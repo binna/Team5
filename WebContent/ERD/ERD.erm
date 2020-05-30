@@ -11,8 +11,8 @@
 	</page_setting>
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
-	<x>302</x>
-	<y>0</y>
+	<x>13</x>
+	<y>51</y>	
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -23,7 +23,7 @@
 		<g>255</g>
 		<b>255</b>
 	</color>
-	<font_name>맑은 고딕</font_name>
+	<font_name>맑�? 고딕</font_name>
 	<font_size>9</font_size>
 	<settings>
 		<database>Oracle</database>
@@ -115,7 +115,7 @@
 					<id>14</id>
 					<height>681</height>
 					<width>367</width>
-						<font_name>맑은 고딕</font_name>
+						<font_name>맑�? 고딕</font_name>
 						<font_size>9</font_size>
 					<x>642</x>
 					<y>12</y>
@@ -126,7 +126,7 @@
 					</color>
 					<connections>
 					</connections>
-					<name>회원관리 (성준)</name>
+					<name>?��?���?�? (?���?)</name>
 					<selected>true</selected>
 					<node_element>11</node_element>
 					<node_element>10</node_element>
@@ -135,7 +135,7 @@
 					<id>15</id>
 					<height>680</height>
 					<width>607</width>
-						<font_name>맑은 고딕</font_name>
+						<font_name>맑�? 고딕</font_name>
 						<font_size>9</font_size>
 					<x>18</x>
 					<y>12</y>
@@ -146,7 +146,7 @@
 					</color>
 					<connections>
 					</connections>
-					<name>커뮤니티관리 (빈나)</name>
+					<name>커�?�니?���?�? (빈나)</name>
 					<selected>true</selected>
 					<node_element>7</node_element>
 					<node_element>6</node_element>
@@ -157,7 +157,7 @@
 					<id>16</id>
 					<height>629</height>
 					<width>1363</width>
-						<font_name>맑은 고딕</font_name>
+						<font_name>맑�? 고딕</font_name>
 						<font_size>9</font_size>
 					<x>18</x>
 					<y>708</y>
@@ -168,7 +168,7 @@
 					</color>
 					<connections>
 					</connections>
-					<name>스토어관리 (우경, 윤주)</name>
+					<name>?��?��?���?�? (?���?, ?���?)</name>
 					<selected>true</selected>
 					<node_element>3</node_element>
 					<node_element>1</node_element>
@@ -181,7 +181,7 @@
 					<id>17</id>
 					<height>681</height>
 					<width>349</width>
-						<font_name>맑은 고딕</font_name>
+						<font_name>맑�? 고딕</font_name>
 						<font_size>9</font_size>
 					<x>1032</x>
 					<y>12</y>
@@ -192,7 +192,7 @@
 					</color>
 					<connections>
 					</connections>
-					<name>인테리어시공 관리 (종훈)</name>
+					<name>?��?��리어?���? �?�? (종훈)</name>
 					<selected>true</selected>
 					<node_element>13</node_element>
 					<node_element>9</node_element>
@@ -208,7 +208,7 @@
 			<id></id>
 			<height>-1</height>
 			<width>-1</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>50</x>
 			<y>50</y>
@@ -223,11 +223,11 @@
 			<creation_date>2020-05-27 13:45:08</creation_date>
 			<updated_date>2020-05-29 17:30:56</updated_date>
 			<model_property>
-				<name>프로젝트명</name>
+				<name>?��로젝?���?</name>
 				<value></value>
 			</model_property>
 			<model_property>
-				<name>모델명</name>
+				<name>모델�?</name>
 				<value></value>
 			</model_property>
 			<model_property>
@@ -235,11 +235,11 @@
 				<value></value>
 			</model_property>
 			<model_property>
-				<name>회사명</name>
+				<name>?��?���?</name>
 				<value></value>
 			</model_property>
 			<model_property>
-				<name>작성자</name>
+				<name>?��?��?��</name>
 				<value></value>
 			</model_property>
 		</model_properties>
@@ -266,7 +266,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>업체 주소</logical_name>
+			<logical_name>?���? 주소</logical_name>
 			<physical_name>Cadr</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -282,7 +282,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>업체 지역</logical_name>
+			<logical_name>?���? �??��</logical_name>
 			<physical_name>Carea</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -298,7 +298,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>업체 카테고리</logical_name>
+			<logical_name>?���? 카테고리</logical_name>
 			<physical_name>Ccategory</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -314,7 +314,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문하기 댓글내용</logical_name>
+			<logical_name>질문?���? ?���??��?��</logical_name>
 			<physical_name>Ccontent</physical_name>
 			<type>clob</type>
 		</word>
@@ -330,7 +330,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문하기 댓글id</logical_name>
+			<logical_name>질문?���? ?���?id</logical_name>
 			<physical_name>Cid</physical_name>
 			<type>decimal</type>
 		</word>
@@ -362,7 +362,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>업체 이름</logical_name>
+			<logical_name>?���? ?���?</logical_name>
 			<physical_name>Cname</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -378,7 +378,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>카테고리 이름</logical_name>
+			<logical_name>카테고리 ?���?</logical_name>
 			<physical_name>Cname</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -394,7 +394,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>업체 번호</logical_name>
+			<logical_name>?���? 번호</logical_name>
 			<physical_name>Cno</physical_name>
 			<type>decimal</type>
 		</word>
@@ -410,7 +410,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상담 시공지역</logical_name>
+			<logical_name>?��?�� ?��공�??��</logical_name>
 			<physical_name>CSarea</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -426,7 +426,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상담 업체이름</logical_name>
+			<logical_name>?��?�� ?��체이�?</logical_name>
 			<physical_name>CSname</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -442,7 +442,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상담 업체신청번호</logical_name>
+			<logical_name>?��?�� ?��체신�?번호</logical_name>
 			<physical_name>CSno</physical_name>
 			<type>decimal</type>
 		</word>
@@ -458,7 +458,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상담 남길번호</logical_name>
+			<logical_name>?��?�� ?��길번?��</logical_name>
 			<physical_name>CSphoneNum</physical_name>
 			<type>decimal</type>
 		</word>
@@ -474,7 +474,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>업체 번호</logical_name>
+			<logical_name>?���? 번호</logical_name>
 			<physical_name>Ctel</physical_name>
 			<type>decimal</type>
 		</word>
@@ -490,7 +490,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상품 브랜드</logical_name>
+			<logical_name>?��?�� 브랜?��</logical_name>
 			<physical_name>Pbrand</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -506,7 +506,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>구매 배송지</logical_name>
+			<logical_name>구매 배송�?</logical_name>
 			<physical_name>PCaddress</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -522,7 +522,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>구매 배송지 우편번호</logical_name>
+			<logical_name>구매 배송�? ?��?��번호</logical_name>
 			<physical_name>PCaddressnum</physical_name>
 			<type>decimal</type>
 		</word>
@@ -538,7 +538,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>구매 카드결제정보</logical_name>
+			<logical_name>구매 카드결제?���?</logical_name>
 			<physical_name>PCcardnum</physical_name>
 			<type>decimal</type>
 		</word>
@@ -586,7 +586,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>구매 상품수량</logical_name>
+			<logical_name>구매 ?��?��?��?��</logical_name>
 			<physical_name>PCLpcnt</physical_name>
 			<type>decimal</type>
 		</word>
@@ -602,7 +602,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>구매 일자</logical_name>
+			<logical_name>구매 ?��?��</logical_name>
 			<physical_name>PCregdate</physical_name>
 			<type>date</type>
 		</word>
@@ -617,8 +617,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>0: 입금대기&#x0D;&#x0A;1: 결제완료&#x0D;&#x0A;2: 배송준비&#x0D;&#x0A;3: 배송중&#x0D;&#x0A;4: 배송완료&#x0D;&#x0A;5: 구매확정</description>
-			<logical_name>구매 상태</logical_name>
+			<description>0: ?��금�?�?&#x0D;&#x0A;1: 결제?���?&#x0D;&#x0A;2: 배송�?�?&#x0D;&#x0A;3: 배송�?&#x0D;&#x0A;4: 배송?���?&#x0D;&#x0A;5: 구매?��?��</description>
+			<logical_name>구매 ?��?��</logical_name>
 			<physical_name>PCstatus</physical_name>
 			<type>decimal</type>
 		</word>
@@ -650,7 +650,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상품 번호</logical_name>
+			<logical_name>?��?�� 번호</logical_name>
 			<physical_name>Pid</physical_name>
 			<type>decimal</type>
 		</word>
@@ -666,7 +666,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문하기 사진id</logical_name>
+			<logical_name>질문?���? ?��진id</logical_name>
 			<physical_name>Pid</physical_name>
 			<type>decimal</type>
 		</word>
@@ -681,8 +681,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>이미지 url&#x0D;&#x0A;</description>
-			<logical_name>상품 이미지</logical_name>
+			<description>?��미�? url&#x0D;&#x0A;</description>
+			<logical_name>?��?�� ?��미�?</logical_name>
 			<physical_name>Pimage</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -698,7 +698,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상품 이름</logical_name>
+			<logical_name>?��?�� ?���?</logical_name>
 			<physical_name>Pname</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -714,7 +714,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문하기 사진 파일</logical_name>
+			<logical_name>질문?���? ?���? ?��?��</logical_name>
 			<physical_name>Ppicture</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -730,7 +730,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상품 가격</logical_name>
+			<logical_name>?��?�� �?�?</logical_name>
 			<physical_name>Pprice</physical_name>
 			<type>decimal</type>
 		</word>
@@ -746,7 +746,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>문의사항 답변</logical_name>
+			<logical_name>문의?��?�� ?���?</logical_name>
 			<physical_name>PQanswer</physical_name>
 			<type></type>
 		</word>
@@ -762,7 +762,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>문의사항 내용</logical_name>
+			<logical_name>문의?��?�� ?��?��</logical_name>
 			<physical_name>PQcontent</physical_name>
 			<type></type>
 		</word>
@@ -778,7 +778,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>문의사항 id</logical_name>
+			<logical_name>문의?��?�� id</logical_name>
 			<physical_name>PQid</physical_name>
 			<type>decimal</type>
 		</word>
@@ -794,7 +794,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>문의사항 작성일자</logical_name>
+			<logical_name>문의?��?�� ?��?��?��?��</logical_name>
 			<physical_name>PQregdate</physical_name>
 			<type>date</type>
 		</word>
@@ -810,7 +810,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문 조회수</logical_name>
+			<logical_name>질문 조회?��</logical_name>
 			<physical_name>Qclickcnt</physical_name>
 			<type>decimal</type>
 		</word>
@@ -826,7 +826,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문 글 내용</logical_name>
+			<logical_name>질문 �? ?��?��</logical_name>
 			<physical_name>Qcontent</physical_name>
 			<type>clob</type>
 		</word>
@@ -841,8 +841,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>구분점을 이용하여 키워드를 구분할 예정&#x0D;&#x0A;1개 필수, 5기 이하 등록 가능</description>
-			<logical_name>질문 키워드</logical_name>
+			<description>구분?��?�� ?��?��?��?�� ?��?��?���? 구분?�� ?��?��&#x0D;&#x0A;1�? ?��?��, 5�? ?��?�� ?���? �??��</description>
+			<logical_name>질문 ?��?��?��</logical_name>
 			<physical_name>Qkeyword</physical_name>
 			<type>clob</type>
 		</word>
@@ -858,7 +858,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문 글 번호(기본키)</logical_name>
+			<logical_name>질문 �? 번호(기본?��)</logical_name>
 			<physical_name>Qno</physical_name>
 			<type>decimal</type>
 		</word>
@@ -874,7 +874,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문 등록 일자</logical_name>
+			<logical_name>질문 ?���? ?��?��</logical_name>
 			<physical_name>Qregdate</physical_name>
 			<type>date</type>
 		</word>
@@ -890,7 +890,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>질문 글 제목</logical_name>
+			<logical_name>질문 �? ?���?</logical_name>
 			<physical_name>Qtitle</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -906,7 +906,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>신고 번호</logical_name>
+			<logical_name>?���? 번호</logical_name>
 			<physical_name>Rid</physical_name>
 			<type>decimal</type>
 		</word>
@@ -921,8 +921,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>신고 사유는 라디오 박스로 넘버링할 예정</description>
-			<logical_name>신고 사유</logical_name>
+			<description>?���? ?��?��?�� ?��?��?�� 박스�? ?��버링?�� ?��?��</description>
+			<logical_name>?���? ?��?��</logical_name>
 			<physical_name>Rselect</physical_name>
 			<type>decimal</type>
 		</word>
@@ -938,7 +938,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>특가상품 기한</logical_name>
+			<logical_name>?���??��?�� 기한</logical_name>
 			<physical_name>SPregdate</physical_name>
 			<type>date</type>
 		</word>
@@ -954,7 +954,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>사용자 주소</logical_name>
+			<logical_name>?��?��?�� 주소</logical_name>
 			<physical_name>Uaddress</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -969,8 +969,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>사용자 접속시간</description>
-			<logical_name>접속 시간</logical_name>
+			<description>?��?��?�� ?��?��?���?</description>
+			<logical_name>?��?�� ?���?</logical_name>
 			<physical_name>UAtime</physical_name>
 			<type>date</type>
 		</word>
@@ -986,7 +986,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>사용자 이메일</logical_name>
+			<logical_name>?��?��?�� ?��메일</logical_name>
 			<physical_name>Uemail</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -1001,8 +1001,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>0 : 남자&#x0D;&#x0A;1 : 여자 </description>
-			<logical_name>사용자 성별</logical_name>
+			<description>0 : ?��?��&#x0D;&#x0A;1 : ?��?�� </description>
+			<logical_name>?��?��?�� ?���?</logical_name>
 			<physical_name>Ugender</physical_name>
 			<type>decimal</type>
 		</word>
@@ -1017,8 +1017,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>사용자 아이디입니다.</description>
-			<logical_name>사용자 ID</logical_name>
+			<description>?��?��?�� ?��?��?��?��?��?��.</description>
+			<logical_name>?��?��?�� ID</logical_name>
 			<physical_name>Uid</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -1034,7 +1034,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>사용자 이미지</logical_name>
+			<logical_name>?��?��?�� ?��미�?</logical_name>
 			<physical_name>Uimage</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -1049,8 +1049,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>사용자 주민번호</description>
-			<logical_name>사용자 주민번호</logical_name>
+			<description>?��?��?�� 주�?�번?��</description>
+			<logical_name>?��?��?�� 주�?�번?��</logical_name>
 			<physical_name>Ujumin</physical_name>
 			<type>decimal</type>
 		</word>
@@ -1065,8 +1065,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>관리자페이지에서 필요</description>
-			<logical_name>사용자 마지막로그인기록</logical_name>
+			<description>�?리자?��?���??��?�� ?��?��</description>
+			<logical_name>?��?��?�� 마�?막로그인기록</logical_name>
 			<physical_name>Ulogtime</physical_name>
 			<type>date</type>
 		</word>
@@ -1081,8 +1081,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>관리자</description>
-			<logical_name>사용자 정보수정일시</logical_name>
+			<description>�?리자</description>
+			<logical_name>?��?��?�� ?��보수?��?��?��</logical_name>
 			<physical_name>Umoditime</physical_name>
 			<type>date</type>
 		</word>
@@ -1097,8 +1097,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>사용자이름</description>
-			<logical_name>사용자 이름</logical_name>
+			<description>?��?��?��?���?</description>
+			<logical_name>?��?��?�� ?���?</logical_name>
 			<physical_name>Uname</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -1114,7 +1114,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>사용자 별명</logical_name>
+			<logical_name>?��?��?�� 별명</logical_name>
 			<physical_name>Unickname</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -1130,7 +1130,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>사용자 PW</logical_name>
+			<logical_name>?��?��?�� PW</logical_name>
 			<physical_name>Upw</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -1145,8 +1145,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>관리자페이지에서 필요</description>
-			<logical_name>사용자 가입일시</logical_name>
+			<description>�?리자?��?���??��?�� ?��?��</description>
+			<logical_name>?��?��?�� �??��?��?��</logical_name>
 			<physical_name>Uregdate</physical_name>
 			<type>date</type>
 		</word>
@@ -1161,8 +1161,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>0 : 활성화 &#x0D;&#x0A;1 : 비활성화 (탈퇴) </description>
-			<logical_name>사용자 상태</logical_name>
+			<description>0 : ?��?��?�� &#x0D;&#x0A;1 : 비활?��?�� (?��?��) </description>
+			<logical_name>?��?��?�� ?��?��</logical_name>
 			<physical_name>Ustate</physical_name>
 			<type>decimal</type>
 		</word>
@@ -1177,8 +1177,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>0 : 회원&#x0D;&#x0A;1 : 관리자 </description>
-			<logical_name>사용자 타입</logical_name>
+			<description>0 : ?��?��&#x0D;&#x0A;1 : �?리자 </description>
+			<logical_name>?��?��?�� ???��</logical_name>
 			<physical_name>Usuper</physical_name>
 			<type>decimal</type>
 		</word>
@@ -1193,8 +1193,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>선택약관 동의 : 0&#x0D;&#x0A;선택약관 비동의 : 1</description>
-			<logical_name>사용자 선택약관</logical_name>
+			<description>?��?��?���? ?��?�� : 0&#x0D;&#x0A;?��?��?���? 비동?�� : 1</description>
+			<logical_name>?��?��?�� ?��?��?���?</logical_name>
 			<physical_name>Utaggwan</physical_name>
 			<type>decimal</type>
 		</word>
@@ -1209,8 +1209,8 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>0 : 이용빈도 낮음&#x0D;&#x0A;1 : 재가입&#x0D;&#x0A;2 : 개인정보 보호&#x0D;&#x0A;3 : 회원특혜/쇼핑해택부족&#x0D;&#x0A;4: : 콘텐츠/제품정보/상품부족&#x0D;&#x0A;5 : 기타</description>
-			<logical_name>사용자 탈퇴</logical_name>
+			<description>0 : ?��?��빈도 ?��?��&#x0D;&#x0A;1 : ?���??��&#x0D;&#x0A;2 : 개인?���? 보호&#x0D;&#x0A;3 : ?��?��?��?��/?��?��?��?���?�?&#x0D;&#x0A;4: : 콘텐�?/?��?��?���?/?��?���?�?&#x0D;&#x0A;5 : 기�?</description>
+			<logical_name>?��?��?�� ?��?��</logical_name>
 			<physical_name>Utaltoe</physical_name>
 			<type>decimal</type>
 		</word>
@@ -1226,7 +1226,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>사용자 전화번호</logical_name>
+			<logical_name>?��?��?�� ?��?��번호</logical_name>
 			<physical_name>Utel</physical_name>
 			<type>varchar(n)</type>
 		</word>
@@ -1242,7 +1242,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>사용자 우편번호</logical_name>
+			<logical_name>?��?��?�� ?��?��번호</logical_name>
 			<physical_name>Uzipcode</physical_name>
 			<type>decimal</type>
 		</word>
@@ -1254,7 +1254,7 @@
 			<id>0</id>
 			<height>126</height>
 			<width>254</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>584</x>
 			<y>1074</y>
@@ -1310,7 +1310,7 @@
 				</relation>
 			</connections>
 			<physical_name>PClist</physical_name>
-			<logical_name>구매리스트</logical_name>
+			<logical_name>구매리스?��</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -1356,7 +1356,7 @@
 					<relation>0</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>구매 상품 번호</logical_name>
+					<logical_name>구매 ?��?�� 번호</logical_name>
 					<physical_name>PCLpid</physical_name>
 					<type>decimal</type>
 					<constraint></constraint>
@@ -1430,7 +1430,7 @@
 			<id>1</id>
 			<height>100</height>
 			<width>247</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>276</x>
 			<y>766</y>
@@ -1527,7 +1527,7 @@
 			<id>2</id>
 			<height>100</height>
 			<width>247</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>276</x>
 			<y>1212</y>
@@ -1561,7 +1561,7 @@
 				</relation>
 			</connections>
 			<physical_name>SaleProduct</physical_name>
-			<logical_name>특가상품</logical_name>
+			<logical_name>?���??��?��</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -1647,7 +1647,7 @@
 			<id>3</id>
 			<height>204</height>
 			<width>254</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>900</x>
 			<y>772</y>
@@ -1703,7 +1703,7 @@
 				</relation>
 			</connections>
 			<physical_name>PQuestion</physical_name>
-			<logical_name>상품문의사항</logical_name>
+			<logical_name>?��?��문의?��?��</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -1748,7 +1748,7 @@
 					<relation>3</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>문의사항 상품번호</logical_name>
+					<logical_name>문의?��?�� ?��?��번호</logical_name>
 					<physical_name>PQpid</physical_name>
 					<type>decimal</type>
 					<constraint></constraint>
@@ -1782,7 +1782,7 @@
 					<relation>4</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>문의사항 작성자 (사용자 ID)</logical_name>
+					<logical_name>문의?��?�� ?��?��?�� (?��?��?�� ID)</logical_name>
 					<physical_name>PQuid</physical_name>
 					<type>varchar(n)</type>
 					<constraint></constraint>
@@ -1922,7 +1922,7 @@
 			<id>4</id>
 			<height>256</height>
 			<width>247</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>276</x>
 			<y>912</y>
@@ -1956,7 +1956,7 @@
 				</relation>
 			</connections>
 			<physical_name>Product</physical_name>
-			<logical_name>상품</logical_name>
+			<logical_name>?��?��</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -2131,7 +2131,7 @@
 					<id>18</id>
 					<referenced_column>3</referenced_column>
 					<relation>5</relation>
-					<description>상품 카테코리 코드&#x0D;&#x0A;</description>
+					<description>?��?�� 카테코리 코드&#x0D;&#x0A;</description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name>Pcode</physical_name>
@@ -2174,7 +2174,7 @@
 			<id>5</id>
 			<height>126</height>
 			<width>255</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>346</x>
 			<y>239</y>
@@ -2208,7 +2208,7 @@
 				</relation>
 			</connections>
 			<physical_name>Picture</physical_name>
-			<logical_name>질문하기 사진</logical_name>
+			<logical_name>질문?���? ?���?</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -2253,7 +2253,7 @@
 					<relation>6</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>질문하기 게시글 no(외래키)</logical_name>
+					<logical_name>질문?���? 게시�? no(?��?��?��)</logical_name>
 					<physical_name>Pqno</physical_name>
 					<type>decimal</type>
 					<constraint></constraint>
@@ -2327,7 +2327,7 @@
 			<id>6</id>
 			<height>275</height>
 			<width>245</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>61</x>
 			<y>55</y>
@@ -2361,7 +2361,7 @@
 				</relation>
 			</connections>
 			<physical_name>Question</physical_name>
-			<logical_name>질문하기</logical_name>
+			<logical_name>질문?���?</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -2406,7 +2406,7 @@
 					<relation>7</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>질문 사용자 ID</logical_name>
+					<logical_name>질문 ?��?��?�� ID</logical_name>
 					<physical_name>Quid</physical_name>
 					<type>varchar(n)</type>
 					<constraint></constraint>
@@ -2612,7 +2612,7 @@
 			<id>7</id>
 			<height>152</height>
 			<width>254</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>346</x>
 			<y>55</y>
@@ -2668,7 +2668,7 @@
 				</relation>
 			</connections>
 			<physical_name>Report</physical_name>
-			<logical_name>신고하기</logical_name>
+			<logical_name>?��고하�?</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -2713,7 +2713,7 @@
 					<relation>9</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>신고 게시글 번호</logical_name>
+					<logical_name>?���? 게시�? 번호</logical_name>
 					<physical_name>Rqno</physical_name>
 					<type>decimal</type>
 					<constraint></constraint>
@@ -2747,7 +2747,7 @@
 					<relation>8</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>신고 작성자(사용자 ID)</logical_name>
+					<logical_name>?���? ?��?��?��(?��?��?�� ID)</logical_name>
 					<physical_name>Ruid</physical_name>
 					<type>varchar(n)</type>
 					<constraint></constraint>
@@ -2821,7 +2821,7 @@
 			<id>8</id>
 			<height>152</height>
 			<width>252</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>348</x>
 			<y>392</y>
@@ -2877,7 +2877,7 @@
 				</relation>
 			</connections>
 			<physical_name>Comment</physical_name>
-			<logical_name>질문하기 댓글</logical_name>
+			<logical_name>질문?���? ?���?</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -2922,7 +2922,7 @@
 					<relation>10</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>질문하기 댓글 작성자(사용자 ID)</logical_name>
+					<logical_name>질문?���? ?���? ?��?��?��(?��?��?�� ID)</logical_name>
 					<physical_name>Cuid</physical_name>
 					<type>varchar(n)</type>
 					<constraint></constraint>
@@ -2956,7 +2956,7 @@
 					<relation>11</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>질문하기 댓글 게시글번호</logical_name>
+					<logical_name>질문?���? ?���? 게시�?번호</logical_name>
 					<physical_name>Cqno</physical_name>
 					<type>decimal</type>
 					<constraint></constraint>
@@ -3030,7 +3030,7 @@
 			<id>9</id>
 			<height>239</height>
 			<width>287</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>1070</x>
 			<y>372</y>
@@ -3086,7 +3086,7 @@
 				</relation>
 			</connections>
 			<physical_name>Consulting</physical_name>
-			<logical_name>상담</logical_name>
+			<logical_name>?��?��</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -3131,7 +3131,7 @@
 					<relation>12</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>상담 업체 번호</logical_name>
+					<logical_name>?��?�� ?���? 번호</logical_name>
 					<physical_name>CScno</physical_name>
 					<type>decimal</type>
 					<constraint></constraint>
@@ -3165,7 +3165,7 @@
 					<relation>13</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>상담 신청유저아이디(사용자 ID)</logical_name>
+					<logical_name>?��?�� ?���??��???��?��?��(?��?��?�� ID)</logical_name>
 					<physical_name>CSuid</physical_name>
 					<type>varchar(n)</type>
 					<constraint></constraint>
@@ -3305,7 +3305,7 @@
 			<id>10</id>
 			<height>490</height>
 			<width>277</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>687</x>
 			<y>54</y>
@@ -3317,7 +3317,7 @@
 			<connections>
 			</connections>
 			<physical_name>User</physical_name>
-			<logical_name>사용자</logical_name>
+			<logical_name>?��?��?��</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -3930,7 +3930,7 @@
 			<id>11</id>
 			<height>100</height>
 			<width>277</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>687</x>
 			<y>576</y>
@@ -3964,7 +3964,7 @@
 				</relation>
 			</connections>
 			<physical_name>UserAccess</physical_name>
-			<logical_name>사용자 접속기록</logical_name>
+			<logical_name>?��?��?�� ?��?��기록</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -4050,7 +4050,7 @@
 			<id>12</id>
 			<height>282</height>
 			<width>257</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>582</x>
 			<y>772</y>
@@ -4084,7 +4084,7 @@
 				</relation>
 			</connections>
 			<physical_name>Purchase</physical_name>
-			<logical_name>구매하기</logical_name>
+			<logical_name>구매?���?</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -4129,7 +4129,7 @@
 					<relation>15</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>구매 사용자 ID</logical_name>
+					<logical_name>구매 ?��?��?�� ID</logical_name>
 					<physical_name>PCuid</physical_name>
 					<type>varchar(n)</type>
 					<constraint></constraint>
@@ -4401,7 +4401,7 @@
 			<id>13</id>
 			<height>178</height>
 			<width>260</width>
-				<font_name>맑은 고딕</font_name>
+				<font_name>맑�? 고딕</font_name>
 				<font_size>9</font_size>
 			<x>1068</x>
 			<y>69</y>
@@ -4413,7 +4413,7 @@
 			<connections>
 			</connections>
 			<physical_name>Company</physical_name>
-			<logical_name>업체</logical_name>
+			<logical_name>?���?</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
