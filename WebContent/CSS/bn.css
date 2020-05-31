@@ -1,1 +1,69 @@
 @charset "UTF-8";
+
+/* communityMain CSS */
+.upload-types {
+    padding-top: 60px;
+}
+
+.upload-types>h2 {
+    margin-bottom: 60px;
+}
+
+.upload-types__item {
+    display: block;
+    max-width: 160px;
+    margin: 0 auto 60px;
+    color: black;
+}
+
+.upload-types__item__pictogram {
+    position: relative;
+    width: 100%;
+}
+
+.upload-types__item__pictogram:after {
+    content: '';
+    display: block;
+    padding-top: 100%;
+    background: #fafafa;
+    border-radius: 50%;
+}
+.upload-types__item__caption {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 1.46;
+    color: #bdbdbd;
+}
+
+.upload-types__item:hover>.upload-types__item__pictogram::after {
+   text-decoration: none;
+   background-color: #35C5F0;
+}
+.upload-types__item:hover {
+   text-decoration: none;
+   color: white;
+}
+.upload-types__item:hover>.upload-types__item__caption {
+    color: black;
+    font-weight: bold;
+}
+
+.upload-types__item__pictogram__contents {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.upload-types__item__pictogram__contents>p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+
+
+
+
