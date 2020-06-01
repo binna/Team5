@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 
 <!-- MaxCDN 사용 -->
 
@@ -34,10 +28,12 @@
 <!-- font-family: 'Do Hyeon', sans-serif;
 font-family: 'Jua', sans-serif; -->
 
-
+<!-- 로고 푸터 css -->
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="CSS/yj.css" type="text/css">
-<!-- <link rel="stylesheet" href="CSS/logo_menu.css" type="text/css"> -->
+
+<!-- 본문 css -->
+<link rel="stylesheet" href="CSS/JH/consMain.css" type="text/css">
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
@@ -46,7 +42,7 @@ font-family: 'Jua', sans-serif; -->
 
 
 
-<title>너네집</title>
+<title>컨설팅 메인</title>
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
@@ -69,9 +65,6 @@ font-family: 'Jua', sans-serif; -->
 					<i class="fas fa-search"></i>
 				</div>
 				<button id="write">글쓰기</button>
-				<!-- <button>
-					<i class="fas fa-search"></i>
-				</button> -->
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -102,7 +95,7 @@ font-family: 'Jua', sans-serif; -->
 					</ul>
 				</nav>
 			</div>
-			<div calss="col-md-3">
+			<div class="col-md-3">
 				<button id="main_top2_app"></button>
 				<a href="#">앱 다운로드</a>
 			</div>
@@ -111,59 +104,82 @@ font-family: 'Jua', sans-serif; -->
 		<hr>
 	</header>
 
+	<!-- 메인입니다. -->
+	<section>
+		<article>
+			<!--  selected 지역선택메뉴  -->
+			<select name="Company">
+				<option value="서울">서울</option>
+				<option value="경기">경기</option>
+				<option value="인천">인천</option>
+				<option value="부산">부산</option>
+				<option value="기타">기타</option>
+			</select>
+			<div id="category">
+				<div class="category">
+					<img class="cateImg"
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487641227160933.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487641227160933.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487641227160933.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487641227160933.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>도배</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644545760381.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644545760381.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644545760381.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644545760381.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>장판</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487643983545025.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487643983545025.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487643983545025.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487643983545025.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>시트필름</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644245312359.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644245312359.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644245312359.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644245312359.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>욕실</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487659846222130.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487659846222130.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487659846222130.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487659846222130.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>주방</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660098535429.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660098535429.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660098535429.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660098535429.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>타일</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642300102400.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642300102400.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642300102400.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642300102400.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>도어</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642521502350.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642521502350.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642521502350.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642521502350.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>마루</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660352228893.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660352228893.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660352228893.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660352228893.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>페인트</div>
+				</div>
+				<div class="category">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642805755493.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642805755493.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642805755493.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642805755493.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
+					<div>마루</div>
+				</div>
+			</div>
+		</article>
+	</section>
 
-	<!--내용부분입니다.  -->
-	<div id="main_content">
-		<div id="content_banner"></div>
-		<div id="content_nav">
-			<nav style="padding: 0px;">
-				<ul>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--158709154758244185.png/512/none">
-						신혼가구</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060163925021105.png/512/none">
-						쇼핑하기</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060166588410696.png/512/none">
-						평수별 집구경</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060167898474932.png/512/none">
-						공간별사진</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
-						시공간편상당</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
-						시공스토어</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157560539045245526.png/512/none">
-						가이드북</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060175107066373.png/512/none">
-						질문과답변</li>
-
-
-				</ul>
-			</nav>
-		</div>
-		<br> <br> <br> <br> <br> <br>
-		<div id="content_community">
-			<h1>오늘의 스토리</h1>
-			<br> <br> <br>
-		</div>
-		<div id="content_store">
-			<h1>오늘의 딜</h1>
-			<br> <br> <br>
-		</div>
-		<div id="content_interior">
-			<h1>인테리어 시공</h1>
-			<br> <br> <br>
-
-		</div>
-
-
-	</div>
 
 
 
