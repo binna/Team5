@@ -7,7 +7,7 @@ $(document)
 					//
 					var c1 = 0; // 카테고리저장
 					var table = ""; // 회사정보
-					var blank = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+					var blank = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
 					// 공백임당
 
 					$("#btn_search").click(function() {
@@ -65,17 +65,17 @@ $(document)
 						table += "<table>";
 						for (var j = 0; j < documents.length; j++) {
 							table += "<tr>";
-							table += "<td>업체이름: " + documents[j].place_name
-									+ blank + "</td>";
-							table += "<td>업체주소 : " + documents[j].address_name
-									+ blank + "</td>";
-							table += "<td>업체 tel: " + documents[j].phone
-									+ blank + "</td>";
-							table += "<td>업체지역: "
+							table += "<td>INTO Company (Cno, Cname, Cadr, Ctel, Carea) VALUES("
+									+ "get_seq" + ",</td>";
+							table += "<td>'" + documents[j].place_name
+									+ "',</td>";
+							table += "<td>'" + documents[j].address_name
+									+ "',</td>";
+							table += "<td>'" + documents[j].phone + "',</td>";
+							table += "<td>'"
 									+ documents[j].address_name.split(" ")[0];
-							+blank + "</td>";
-							table += "<td>업체 카테고리: " + consCategory[c1] + blank
-									+ "</td>";
+							+"</td>";
+							table += "<td>')</td>"
 							table += "</tr>";
 							console.log(c1);
 						} // end for
