@@ -3,10 +3,13 @@
 /* communityMain CSS */
 .upload-types {
     padding-top: 60px;
+    padding-bottom: 100px;
 }
 
 .upload-types>h2 {
     margin-bottom: 60px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .upload-types__item {
@@ -20,7 +23,6 @@
     position: relative;
     width: 100%;
 }
-
 .upload-types__item__pictogram:after {
     content: '';
     display: block;
@@ -57,13 +59,185 @@
     text-align: center;
     width: 100%;
 }
-
 .upload-types__item__pictogram__contents>p {
     margin-top: 15px;
     font-size: 18px;
+}
+
+.question-form__body__content__input:empty:not(:focus)+.question-form__body__content__placeholder {
+    display: block;
+}
+.question-form__body__content__placeholder {
+    width: 100%;
+    color: #bdbdbd;
+    display: none;
+}
+.question-form__body__content__input, .question-form__body__content__placeholder {
+    width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: 1.87;
+    word-wrap: break-word;
+    cursor: text;
+    padding: 15px;
 }
 
 
 
 
 
+
+
+
+
+/* write.jsp */
+header {
+	margin-top: 40px
+}
+.simplified-gnb__container {
+    max-width: 690px
+}
+
+.btn {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 30px 100px 30px 100px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.question-form {
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 0 15px
+}
+.question-form__expert {
+    margin-bottom: 15px
+}
+.question-form__expert__name {
+    margin-right: 6px
+}
+.question-form__expert__name,
+.question-form__expert__tip {
+    vertical-align: middle
+}
+.question-form__cs {
+    margin-bottom: 20px;
+    color: #424242
+}
+.question-form__cs__link {
+    margin-left: 2px;
+    color: #35C5F0;
+    font-weight: bold;
+    text-decoration: underline
+}
+.question-form__header__heading {
+    margin-bottom: 20px
+}
+.question-form__header__title {
+    display: block;
+    margin-bottom: 15px
+}
+.question-form__header__title>input {
+    display: block;
+    margin-bottom: 2px;
+    width: 100%;
+    font-size: 15px
+}
+.question-form__meta {
+    display: none
+}
+.question-form__body__content {
+    margin-bottom: 20px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 질문 저장하기 버튼 */
+.btn-lg {
+    margin: 10px 5px;
+    width: 100%;
+    background-color: #35C5F0;
+    border-color: #35C5F0;
+    color: #ffffff;
+    
+}
+.btn-lg:hover {
+    color: #ffffff;
+    background-color: #046a91;
+}
+
+/* 키워드 추가, 모달 영역 */
+.modal-dialog{
+	max-width: 80%; 
+	width: auto; 
+}
+.modal-tag-select__header__name {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+.modal-tag-select__header__name__tip {
+    font-size: 15px;
+    color: #bdbdbd
+}
+li {list-style: none;}
+.modal-tag-select__groups__name {
+    margin: 10px 0 20px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+}
+.modal-tag-select__groups__list__item {
+    width: 220px;
+    margin-bottom: 10px;
+    font-size: 15px
+}
+
+/* 키워드 추가, footer 버튼 부분 */
+.modal-tag-select__footer {
+    justify-content: center;
+    padding-top: 20px;
+    margin: 0 -5px;
+}
+.btn-dismiss {
+	background-color: #bdbdbd;
+    border-color: #bdbdbd;
+    color: #ffffff;
+}
+.btn-dismiss:hover {
+	background-color: #696969;
+    color: #ffffff;
+}
+/* 자바 스크립트를 통해 체크박스 유효성 통과하면 파란색으로 변할 수 있도록 설정! */
+.btn-priority {
+    background-color: #35C5F0;
+    border-color: #35C5F0;
+    color: #ffffff;
+}
+.btn-priority:hover {
+    color: #ffffff;
+    background-color: #046a91;
+}
+/* disabled 상태일때 */
+.btn-priority:disabled {
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+    color: #ededed;
+}

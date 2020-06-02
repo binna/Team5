@@ -29,7 +29,7 @@
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
 	rel="stylesheet">
 	
-<!-- 네모네모 -->
+<!-- 네모 네모 -->
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
@@ -96,7 +96,7 @@
 	<main role="main" id="root">
 	
 	<section class="container upload-types">
-	<h2 class="text-black bold">글쓰기</h2>
+		<h2>글쓰기</h2>
 		<div class="row">
 	    	<section class="col-4 col-lg-3 col-xl-2 upload-types__item__wrap">
 	       	<a class="upload-types__item upload-types__item__qna" href="write.jsp">
