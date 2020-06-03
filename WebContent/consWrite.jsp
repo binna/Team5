@@ -40,72 +40,81 @@
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
 	rel="stylesheet">
 
-<!-- css 링크 -->
+<!-- CSS 링크 -->
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="CSS/JH/consWrite.css" type="text/css">
+
+<!-- JS 링크 -->
+<script src="JS/JH/consWrite/consWrite.js"></script>
 
 <title>너네 집</title>
 </head>
 <body>
 	<header id="cons_header">
-		<div id="cons_logo"></div>
-		<h1 id="cons_title">너네 집</h1>
+		<div class="cons_header">
+			<div id="cons_logo"></div>
+			<h1 id="cons_title">너네 집</h1>
+		</div>
 	</header>
-
-	<section id="cons_section">
-		<article id="cons_section_header">
-			<h1 class="consultation-form__header__title">
-				<img
-					src="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157924932272521634.jpg?gif=1&amp;w=40&amp;h=40&amp;c=c&amp;webp=1"
-					srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157924932272521634.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157924932272521634.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157924932272521634.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 3x"
-					alt="">인테리온 Interion<span
-					class="tooltip consultation-form__header__title__badge"><svg
-						class="icon" width="18" height="18" viewBox="0 0 18 18"
-						preserveAspectRatio="xMidYMid meet">
+	
+	
+	<!-- post방식 -->
+	<form name="frm" action="consWriteOk.do" method="post"
+		onsubmit="return chkSubmit()">
+		<section id="cons_section">
+			<article id="cons_section_header">
+				<h1 class="consultation-form__header__title">
+					<img
+						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157924932272521634.jpg?gif=1&amp;w=40&amp;h=40&amp;c=c&amp;webp=1"
+						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157924932272521634.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157924932272521634.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157924932272521634.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 3x"
+						alt="">인테리온 Interion<span
+						class="tooltip consultation-form__header__title__badge"><svg
+							class="icon" width="18" height="18" viewBox="0 0 18 18"
+							preserveAspectRatio="xMidYMid meet">
 						<g fill="none">
 						<path fill="#1778BA"
-							d="M9 16.2l-2.78 1.36-1.45-2.73-3.05-.54.43-3.06L0 9l2.15-2.23-.43-3.06 3.05-.54L6.22.44 9 1.8 11.78.44l1.45 2.73 3.05.54-.43 3.06L18 9l-2.15 2.23.43 3.06-3.05.54-1.45 2.73z"></path>
+								d="M9 16.2l-2.78 1.36-1.45-2.73-3.05-.54.43-3.06L0 9l2.15-2.23-.43-3.06 3.05-.54L6.22.44 9 1.8 11.78.44l1.45 2.73 3.05.54-.43 3.06L18 9l-2.15 2.23.43 3.06-3.05.54-1.45 2.73z"></path>
 						<path fill="#FFF"
-							d="M7.77 10.52l4.13-4.26.83.81-4.92 5.08-2.9-2.7.8-.85z"></path></g></svg></span>
-			</h1>
-			<div class="cateEx">해당 전문가님의 시공분야는 아래와 같습니다.</div>
-			<div class="ccategory">
-				<div><%=ccategory%></div>
-			</div>
-		</article>
-
-		<article id="cons_section_comInfo">
-			<div class="areaEx">시공할 지역을 알려주세요</div>
-			<!--  selected 지역선택메뉴  -->
-			<select id="consArea" name="Company">
-				<option value="서울">서울</option>
-				<option value="경기">경기</option>
-				<option value="인천">인천</option>
-				<option value="부산">부산</option>
-				<option value="기타">기타</option>
-			</select>
-		</article>
-
-		<article id="cons_section_userInfo">
-			<div class="userNameInfo">고객님의 이름을 알려주세요.</div>
-			<input type="text" name="csuid" placeholder="집순이"
-				class="userNameInput"></input>
-			<div class="userTelInfo">
-				상담받을 전화번호를 알려주세요.
-				<div class="userTelHint">010을 제외한 8글자를 적어주세요.</div>
-				<input type="text" name="csphonenume" placeholder="010"
-					class="ctel01"></input> - <input type="text" name="csphonenume"
-					placeholder="1234" class="ctel02"></input> - <input type="text"
-					name="csphonenume" placeholder="5678" class="ctel03"></input>
-			</div>
-			
-			<article id="cons_section_submit_cancel">
-				<button class="submit">SUBMIT</button>
-				<button class="cancel">CANCEL</button>
+								d="M7.77 10.52l4.13-4.26.83.81-4.92 5.08-2.9-2.7.8-.85z"></path></g></svg></span>
+				</h1>
+				<div class="cateEx">해당 전문가님의 시공분야는 아래와 같습니다.</div>
+				<div class="ccategory">
+					<div><%=ccategory%></div>
+				</div>
 			</article>
-		</article>
-	</section>
 
+			<article id="cons_section_comInfo">
+				<div class="areaEx">시공할 지역을 알려주세요</div>
+				<!--  selected 지역선택메뉴  -->
+				<select id="consArea" name="Company">
+					<option value="서울">서울</option>
+					<option value="경기">경기</option>
+					<option value="인천">인천</option>
+					<option value="부산">부산</option>
+					<option value="기타">기타</option>
+				</select>
+			</article>
+
+			<article id="cons_section_userInfo">
+				<div class="userNameInfo">고객님의 이름을 알려주세요.</div>
+				<input type="text" name="csuid" placeholder="집순이"
+					class="userNameInput"></input>
+				<div class="userTelInfo">
+					상담받을 전화번호를 알려주세요.
+					<div class="userTelHint">010을 제외한 8글자를 적어주세요.</div>
+					<input type="text" name="csphonenume" placeholder="010"
+						class="ctel01"></input> - <input type="text" name="csphonenume"
+						placeholder="1234" class="ctel02"></input> - <input type="text"
+						name="csphonenume" placeholder="5678" class="ctel03"></input>
+				</div>
+
+				<article id="cons_section_submit_cancel">
+					<button type="submit" class="submit">SUBMIT</button>
+					<button type="button" class="cancel">CANCEL</button>
+				</article>
+			</article>
+		</section>
+	</form>
 
 
 

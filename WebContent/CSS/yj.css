@@ -5,18 +5,18 @@
 /*TODO logo_menu delete*/
 header#main_header {
 	width: 90%;
-	height: 200px;
+	height: auto;
 	text-align: center;
 	margin: 0px auto;
 }
 
-#main_top1_2 li, #main_top2 li {
+#main_top1_2 li, #main_top2 li,#main_top3 li {
 	display: inline-block;
 	height: 100%;
 	margin-left: 20px;
 }
 
-#main_top1_2 li a, #main_top2 li a, #main_top2 a {
+#main_top1_2 li a, #main_top2 li a, #main_top2 a, #main_top3 li a, #main_top3 a {
 	/* font-family: 'Do Hyeon', sans-serif; */
 	/* font-weight: bold; */
 	font-weight: 900;
@@ -24,7 +24,7 @@ header#main_header {
 	color: #444;
 }
 
-#main_top1_2 li a:hover, #main_top2 li a:hover, #main_top2 a:hover {
+#main_top1_2 li a:hover, #main_top2 li a:hover, #main_top2 a:hover,#main_top3 li a:hover, #main_top3 a:hover  {
 	color: rgb(53, 197, 240)
 }
 /*---------*/
@@ -36,7 +36,7 @@ div#main_top1 {
 	padding-top: 40px
 }
 
-div#main_top2 li {
+div#main_top2 li,div#main_top3 li {
 	margin-left: 10px
 }
 
@@ -177,7 +177,7 @@ footer#main_footer {
 }
 
 /*---------main content--------*/
-#main_content {
+#main_content, #product_main_content,#product_main_nav{
 	width: 70%;
 	margin: 50px auto;
 }
@@ -205,3 +205,105 @@ footer#main_footer {
 #main_content li img {
 	width: 100%
 }
+
+
+
+/*--------store main---------------*/
+div.product_img{
+	width: 100%;
+	background-size: cover;
+	padding-top: 100%;
+	border-radius: 6%
+}
+h3.pbrand{
+	font-weight: 900;
+	font-size: x-small;
+}
+
+h3.pname{
+	font-weight: 900;
+	font-size: small;
+	color: #333;
+}
+h3.pprice{
+	font-weight: 900;
+	font-size: medium;
+	color: #333;
+	
+}
+div.product_td{
+	margin-bottom: 50px;
+}
+.product_td a{
+	text-decoration: none;
+	
+	
+}
+
+#product_category li{
+	padding: 10px;
+	font-weight: 900;
+	color: #333;
+	font-size: large;
+}
+#product_category li:hover {
+	color: #555;
+}
+
+
+
+.product_main_nav{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	text-align: center;
+}	
+
+.product_main_nav_img{
+	width: 90%;
+	margin: 0px auto;
+	background-size: contain;
+	background-repeat:no-repeat;
+	padding-top: 100%;
+
+}
+.product_main_nav h3{
+	font-weight: 700;
+	font-size: small;
+}
+
+.product_main_nav h3:hover{
+	font-weight:bolder;
+	font-size: small;
+	color: rgb(53, 197, 240);
+}
+
+li#Q_li a, li#menu_myshopping a{
+	color: rgb(53, 197, 240);
+}
+
+#main_content_qlist{
+	box-shadow: 1px 1px 1px 1px #eee;
+	border: 0.5px solid #eee;
+	border-radius: 8px;
+	min-height: 300px;
+	padding: 75px
+}
+#main_qlist{
+	min-height: 125px;
+	line-height: 125px;
+	border-bottom: 1px solid #ccc;
+	
+}
+#main_content_qlist>h1{
+	color: #333;
+}
+#main_qlist h1{
+	font-weight: 200px;
+	font-size: 10px;
+	color: #666;
+	text-align: center;
+
+}
+
