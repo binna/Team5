@@ -1,8 +1,85 @@
 @charset "UTF-8";
 
+/*-------------- 폰트입당 --------------*/
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+/*-------------- 메뉴 입니당 --------------*/
+.mLeft {
+	background-image: url('../../IMG_JH/left.png');
+	background-color: white;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	border-radius: 70%;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 47%;
+	left: -20px;
+	box-shadow: 0px 0px 0.5px 1.5px #f4f4f4;
+	background-position: center;
+}
+
+.mRight {
+	background-image: url('../../IMG_JH/right.png');
+	background-color: white;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	border-radius: 70%;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 47%;
+	right: -20px;
+	box-shadow: 0px 0px 0.5px 1.5px #f4f4f4;
+	background-position: center;
+}
+
+.mLeft:hover {
+	cursor: pointer;
+	background-color: #ff2200;
+	filter: invert(100%);
+	box-shadow: 0px 0px;
+}
+
+.mRight:hover {
+	cursor: pointer;
+	background-color: #ff2200;
+	filter: invert(100%);
+	box-shadow: 0px 0px;
+}
+
+#consMenu {
+	margin-left: 20%;
+	margin-right: 20%;
+	position: relative;
+}
+
+#consArea {
+	width: 100px;
+	padding: 3px;
+	background-color: #0080c0;
+	color: white;
+	border-radius: 3px;
+}
+
+#category {
+	padding-top: 10px;
+	overflow-x: scroll;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-top: 10px;
+}
+
 .category {
 	display: inline-block;
 	text-align: center;
+	padding: 0px 20px 0px 0px;
+}
+
+.category:hover {
+	cursor: pointer;
 }
 
 IMG {
@@ -10,6 +87,70 @@ IMG {
 	overflow: hidden;
 }
 
-.cateImg {
-	
+/*-------------- 본문 입니당 --------------*/
+#comList, .btnCons:hover {
+	cursor: pointer;
+}
+
+#comList {
+	width: 80%;
+	padding-left: 20%;
+	margin: 30px 0px;
+	display: inline-block;
+}
+
+.comList:hover {
+	background-color: #f9ffff;
+}
+
+.comname {
+	font-size: 20px;
+	font-family: 'Hanna', sans-serif;
+	margin-bottom: 10px;
+}
+
+.comNo {
+	display: none;
+}
+
+.comList {
+	position: relative;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+
+.btnCons {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	background-color: #f7f7f7;
+	border-radius: 3px;
+	padding: 12px 8px;
+	font-weight: bold;
+}
+
+.btnCons:hover {
+	background-color: #f2f2f2;
+	text-decoration: none;
+}
+
+.cominfo {
+	padding: 5px 0px;
+}
+
+
+#ex {
+	font-family: 'Nanum Pen Script', cursive;
+	font-size: 30px;
+	width: 80%;
+	height: 500px;
+	padding-left: 20%;
+	text-align: center;
+}
+
+.ex {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

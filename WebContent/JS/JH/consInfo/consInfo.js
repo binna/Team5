@@ -83,7 +83,7 @@ $(document)
 										+ "'</td>";
 							table += "<td>)</td>"
 							table += "</tr>";
-							if(j == 14){categoryCnt++; console.log("아니왜 안들어와 미친놈아")};
+							if(j == 14){categoryCnt++;}
 						} // end for
 						table += "</table>";
 						$("#company").html(table); // 데이터 출력

@@ -5,8 +5,6 @@
 <head>
 
 <!-- MaxCDN 사용 -->
-
-
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script
@@ -25,8 +23,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
 	rel="stylesheet">
-<!-- font-family: 'Do Hyeon', sans-serif;
-font-family: 'Jua', sans-serif; -->
 
 <!-- 로고 푸터 css -->
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
@@ -37,14 +33,10 @@ font-family: 'Jua', sans-serif; -->
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
-
-
-
-
-
-<title>컨설팅 메인</title>
+<title>너네 집</title>
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="JS/JH/consMain/consMain.js"></script>
 <body>
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
@@ -105,16 +97,18 @@ font-family: 'Jua', sans-serif; -->
 	</header>
 
 	<!-- 메인입니다. -->
-	<section>
-		<article>
-			<!--  selected 지역선택메뉴  -->
-			<select id="consArea" name="Company">
-				<option value="서울">서울</option>
-				<option value="경기">경기</option>
-				<option value="인천">인천</option>
-				<option value="부산">부산</option>
-				<option value="기타">기타</option>
-			</select>
+	<section style="position: relative;">
+		<article id="consMenu">
+			<div id="area">
+				<!--  selected 지역선택메뉴  -->
+				<select id="consArea" name="Company">
+					<option value="서울">서울</option>
+					<option value="경기">경기</option>
+					<option value="인천">인천</option>
+					<option value="부산">부산</option>
+					<option value="기타">기타</option>
+				</select>
+			</div>
 			<div id="category">
 				<div class="category">
 					<img class="cateImg"
@@ -177,86 +171,14 @@ font-family: 'Jua', sans-serif; -->
 					<div>마루</div>
 				</div>
 			</div>
+			<div class="mLeft"></div>
+			<div class="mRight"></div>
 		</article>
 		<article id="consList"></article>
+		<div id="ex">
+			<div class="ex">지역을 선택한 후 카테고리를 눌러 주세요~</div>
+		</div>
 	</section>
-
-	<script>
-		$("#category>.category")
-				.click(
-						function() {
-							// console.log($('#consArea').val().trim());
-							// console.log($(this).text().trim());
-							var category = $(this).text().trim();
-							var area = $('#consArea').val().trim();
-
-							// JSON
-							url = "list.ajax?reqType=json";
-							$.ajax({
-								url : url,
-								type : "GET",
-								cache : false,
-								success : function(data, status) {
-									if (status == "success")
-										parseJSON(data, category);
-								}
-							});
-
-							function parseJSON(jsonObj) {
-								var data = jsonObj.data;
-								var cnt = 0;
-								var table = "<div id = \"comList\">";
-								if (area != "기타") {
-									for (var i = 0; i < data.length; i++) {
-										if (category == data[i].ccategory
-												&& $('#consArea').val().trim() == data[i].carea
-														.trim()) {
-											table += "<div>" + data[i].cname
-													+ "</div>"
-											table += "<div>" + data[i].cadr
-													+ "</div>"
-											table += "<div>" + data[i].ctel
-													+ "</div>"
-											cnt++;
-										} // end if
-									} // end for
-								} else {
-									for (var i = 0; i < data.length; i++) {
-										switch (data[i].carea.trim()) {
-										case "서울":
-										case "경기":
-										case "인천":
-										case "부산":
-											break;
-										default:
-											if (category == data[i].ccategory){
-												table += "<div>"
-														+ data[i].cname
-														+ "</div>"
-												table += "<div>" + data[i].cadr
-														+ "</div>"
-												table += "<div>" + data[i].ctel
-														+ "</div>"
-												cnt++;
-											}
-										} // end switch
-									}
-								}
-								if (cnt == 0)
-									table = "아직 업체가 없습니다..";
-								table += "</div>";
-								$("#consList").html(table);
-
-								//else if(category != data[i].ccategory){}
-							}
-							//$(this).text().trim() == data[i]. && 
-						})
-	</script>
-
-
-
-
-
 
 	<!-- 바닥입니다. -->
 	<footer id="main_footer">

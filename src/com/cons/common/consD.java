@@ -10,8 +10,11 @@ public class consD {
 	public static final String USERID = "team5"; // DB 접속 계정 정보
 	public static final String USERPW = "team5";
 	
-	public static final String SQL_WRITE_SELECT = 
+	public static final String SQL_COM_SELECT = 
 			"SELECT * FROM Company";
+	
+	public static final String SQL_COM_SELECT_BY_UID =  // 글 읽어 오기
+			"SELECT * FROM Company WHERE Cno = ?";
 	
 	// WHERE CAREA = '?'
 }
