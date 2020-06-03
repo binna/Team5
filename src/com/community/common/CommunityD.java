@@ -42,8 +42,8 @@ public class CommunityD {
 	= "SELECT * FROM Question ORDER BY Qno DESC";  
 
 	// 데이터 삽입하기
-	public static final String SQL_WRITE_INSERT = "INSERT INTO Qno "
-			+ "(Qno, Qtitle, Qcontent, Qregdate, Qclickcnt, Qkeyword) "
-			+ "VALUES(SEQ_question_Qno.nextval, ?, ?, ?, ?, ?)";
+	public static final String SQL_WRITE_INSERT = "INSERT INTO Question"
+			+ "(Qno, Qtitle, Qcontent, Qkeyword)"
+			+ "VALUES(SEQ_question_Qno.nextval, ?, ?, ?)";
 
 }

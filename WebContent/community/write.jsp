@@ -52,7 +52,7 @@
 
 	<div class="question-form container">
 	
-	<form id="question-form" class="new_question" action="writeOk.jsp" accept-charset="UTF-8" method="post">
+	<form id="question-form" class="new_question" action="writeOk.community" accept-charset="UTF-8" method="post">
 
 	<header class="question-form__header">
 		<h2 class="question-form__header__heading text-black bold">질문하기</h2>
@@ -71,8 +71,9 @@
         <div class="question-form__body__content__wrap">
         
           <!-- 텍스트 글쓰기 -->
-          <div class="question-form__body__content__input" contenteditable="true" tabindex="0">
-	          <!-- question-form__body__content__input, 사용자가 내용 추가하면 여기에 작성 됨, 사진도 포함 -->
+          <div class="question-form__body__content__input" 
+          	contenteditable="true" tabindex="0">
+ 	         <!-- question-form__body__content__input, 사용자가 내용 추가하면 여기에 작성 됨 -->
           </div>
           
           <!-- 텍스트 아무것도 안쓸때 생기는 힌트..!! -->
@@ -117,6 +118,12 @@
         </div>
       </div>
     </section>
+    
+    <!-- 키워드 값을 DB에 저장하기 위한 input value 설정 -->
+    <input id="keyword_value" name="keyword" value="" hidden="true">
+    
+    <!-- content 값을 리퀘스트 보내기 위해 -->
+    <input id="content_value" name="content" value="" hidden="true">
     
     
     <footer class="question-form__footer">
