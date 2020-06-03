@@ -24,6 +24,6 @@ public class D {
 			   "ON p.PID =q.PQID " + 
 			   "WHERE q.PQUID ='?';";
 	   public static String SQL_PQLIST_SELECT_ALL= //모든물건가져오기
-			   "SELECT p.PBRAND ,p.PNAME ,q.PQid,q.PQpid,q.PQuid,q.PQregdate,q.PQcontent,q.PQANSWER FROM PRODUCT p LEFT OUTER JOIN PQUESTION q ON p.PID =q.PQID" ;
+			   "SELECT p.PBRAND ,p.PNAME ,q.PQid,q.PQpid,q.PQuid,q.PQregdate,q.PQcontent,q.PQANSWER FROM PRODUCT p INNER JOIN PQUESTION q ON p.PID =q.PQID" ;
 
 }

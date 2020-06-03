@@ -16,7 +16,7 @@ import com.yoon.write.productListCommand;
 /**
  * Servlet implementation class controller
  */
-@WebServlet("*.do")
+@WebServlet("*.y")
 public class controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -49,15 +49,15 @@ public class controller extends HttpServlet {
 		String com = uri.substring(conPath.length());
 		
 		switch(com) {
-		case "/storeMain.do":
+		case "/storeMain.y":
 			command = new productListCommand();
 			command.execute(request, response);
 			viewPage ="storeMain.jsp";
 			break;
-		case "/uQuestionList.do":
+		case "/aQuestionList.y":
 			command = new pquestionListCommand();
 			command.execute(request, response);
-			viewPage ="uQuestionList.jsp";
+			viewPage ="aQuestionList.jsp";
 			break;
 		}
 		

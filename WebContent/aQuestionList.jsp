@@ -45,6 +45,8 @@ font-family: 'Jua', sans-serif; -->
 
 
 
+<script type="text/javascript" src="JS/yj.js"></script>
+
 
 
 
@@ -124,21 +126,29 @@ font-family: 'Jua', sans-serif; -->
 	<!--내용부분입니다.  -->
 	<div id="main_content">
 		<div id="main_content_qlist">
-			<h1>상품문의내역</h1>
+			<h1 id ="main_content_qlist_h" >상품문의내역</h1>
 				<c:choose>
 					<c:when test="${empty list || fn:length(list) ==0}">
+						<div id="main_qlist">
 						<h1>아직 문의한 내역이 없습니다.</h1>
+						</div>
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="dto" items='${list }'>
 			<div id="main_qlist">
-		
-							<h3 class="pbrand">[${dto.pbrand }]${dto.pname }</h3>
-							<h3 class="pbrand">[${dto.pquid }]</h3>
-							<h3 class="pbrand">[${dto.pquid }]</h3>
-							<h3 class="pbrand">[${dto.pqregdate }]</h3>
-							<h3 class="pbrand">[${dto.pqcontent }]</h3>
+							<div class="row">
+							<h3 id = "pinfo" class="col-md-8">[${dto.pbrand }] ${dto.pname }</h3>
+							<h3 id="pqregdate" class="col-md-4">${dto.pqregdate }</h3>
+							</div>
 							<br>
+							<br>
+							<h1 id = "Q_mark">Q. </h1><h3 class="pqcontent">${dto.pqcontent }</h3>
+							<br>
+							<h1 id = "A_mark">A. </h1><h3 class="pqanswer">${dto.pqanswer }</h3>
+							<br>
+							<button class = "main_qlist_answer" id = "main_qlist_answer_1_${dto.pqid}" >답변 등록 </button>
+							<button class = "main_qlist_answer" 
+							id = "main_qlist_answer_2_${dto.pqid}" >등록 완료 </button>
 
 			</div>
 						</c:forEach>

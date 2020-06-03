@@ -62,7 +62,7 @@ public class PQuestionDAO {
 
 			String pqregdate = "";
 			if (d != null) {
-				pqregdate = new SimpleDateFormat("yyyy-MM-dd").format(d) + ""
+				pqregdate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 
