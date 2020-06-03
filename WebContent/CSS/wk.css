@@ -1,5 +1,196 @@
 @charset "UTF-8";
 
+div.s_info{
+	margin:30px auto;
+	width: 80%
 
-/* 김우경  바보*/
+}
+
+
+div.buy{
+	padding-top:10px;
+	width:150px;
+	background-color: #35c5f0;
+    border-color: #35c5f0;
+    color:#fff;
+    font-size: 12px;
+    line-height: 26px;
+    border:1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    font-weight: 700;
+    opacity: 0.7;
+    display: inline-block;
+}	
+
+
+div.s_image{
+	padding-right:30px;
+	padding-left:10px;
+	display:inline-block;
+	width:550px;
+}
+
+img.p_image{
+	backgroud-size:cover;
+	width:100%;
+	border-radius: 6%;
+}
+
+
+div.s_content{
+	display:inline-block;
+	float:right;
+	font-weight: 900;
+	width:200px;
+	
+}
+
+
+div.s_brand{
+	color:#35c5f0;
+	font-weight: 900;
+	line-height:19px;
+	font-size:13px;
+	
+}
+
+div.s_name{
+	font-size:25px;
+	line-height:34px;
+	font-weight: 400;
+	
+}
+
+div.p_content{
+	height:200px;
+	border-bottom: 1px solid #ededed;
+}
+
+
+div.s_price{
+	font-size:32px;
+	font-weight: 900;
+	
+}
+
+div.p_fix{
+	padding-top:20px;
+}
+
+div.total{
+	padding-top:10px;
+	height:30px;
+	padding-bottom:10px;
+	
+}
+
+/*-------------------------modal-------------------------*/
+
+body {font-family: Arial, Helvetica, sans-serif;} /* 페이지 기본 글꼴 */
+form {border: 3px solid #f1f1f1;} /* 폼 테두리 */
+
+/* Model */
+.modal {
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: auto;
+    padding-top: 60px;
+
+    display: none;  /* 처음에는 팝업 안보이게 하기 */
+}
+
+.modal-content {  /* 모달 팝업 안의 form */
+    background-color: #fefefe;
+    width: 80%;
+    margin: 5px auto;
+    border: 1px solid #888;
+}
+
+.imgcontainer {
+    text-align: center;  /* 이미지 중앙 정렬 */
+    margin: 24px 0 12px 0;  /* 바깥 여백 */
+    position: relative;
+}
+
+.close { /* 닫기 버튼 (x) */
+    font-size: 35px;
+    font-weight: bold;
+    color: #000;
+    /* position 설정하여 우상단으로 배치 */
+    position: absolute;
+    right: 25px;
+    top: 0;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+img.avatar {
+    width: 40%;  /* 원래 이미지 크기의 40% */
+    border-radius: 50%;  /* 이미지 둥글게 */
+}
+
+/* --------------------------------------- */
+/* form */
+
+.container {
+    padding: 16px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding : 12px 20px;
+    margin : 8px 0;
+    border : 1px solid #ccc;
+    display: inline-block;
+    box-sizing: border-box;  /* border 등 size가 width 안으로 들어옴 */
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto; /* 내부 담는 content 만큼의 폭 */
+    padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
+    background-color: #f44336;
+}
+
+span.psw {
+    float: right; 
+    padding-top: 16px;
+}
+
+/* 380 px  이하 화면에서 RWD */
+@media (max-width: 380px){
+    .cancelbtn {
+        width: 100%;
+    }
+    span.psw {
+        float: none;
+        display: block;
+    }
+}
+
+/* 애니메이션 zoom 효과 */
+
+.animate {
+    animation: animatezoom 0.6s;
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
 
