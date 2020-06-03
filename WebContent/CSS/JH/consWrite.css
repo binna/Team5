@@ -12,6 +12,14 @@ html, body {
 	margin: 0 auto 10px;
 }
 
+.cons_header {
+	width: 170px;
+}
+
+.cons_header:hover {
+	cursor: pointer;
+}
+
 #cons_title {
 	font-family: 'Jua', sans-serif;
 	font-size: 40px;
@@ -28,6 +36,15 @@ html, body {
 	height: 40px;
 	background-position: center;
 	display: inline-block;
+	vertical-align: text-bottom;
+}
+
+#cons_logo:hover {
+	cursor: pointer;
+}
+
+#cons_title:hover {
+	cursor: pointer;
 }
 
 /*----------- 본문 헤더 -----------*/
@@ -66,6 +83,12 @@ html, body {
 	margin-bottom: 10px;
 }
 
+.ccategory:hover {
+	color: white;
+	background-color: skyblue;
+	border-color: skyblue;
+}
+
 .cateEx {
 	color: #979797;
 	font-size: 13px;
@@ -88,7 +111,7 @@ html, body {
 
 /*---------- 본문 업체INFO ----------*/
 #cons_section_comInfo {
-	padding: 20px 0 30px;
+	padding: 0px 0 30px;
 }
 
 /*---------- 본문 시공지역 ----------*/
@@ -112,7 +135,7 @@ html, body {
 }
 
 .userNameInfo {
-	padding: 20px 0px 5px 0px;
+	padding: 0px 0px 5px 0px;
 }
 
 .userNameInput {
@@ -154,14 +177,14 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 }
 
 /*------------------------ submit,cancel -----------------------*/
-.submit:hover {
+.cancel:hover, .submit:hover {
 	color: white;
 	background-color: skyblue;
+	cursor: pointer;
 }
 
-.cancel:hover {
-	color: white;
-	background-color: skyblue;
+.cancel:focus,.submit:focus {
+	outline: none
 }
 
 .submit {
@@ -175,6 +198,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 	height: 50px;
 	color: skyblue;
 	background-color: white;
+	color: skyblue;
 }
 
 .cancel {

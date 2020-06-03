@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cons.write.Command;
 import com.cons.write.ViewCommand;
+import com.cons.write.WriteCommand;
 
 @WebServlet("*.cons")
 public class ConsController extends HttpServlet {
@@ -57,6 +58,11 @@ public class ConsController extends HttpServlet {
 			command = new ViewCommand();
 			command.execute(request, response);
 			viewPage = "consWrite.jsp";
+			break;
+		case "/consWriteOk.cons":
+			command = new WriteCommand();
+			command.execute(request, response);
+			viewPage = "consWriteOk.jsp";
 			break;
 
 		} // end switch
