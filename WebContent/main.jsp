@@ -31,8 +31,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
 	rel="stylesheet">
-<!-- font-family: 'Do Hyeon', sans-serif;
-font-family: 'Jua', sans-serif; -->
+
 
 
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
