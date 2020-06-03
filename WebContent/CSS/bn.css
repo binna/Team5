@@ -86,11 +86,6 @@
 
 
 
-
-
-
-
-
 /* write.jsp */
 header {
 	margin-top: 40px
@@ -102,7 +97,7 @@ header {
 .btn {
     box-sizing: border-box;
     display: inline-block;
-    padding: 30px 100px 30px 100px;
+    padding: 20px 100px 20px 100px;
     border-width: 1px;
     border-style: solid;
     text-align: center;
@@ -149,25 +144,166 @@ header {
     width: 100%;
     font-size: 15px
 }
-.question-form__meta {
+
+/* 제목, 키워드, 문의사항 에러 메시지 */
+#error1,
+#error2,
+#error3 {
+	color: #F77;
+    font-size: 11px;
+    display: none;
+    margin-top: 10px;
+}
+
+/* 문의사항 텍스트 */
+.question-form__body__content {
+    margin-bottom: 20px;
+}
+.question-form__body__content__wrap {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    transition: border .2s, background-color .2s;
+}
+.question-form__body__content__wrap:hover {
+    background-color: #fafafa;
+}
+[contenteditable=true]:focus {
+	outline: none;
+}
+.question-form__body__content__input {
+    transition: box-shadow .2s
+}
+
+/* 문의사항 텍스트 */
+.question-form__body__content__input {
+    width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: 1.87;
+    word-wrap: break-word;
+    cursor: text;
+    padding: 15px;
+    display: none;
+}
+
+/* 문의사항 텍스트 Hint*/
+.question-form__body__content__placeholder {
+    color: #bdbdbd;
+    width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: 1.87;
+    word-wrap: break-word;
+    cursor: text;
+    padding: 15px;
+    display: block;
+}
+.question-form__body__content__placeholder__cs {
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+}
+
+/* 이거 보기*/
+/*
+.question-form__body__content__input:empty:not(:focus)+.question-form__body__content__placeholder {
+    display: block
+}
+.question-form__body__content__input:empty:not(:focus) {
+    min-height: 0;
+    height: 0;
+    padding: 0
+}
+*/
+/*------------------------------------------------------*/
+/* write.jsp에서 노출되는 키워드 선택 전과 선택 후 보여지는 문구 */
+.question-form__keywords__keyword--new {
+    border: none;
+    font-family: inherit;
+    color: #bdbdbd
+}
+.question-form__keywords__keyword--new:hover,
+.question-form__keywords__keyword--new:active {
+    background-color: #ededed;
+    text-decoration: none
+}
+.question-form__keywords__keyword__name {
+	display: none;
+}
+.question-form__keywords__keyword__name--hint {
+	display: inline;
+}
+
+/* write.jsp에서 노출되는 키워드 리스트 */
+.template {
     display: none
 }
-.question-form__body__content {
-    margin-bottom: 20px
+.keyword-list {
+    margin: -4px -2.5px;
+    font-size: 0
+}
+.keyword-list>li {
+    display: inline-block
+}
+.keyword-item {
+    display: inline-block;
+    margin: 4px 2.5px;
+    padding: 0 8px;
+    line-height: 25px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #757575;
+    background-color: #fafafa;
+    border-radius: 13px;
+    vertical-align: bottom;
+    white-space: nowrap
+}
+.keyword-item:before {
+    display: inline-block;
+    content: '#';
+    padding-right: 4px;
+    color: #dbdbdb
+}
+.keyword-item:hover,
+.keyword-item:active {
+    background-color: #ededed
+}
+.question-form__keywords {
+    margin-top: 20px;
+    margin-bottom: 60px
+}
+.question-form__keywords__wrap {
+    margin-bottom: 2px;
+    width: 100%
+}
+.question-form__keywords__list {
+    display: inline
+}
+.btn_keywords {
+    font-size: 13px;
+    font-weight: normal;
+    border: 0;
+    background-color: #fafafa;	
+}
+.btn_keywords:hover,
+.keyword-item:hover>.btn_keywords {
+background-color: #ededed;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* 키워드 최종 마지막 개수 */
+.question-form__keywords__counter {
+    margin: 10px 0;
+    font-size: 11px;
+    color: #bdbdbd
+}
+.question-form__keywords__counter__divider {
+    border-left: 1px solid #bdbdbd;
+    margin: 2px 7px
+}
 
 /* 질문 저장하기 버튼 */
 .btn-lg {
@@ -241,3 +377,25 @@ li {list-style: none;}
     border-color: #dbdbdb;
     color: #ededed;
 }
+
+
+
+/* 에러메시지
+.question-form__body__content.error>.question-form__body__content__wrap {
+    border: 1px solid #F77;
+}
+.question-form__body__content>.error {
+    margin-top: 10px;
+}
+
+.question-form__keywords.form-group.error .error {
+    display: inline-block;
+}
+.question-form__keywords__list__wrap>.error {
+    display: none;
+    margin: 4px 0 4px 8px;
+    color: #F77;
+    font-size: 11px;
+    line-height: 31px
+}
+*/
