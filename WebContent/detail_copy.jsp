@@ -37,16 +37,25 @@
 font-family: 'Jua', sans-serif; -->
 
 
+<script type="text/javascript" src="JS/wk.js"></script>
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="CSS/yj.css" type="text/css">
+<link rel="stylesheet" href="CSS/wk.css" type="text/css">
 <!-- <link rel="stylesheet" href="CSS/logo_menu.css" type="text/css"> -->
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
 
+<style>
+table {
+	width: 100%;
+}
 
-<script type="text/javascript" src="JS/yj.js"></script>
-
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
 
 
 
@@ -92,83 +101,140 @@ font-family: 'Jua', sans-serif; -->
 		</div>
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-12">
+			<div class="col-md-9">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">프로필</a></li>
-						<li id="menu_myshopping"><a href="#">나의 쇼핑</a></li>
-						<li><a href="#">나의 리뷰</a></li>
-						<li><a href="#">설정</a></li>
-
+						<li><a href="#">스토어홈</a></li>
+						<li><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">특가</a></li>
+						<li><a href="#">여름패브릭</a></li>
+						<li><a href="#">여름가전</a></li>
+						<li><a href="#">기획전</a></li>
 					</ul>
 				</nav>
 			</div>
-		</div>
-		<hr>
-		<div id="main_top3" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="#">주문배송내역 조회</a></li>
-						<li><a href="#">상품 스크랩북</a></li>
-						<li id="Q_li"><a href="#">상품문의내역</a></li>
-						<li><a href="#">포인트</a></li>
-						<li><a href="#">고객센터</a></li>
-
-					</ul>
-				</nav>
+			<div class="col-md-3">
+				<button id="main_top2_app"></button>
+				<a href="#">앱 다운로드</a>
 			</div>
+
 		</div>
 		<hr>
 	</header>
 
 
-	<!--내용부분입니다.  -->
-	<div id="main_content">
-		<div id="main_content_qlist">
-			<h1 id="main_content_qlist_h">상품문의내역</h1>
-			<c:choose>
-				<c:when test="${empty list || fn:length(list) ==0}">
-					<div id="main_qlist">
-						<h1>아직 문의한 내역이 없습니다.</h1>
-					</div>
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="dto" items='${list }'>
-						<div id="main_qlist">
-							<%-- <h3 id = "A_status_${dto.pqid}" class ="A_status" >답변예정</h3> --%>
-							<div class="row">
-								<h3 id="pinfo" class="col-md-8">[${dto.pbrand }]
-									${dto.pname }</h3>
-								<h3 id="pqregdate" class="col-md-4">${dto.pqregdate }</h3>
-							</div>
-							<br> <br>
-							<h1 id="Q_mark">Q.</h1>
-							<h3 class="pqcontent">${dto.pqcontent }</h3>
-							<br>
-							<h1 id="A_mark">A.</h1>
-							<h3 class="pqanswer">${dto.pqanswer }</h3>
-							<br>
-							<form action="QuestionUpdateOk.y" method="post">
-								<input type="hidden" name = "pqid" value="${dto.pqid}">
-								<input type="text" id="main_qlist_input_${dto.pqid}"
-									class="main_qlist_input" value="${dto.pqanswer}" name ="pqanswer"> <br> <br>
-								<button class="main_qlist_answer_1"
-									id="main_qlist_answer_1_${dto.pqid}" type="button">답변 등록</button>
-								<button class="main_qlist_answer_2"
-									id="main_qlist_answer_2_${dto.pqid}" type="submit">등록 완료</button>
-							</form>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-			</c:choose>
+
+	<!------------------------------------------- 내용입니다 . ------------------------------------------------------------------- -->
+
+	<div class="s_info row">
+		<br>
+
+		<div class="s_image col-md-6">
+			<h3>가구 > ${view[0].pname }</h3>
+			<br> <img class="p_image" id="p_image" src="${view[0].pimage}" />
 		</div>
+		<br>
+
+		<div class="s_content col-md-6">
+			<br> <br>
+
+
+			<div class="s_brand" id="s_brand">
+				${view[0].pbrand }<br>
+			</div>
+
+			<div class="s_name" >
+				${view[0].pname }<br>
+			</div>
+
+			<div class="p_content">
+				<div class="s_price" id="s_price">${view[0].pprice}원</div>
+			</div>
+
+
+			<div class="p_fix">
+				<form class="p_option" name="myform1" action="">
+					<div id="p_position">
+						<!-- 						<div >
+							<span>수량 :</span> <input class="figure" type="number" name="number" min="1" max="50" step="1" /><br>
+						</div> -->
+						<span>수량 : </span> <select id="figure" class="figure"
+							name="figure">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="" selected>선택</option>
+						</select>
+
+
+						<div class="total" id="total"></div>
+
+					</div>
+				</form>
+				
+				<div class="buy">
+					<button id="cashBtn">바로구매</button>
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+	<!------------- modal입니다 -------------------------------------------------------- -->
+
+	<!-- The Modal -->
+	<div id="id01" class="modal">
+
+		<form class="modal-content animate"
+			action="https://www.w3schools.com/action_page.php" method="post">
+			<div class="imgcontainer">
+				<!-- 닫기버튼  -->
+				<span class="close" id="close">&times;</span>
+				<!-- 이미지  -->
+				<img src="${view[0].pimage}" class="avatar" alt="Avatar">
+			</div>
+
+			<div class="container">
+				<!-- 로그인 form -->
+
+				<label for="uname"><b>Username</b></label> <input type="text"
+					placeholder="Enter Username" name="uname" required> <label
+					for="psw"><b>Password</b></label> <input type="password"
+					placeholder="Enter Password" name="psw" required>
+
+				<button type="submit">Login</button>
+				<label> <input type="checkbox" name="remember" checked>Remember
+					me
+				</label>
+			</div>
+
+			<div class="container" style="background-color: #f1f1f1">
+				<button type="button" class="cancelbtn" id="cancelbtn">Cancel</button>
+				<span class="psw">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
 
 	</div>
 
 
 
-	<!-- 바닥입니다. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!---------------------- 바닥입니다. ------------------------------------------------------------------------------------------------------>
 	<footer id="main_footer">
 		<div id="main_footer_content">
 			<div id="main_footer_icon">
