@@ -344,3 +344,10 @@ li#Q_li a, li#menu_myshopping a{
 	text-align: center;
 	font-weight: 900;
 }
+
+#detail_delivery h1{
+	color: #666;
+	font-weight: 900;
+	font-size: x-large;
+	
+}
