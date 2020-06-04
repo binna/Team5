@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.yoon.write.Command;
 import com.yoon.write.pquestionListCommand;
 import com.yoon.write.productListCommand;
+import com.yoon.write.questionUpdateCommand;
 
 /**
  * Servlet implementation class controller
@@ -58,6 +59,11 @@ public class controller extends HttpServlet {
 			command = new pquestionListCommand();
 			command.execute(request, response);
 			viewPage ="aQuestionList.jsp";
+			break;
+		case "/QuestionUpdateOk.y":
+			command = new questionUpdateCommand();
+			command.execute(request, response);
+			viewPage ="QuestionUpdateOk.jsp";
 			break;
 		}
 		

@@ -193,7 +193,7 @@ font-family: 'Jua', sans-serif; -->
 				<c:otherwise>
 					<c:forEach var="dto" items='${list }'>
 						<div class="product_td col-md-3">
-							<a href="productView.do?pid=${dto.pid }">
+							<a href="productView.woo?pid=${dto.pid }">
 								<div class="product_img"
 									style='background-image: url("${dto.pimage }")'></div> <%--<img class="thumbnail-img" src="${dto.pimage }" />  --%>
 								<br>
