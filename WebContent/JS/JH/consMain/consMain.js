@@ -86,9 +86,4 @@ $(document)
 										}
 									}); // end
 					
-					$(document).on('click', '.btnCons', function(){
-						console.log($(this).parent().children('.comNo').text().trim());
-						var str = $(this).parent().children('.comNo').text().trim()
-						location.href ="consWrite.cons?cno=" + str;
-					}) // end btnCons Click
 				}) // end JS

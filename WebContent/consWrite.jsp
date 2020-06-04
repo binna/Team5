@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.cons.beans.*"%>
+
+<!-- GET방식으로 Controller로 넘겨줌 Cno 값을 이용해서 컬럼값을 가져오는 소스코드 -->
 <%
 	// Controller 로부터 결과 데이터 받음
 	consDTO[] arr = (consDTO[]) request.getAttribute("list");
@@ -50,14 +52,31 @@
 <title>너네 집</title>
 </head>
 <body>
+
+	<!-- 로그인 유효서 검사 -->
+	<%
+		if (session.getAttribute("csuid") != null) {
+		String csuid = ((String)session.getAttribute("csuid")).trim();
+		} else {
+	%>
+	<script>
+		alert('로그인 상태가 아닙니다.');
+		location.href = "main.jsp";
+	</script>
+	<%
+		}
+	%>
+
+
+	<!-- 로고부분 -->
 	<header id="cons_header">
 		<div class="cons_header">
 			<div id="cons_logo"></div>
 			<h1 id="cons_title">너네 집</h1>
 		</div>
 	</header>
-	
-	
+
+
 	<!-- post방식 -->
 	<form name="frm" action="consWriteOk.do" method="post"
 		onsubmit="return chkSubmit()">
