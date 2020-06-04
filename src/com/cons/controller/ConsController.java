@@ -62,7 +62,7 @@ public class ConsController extends HttpServlet {
 		case "/consWriteOk.cons":
 			command = new WriteCommand();
 			command.execute(request, response);
-			viewPage = "consWriteOk.jsp";
+			viewPage = "consMain.jsp";
 			break;
 
 		} // end switch

@@ -85,5 +85,4 @@ $(document)
 											$("#consList").html(table);
 										}
 									}); // end
-					
 				}) // end JS

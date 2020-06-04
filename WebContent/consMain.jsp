@@ -40,17 +40,17 @@
 %>
 <script type="text/javascript">
 	var csuid = <%=session.getAttribute("csuid")%>;
-$(document).on('click', '.btnCons', function(){
-	console.log(csuid);
-	if(csuid =='1234'){
-		console.log($(this).parent().children('.comNo').text().trim());
-		var str = $(this).parent().children('.comNo').text().trim();
-		alert('로그인 했슴다.');
-		location.href ="consWrite.cons?cno=" + str;
-	} else{
-		alert('로그인 안됬어요임마.');
-	}
-});
+	$(document).on('click', '.btnCons', function() {
+		console.log(csuid);
+		if (csuid == '1234') {
+//			console.log($(this).parent().children('.comNo').text().trim());
+//			alert('로그인 했슴다.');
+			var str = $(this).parent().children('.comNo').text().trim();
+			location.href = "consWrite.cons?cno=" + str;
+		} else {
+//			alert('로그인 안됬어요임마.');
+		}
+	});
 </script>
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
