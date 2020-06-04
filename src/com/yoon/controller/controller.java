@@ -12,11 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.yoon.write.Command;
 import com.yoon.write.pquestionListCommand;
 import com.yoon.write.productListCommand;
+import com.yoon.write.questionUpdateCommand;
 
 /**
  * Servlet implementation class controller
  */
-@WebServlet("*.do")
+@WebServlet("*.y")
 public class controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -49,15 +50,20 @@ public class controller extends HttpServlet {
 		String com = uri.substring(conPath.length());
 		
 		switch(com) {
-		case "/storeMain.do":
+		case "/storeMain.y":
 			command = new productListCommand();
 			command.execute(request, response);
 			viewPage ="storeMain.jsp";
 			break;
-		case "/uQuestionList.do":
+		case "/aQuestionList.y":
 			command = new pquestionListCommand();
 			command.execute(request, response);
-			viewPage ="uQuestionList.jsp";
+			viewPage ="aQuestionList.jsp";
+			break;
+		case "/QuestionUpdateOk.y":
+			command = new questionUpdateCommand();
+			command.execute(request, response);
+			viewPage ="QuestionUpdateOk.jsp";
 			break;
 		}
 		

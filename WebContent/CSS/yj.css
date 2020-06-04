@@ -292,18 +292,62 @@ li#Q_li a, li#menu_myshopping a{
 }
 #main_qlist{
 	min-height: 125px;
-	line-height: 125px;
-	border-bottom: 1px solid #ccc;
-	
+	border-top: 1px solid #ccc;
+	padding: 20px;
+	margin-top: 30px
 }
 #main_content_qlist>h1{
 	color: #333;
 }
-#main_qlist h1{
-	font-weight: 200px;
-	font-size: 10px;
-	color: #666;
-	text-align: center;
-
+#main_qlist h3{
+	font-size: 15px;
+	margin: 10px 0;
+}
+#main_qlist h1#Q_mark, #pinfo{
+	color: rgb(53, 197, 240);
+}
+#pinfo{
+	font-weight: 700;
+}
+#pqregdate{
+	display: inline-block;
+	text-align: right;
 }
 
+.main_qlist_answer_1, .main_qlist_answer_2{
+	padding : 10px;
+	background-color: rgb(53, 197, 240);
+	color: #fff;
+	font-weight: 900;
+	border: none;
+	border-radius: 3px;
+}
+.main_qlist_answer_1:hover,.main_qlist_answer_2:hover {
+	background-color: rgb(17, 167, 210);
+}
+.main_qlist_input{
+	width: 100%;
+	min-height: 150px;
+	border: 1.5px solid #666;
+	border-radius: 5px;
+}
+ 
+.main_qlist_answer_2{
+ display: none;
+}
+.A_status{
+	padding:5px;
+	color: #fff;
+	background-color: #bbb;
+	border-radius: 3px;
+	width: 80px;
+	text-align: center;
+	font-weight: 900;
+}
+
+#detail_delivery h1{
+	color: #666;
+	font-weight: 900;
+	font-size: x-large;
+	
+}

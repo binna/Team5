@@ -1,7 +1,7 @@
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -33,17 +33,29 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
 	rel="stylesheet">
+<!-- font-family: 'Do Hyeon', sans-serif;
+font-family: 'Jua', sans-serif; -->
 
 
-
+<script type="text/javascript" src="JS/wk.js"></script>
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="CSS/yj.css" type="text/css">
+<link rel="stylesheet" href="CSS/wk.css" type="text/css">
 <!-- <link rel="stylesheet" href="CSS/logo_menu.css" type="text/css"> -->
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
 
+<style>
+table {
+	width: 100%;
+}
 
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
 
 
 
@@ -103,7 +115,7 @@
 					</ul>
 				</nav>
 			</div>
-			<div calss="col-md-3">
+			<div class="col-md-3">
 				<button id="main_top2_app"></button>
 				<a href="#">앱 다운로드</a>
 			</div>
@@ -113,62 +125,116 @@
 	</header>
 
 
-	<!--내용부분입니다.  -->
-	<div id="main_content">
-		<div id="content_banner"></div>
-		<div id="content_nav">
-			<nav style="padding: 0px;">
-				<ul>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--158709154758244185.png/512/none">
-						신혼가구</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060163925021105.png/512/none">
-						쇼핑하기</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060166588410696.png/512/none">
-						평수별 집구경</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060167898474932.png/512/none">
-						공간별사진</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
-						시공간편상당</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
-						시공스토어</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157560539045245526.png/512/none">
-						가이드북</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060175107066373.png/512/none">
-						질문과답변</li>
+
+	<!------------------------------------------- 내용입니다 . ------------------------------------------------------------------- -->
+
+	<div class="s_info row">
+		<br>
+
+		<div class="s_image col-md-6">
+			<h3>가구 > ${view[0].pname }</h3>
+			<br> <img class="p_image" id="p_image" src="${view[0].pimage}" />
+		</div>
+		<br>
+
+		<div class="s_content col-md-6">
+			<br> <br>
 
 
-				</ul>
-			</nav>
-		</div>
-		<br> <br> <br> <br> <br> <br>
-		<div id="content_community">
-			<h1>오늘의 스토리</h1>
-			<br> <br> <br>
-		</div>
-		<div id="content_store">
-			<h1>오늘의 딜</h1>
-			<br> <br> <br>
-		</div>
-		<div id="content_interior">
-			<h1>인테리어 시공</h1>
-			<br> <br> <br>
+			<div class="s_brand" id="s_brand">
+				${view[0].pbrand }<br>
+			</div>
 
+			<div class="s_name" >
+				${view[0].pname }<br>
+			</div>
+
+			<div class="p_content">
+				<div class="s_price" id="s_price">${view[0].pprice}원</div>
+			</div>
+
+
+			<div class="p_fix">
+				<form class="p_option" name="myform1" action="">
+					<div id="p_position">
+						<!-- 						<div >
+							<span>수량 :</span> <input class="figure" type="number" name="number" min="1" max="50" step="1" /><br>
+						</div> -->
+						<span>수량 : </span> <select id="figure" class="figure"
+							name="figure">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="" selected>선택</option>
+						</select>
+
+
+						<div class="total" id="total"></div>
+
+					</div>
+				</form>
+				
+				<div class="buy">
+					<button id="cashBtn">바로구매</button>
+				</div>
+				
+			</div>
 		</div>
 
+	</div>
+	<!------------- modal입니다 -------------------------------------------------------- -->
+
+	<!-- The Modal -->
+	<div id="id01" class="modal">
+
+		<form class="modal-content animate"
+			action="https://www.w3schools.com/action_page.php" method="post">
+			<div class="imgcontainer">
+				<!-- 닫기버튼  -->
+				<span class="close" id="close">&times;</span>
+				<!-- 이미지  -->
+				<img src="${view[0].pimage}" class="avatar" alt="Avatar">
+			</div>
+
+			<div class="container">
+				<!-- 로그인 form -->
+
+				<label for="uname"><b>Username</b></label> <input type="text"
+					placeholder="Enter Username" name="uname" required> <label
+					for="psw"><b>Password</b></label> <input type="password"
+					placeholder="Enter Password" name="psw" required>
+
+				<button type="submit">Login</button>
+				<label> <input type="checkbox" name="remember" checked>Remember
+					me
+				</label>
+			</div>
+
+			<div class="container" style="background-color: #f1f1f1">
+				<button type="button" class="cancelbtn" id="cancelbtn">Cancel</button>
+				<span class="psw">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
 
 	</div>
 
 
 
-	<!-- 바닥입니다. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!---------------------- 바닥입니다. ------------------------------------------------------------------------------------------------------>
 	<footer id="main_footer">
 		<div id="main_footer_content">
 			<div id="main_footer_icon">

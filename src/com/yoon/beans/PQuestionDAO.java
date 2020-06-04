@@ -62,7 +62,7 @@ public class PQuestionDAO {
 
 			String pqregdate = "";
 			if (d != null) {
-				pqregdate = new SimpleDateFormat("yyyy-MM-dd").format(d) + ""
+				pqregdate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 
@@ -100,5 +100,22 @@ public class PQuestionDAO {
 		}
 
 		return arr;
+	}
+	
+	public int pqupdate(int pqid, String pqanswer)throws SQLException{
+		int cnt = 0;
+		
+		
+		try {
+			  pstmt=conn.prepareStatement(D.SQL_PQLIST_UPDATE);
+			  pstmt.setString(1, pqanswer);
+			  pstmt.setInt(2, pqid);
+			  
+			  cnt = pstmt.executeUpdate();
+		  }finally {
+			  close();
+		  }
+		
+		return cnt;
 	}
 }

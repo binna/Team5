@@ -35,6 +35,24 @@
 
 <title>너네 집</title>
 </head>
+<%
+	session.setAttribute("csuid", "1234");
+%>
+<script type="text/javascript">
+	var csuid = <%=session.getAttribute("csuid")%>;
+	$(document).on('click', '.btnCons', function() {
+		console.log(csuid);
+		if (csuid == '1234') {
+//			console.log($(this).parent().children('.comNo').text().trim());
+//			alert('로그인 했슴다.');
+			var str = $(this).parent().children('.comNo').text().trim();
+			location.href = "consWrite.cons?cno=" + str;
+		} else {
+//			alert('로그인 안됬어요임마.');
+		}
+	});
+</script>
+
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="JS/JH/consMain/consMain.js"></script>
 <body>
@@ -179,6 +197,8 @@
 			<div class="ex">지역을 선택한 후 카테고리를 눌러 주세요~</div>
 		</div>
 	</section>
+
+
 
 	<!-- 바닥입니다. -->
 	<footer id="main_footer">

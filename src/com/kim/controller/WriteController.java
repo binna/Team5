@@ -1,4 +1,4 @@
-package com.cons.controller;
+package com.kim.controller;
 
 import java.io.IOException;
 
@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cons.write.Command;
-import com.cons.write.ViewCommand;
-import com.cons.write.WriteCommand;
+import com.kim.write.Command;
+import com.kim.write.ListCommand;
+import com.kim.write.ViewCommand;
 
-@WebServlet("*.cons")
-public class ConsController extends HttpServlet {
+@WebServlet("*.do")
+public class WriteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ConsController() {
+	public WriteController() {
 		super();
 	}
 
@@ -35,43 +35,44 @@ public class ConsController extends HttpServlet {
 			throws ServletException, IOException {
 		System.out.println("actionDo() 호출");
 
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("utf-8");
 
-		// 컨트롤러는 다음 두개를 선택해야 한다.
-		String viewPage = null; // 어떠한 뷰? --> 페이지
-		Command command = null; // 어떠한 커맨드? --> 어떠한 로직 수행.
+		// 컨트롤러 선택
+		String viewPage = null; // 페이지선택
+		Command command = null; // 커맨드 선택
 
-		// URL로부터 URI, ContextPath, Command 분리
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();
 		String com = uri.substring(conPath.length());
 
-		// 테스트 출력
-		System.out.println("uri: " + uri);
-		System.out.println("conPath: " + conPath);
-		System.out.println("com: " + com);
+		System.out.println(uri);
+		System.out.println(conPath);
+		System.out.println(com);
 
-		// 컨트롤러는 커맨드에 따라, 로직을 수행하고
-		// 결과를 내보낼 view 를 결정한다
+		// view결정
+		// command 선택
 		switch (com) {
-		case "/consWrite.cons":
+		case "/detail2.do":
+			command = new ListCommand();
+			command.execute(request, response);
+			viewPage = "detail2.jsp";
+			break;
+			
+		case "/detail.do":
 			command = new ViewCommand();
 			command.execute(request, response);
-			viewPage = "consWrite.jsp";
-			break;
-		case "/consWriteOk.cons":
-			command = new WriteCommand();
-			command.execute(request, response);
-			viewPage = "consMain.jsp";
+			viewPage = "detail.jsp";
 			break;
 
 		} // end switch
 
 		// request 를 위에서 결정된 view 에 forward 해줌.
+
 		if (viewPage != null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);
 		}
 
-	} // end actionDo()
-}
+	}// end actionDo()
+
+}// end class

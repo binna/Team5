@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.cons.beans.*"%>
+
+<!-- GET방식으로 Controller로 넘겨줌 Cno 값을 이용해서 컬럼값을 가져오는 소스코드 -->
 <%
 	// Controller 로부터 결과 데이터 받음
 	consDTO[] arr = (consDTO[]) request.getAttribute("list");
@@ -50,16 +52,31 @@
 <title>너네 집</title>
 </head>
 <body>
+	<!-- 로그인 유효성 검사 -->
+	<%
+		if (session.getAttribute("csuid") != null) {
+			String csuid = (String) session.getAttribute("csuid");
+		} else {
+	%>
+	<script>
+		alert('로그인 상태가 아닙니다.');
+		location.href = "main.jsp";
+	</script>
+	<%
+		}
+	%>
+
+	<!-- 로고부분 -->
 	<header id="cons_header">
 		<div class="cons_header">
 			<div id="cons_logo"></div>
 			<h1 id="cons_title">너네 집</h1>
 		</div>
 	</header>
-	
-	
+
+
 	<!-- post방식 -->
-	<form name="frm" action="consWriteOk.do" method="post"
+	<form name="frm" action="consWriteOk.cons" method="post"
 		onsubmit="return chkSubmit()">
 		<section id="cons_section">
 			<article id="cons_section_header">
@@ -86,7 +103,7 @@
 			<article id="cons_section_comInfo">
 				<div class="areaEx">시공할 지역을 알려주세요</div>
 				<!--  selected 지역선택메뉴  -->
-				<select id="consArea" name="Company">
+				<select id="consArea" name="CompanyArea">
 					<option value="서울">서울</option>
 					<option value="경기">경기</option>
 					<option value="인천">인천</option>
@@ -102,10 +119,10 @@
 				<div class="userTelInfo">
 					상담받을 전화번호를 알려주세요.
 					<div class="userTelHint">010을 제외한 8글자를 적어주세요.</div>
-					<input type="text" name="csphonenume" placeholder="010"
-						class="ctel01"></input> - <input type="text" name="csphonenume"
+					<input type="text" name="cstel01" placeholder="010"
+						class="ctel01"></input> - <input type="text" name="cstel02"
 						placeholder="1234" class="ctel02"></input> - <input type="text"
-						name="csphonenume" placeholder="5678" class="ctel03"></input>
+						name="cstel03" placeholder="5678" class="ctel03"></input>
 				</div>
 
 				<article id="cons_section_submit_cancel">
