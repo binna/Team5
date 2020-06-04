@@ -14,7 +14,7 @@ package com.community.beans;
 	Qkeyword varchar2(50) // 키워드
 */
 
-public class WriteDTO {
+public class DTO {
 	
 	// 각각 담을 데이터 객체
 	private int no;			// 게시글 No
@@ -26,9 +26,9 @@ public class WriteDTO {
 	
 	
 	// 기본생성자, 매개변수 생성자
-	public WriteDTO() {}
+	public DTO() {}
 
-	public WriteDTO(int no, String title, String content, int clickCnt, String keyword) {
+	public DTO(int no, String title, String content, int clickCnt, String keyword) {
 		super();
 		this.no = no;
 		this.title = title;

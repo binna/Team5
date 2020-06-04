@@ -29,8 +29,9 @@
 
 <!-- 내 CSS 적용 -->
 <link rel="stylesheet" href="../CSS/bn.css" type="text/css">
+<!-- 
 <link rel="stylesheet" href="test.css" type="text/css">
-
+ -->
 
 <title>너네 집</title>
 

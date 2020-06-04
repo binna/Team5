@@ -20,18 +20,20 @@ import com.community.common.CommunityD;
 
 // 다루는 데이터 소스의 종류에 따라 DAO는 여러개 정의 가능
 
-public class WriteDAO {
+public class DAO {
 	Connection conn = null;
 	Statement stmt = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;   // SELECT 결과, executeQuery()
 	
 	// DAO 객체가 생성될때 Connection 도 생성된다.
-	public WriteDAO() {
+	public DAO() {
 		
 		try {
 			Class.forName(CommunityD.DRIVER);
 			conn = DriverManager.getConnection(CommunityD.URL, CommunityD.USERID, CommunityD.USERPW);
+			
+			// 확인용, 나중에 지우기
 			System.out.println("WriteDAO 생성, 데이터 베이스 연결!");
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -50,7 +52,7 @@ public class WriteDAO {
 	
 	// write.jsp, writeOk.jsp
 	// 새 글 작성 <-- DTO
-	public int insert(WriteDTO dto) throws SQLException {
+	public int insert(DTO dto) throws SQLException {
 		String title = dto.getTitle();
 		String content = dto.getContent();
 		String keyword = dto.getKeyword();
@@ -78,19 +80,45 @@ public class WriteDAO {
 		return cnt;
 	}
 	
-	// ResultSet --> DTO 배열로 리턴
-	public WriteDTO[] createArray(ResultSet rs) throws SQLException {
-		WriteDTO [] arr = null;  // DTO 배열
+	
+	
+	
+	
+	// 아직 사용 안함ㅋ----------------------------------------
+	// write에서 view단으로 넘어가기 위해 Qtitle로 Qno 검색이 필요
+	public DTO[] selectByQtitle(String title) throws SQLException {
+		DTO [] arr = null;
 		
-		ArrayList<WriteDTO> list = new ArrayList<WriteDTO>();
+		try {
+			pstmt = conn.prepareStatement(CommunityD.SQL_SELECT_BY_Qtitle);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		}		
+		
+		return arr;
+	} // end selectByQtitle()
+	//--------------------------------------------------------
+	
+	
+	
+	
+	
+	// View 조회를 위해
+	// ResultSet --> DTO 배열로 리턴
+	public DTO[] createArray(ResultSet rs) throws SQLException {
+		DTO [] arr = null;  // DTO 배열
+		
+		ArrayList<DTO> list = new ArrayList<DTO>();
 		
 		while(rs.next()) {
 			int no = rs.getInt("Qno");
 			String title = rs.getString("Qtitle");
 			String content = rs.getString("Qcontent");
-			Date d = rs.getDate("content");
+			Date d = rs.getDate("Qregdate");
 			Time t = rs.getTime("Qregdate");
-			int clickCnt = rs.getInt("Qregdate");
+			int clickCnt = rs.getInt("Qclickcnt");
 			String keyword = rs.getString("Qkeyword");
 			
 			String regDate = "";
@@ -99,7 +127,7 @@ public class WriteDAO {
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 			
-			WriteDTO dto = new WriteDTO(no, title, content, clickCnt, keyword);
+			DTO dto = new DTO(no, title, content, clickCnt, keyword);
 			dto.setRegDate(regDate);
 			list.add(dto);
 			
@@ -109,10 +137,63 @@ public class WriteDAO {
 		
 		if(size == 0) return null;
 		
-		arr = new WriteDTO[size];
+		arr = new DTO[size];
 		list.toArray(arr);  // List -> 배열		
 		return arr;
 	}
+
+	// 특정 uid 의 글 내용 읽기, 조회수 증가
+	// viewCnt 도 1 증가 해야 하고, 글 읽어와야 한다 --> 트랜잭션 처리
+	public DTO[] readByQno(int no) throws SQLException{
+		DTO[] arr = null;
+		
+		try {
+			// 트랜잭션 처리
+			// Auto-commit 비활성화
+			conn.setAutoCommit(false);
+			
+			// 쿼리들 수행
+			pstmt = conn.prepareStatement(CommunityD.SQL_INC_QCLICKCNT);
+			pstmt.setInt(1, no);
+			
+			// 작용한 열의 개수(갱신 카운트로 간주되는)를 나타내는 정수
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			
+			pstmt = conn.prepareStatement(CommunityD.SQL_SELECT_BY_QNO);
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			
+			arr = createArray(rs);
+			conn.commit();
+			
+		} catch(SQLException e) {
+			conn.rollback();
+			throw e;
+		} finally {
+			close();
+		}
+		
+		return arr;
+	} // end readByQno()
+			
+		
+	
+//	// 특정 uid의 글만 SELECT(조회수 증가 없음)
+//	public WriteDTO [] selectByUid(int uid) throws SQLException {
+//		WriteDTO [] arr = null;
+//		
+//		try {
+//			pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT_BY_UID);
+//			pstmt.setInt(1, uid);
+//			rs = pstmt.executeQuery();
+//			arr = createArray(rs);
+//		} finally {
+//			close();
+//		}
+//		return arr;
+//	}
 	
 	
 } // end DAO

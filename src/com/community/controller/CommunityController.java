@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.community.command.Command;
 import com.community.command.WriteCommand;
+import com.community.command.ViewCommand;
 
 @WebServlet("*.community")
 public class CommunityController extends HttpServlet {
@@ -31,7 +32,6 @@ public class CommunityController extends HttpServlet {
 	
 	protected void actionDo(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		System.out.println("actionDo() 호출");
 		
 		request.setCharacterEncoding("UTF-8");
 		
@@ -55,6 +55,12 @@ public class CommunityController extends HttpServlet {
 			command = new WriteCommand();
 			command.execute(request, response);
 			viewPage = "/community/writeOk.jsp";
+			break;
+			
+		case "/community/view.community":
+			command = new ViewCommand();
+			command.execute(request, response);
+			viewPage = "/community/view.jsp";
 			break;
 		
 		} // end switch()

@@ -1,6 +1,5 @@
-/* write.jsp */
 $(document).ready(function () {
-	
+	/* write.jsp */
 	// 제목 에러메시지 띄우기
 	$("#question_title").keyup(function(){
 		// 7자 미만 에러 메시지
@@ -131,5 +130,29 @@ $(document).ready(function () {
 	}); // end 배열 이용 체크박스
 	
 	
+	
+	
+	/* view.jsp */
+	// 키워드 값 받아오기
+	var $btn_keyword_value = $('#btn_keyword_value').val();
+	var $keywordHtml = "";
+	
+	var $keyword_length = $btn_keyword_value.split(',');
+	console.log();
+	
+	// 마지막에 -1하는 이유는 키워드보다 콤마 하나가 더 많음!
+	// 그래서 마지막 하나는 빈 내용이 들어 있음
+	for(i = 0; i < $keyword_length.length - 1; i++) {
+		$keywordHtml += "<li class='qna-detail__footer__keyword-list-item'>"
+			+ $keyword_length[i] + "</li>";
+	}
+	$("#keyword_list_group").append($keywordHtml);
+	
+	
+	
+	
 }); // end ready()
+
+
+//console.log()
 
