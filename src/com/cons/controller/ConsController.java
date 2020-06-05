@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cons.write.Command;
+import com.cons.write.ConsListCommand;
+import com.cons.write.UpdateCommand;
 import com.cons.write.ViewCommand;
 import com.cons.write.WriteCommand;
 
@@ -61,11 +63,25 @@ public class ConsController extends HttpServlet {
 			break;
 		case "/consWriteOk.cons":
 			command = new WriteCommand();
-			command.execute(request, response);
+			command.execute(request, response); 
 			viewPage = "consMain.jsp";
 			break;
+		case "/consManager.cons":
+			command = new ConsListCommand();
+			command.execute(request, response);
+			viewPage = "consManager.jsp";
+			break;
+		case "/consUpdateOk.cons":
+			command = new UpdateCommand();
+			command.execute(request, response);
+			viewPage = "consUpdateOk.jsp";
+			break;	
 
+		case "/consDeleteOk.cons":
+			viewPage = "consManager.cons";
+			break;
 		} // end switch
+		
 
 		// request 를 위에서 결정된 view 에 forward 해줌.
 		if (viewPage != null) {

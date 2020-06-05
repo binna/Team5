@@ -5,36 +5,33 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cons.beans.consDAO;
-
+import com.cons.beans.comDAO;
 
 public class WriteCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		
+
 		int cnt = 0;
-		consDAO dao = new consDAO();
-		
+		comDAO dao = new comDAO();
+
 		// 매개변수 받아오기
-		String carea = request.getParameter("CompanyArea");
 		String csuid = request.getParameter("csuid");
-		String content = request.getParameter("csphonenume");
-		
-		System.out.println(carea + "   " + csuid + content);
-		
-//		if(name != null && subject != null &&
-//				name.trim().length() > 0 && subject.trim().length() > 0) {
-//			
-//			try {
-//				cnt = dao.insert(subject, content, name);
-//			} catch(SQLException e) {
-//				e.printStackTrace();
-//			}
-//			
-//		} // end if
-//			
-//		request.setAttribute("result", cnt);
+		int cno = Integer.parseInt(request.getParameter("cno"));
+		String carea = request.getParameter("CompanyArea");
+		String c1 = request.getParameter("cstel01");
+		String c2 = request.getParameter("cstel02");
+		String c3 = request.getParameter("cstel03");
+		String cstel = c1 + c2 + c3;
+
+		// System.out.println(csuid + " " + cno + " " + carea + " " + cstel);
+		try {
+			cnt = dao.insert(csuid, cno, carea, cstel);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		request.setAttribute("result", cnt);
 
 	} // end execute()
 

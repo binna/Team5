@@ -5,14 +5,14 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cons.beans.consDAO;
-import com.cons.beans.consDTO;
+import com.cons.beans.comDAO;
+import com.cons.beans.comDTO;
 public class ViewCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		consDAO dao = new consDAO();
-		consDTO [] arr = null;
+		comDAO dao = new comDAO();
+		comDTO [] arr = null;
 		int uid = Integer.parseInt(request.getParameter("cno"));  // 매개변수 검증 필요
 
 		try {

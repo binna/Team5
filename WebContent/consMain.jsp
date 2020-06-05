@@ -33,28 +33,33 @@
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
+
 <title>너네 집</title>
 </head>
 <%
 	session.setAttribute("csuid", "1234");
 %>
 <script type="text/javascript">
-	var csuid = <%=session.getAttribute("csuid")%>;
+	var csuid =
+<%=session.getAttribute("csuid")%>
+	;
 	$(document).on('click', '.btnCons', function() {
 		console.log(csuid);
 		if (csuid == '1234') {
-//			console.log($(this).parent().children('.comNo').text().trim());
-//			alert('로그인 했슴다.');
+			//			console.log($(this).parent().children('.comNo').text().trim());
+			//			alert('로그인 했슴다.');
 			var str = $(this).parent().children('.comNo').text().trim();
 			location.href = "consWrite.cons?cno=" + str;
 		} else {
-//			alert('로그인 안됬어요임마.');
+			//			alert('로그인 안됬어요임마.');
 		}
 	});
 </script>
 
+<!-- 본문 JS -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="JS/JH/consMain/consMain.js"></script>
+
 <body>
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
@@ -129,64 +134,64 @@
 			</div>
 			<div id="category">
 				<div class="category">
-					<img class="cateImg"
+					<img class="cateImg cate01"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487641227160933.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487641227160933.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487641227160933.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487641227160933.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>도배</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate02"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644545760381.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644545760381.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644545760381.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644545760381.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>장판</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate03"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487643983545025.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487643983545025.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487643983545025.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487643983545025.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>시트필름</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate04"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644245312359.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644245312359.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644245312359.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487644245312359.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>욕실</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate05"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487659846222130.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487659846222130.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487659846222130.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487659846222130.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>주방</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate06"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660098535429.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660098535429.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660098535429.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660098535429.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>타일</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate07"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642300102400.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642300102400.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642300102400.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642300102400.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>도어</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate08"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642521502350.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642521502350.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642521502350.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642521502350.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>마루</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate09"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660352228893.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660352228893.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660352228893.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487660352228893.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
 					<div>페인트</div>
 				</div>
 				<div class="category">
-					<img
+					<img class="cateImg cate10"
 						src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642805755493.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1"
 						srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642805755493.jpg?gif=1&amp;w=80&amp;h=80&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642805755493.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/158487642805755493.jpg?gif=1&amp;w=160&amp;h=160&amp;c=c&amp;webp=1 3x">
-					<div>마루</div>
+					<div>목공</div>
 				</div>
 			</div>
 			<div class="mLeft"></div>
