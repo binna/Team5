@@ -37,13 +37,52 @@ public class CommunityD {
 	public static final String USERPW = "team5";
 	
 	// 쿼리문 작성하기
+	// 데이터 삽입하기
+	public static final String SQL_WRITE_INSERT = "INSERT INTO Question"
+		+ "(Qno, Qtitle, Qcontent, Qkeyword) "
+		+ "VALUES(SEQ_question_Qno.nextval, ?, ?, ?)";
+	
+	// no으로 데이터 조회하기
+	public static final String SQL_SELECT_BY_QNO 
+		= "SELECT * FROM Question WHERE Qno = ?";
+	
+	// click 수 증가
+	public static final String SQL_INC_QCLICKCNT = "UPDATE Question SET "
+			+ "Qclickcnt = Qclickcnt + 1 WHERE Qno = ?";
+
+	// title로  no 데이터 조회하기
+	public static final String SQL_SELECT_BY_Qtitle
+		= "SELECT Qno FROM Question WHERE Qtitle = ?";
+	
+	
+	//-----------------------------------------------------------
 	// 전체 검색하기
 	public static final String SQL_WRITE_SELECT 
-	= "SELECT * FROM Question ORDER BY Qno DESC";  
+		= "SELECT * FROM Question ORDER BY Qno DESC";  
 
-	// 데이터 삽입하기
-	public static final String SQL_WRITE_INSERT = "INSERT INTO Qno "
-			+ "(Qno, Qtitle, Qcontent, Qregdate, Qclickcnt, Qkeyword) "
-			+ "VALUES(SEQ_question_Qno.nextval, ?, ?, ?, ?, ?)";
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

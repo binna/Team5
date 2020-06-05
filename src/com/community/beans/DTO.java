@@ -14,26 +14,25 @@ package com.community.beans;
 	Qkeyword varchar2(50) // 키워드
 */
 
-public class writeDTO {
+public class DTO {
 	
 	// 각각 담을 데이터 객체
 	private int no;			// 게시글 No
 	private String title; 	// 게시글 제목 글자수 : 7 ~ 20자
 	private String content;	// 게시글 안의 내용물 : 제한 없음
-	private String date;	// 날짜
+	private String regDate;	// 날짜
 	private int clickCnt;	// 클릭수
 	private String keyword;	// 키워드
 	
 	
 	// 기본생성자, 매개변수 생성자
-	public writeDTO() {}
+	public DTO() {}
 
-	public writeDTO(int no, String title, String content, String date, int clickCnt, String keyword) {
+	public DTO(int no, String title, String content, int clickCnt, String keyword) {
 		super();
 		this.no = no;
 		this.title = title;
 		this.content = content;
-		this.date = date;
 		this.clickCnt = clickCnt;
 		this.keyword = keyword;
 	}
@@ -64,12 +63,12 @@ public class writeDTO {
 		this.content = content;
 	}
 
-	public String getDate() {
-		return date;
+	public String getRegDate() {
+		return regDate;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
 	}
 
 	public int getClickCnt() {

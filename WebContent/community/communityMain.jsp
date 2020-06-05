@@ -99,7 +99,7 @@
 		<h2>글쓰기</h2>
 		<div class="row">
 	    	<section class="col-4 col-lg-3 col-xl-2 upload-types__item__wrap">
-	       	<a class="upload-types__item upload-types__item__qna" href="write.jsp">
+	       	<a class="upload-types__item upload-types__item__qna" href="write.community">
 	        	<div class="upload-types__item__pictogram">
 	          		<div class="upload-types__item__pictogram__contents">
 	          		<i class="far fa-question-circle"></i>
