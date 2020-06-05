@@ -104,5 +104,33 @@ public class consDAO {
 		
 		return cnt;
 	} // end update()
+	
+	// 특정 uid 글 삭제하기
+	public int deleteByUid(int uid) throws SQLException {
+		int cnt = 0;
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_CONS_DELETE);
+			pstmt.setInt(1, uid);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}		
+		return cnt;
+	} // end deleteByUid()
+	
+	// 특정 uid 의 글 만 SELECT (조회수 증가 없슴!)
+	public consDTO [] selectByUid(int csuid) throws SQLException {
+		consDTO [] arr = null;
+		
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_CONS_UID_SELECT);
+			pstmt.setInt(1, csuid);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		}
+		return arr;
+	}
 
-}
+} // end class

@@ -121,7 +121,8 @@
 		<input class="consUpdate" style="display: none;" name="csarea" value="<%=arr[i].getCsarea()%>">
 		<input class="consUpdate" style="display: none;" name="cstel" value="<%=arr[i].getCstel()%>">
 		<input type="button" class="update" value="수정">
-		<input type="button" class="delete" value="삭제">
+		<input type="submit" class="delete" value="삭제"
+			formaction="consDeleteOk.cons">
 		<input type="submit" class="updateComplete" value="완료">
 		<input type="button" class="cancel" value="취소">
 	</section>
@@ -132,16 +133,6 @@
 		} // end for
 		} // end if
 	%>
-
-
-
-
-
-
-
-
-
-
 
 
 

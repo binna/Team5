@@ -30,5 +30,14 @@ public class consD {
 	public static final String SQL_CONS_UPDATE = // 회사 INFO 읽어오기
 			"UPDATE Consulting SET CSUID = ?, CSAREA = ?, CSTEL =? WHERE CSNO = ?";
 	
+	// 상담신청삭제 DB
+	public static final String SQL_CONS_DELETE = // 상담 신청서 삭제
+			"DELETE FROM CONSULTING WHERE CSNO = ?";
 	
+	// 상담신청 특정 유저 이름으로 검색
+	public static final String SQL_CONS_UID_SELECT =
+		"SELECT c2.CSNO, c2.CSUID, c2.CSAREA , c2.CSTEL , c1.CNAME" + 
+		" FROM COMPANY c1 INNER JOIN CONSULTING c2" + 
+		" ON c1.CNO =c2.CNO" + 
+		" WHERE c2.CSNO = ?";	
 }

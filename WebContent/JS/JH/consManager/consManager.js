@@ -39,10 +39,6 @@ $(document).ready(function() {
 		} // end function
 	) // end update click
 	
-	$('.delete').click(function() {
-		location.href ="consDeleteOk.cons";
-		
-	})
 	
 }) // end JS
 

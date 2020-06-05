@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cons.write.Command;
 import com.cons.write.ConsListCommand;
+import com.cons.write.DeleteCommand;
+import com.cons.write.SelectCommand;
 import com.cons.write.UpdateCommand;
 import com.cons.write.ViewCommand;
 import com.cons.write.WriteCommand;
@@ -56,30 +58,41 @@ public class ConsController extends HttpServlet {
 		// 컨트롤러는 커맨드에 따라, 로직을 수행하고
 		// 결과를 내보낼 view 를 결정한다
 		switch (com) {
+		// 상담신청 페이지
 		case "/consWrite.cons":
 			command = new ViewCommand();
 			command.execute(request, response);
 			viewPage = "consWrite.jsp";
 			break;
+			
+		// 상담신청 OK 페이지
 		case "/consWriteOk.cons":
 			command = new WriteCommand();
 			command.execute(request, response); 
 			viewPage = "consMain.jsp";
 			break;
+		
+		// 상담매니저 페이지
 		case "/consManager.cons":
 			command = new ConsListCommand();
 			command.execute(request, response);
 			viewPage = "consManager.jsp";
 			break;
+			
+		// 상담업데이트Ok
 		case "/consUpdateOk.cons":
 			command = new UpdateCommand();
 			command.execute(request, response);
 			viewPage = "consUpdateOk.jsp";
 			break;	
-
+		
+		// 상담신청 삭제
 		case "/consDeleteOk.cons":
+			command = new DeleteCommand();
+			command.execute(request, response);
 			viewPage = "consManager.cons";
 			break;
+		
 		} // end switch
 		
 

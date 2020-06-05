@@ -85,7 +85,7 @@
 				<nav>
 					<ul>
 						<li><a href="#">커뮤니티</a></li>
-						<li><a href="storeMain.jsp">스토어</a></li>
+						<li><a href="storeMain.y">스토어</a></li>
 						<li><a href="consMain.jsp">인테리어시공</a></li>
 					</ul>
 				</nav>
