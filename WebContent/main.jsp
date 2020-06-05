@@ -2,7 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+	
+	
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -11,6 +12,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+
+	<%!
+	
+	public static final String ADMIN_ID = "admin";
+	public static final String ADMIN_PW = "1234";
+%>    
+
+<% 
+	String userid = request.getParameter("userid");
+	String pw = request.getParameter("pw");
+
+	
+	String sessionName = "userid";
+	String sessionValue = userid;
+
+	
+	if(ADMIN_ID.equalsIgnoreCase(userid) && ADMIN_PW.equals(pw)){
+		out.println("<script>");
+		out.println("alert('로그인 성공');");
+		out.println("</script>");
+
+		
+		session.setAttribute(sessionName, sessionValue);		
+	}else{
+		out.println("<script>");
+		 out.println("alert('로그인 해주세요');"); 
+		out.println("</script>");
+
+		
+		session.removeAttribute(sessionName);
+	}
+%>
 
 <!-- MaxCDN 사용 -->
 
@@ -51,6 +84,7 @@
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
+
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -82,9 +116,10 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button>
+				<button onclick="location.href= 'MemberLogin.me'">
 					<i class="far fa-user"></i>
 				</button>
+
 			</div>
 		</div>
 		<hr>
