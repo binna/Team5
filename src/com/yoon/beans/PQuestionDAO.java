@@ -118,4 +118,19 @@ public class PQuestionDAO {
 		
 		return cnt;
 	}
+	public PQuestionDTO[] selectbypid(int pid) throws SQLException {
+		PQuestionDTO[] arr = null;
+		try {
+			System.out.println("try");
+			pstmt = conn.prepareStatement(D.SQL_PQLIST_SELECT_BY_PID);
+			pstmt.setInt(1, pid);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+			/* System.out.println(arr.length); */
+		} finally {
+			close();
+		}
+
+		return arr;
+	}
 }

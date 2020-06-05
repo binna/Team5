@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yoon.write.Command;
+import com.yoon.write.pqListbypidCommand;
 import com.yoon.write.pquestionListCommand;
 import com.yoon.write.productListCommand;
 import com.yoon.write.questionUpdateCommand;
@@ -64,6 +65,11 @@ public class controller extends HttpServlet {
 			command = new questionUpdateCommand();
 			command.execute(request, response);
 			viewPage ="QuestionUpdateOk.jsp";
+			break;
+		case "/detail_copy2.y":
+			command = new pqListbypidCommand();
+			command.execute(request, response);
+			viewPage ="detail_copy2.jsp";
 			break;
 		}
 		

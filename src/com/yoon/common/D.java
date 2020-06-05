@@ -25,7 +25,10 @@ public class D {
 			   "WHERE q.PQUID ='?';";
 	   public static String SQL_PQLIST_SELECT_ALL= //모든물건가져오기
 			   "SELECT p.PBRAND ,p.PNAME ,q.PQid,q.PQpid,q.PQuid,q.PQregdate,q.PQcontent,q.PQANSWER FROM PRODUCT p INNER JOIN PQUESTION q ON p.PID =q.PQID" ;
+	   public static String SQL_PQLIST_SELECT_BY_PID= //모든물건가져오기
+			   "SELECT p.PBRAND ,p.PNAME ,q.PQid,q.PQpid,q.PQuid,q.PQregdate,q.PQcontent,q.PQANSWER FROM PRODUCT p INNER JOIN PQUESTION q ON p.PID =q.PQPID WHERE p.pid = ?" ;
 	   
 	   public static String SQL_PQLIST_UPDATE=
 			   "UPDATE PQUESTION SET PQANSWER =? WHERE PQID =?";
+	   
 }

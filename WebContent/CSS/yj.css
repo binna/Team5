@@ -3,6 +3,11 @@
 
 /*logo_menu*/
 /*TODO logo_menu delete*/
+.clear {
+	clear: both;
+}
+
+
 header#main_header {
 	width: 90%;
 	height: auto;
@@ -345,9 +350,168 @@ li#Q_li a, li#menu_myshopping a{
 	font-weight: 900;
 }
 
-#detail_delivery h1{
+#detail_delivery h1,#detail_question h1{
 	color: #666;
 	font-weight: 900;
 	font-size: x-large;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	display: block;
+	width: 100%
 	
+}
+#detail_delivery table, #detail_delivery tr,#detail_delivery td{
+	border: 0px;
+}
+#detail_delivery table tr td:first-child{
+	color: #666;
+	width: 20%
+}
+#detail_delivery table td{
+	padding: 20px;
+	font-size: small;
+	font-weight: 700;
+}
+
+#detail_delivery table tr{
+	border-bottom: 2px solid #ccc
+}
+#detail_delivery h3{
+	font-size: small;
+	font-weight: 300;
+	margin-bottom: 5px;
+	color: #888;
+	}
+	
+/* ----------------- detail: 문의------------------- */
+#detail_question, #detail_delivery{
+	width: 70%;
+	margin: 50px auto;
+}
+h1#detail_question_2{
+	color: rgb(53, 197, 240);
+	text-align: center;
+	font-size: medium;
+	border: 1px solid rgb(53, 197, 240);
+	padding: 10px;
+	width: 100px;
+	border-radius: 15px;
+	display: inline-block;
+	
+}
+h1#detail_question_2:hover {
+	background-color:rgb(53, 197, 240);
+	color: #fff;
+}
+h1#detail_question_1 a{
+	color:  rgb(53, 197, 240);
+}
+#detail_question_list h2{
+	color: #666;
+	font-weight: 600;
+}
+h2#detail_question_list_4, h2#detail_question_list_5{
+	color: rgb(53, 197, 240);
+	font-weight: 900;
+	font-size: x-large;
+}
+h2#detail_question_list_4 a, h2#detail_question_list_5 a{
+
+	color: #666;
+	font-weight: 600;
+	font-size: medium;
+	margin-left: 30px
+	}
+a#ql_status{
+	margin-left: 10px;
+	padding :5px;
+	border-radius: 6px
+}
+div#detail_question_list_container{
+	box-shadow: 1px 1px 1px 1px #eee;
+	border: 0.5px solid #eee;
+	border-radius: 8px;
+	padding: 75px
+}
+div#detail_questiondiv_2{
+	text-align: right;
+	
+}
+
+/*-- Qmodal --*/
+div#QModal {
+    width: 100%; /*윈도우 전체차지*/
+    height: 100%;/*윈도우 전체차지*/
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 0;
+    top: 0;
+    z-index: 1; /*최상단에 보이게 하기*/
+    overflow: auto;/*필요한 경우 스크롤바 생기기*/
+    display: none;/* 기본적으로 팝업 안보이기  */
+}
+div.QModal_content {
+    width: 50%;
+    padding : 40px;
+    background-color: #fefefe;
+    margin: 5% auto;
+    /* top에서 15%, 좌우 균일 (중앙정렬) */
+    
+    border: 1px solid #888;
+}
+span.Qclose{
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    float: right;
+}
+span.Qclose:hover, span.Qclose:focus{
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1#QModal_title{
+	text-align: center;
+	font-weight: 900;
+	font-size: medium;
+	color: #444;
+}
+
+h2.QModal_h2{
+	font-weight: 900;
+	font-size: medium;
+	color: #444;
+}
+
+#QModal_btn{
+	width: 100%;
+	padding: 20px;
+	border:0;
+	border-radius: 8px;
+	background-color: rgb(53, 197, 240);
+	color: #fff;
+	text-align: center;
+	font-weight: 900;
+	font-size: large; 
+}
+
+#QModal_input{
+	
+	height: 200px;
+}
+
+h3#QModal_detail{
+	font-size: small;
+	margin-bottom:20px 
+}
+input.Q_sort{
+	margin:0;
+	width: 32%;
+	border: 0px;
+	padding: 0;
+}
+
+#QModal_form{
+	border: 0;
 }
