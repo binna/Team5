@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cons.beans.AjaxWriteListJson;
-import com.cons.beans.consDTO;
+import com.cons.beans.comDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -30,7 +30,7 @@ public class AjaxListCommand implements Command {
 	} // end execute()
 
 	private void responseJSON2(HttpServletRequest request, HttpServletResponse response) {
-		consDTO[] dtoArr = (consDTO[]) request.getAttribute("list");
+		comDTO[] dtoArr = (comDTO[]) request.getAttribute("list");
 
 		AjaxWriteListJson list = new AjaxWriteListJson(); // response 할 Java 객체
 

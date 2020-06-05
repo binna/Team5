@@ -5,7 +5,9 @@
 <!-- GET방식으로 Controller로 넘겨줌 Cno 값을 이용해서 컬럼값을 가져오는 소스코드 -->
 <%
 	// Controller 로부터 결과 데이터 받음
-	consDTO[] arr = (consDTO[]) request.getAttribute("list");
+	comDTO[] arr = (comDTO[]) request.getAttribute("list");
+	int cno = Integer.parseInt(request.getParameter("cno"));
+	// System.out.print(uid);
 %>
 
 <%
@@ -37,6 +39,7 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
+
 <!-- Google 폰트 -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
@@ -48,6 +51,7 @@
 
 <!-- JS 링크 -->
 <script src="JS/JH/consWrite/consWrite.js"></script>
+
 
 <title>너네 집</title>
 </head>
@@ -119,11 +123,13 @@
 				<div class="userTelInfo">
 					상담받을 전화번호를 알려주세요.
 					<div class="userTelHint">010을 제외한 8글자를 적어주세요.</div>
-					<input type="text" name="cstel01" placeholder="010"
-						class="ctel01"></input> - <input type="text" name="cstel02"
-						placeholder="1234" class="ctel02"></input> - <input type="text"
-						name="cstel03" placeholder="5678" class="ctel03"></input>
+					<input type="text" name="cstel01" placeholder="010" class="ctel01">
+					- <input type="text" name="cstel02" placeholder="1234"
+						class="ctel02"> - <input type="text" name="cstel03"
+						placeholder="5678" class="ctel03">
 				</div>
+				<input type="hidden" value="<%=cno%>" name="cno">
+
 
 				<article id="cons_section_submit_cancel">
 					<button type="submit" class="submit">SUBMIT</button>

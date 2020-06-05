@@ -1,28 +1,52 @@
 package com.cons.beans;
 
 public class consDTO {
+	private int csno;
+	private String csuid;
 	private int cno;
+	private String csarea;
+	private String cstel;
 	private String cname;
-	private String cadr;
-	private String ctel;
-	private String carea;
-	private String ccategory;
 	
-	public consDTO(int cno, String cname, String cadr, String ctel, String carea, String ccategory) {
+	public consDTO(int csno, String csuid, int cno, String csarea, String cstel, String cname) {
 		super();
+		this.csno = csno;
+		this.csuid = csuid;
 		this.cno = cno;
+		this.csarea = csarea;
+		this.cstel = cstel;
 		this.cname = cname;
-		this.cadr = cadr;
-		this.ctel = ctel;
-		this.carea = carea;
-		this.ccategory = ccategory;
 	}
 	
+	public int getCsno() {
+		return csno;
+	}
+	public void setCsno(int csno) {
+		this.csno = csno;
+	}
+	public String getCsuid() {
+		return csuid;
+	}
+	public void setCsuid(String csuid) {
+		this.csuid = csuid;
+	}
 	public int getCno() {
 		return cno;
 	}
 	public void setCno(int cno) {
 		this.cno = cno;
+	}
+	public String getCsarea() {
+		return csarea;
+	}
+	public void setCsarea(String csarea) {
+		this.csarea = csarea;
+	}
+	public String getCstel() {
+		return cstel;
+	}
+	public void setCstel(String cstel) {
+		this.cstel = cstel;
 	}
 	public String getCname() {
 		return cname;
@@ -30,31 +54,6 @@ public class consDTO {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-	public String getCadr() {
-		return cadr;
-	}
-	public void setCadr(String cadr) {
-		this.cadr = cadr;
-	}
-	public String getCtel() {
-		return ctel;
-	}
-	public void setCtel(String ctel) {
-		this.ctel = ctel;
-	}
-	public String getCarea() {
-		return carea;
-	}
-	public void setCarea(String carea) {
-		this.carea = carea;
-	}
-	public String getCcategory() {
-		return ccategory;
-	}
-	public void setCcategory(String ccategory) {
-		this.ccategory = ccategory;
-	}
 	
 	
-	
-}	// end main
+}

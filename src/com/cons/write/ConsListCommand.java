@@ -5,15 +5,15 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cons.beans.comDAO;
-import com.cons.beans.comDTO;
+import com.cons.beans.consDAO;
+import com.cons.beans.consDTO;
 
-public class ListCommand implements Command {
+public class ConsListCommand implements Command{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-		comDAO dao = new comDAO(); // DAO 객체 생성
-		comDTO[] arr = null;
+		consDAO dao = new consDAO(); // DAO 객체 생성
+		consDTO[] arr = null;
 
 		try {
 			// 트랜잭션 수행

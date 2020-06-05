@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /*-------------- 폰트입당 --------------*/
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
@@ -19,6 +18,7 @@
 	left: -20px;
 	box-shadow: 0px 0px 0.5px 1.5px #f4f4f4;
 	background-position: center;
+	visibility: hidden;
 }
 
 .mRight {
@@ -34,6 +34,7 @@
 	right: -20px;
 	box-shadow: 0px 0px 0.5px 1.5px #f4f4f4;
 	background-position: center;
+	visibility: hidden;
 }
 
 .mLeft:hover {
@@ -138,7 +139,6 @@ IMG {
 	padding: 5px 0px;
 }
 
-
 #ex {
 	font-family: 'Nanum Pen Script', cursive;
 	font-size: 30px;
@@ -153,4 +153,7 @@ IMG {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	visibility: 
 }
+
+/*---------------------------------------- */

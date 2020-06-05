@@ -12,7 +12,7 @@ public class AjaxWriteListJson {
 	String memo;   // response 에서 제외할 필드
 	
 	@JsonProperty("data")  // Json property 이름과 Java 필드명이 다른 경우
-	List<consDTO> list;	
+	List<comDTO> list;	
 
 	public int getCount() {
 		return count;
@@ -38,11 +38,11 @@ public class AjaxWriteListJson {
 		this.memo = memo;
 	}
 
-	public List<consDTO> getList() {
+	public List<comDTO> getList() {
 		return list;
 	}
 
-	public void setList(List<consDTO> list) {
+	public void setList(List<comDTO> list) {
 		this.list = list;
 	}
 	
