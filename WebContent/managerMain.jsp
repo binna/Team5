@@ -1,7 +1,8 @@
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -9,6 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 
 
@@ -33,8 +35,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
 	rel="stylesheet">
-<!-- font-family: 'Do Hyeon', sans-serif;
-font-family: 'Jua', sans-serif; -->
+
 
 
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
@@ -45,8 +46,6 @@ font-family: 'Jua', sans-serif; -->
 
 
 
-<script type="text/javascript" src="JS/yj.js"></script>
-
 
 
 
@@ -54,6 +53,8 @@ font-family: 'Jua', sans-serif; -->
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
+
+
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -63,8 +64,8 @@ font-family: 'Jua', sans-serif; -->
 				<nav>
 					<ul>
 						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
+						<li><a href="storeMain.jsp">스토어</a></li>
+						<li><a href="consMain.jsp">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -85,39 +86,33 @@ font-family: 'Jua', sans-serif; -->
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button>
+				<button onclick="location.href= 'MemberLogin.me'">
 					<i class="far fa-user"></i>
 				</button>
+
 			</div>
 		</div>
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-12">
+			<div class="col-md-9">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">프로필</a></li>
-						<li id="menu_myshopping"><a href="#">나의 쇼핑</a></li>
-						<li><a href="#">나의 리뷰</a></li>
-						<li><a href="#">설정</a></li>
-
+						<li><a href="#">스토어홈</a></li>
+						<li><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">특가</a></li>
+						<li><a href="#">여름패브릭</a></li>
+						<li><a href="#">여름가전</a></li>
+						<li><a href="#">기획전</a></li>
 					</ul>
 				</nav>
 			</div>
-		</div>
-		<hr>
-		<div id="main_top3" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="#">주문배송내역 조회</a></li>
-						<li><a href="#">상품 스크랩북</a></li>
-						<li id="Q_li"><a href="#">상품문의내역</a></li>
-						<li><a href="#">포인트</a></li>
-						<li><a href="#">고객센터</a></li>
-
-					</ul>
-				</nav>
+			<div calss="col-md-3">
+				<button id="main_top2_app"></button>
+				<a href="#">앱 다운로드</a>
 			</div>
+
 		</div>
 		<hr>
 	</header>
@@ -125,45 +120,7 @@ font-family: 'Jua', sans-serif; -->
 
 	<!--내용부분입니다.  -->
 	<div id="main_content">
-		<div id="main_content_qlist">
-			<h1 id="main_content_qlist_h">상품문의내역</h1>
-			<c:choose>
-				<c:when test="${empty list || fn:length(list) ==0}">
-					<div id="main_qlist">
-						<h1>아직 문의한 내역이 없습니다.</h1>
-					</div>
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="dto" items='${list }'>
-						<div id="main_qlist">
-							<%-- <h3 id = "A_status_${dto.pqid}" class ="A_status" >답변예정</h3> --%>
-							<div class="row">
-								<h3 id="pinfo" class="col-md-8">[${dto.pbrand }]
-									${dto.pname }</h3>
-								<h3 id="pqregdate" class="col-md-4">${dto.pqregdate }</h3>
-							</div>
-							<br> <br>
-							<h1 id="Q_mark">Q.</h1>
-							<h3 class="pqcontent">${dto.pqcontent }</h3>
-							<br>
-							<h1 id="A_mark">A.</h1>
-							<h3 class="pqanswer">${dto.pqanswer }</h3>
-							<br>
-							<form action="QuestionWriteOk.y" method="post">
-								<input type="hidden" name = "pqid" value="${dto.pqid}">
-								<input type="text" id="main_qlist_input_${dto.pqid}"
-									class="main_qlist_input" value="${dto.pqanswer}" name ="pqanswer"> <br> <br>
-								<button class="main_qlist_answer_1"
-									id="main_qlist_answer_1_${dto.pqid}" type="button">답변 등록</button>
-								<button class="main_qlist_answer_2"
-									id="main_qlist_answer_2_${dto.pqid}" type="submit">등록 완료</button>
-							</form>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-			</c:choose>
-		</div>
-
+		<h1>관리자 메인입니다</h1>
 	</div>
 
 

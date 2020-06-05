@@ -61,4 +61,27 @@ $(document).ready(function(){
 		$('#A_status_'+id).css("background-color","#FFB4B4")
 	}*/
 	
+	
+	
+	var modal = document.getElementById('QModal')
+	var btn = document.getElementById('detail_question_2')
+
+	var span = document.getElementsByClassName('Qclose')[0]
+	// TODO
+	// 버튼 클릭하면 팝업 보이게 하기
+	// 팝업의 x 버튼 누르면 닫히게 하기
+	btn.onclick = function(){
+	  modal.style.display = "block"
+	}
+	span.onclick = function(){
+	  modal.style.display='none'
+	}
+	// 팝업창 바깥을 클릭해도 팝업이 닫히게 하기 (modal)<--->(반대 : modeless)
+	window.onclick = function(event){
+	  if(event.target==modal){
+	    modal.style.display = 'none'
+	  }
+
+	}
+	
 });
