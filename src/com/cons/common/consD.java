@@ -36,8 +36,5 @@ public class consD {
 	
 	// 상담신청 특정 유저 이름으로 검색
 	public static final String SQL_CONS_UID_SELECT =
-		"SELECT c2.CSNO, c2.CSUID, c2.CSAREA , c2.CSTEL , c1.CNAME" + 
-		" FROM COMPANY c1 INNER JOIN CONSULTING c2" + 
-		" ON c1.CNO =c2.CNO" + 
-		" WHERE c2.CSNO = ?";	
+		"SELECT c2.CSNO, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSNO = ?";	
 }

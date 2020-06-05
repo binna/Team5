@@ -35,9 +35,6 @@
 <link rel="stylesheet" href="CSS/yj.css" type="text/css">
 <title>너네 집</title>
 </head>
-<%
-	session.setAttribute("csuid", "1234");
-%>
 
 
 <!-- 본문 JS -->
@@ -102,30 +99,50 @@
 		</div>
 		<hr>
 	</header>
+	
+	<form action="consCsnoSelect.cons" method="post"> 
+		<input type="text" name="csno">
+		<input type="submit" value="검색">
+	</form>
+
 
 	<!-- 본문입니다. -->
 	<%
 		if (arr != null) {
 			for (int i = 0; i < arr.length; i++) {
 	%>
-	<form action="consUpdateOk.cons"  method="post">
-	<section class="consData">
-		<div class="cname">업체명 : <%=arr[i].getCname()%></div>
-		<div class="csno">업체번호 : <%=arr[i].getCsno()%></div>
-		<div class="consInfo csuid">신청이름 : <%=arr[i].getCsuid()%></div>
-		<div class="consInfo csarea">시공지역 : <%=arr[i].getCsarea()%>야야</div>
-		<div class="consInfo cstel">신청번호 : <%=arr[i].getCstel()%></div>
-		<!------------------------------------------------------------------------------------------------------>
-		<input class="consUpdate csno01" style="display: none;" name="csno" value="<%=arr[i].getCsno()%>">
-		<input class="consUpdate" style="display: none;" name="csuid" value="<%=arr[i].getCsuid()%>">
-		<input class="consUpdate" style="display: none;" name="csarea" value="<%=arr[i].getCsarea()%>">
-		<input class="consUpdate" style="display: none;" name="cstel" value="<%=arr[i].getCstel()%>">
-		<input type="button" class="update" value="수정">
-		<input type="submit" class="delete" value="삭제"
-			formaction="consDeleteOk.cons">
-		<input type="submit" class="updateComplete" value="완료">
-		<input type="button" class="cancel" value="취소">
-	</section>
+	<form action="consUpdateOk.cons" method="post">
+		<section class="consData">
+			<div class="cname">
+				업체명 :
+				<%=arr[i].getCname()%></div>
+			<div class="csno">
+				업체번호 :
+				<%=arr[i].getCsno()%></div>
+			<div class="consInfo csuid">
+				신청이름 :
+				<%=arr[i].getCsuid()%></div>
+			<div class="consInfo csarea">
+				시공지역 :
+				<%=arr[i].getCsarea()%>야야
+			</div>
+			<div class="consInfo cstel">
+				신청tel :
+				<%=arr[i].getCstel()%></div>
+			<!------------------------------------------------------------------------------------------------------>
+			<input class="consUpdate csno01" style="display: none;" name="csno"
+				value="<%=arr[i].getCsno()%>"> <input class="consUpdate"
+				style="display: none;" name="csuid" value="<%=arr[i].getCsuid()%>">
+			<input class="consUpdate" style="display: none;" name="csarea"
+				value="<%=arr[i].getCsarea()%>"> <input class="consUpdate"
+				style="display: none;" name="cstel" value="<%=arr[i].getCstel()%>">
+			<input type="button" class="update" value="수정"> <input
+				type="submit" class="delete" value="삭제"
+				formaction="consDeleteOk.cons"> <input type="submit"
+				class="updateComplete" value="완료"> <input type="button"
+				class="cancel" value="취소">
+
+		</section>
 	</form>
 	<br>
 	<br>
@@ -133,7 +150,6 @@
 		} // end for
 		} // end if
 	%>
-
 
 
 	<!-- 바닥입니다. -->

@@ -22,7 +22,7 @@ public class consDAO {
 		try {
 			Class.forName(consD.DRIVER);
 			conn = DriverManager.getConnection(consD.URL, consD.USERID, consD.USERPW);
-			System.out.println("WriteDAO 생성, 데이터 베이스 연결!");
+			System.out.println("consDAO 생성, 데이터 베이스 연결!");
 		} catch (Exception e) {
 			e.printStackTrace();
 			// throw e;
@@ -45,9 +45,8 @@ public class consDAO {
 	// ResultSet --> DTO 배열로 리턴
 	public consDTO[] createArray(ResultSet rs) throws SQLException {
 		consDTO[] arr = null; // DTO 배열
-
 		ArrayList<consDTO> list = new ArrayList<consDTO>();
-
+		
 		while (rs.next()) {
 			int csno = rs.getInt("CSno");
 			String csuid = rs.getString("CSuid");
@@ -60,6 +59,8 @@ public class consDAO {
 			list.add(dto);
 
 		} // end while
+		System.out.println("여기는 들어왔나요?");
+		
 
 		int size = list.size();
 
@@ -119,14 +120,17 @@ public class consDAO {
 	} // end deleteByUid()
 	
 	// 특정 uid 의 글 만 SELECT (조회수 증가 없슴!)
-	public consDTO [] selectByUid(int csuid) throws SQLException {
+	public consDTO [] selectByUid(int csno) throws SQLException {
 		consDTO [] arr = null;
+		System.out.println("하이요");
 		
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_UID_SELECT);
-			pstmt.setInt(1, csuid);
+			pstmt.setInt(1, csno);
 			rs = pstmt.executeQuery();
+			System.out.println("실행됬나요?");
 			arr = createArray(rs);
+			
 		} finally {
 			close();
 		}

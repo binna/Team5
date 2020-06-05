@@ -93,6 +93,14 @@ public class ConsController extends HttpServlet {
 			viewPage = "consManager.cons";
 			break;
 		
+		// 특정 상담번호로 상담신청 정보 출력
+		case "/consCsnoSelect.cons":
+			System.out.println("들어옴 select");
+			command = new SelectCommand();
+			command.execute(request, response);
+			viewPage = "consManager.jsp";
+			break;
+			
 		} // end switch
 		
 
