@@ -146,3 +146,8 @@ from member
 where MEMBER_NAME='홍길동'
 AND MEMBER_JUMIN1 ='890922'
 AND MEMBER_JUMIN2 ='1036718'
+
+
+INSERT INTO MEMBER values(
+'1','1','1','1','1','1','1','1','1','1','1',
+)

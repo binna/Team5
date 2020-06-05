@@ -2,8 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-	
+
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,37 +13,6 @@
 
 
 
-	<%!
-	
-	public static final String ADMIN_ID = "admin";
-	public static final String ADMIN_PW = "1234";
-%>    
-
-<% 
-	String userid = request.getParameter("userid");
-	String pw = request.getParameter("pw");
-
-	
-	String sessionName = "userid";
-	String sessionValue = userid;
-
-	
-	if(ADMIN_ID.equalsIgnoreCase(userid) && ADMIN_PW.equals(pw)){
-		out.println("<script>");
-		out.println("alert('로그인 성공');");
-		out.println("</script>");
-
-		
-		session.setAttribute(sessionName, sessionValue);		
-	}else{
-		out.println("<script>");
-		 out.println("alert('로그인 해주세요');"); 
-		out.println("</script>");
-
-		
-		session.removeAttribute(sessionName);
-	}
-%>
 
 <!-- MaxCDN 사용 -->
 
@@ -84,6 +53,28 @@
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
+	<%
+	System.out.print(session.getAttribute("id"));
+
+	if (session.getAttribute("id") != null) {
+%>
+<h2>로그인 상태입니다</h2>
+<form action="logout.jsp">
+	<input type="submit" value="로그아웃"><br>
+</form>
+<%
+	} else {
+%>
+<h2>로그인 상태가 아닙니다</h2>
+<form action="loginOk.jsp">
+	id: <input type="text" name="userid"><br> pw: <input
+		type="password" name="pw"><br> <input type="submit"
+		value="로그인"><br>
+</form>
+<%
+	}
+%>
+
 
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">

@@ -15,7 +15,8 @@
 	String sessionName = "userid";
 	String sessionValue = userid;
 
-	
+	System.out.print("loginOk 넘어옴");
+	System.out.print(pw);
 	if(ADMIN_ID.equalsIgnoreCase(userid) && ADMIN_PW.equals(pw)){
 		out.println("<script>");
 		out.println("alert('로그인 성공');");
