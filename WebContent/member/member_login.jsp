@@ -8,7 +8,7 @@
 <title>로그인</title>
 <script>
 	$(document)
-			.ready(
+			.ready( 
 					function() {
 						function check() {
 							var id = loginform.MEMBER_ID.value;

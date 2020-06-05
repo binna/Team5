@@ -31,7 +31,7 @@ function formSubmit(){
 </script>
 </head>
 <body>
-<table style="width:450px; height:20px; ali">
+<table style="width:450px; height:20px;">
 	<tr>
 		<td align="center" >
 			<b>아이디/비밀번호 찾기</b>

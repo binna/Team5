@@ -59,7 +59,7 @@
 	if (session.getAttribute("id") != null) {
 %>
 <h2>로그인 상태입니다</h2>
-<form action="logout.jsp">
+<form action="./member/logout.jsp">
 	<input type="submit" value="로그아웃"><br>
 </form>
 <%
@@ -85,7 +85,7 @@
 				<nav>
 					<ul>
 						<li><a href="#">커뮤니티</a></li>
-						<li><a href="storeMain.y">스토어</a></li>
+						<li><a href="storeMain.jsp">스토어</a></li>
 						<li><a href="consMain.jsp">인테리어시공</a></li>
 					</ul>
 				</nav>
@@ -110,6 +110,7 @@
 				<button onclick="location.href= 'MemberLogin.me'">
 					<i class="far fa-user"></i>
 				</button>
+
 
 			</div>
 		</div>

@@ -19,13 +19,14 @@ public class MemberLoginAction implements Action{
 			session.setAttribute("id", id);
   			if(memberdao.isAdmin(id)){
 				forward.setRedirect(true);
-				forward.setPath("./main.jsp"); 
+				forward.setPath("./managerMain.jsp"); 
 				return forward;
-			}else{
-				forward.setRedirect(true);
+			} else{ 
+				forward.setRedirect(true); 
 				forward.setPath("./main.jsp"); 
-				return forward;
-			}
+				return forward; 
+				}
+				 
 		}else if(check == 0){
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
