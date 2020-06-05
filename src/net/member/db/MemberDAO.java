@@ -26,7 +26,7 @@ public class MemberDAO {
 			ex.printStackTrace();
 		}
 	}
-	
+	// 회원 가입
 	public boolean insertMember(MemberBean mb) throws SQLException{
 		String sql=null;
 		boolean result = false;
@@ -64,7 +64,7 @@ public class MemberDAO {
 		
 		return result;
 	}
-	
+	// 로그인 체크
 	public int userCheck(String id, String pw) throws SQLException{
 		String sql=null;
 		int x=-1;
@@ -96,7 +96,7 @@ public class MemberDAO {
 		
 		return x;
 	}
-	
+	// 야이디 중복체크
 	public int confirmId(String id) throws SQLException{
 		String sql=null;
 		int x=-1;
@@ -122,9 +122,10 @@ public class MemberDAO {
 			}catch(Exception ex) {}
 		}
 		
+		System.out.println(sql);
 		return x;
 	}
-	
+	// 사용자 조회
 	public MemberBean getMember(String id) throws SQLException{
 		MemberBean member=null;
 		String sql=null;
@@ -169,7 +170,7 @@ public class MemberDAO {
 		
 		return member;
 	}
-	
+	// 회원 수정
 	public void updateMember(MemberBean mb) throws SQLException{
 		String sql=null;
 		
@@ -202,7 +203,7 @@ public class MemberDAO {
 			}catch(Exception ex) {}
 		}
 	}
-	
+	// 회원탈퇴
 	public int deleteMember(String id, String pw) throws SQLException{
 		String sql=null;
 		int x=-1;
@@ -240,7 +241,7 @@ public class MemberDAO {
 		
 		return x;
 	}	
-	
+	// 아이디/비밀번호 찾기
 	public MemberBean findId(String name, String jumin1, String jumin2)
 	throws SQLException{
 		String sql=null;
@@ -284,7 +285,7 @@ public class MemberDAO {
 		
 		return member;
 	}
-	
+	//관리자
 	public boolean isAdmin(String id){
 		String sql="select MEMBER_ADMIN from MEMBER where MEMBER_ID=?";
 		int member_admin=0;
@@ -313,7 +314,7 @@ public class MemberDAO {
 		}
 		return result;
 	}
-	
+	// 우편번호 검색
 	public List searchZipcode(String searchdong){
 		String sql="select * from zipcode where dong like ?";
 		List zipcodeList=new ArrayList();
@@ -352,4 +353,31 @@ public class MemberDAO {
 		}
 		return zipcodeList;
 	}
+	
+	// 로그인 세션처리
+	public String isMember(String id, String pwd) {
+	
+		String name = null;
+		String sql = "select name from member where id=? and pwd=?";
+		try {
+			con = ds.getConnection();
+			pstmt=con.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+			ResultSet rs = pstmt.executeQuery();
+
+			if(rs.next())
+			{
+				name = rs.getString(1);
+			}
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		return name;
+	}
+	
+
 }
