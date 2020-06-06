@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.community.command.Command;
-import com.community.command.WriteCommand;
-import com.community.command.ViewCommand;
+import com.community.command.*;
 
 @WebServlet("*.community")
 public class CommunityController extends HttpServlet {
@@ -47,6 +45,12 @@ public class CommunityController extends HttpServlet {
 		// 컨트롤러는 커멘드에 따라, 로직을 수행하고
 		// 결과를 내보낼 view를 결정한다.
 		switch(com) {
+		case "/community/list.community":
+			command = new ListCommand();
+			command.execute(request, response);
+			viewPage = "/community/list.jsp";
+			break;
+		
 		case "/community/write.community":
 			viewPage = "/community/write.jsp";
 			break;
@@ -61,6 +65,30 @@ public class CommunityController extends HttpServlet {
 			command = new ViewCommand();
 			command.execute(request, response);
 			viewPage = "/community/view.jsp";
+			break;
+			
+		case "/community/update.community":
+			command = new SelectCommand();
+			command.execute(request, response);
+			viewPage = "update.jsp";
+			break;
+			
+		case "/community/updateOk.community":
+			command = new UpdateCommand();
+			command.execute(request, response);
+			viewPage = "updateOk.jsp";
+			break;
+			
+		case "/community/deleteOk.community":
+			command = new DeleteCommand();
+			command.execute(request, response);
+			viewPage = "deleteOk.jsp";
+			break;
+			
+		case "/community/commentWriteOk.community":
+			command = new CommentWriteCommend();
+			command.execute(request, response);
+			viewPage = "commentWriteOk.jsp";
 			break;
 		
 		} // end switch()

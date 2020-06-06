@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ page import="com.community.beans.*" %>
+
+<%
+	// Controller 로부터 결과 데이터 받음
+	WriteDTO[] arr = (WriteDTO [])request.getAttribute("select");
+	int no = Integer.parseInt(request.getParameter("no"));
+	
+	//http://localhost:8888/Team5/community/update.community?no=3
+
+	String title = arr[0].getTitle();
+	String content = arr[0].getContent();
+	String keyword = arr[0].getKeyword();
+%>    
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -25,7 +37,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <!-- 내 스크립트 적용 -->
-<script type="text/javascript" src="../JS/BN/write_view_bn.js"></script>
+<script type="text/javascript" src="../JS/BN/update_bn.js"></script>
 
 <!-- 내 CSS 적용 -->
 <link rel="stylesheet" href="../CSS/BN/main_write_view_bn.css" type="text/css">
@@ -55,7 +67,8 @@
 	<header class="question-form__header">
 		<h2 class="question-form__header__heading text-black bold">질문하기</h2>
 		<div class="question-form__header__title form-group">
-		<input placeholder="제목을 적어주세요." class="form-control" maxlength="60" size="1" type="text" name="question[title]" id="question_title">
+		<input value="<%= title %>"
+			placeholder="제목을 적어주세요." class="form-control" maxlength="60" size="1" type="text" name="question[title]" id="question_title">
 		
         <p id="error1">제목을 7자 이상으로 적어주세요.</p>
         
@@ -98,7 +111,7 @@
         <div class="question-form__keywords__list__wrap keyword-list">
         
           <ul class="question-form__keywords__list">
-	          	<!-- 여기에다가 키워드 추가해주는 코드 만들기 -->
+	          <!-- 여기에다가 키워드 추가해주는 코드 만들기 -->
           </ul>
 
           <!-- 모달창 여는 버튼, data-toggle="modal" -->
@@ -117,9 +130,13 @@
       </div>
     </section>
     
+    <!-- 값을 불러 오기 위해 필요 -->
+    <input id="get_content_value" value="<%= content %>" hidden="true">
+    <input id="get_keyword_value" value="<%= keyword %>" hidden="true">
+
+    
     <!-- 키워드 값을 DB에 저장하기 위한 input value 설정 -->
     <input id="keyword_value" name="keyword" value="" hidden="true">
-    
     <!-- content 값을 리퀘스트 보내기 위해 -->
     <input id="content_value" name="content" value="" hidden="true">
     

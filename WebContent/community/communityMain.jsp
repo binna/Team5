@@ -40,7 +40,7 @@
 
 
 <!-- 내 CSS 적용 -->
-<link rel="stylesheet" href="../CSS/bn.css" type="text/css">
+<link rel="stylesheet" href="../CSS/BN/main_write_view_bn.css" type="text/css">
 
 
 <title>너네 집</title>

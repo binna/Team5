@@ -2,8 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="com.community.beans.*" %>
 
-<%	//Controller로부터 결과 데이터 받음
-	DTO[] arr = (DTO[])request.getAttribute("view");
+<%
+	//Controller로부터 결과 데이터 받음
+	WriteDTO[] arr = (WriteDTO[])request.getAttribute("view");
+	CommentDTO[] arr2 = (CommentDTO[])request.getAttribute("CommentList");
 %> 
 
 <%
@@ -44,12 +46,12 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <!-- 내 스크립트 적용 -->
-<script type="text/javascript" src="../JS/bn.js"></script>
+<script type="text/javascript" src="../JS/BN/write_view_bn.js"></script>
 
 <!-- CSS 적용 -->
 <link rel="stylesheet" href="../CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="../CSS/yj.css" type="text/css">
-<link rel="stylesheet" href="../CSS/bn.css" type="text/css">
+<link rel="stylesheet" href="../CSS/BN/main_write_view_bn.css" type="text/css">
 
 
 
@@ -139,6 +141,13 @@
 
       <!-- 질문 제목 title -->
       <h1 class="qna-detail__content__header-title"><%= title %></h1>
+      
+      <!-- 수정 삭제 버튼 -->
+      <div class="qna-detail__content__action-group">
+      <a class="button button--color-gray-14-inverted button--size-30 button--shape-4 qna-detail__content__action-item" href="update.community?no=<%= no %>">수정</a>
+
+      <button onclick="chkDelete(<%= no %>)" class="button button--color-gray-14-inverted button--size-30 button--shape-4 qna-detail__content__action-item" type="button">삭제</button>
+      </div>
       </header>
 	
       <!-- 모바일 버전 사용자 아이디 노출 -->
@@ -169,7 +178,7 @@
 		<!-- 사용자 정보와 공유 버튼 -->
 		<aside class="qna-detail-actions qna-detail__footer__action-group">
 			<div class="drop-down qna-detail-actions__wrapper">
-				<button class="view_btn button--color-gray-14-inverted button--size-30 button--shape-round qna-detail-actions__action" type="button">
+				<button class="view_btn button--color-gray-14-inverted button--size-30 qna-detail-actions__action" type="button">
 					<span class="qna-detail-actions__action__label">공유</span>
 				</button>
 			</div>
@@ -193,21 +202,21 @@
       <section class="qna-detail__comment-section">
 	      <section class="comment-feed">
 	      	<!-- 댓글이 몇개인지 파악하여 노출 -->
-		    <h1 class="comment-feed__header">댓글&nbsp;<span class="comment-feed__header__count">숫자로댓글개수</span></h1>
+		    <h1 class="comment-feed__header">댓글&nbsp;<span class="comment-feed__header__count"><%= arr2.length %></span></h1>
 		      
 		    <!-- 작성한 댓글 db에 보내기 위한 form -->
-		    <form class="comment-feed__form">
+		    <form class="comment-feed__form" action="commentWriteOk.community?no=<%= no %>" accept-charset="UTF-8" method="post">
 		      <div class="comment-feed__form__input">
 		        <!-- 댓글 택스트 작성 영역 -->
 		        <div class="comment-feed__form__content">
 		          <!-- 댓글 hint, 댓글이 없을때만 노출하기 -->
 		          <div class="comment-content-input">
-		            <div class="comment-content-iDDt comment-feed__form__content__text" data-ph="댓글을 남겨 보세요." contenteditable="true"></div>
+		            <input class="comment-content-iDDt comment-feed__form__content__text" placeholder="댓글을 남겨 보세요." name="commentContent">
 		          </div>
 		        </div>
 		        <!-- 댓글 등록 버튼, 등록하는 순간 DB에 저장되어야 함 -->
 		        <div class="comment-feed__form__actions">
-		          <button class="comment-feed__form__submit" aria-label="등록" type="submit" disabled="">등록</button>
+		          <button class="comment-feed__form__submit" aria-label="등록" type="submit">등록</button>
 		        </div>
 							
 		      </div>
@@ -215,21 +224,29 @@
 		      
 		      <!-- 댓글 리스트 보는 곳 -->
 		      <ul class="comment-feed__list">
+		        <%
+			        if(arr2 != null) {
+			    		for(int i = 0; i < arr2.length; i++) {
+		        %>
 		        <!-- 실제 댓글 , 댓글 하나당 아래의 li 전체가 추가되어야 함-->
 		        <li class="comment-feed__list__item">
 		          <article class="comment-feed__item">
 		            <!-- 댓글 남긴 사람과 댓글 내용 -->
 		            <p class="comment-feed__item__content">
 		              <span class="comment-feed__item__content__author__name">아이디</span>
-		              <span class="comment-feed__item__content__content">댓글 내용</span>
+		              <span class="comment-feed__item__content__content"><%= arr2[i].getCcomment() %></span>
 		            </p>
 		        
 		            <!-- 댓글 등록 시간 노출 -->
 		            <footer class="comment-feed__item__footer">
-		              <time class="comment-feed__item__footer__time">10분 전</time>
+		              <time class="comment-feed__item__footer__time"><%= arr2[i].getCregDate() %></time>
 		            </footer>
 		          </article>
 		        </li>
+		        <%
+			    		} // end for
+			        } // end if
+		        %>
 		      </ul>
 		      
 	      </section>
@@ -242,7 +259,9 @@
       <aside class="qna-detail-aside qna-detail__aside">
         <div class="qna-detail-aside__section">
           <h2 class="qna-detail-aside__section__header">인테리어 궁금한 것물어보세요!</h2>
-          <button class="view_btn button--color-bluebutton--size-60 button--shape-4  qna-detail-aside__section__new-question-button" type="button">질문하러 가기</button>
+          <a href="write.community">
+            <button class="view_btn button--size-60 button--color-blue qna-detail-aside__section__new-question-button" type="button">질문하러 가기</button>
+          </a>
         </div>
       </aside>
 
@@ -263,7 +282,7 @@
 		<!-- 공유하기 버튼 -->
 		<aside class="qna-detail-actions question__sidebar__actions">
           <div class="drop-down qna-detail-actions__wrapper">
-	        <button class="view_btn button--color-gray-14-inverted button--size-30 button--shape-round qna-detail-actions__action" type="button">
+	        <button class="view_btn button--color-gray-14-inverted button--size-30 qna-detail-actions__action" type="button">
               <span class="qna-detail-actions__action__label">공유</span>
             </button>
           </div>
@@ -272,10 +291,12 @@
  		<!-- 인테리어 궁금한 것 물어보세요 문구, 질문하러 가기 버튼 -->
  		<aside class="qna-detail-aside qna-detail__container__sidebar__aside">
  		  <div class="qna-detail-aside__section">
- 		  <!-- 인테리어 궁금한 것 물어보세요 문구 -->
+ 		    <!-- 인테리어 궁금한 것 물어보세요 문구 -->
 		    <h2 class="qna-detail-aside__section__header">인테리어 궁금한 것 물어보세요!</h2>
- 		  <!-- 질문하러 가기 버튼 -->
- 		  <button class="view_btn button--color-blue button--size-60 button--shape-4 qna-detail-aside__section__new-question-button" type="button">질문하러 가기</button> 
+ 		    <!-- 질문하러 가기 버튼 -->
+ 		    <a href="write.community">
+ 		      <button class="view_btn button--color-blue button--size-60 qna-detail-aside__section__new-question-button" type="button">질문하러 가기</button>
+ 		  	</a> 
  		  </div>
 		</aside>
         		

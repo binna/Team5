@@ -5,32 +5,42 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.community.beans.DAO;
-import com.community.beans.DTO;
+import com.community.beans.CommentDAO;
+import com.community.beans.CommentDTO;
+import com.community.beans.WriteDAO;
+import com.community.beans.WriteDTO;
 
 public class ViewCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		DAO dao = new DAO();	// DAO 객체 생성
-		DTO[] arr = null;
+		WriteDAO dao = new WriteDAO();	// DAO 객체 생성
+		WriteDTO[] arr = null;
 		
 		// Qno 값 받아 오기
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		try {
 			// 트랜잭션 수행
-			arr = dao.readByQno(no);
-			
-			// "view"란 name으로 request에 arr 값 전달
-			// 즉, request에 담아서 컨트롤러에 전달되는 셈!
+			arr = dao.clickReadByQno(no);
 			request.setAttribute("view", arr);
 			
 		} catch(SQLException e) {
-			// 만약 ConnectionPool을 사용한다면 
-			// 여기서 NamingException도 catch 해야 한다.
 			e.printStackTrace();
 		} // end try catch
+		
+		// 등록된 댓글 모두 보기
+		CommentDAO dao2 = new CommentDAO();	// DAO 객체 생성
+		CommentDTO[] arr2 = null;
+		
+		try {
+			// 트랜젝션 수행
+			arr2 = dao2.select();
+			request.setAttribute("CommentList", arr2);
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
 
 	} // end execute
 
