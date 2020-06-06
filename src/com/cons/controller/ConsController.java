@@ -72,7 +72,7 @@ public class ConsController extends HttpServlet {
 			viewPage = "consMain.jsp";
 			break;
 		
-		// 상담매니저 페이지
+		// 상담매니저 페이지---------------------------------------------------------------------------
 		case "/consManager.cons":
 			command = new ConsListCommand();
 			command.execute(request, response);
@@ -92,10 +92,43 @@ public class ConsController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "consManager.cons";
 			break;
-		
-		// 특정 상담번호로 상담신청 정보 출력
+			
+		// 검색 부분----------------------------------------------------------------------------------------------------	
+		// 상담순서
 		case "/consCsnoSelect.cons":
-			System.out.println("들어옴 select");
+			//System.out.println("들어옴 consCsnoSelect");
+			command = new SelectCommand();
+			command.execute(request, response);
+			viewPage = "consManager.jsp";
+			break;
+		
+		// 상담신청아이디
+		case "/consCsuidSelect.cons":
+			//System.out.println("들어옴 consCsuidSelect");
+			command = new SelectCommand();
+			command.execute(request, response);
+			viewPage = "consManager.jsp";
+			break;
+
+		// 상담신청 업체명
+		case "/consCnameSelect.cons":
+			//System.out.println("들어옴 consCnameSelect");
+			command = new SelectCommand();
+			command.execute(request, response);
+			viewPage = "consManager.jsp";
+			break;
+		
+		// 상담신청 전화번호
+		case "/consCstelSelect.cons":
+			//System.out.println("들어옴 consCstelSelect");
+			command = new SelectCommand();
+			command.execute(request, response);
+			viewPage = "consManager.jsp";
+			break;
+			
+		// 상담신청 시공지역
+		case "/consCsareaSelect.cons":
+			//System.out.println("들어옴 consCareaSelect");
 			command = new SelectCommand();
 			command.execute(request, response);
 			viewPage = "consManager.jsp";

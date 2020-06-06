@@ -16,12 +16,12 @@ public class WriteCommand implements Command {
 		comDAO dao = new comDAO();
 
 		// 매개변수 받아오기
-		String csuid = request.getParameter("csuid");
-		int cno = Integer.parseInt(request.getParameter("cno"));
-		String carea = request.getParameter("CompanyArea");
-		String c1 = request.getParameter("cstel01");
-		String c2 = request.getParameter("cstel02");
-		String c3 = request.getParameter("cstel03");
+		String csuid = request.getParameter("csuid").trim();
+		int cno = Integer.parseInt(request.getParameter("cno").trim());
+		String carea = request.getParameter("CompanyArea").trim();
+		String c1 = request.getParameter("cstel01").trim();
+		String c2 = request.getParameter("cstel02").trim();
+		String c3 = request.getParameter("cstel03").trim();
 		String cstel = c1 + c2 + c3;
 
 		// System.out.println(csuid + " " + cno + " " + carea + " " + cstel);

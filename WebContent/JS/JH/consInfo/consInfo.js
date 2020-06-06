@@ -16,7 +16,7 @@ $(document)
 					function parseJSON() {
 
 						for (var i = 0; i < consCategory.length; i++) {
-							console.log("1");	// 순서확인용
+							// console.log("1");	// 순서확인용
 							// 키워드로 장소검색
 							$
 									.ajax(
@@ -30,7 +30,7 @@ $(document)
 													'query' : consCategory[i],
 												},
 												success : function(data) {
-													console.log("3"); 	// 순서확인용
+													// console.log("3"); 	// 순서확인용
 													
 													// 호출 성공하면 작성할 내용
 													if (data.documents.length != 0) { // 값이
@@ -42,11 +42,11 @@ $(document)
 													}
 												}
 											}).done(function(data){
-										console.log(data);
+										// console.log(data);
 									});
-							console.log("2");	// 순서확인용
+							// console.log("2");	// 순서확인용
 						} // end for
-//						console.log(table);
+						// console.log(table);
 						
 					} // end parseJSON();
 
@@ -58,8 +58,8 @@ $(document)
 						
 						table += "<table>";
 						for (var j = 0; j < documents.length; j++) {
-							console.log("4" + documents.length);	// 순서확인용
-							console.log(j);	// 순서확인용
+							// console.log("4" + documents.length);	// 순서확인용
+							// console.log(j);	// 순서확인용
 
 							
 							

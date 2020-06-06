@@ -44,7 +44,7 @@
 <%=session.getAttribute("csuid")%>
 	;
 	$(document).on('click', '.btnCons', function() {
-		console.log(csuid);
+		// console.log(csuid);
 		if (csuid == '1234') {
 			//			console.log($(this).parent().children('.comNo').text().trim());
 			//			alert('로그인 했슴다.');
@@ -194,8 +194,8 @@
 					<div>목공</div>
 				</div>
 			</div>
-			<div class="mLeft"></div>
-			<div class="mRight"></div>
+			<div class="mLeft" onclick="moveScrollLeft()"></div>
+			<div class="mRight" onclick="moveScrollRight()"></div>
 		</article>
 		<article id="consList"></article>
 		<div id="ex">

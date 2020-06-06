@@ -7,7 +7,7 @@ html, body {
 /*----------- 헤더입니다 -----------*/
 #cons_header {
 	display: block;
-	width: 60%;
+	width: 30%;
 	padding: 40px 20px 0;
 	margin: 0 auto 10px;
 }
@@ -54,7 +54,7 @@ html, body {
 
 #cons_section {
 	display: block;
-	width: 60%;
+	width: 30%;
 	padding: 30px 40px;
 	margin: 0 auto;
 	vertical-align: middle;
@@ -139,7 +139,7 @@ html, body {
 }
 
 .userNameInput {
-	width: 100%;
+	width: 494px;
 	height: 30px;
 	border: 1px solid #bebebe;
 	border-radius: 5px;
@@ -161,7 +161,7 @@ html, body {
 
 .ctel01, .ctel02, .ctel03 {
 	display: inline-block;
-	width: 140px;
+	width: 148.8px;
 	height: 30px;
 	border-radius: 5px;
 	text-align: center;

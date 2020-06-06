@@ -51,6 +51,7 @@
 
 <!-- JS 링크 -->
 <script src="JS/JH/consWrite/consWrite.js"></script>
+<script src="JS/JH/consWrite/consWriteValidation.js"></script>
 
 
 <title>너네 집</title>
@@ -79,9 +80,8 @@
 	</header>
 
 
-	<!-- post방식 -->
-	<form name="frm" action="consWriteOk.cons" method="post"
-		onsubmit="return chkSubmit()">
+	<!-- post방식  action="consWriteOk.cons" -->
+	<form name="frm" method="post"  action="consWriteOk.cons" class="searchForm">
 		<section id="cons_section">
 			<article id="cons_section_header">
 				<h1 class="consultation-form__header__title">
@@ -122,7 +122,7 @@
 					class="userNameInput"></input>
 				<div class="userTelInfo">
 					상담받을 전화번호를 알려주세요.
-					<div class="userTelHint">010을 제외한 8글자를 적어주세요.</div>
+					<div class="userTelHint">전화번호를 적어주세요.</div>
 					<input type="text" name="cstel01" placeholder="010" class="ctel01">
 					- <input type="text" name="cstel02" placeholder="1234"
 						class="ctel02"> - <input type="text" name="cstel03"
@@ -131,14 +131,11 @@
 				<input type="hidden" value="<%=cno%>" name="cno">
 
 
-				<article id="cons_section_submit_cancel">
-					<button type="submit" class="submit">SUBMIT</button>
-					<button type="button" class="cancel">CANCEL</button>
-				</article>
+					<input type="submit" class="submit" value="SUBMIT">
+					<input type="button" class="cancel" value="CANCEL">
 			</article>
 		</section>
 	</form>
-
 
 
 	<!-- 바닥입니다. -->

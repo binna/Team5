@@ -106,83 +106,81 @@ $(document)
 						$(this).children('div').css({
 							'color' : '#0080c0'
 						});
+						isCheckLR();
 					}); // end click function
 
-					var _scrollX = $('.cate01').scrollLeft();
-					$('.mRight').click(function() {
+					moveScrollRight = function() {
+						
+						var _scrollX = $('#category').scrollLeft();
+						$('#category').animate({scrollLeft : (_scrollX + 292)},500,function(){isCheckLR()});
+						isCheckLR();
+					}; // end left click
 
-						$('#category').scrollLeft(_scrollX + 100);
-						// console.log(_scrollX);
-						//
-						if (_scrollX >= $('.cate01').scrollLeft() + 300) {
-							_scrollX = $('.cate01').scrollLeft() + 300
-							console.log(_scrollX);
-							$('.mLeft').css({
-								'visibility' : 'visible'
-							})
-							$('.mRight').css({
-								'visibility' : 'hidden'
-							})
-						} else {
-							_scrollX += 300;
-						}
+					moveScrollLeft = function() {
+						var _scrollX = $('#category').scrollLeft();
+						$('#category').animate({scrollLeft : (_scrollX - 292)},500,function(){isCheckLR()});
+						
+					}; // end right click
 
-					}); // end right event
-
-					$('.mLeft').click(function() {
-						$('#category').scrollLeft(_scrollX - 100);
-						if (_scrollX == $('.cate01').scrollLeft()) {
-							$('.mLeft').css({
-								'visibility' : 'hidden'
-							})
-							$('.mRight').css({
-								'visibility' : 'visible'
-							})
-						} else {
-							_scrollX -= 300;
-						}
-					}); // end left event
-
-					$('#category').hover(
-							function() {
-								if (_scrollX == $('.cate01').scrollLeft()) {
-									$('.mLeft').css({
-										'visibility' : 'hidden'
-									})
-									$('.mRight').css({
-										'visibility' : 'visible'
-									})
-								} else if (_scrollX == $('.cate01')
-										.scrollLeft() + 300) {
-									console.log(_scrollX);
-									$('.mLeft').css({
-										'visibility' : 'visible'
-									})
-									$('.mRight').css({
-										'visibility' : 'hidden'
-									})
-								}
-							}); // end 화살표 호버 이벤트
+					$('#category')
+							.hover(
+									function() {
+										console.log($('#category').scrollLeft());
+										if (_scrollX = $('#category')
+												.scrollLeft() != 292) {
+											$('.mRight').css({
+												'visibility' : 'visible'
+											})
+										} else if (_scrollX = $('#category')
+												.scrollLeft() != 0) {
+											$('.mLeft').css({
+												'visibility' : 'visible'
+											})
+										}
+										;
+										isCheckLR();
+									}); // end mouseHover
 
 					$('#category').mouseleave(function() {
-						$('.mLeft').css({
-							'visibility' : 'hidden'
-						})
+
 						$('.mRight').css({
 							'visibility' : 'hidden'
 						})
-					});
+						$('.mLeft').css({
+							'visibility' : 'hidden'
+						})
+					}); // end mouseLeave
 
 					$('.mLeft').hover(function() {
 						$('.mLeft').css({
 							'visibility' : 'visible'
-						})
-					});
+						});
+						isCheckLR();
+					}); // end mLeft hover
 
 					$('.mRight').hover(function() {
 						$('.mRight').css({
 							'visibility' : 'visible'
-						})
-					});
+						});
+						isCheckLR();
+					}); // end mRight hover
 
+					function isCheckLR() {
+						if (_scrollX = $('#category').scrollLeft() >= 292) {
+							$('.mRight').css({
+								'visibility' : 'hidden'
+							})
+							$('.mLeft').css({
+								'visibility' : 'visible'
+							})
+						} else if (_scrollX = $('#category').scrollLeft() <= 0) {
+							$('.mRight').css({
+								'visibility' : 'visible'
+							})
+							$('.mLeft').css({
+								'visibility' : 'hidden'
+							})
+						}
+					} // end isCheckLR
+				
 				}) // end JS

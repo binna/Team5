@@ -59,8 +59,7 @@ public class consDAO {
 			list.add(dto);
 
 		} // end while
-		System.out.println("여기는 들어왔나요?");
-		
+		// System.out.println("여기는 들어왔나요?");
 
 		int size = list.size();
 
@@ -119,14 +118,81 @@ public class consDAO {
 		return cnt;
 	} // end deleteByUid()
 	
-	// 특정 uid 의 글 만 SELECT (조회수 증가 없슴!)
-	public consDTO [] selectByUid(int csno) throws SQLException {
+	// 특정 CSNO 의 글 만 SELECT (조회수 증가 없슴!)
+	public consDTO [] selectByCsno(int csno) throws SQLException {
 		consDTO [] arr = null;
-		System.out.println("하이요");
 		
 		try {
-			pstmt = conn.prepareStatement(consD.SQL_CONS_UID_SELECT);
+			pstmt = conn.prepareStatement(consD.SQL_CONS_CSNO_SELECT);
 			pstmt.setInt(1, csno);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+			
+		} finally {
+			close();
+		}
+		return arr;
+	}
+
+	// 특정 CSUID 의 글 만 SELECT (조회수 증가 없슴!)
+	public consDTO [] selectByCsuid(String csuid) throws SQLException {
+		consDTO [] arr = null;
+		System.out.println("selectByCsuid 들어옴");
+		
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_CONS_CSUID_SELECT);
+			pstmt.setString(1, csuid);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+			
+		} finally {
+			close();
+		}
+		return arr;
+	}
+
+	// 특정 CNAME 의 글 만 SELECT (조회수 증가 없슴!)
+	public consDTO [] selectByCNAME(String csuid) throws SQLException {
+		consDTO [] arr = null;
+		System.out.println("selectByCsuid 들어옴");
+		
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_CONS_CNAME_SELECT);
+			pstmt.setString(1, csuid);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+			
+		} finally {
+			close();
+		}
+		return arr;
+	}
+	
+	// 특정 CTEL 의 글 만 SELECT (조회수 증가 없슴!)
+	public consDTO [] selectByCTEL(String csuid) throws SQLException {
+		consDTO [] arr = null;
+		System.out.println("selectByCsuid 들어옴");
+		
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_CONS_CTEL_SELECT);
+			pstmt.setString(1, csuid);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+			
+		} finally {
+			close();
+		}
+		return arr;
+	}
+
+	// 특정 CSAREA 의 글 만 SELECT (조회수 증가 없슴!)
+	public consDTO [] selectByCSAREA(String csuid) throws SQLException {
+		consDTO [] arr = null;
+		System.out.println("selectByCSAREA 들어옴");
+		
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_CONS_CSAREA_SELECT);
+			pstmt.setString(1, csuid);
 			rs = pstmt.executeQuery();
 			System.out.println("실행됬나요?");
 			arr = createArray(rs);
@@ -136,5 +202,6 @@ public class consDAO {
 		}
 		return arr;
 	}
+	
 
 } // end class

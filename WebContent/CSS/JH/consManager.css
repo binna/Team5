@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+html, body {
+	font-size: 15px;
+}
+
+#consManager {
+	display: block;
+	width: 60%;
+	padding: 0px 20px 0;
+	margin: 0 auto 10px;
+}
+
+section {
+	margin-bottom: 30px;
+}
+
+#searchMenu>div {
+	display: inline-block;
+	padding: 5px; 3 px;
+	border: 1px solid #bebebe;
+	border-radius: 5px;
+}
+
+.consData {
+	padding: 10px 0px;
+}
+
+.Info>div {
+	margin: 10px 0px;
+}
+
+.Info {
+	position: relative;
+	border: 1px solid #bebebe;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.update, .updateComplete {
+	position: absolute;
+	right: 60px;
+	top: 10px;
+	padding: 10px 8px;
+	font-weight: bold;
+}
+
+.delete, .cancel {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	padding: 10px 8px;
+	font-weight: bold;
+}

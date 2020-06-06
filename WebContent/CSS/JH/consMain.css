@@ -4,6 +4,8 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
+html {scroll-behavior: smooth; /* 부드러게 */}
+
 /*-------------- 메뉴 입니당 --------------*/
 .mLeft {
 	background-image: url('../../IMG_JH/left.png');
