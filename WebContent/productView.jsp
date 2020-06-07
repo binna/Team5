@@ -38,6 +38,7 @@ font-family: 'Jua', sans-serif; -->
 
 
 <script type="text/javascript" src="JS/wk.js"></script>
+<script type="text/javascript" src="JS/yj.js"></script>
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="CSS/yj.css" type="text/css">
 <link rel="stylesheet" href="CSS/wk.css" type="text/css">
@@ -182,6 +183,162 @@ table, th, td {
 		</div>
 
 	</div>
+	
+	
+	
+	<!-------------------------------문의입니다. ******복사할부분----------------------------------------------->
+	<div id="detail_question">
+		<div class="row">
+		<h1 id = "detail_question_1" class="col-md-10">문의<a> ${fn:length(Qlist) }</a> </h1>
+		<div class="col-md-2" id = "detail_questiondiv_2"><h1 id = "detail_question_2">문의하기</h1></div>
+		</div>
+
+		<div id="detail_question_list">
+		<c:choose>
+				<c:when test="${empty Qlist || fn:length(Qlist) ==0}">
+					<div id="main_qlist">
+						<h1>아직 문의한 내역이 없습니다.</h1>
+					</div>
+				</c:when>
+				<c:otherwise>
+					
+					
+					<c:forEach var="dto" items='${Qlist }'>
+					<br><br>
+					<div id ="detail_question_list_container" >
+					<h2 id="detail_question_list_2"><a>${dto.pqid }</a> | 구매 | 
+					<c:if test="${dto.pqanswer!='답변준비중 입니다.' }">
+					<a id = "ql_status" style="color: #fff; background-color: rgb(53, 197, 240);">
+					답변완료
+					</a>
+					</c:if>
+					<c:if test="${dto.pqanswer=='답변준비중 입니다.' }">
+					<a id = "ql_status" style="color: rgb(53, 197, 240); background-color: #fff; border: 1px solid  rgb(53, 197, 240) ">
+					답변대기
+					</a>
+					</c:if>
+					</h2>
+					<br>
+					<h2 id="detail_question_list_1">[ ${dto.pbrand } ] ${dto.pname } </h2>
+					<br>
+					<h2 id="detail_question_list_3">${dto.pquid } | <a>${dto.pqregdate }</a></h2>
+					<br>
+					<br>
+					<br>
+					<br>
+					<h2 id="detail_question_list_4">Q. <a> ${dto.pqcontent }</a></h2>
+					<br>
+					<h2 id="detail_question_list_5">A. <a> ${dto.pqanswer }</a></h2>
+					
+						
+						</div>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
+		</div>
+
+
+	</div>
+	
+	<!-- --문의 등록 -->
+	<div id="QModal" >
+
+	  <!-- Modal content -->
+	  <div class="QModal_content">
+	    <span class="Qclose">&times;</span>
+	    <br>
+	    <br>
+	    <br>
+	  
+	  
+	  
+	    <h1 id="QModal_title">상품 문의하기</h1>
+	    <br>
+	    <br>
+	    <br>
+	    <h2 class ="QModal_h2">문의내용</h2>
+	    <form id ="QModal_form" action="QuestionWriteOk.y" method="post">
+		    <input id="QModal_input" type="text" name="pqcontent" placeholder="문의내용을 입력하세요 ">
+		    <input type="hidden" name = "pquid" value="<%= session.getAttribute("id")%>"><!-- TODO uid 들어가ㅣ -->
+		    <input type="hidden" name = "pqanswer" value="답변준비중 입니다.">
+		    <input type="hidden" name = "pqpid" value="${param.pid }">
+	  	<br>
+	  	<br>
+	  	<br>
+	  	<h3 id="QModal_detail">문의내용에 대한 답변은 ‘마이페이지 > 나의 쇼핑 > 나의 문의내역’ 또는 ‘상품 상세페이지’에서 확인 가능합니다.</h3>
+	  	<button id ="QModal_btn" type="submit">완료</button>
+	  	</form>
+	  </div>
+	
+	</div>
+
+
+
+	<!-------------------------------배송안내입니다. ******복사할 부분----------------------------------------------->
+	<div class="clear"></div>
+	<br>
+	<div id="detail_delivery">
+		<h1>배송</h1>
+		<table>
+			<tr>
+				<td>배송</td>
+				<td>일반택배</td>
+			</tr>
+			<tr>
+				<td>배송비</td>
+				<td>무료배송</td>
+			</tr>
+			<tr>
+				<td>도서산간 추가배송비</td>
+				<td>5,000원</td>
+			</tr>
+			<tr>
+				<td>배송불가 지역</td>
+				<td>배송불가 지역이 없습니다.</td>
+			</tr>
+		</table>
+		<br> <br> <br> <br>
+		<h1>교환/환불</h1>
+		<table>
+			<tr>
+				<td>반품배송비</td>
+				<td>3,000원 (최초 배송비가 무료인 경우 6,000원 부과)</td>
+			</tr>
+			<tr>
+				<td>교환배송비</td>
+				<td>6,000원</td>
+			</tr>
+			<tr>
+				<td>보내실 곳</td>
+				<td>(42982) 서울 강남구 테헤란로 146</td>
+			</tr>
+		</table>
+		<br> <br> <br> <br> <br> <br>
+		<h1>반품/교환 사유에 따른 요청 가능 기간</h1>
+		<h3>반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비, 반품지 주소 등을 협의하신 후 반품상품을 발송해
+			주시기 바랍니다.</h3>
+		<h3>1. 구매자 단순 변심은 상품 수령 후 7일 이내 (구매자 반품배송비 부담)</h3>
+		<h3>2. 표시/광고와 상이, 상품하자의 경우 상품 수령 후 3개월 이내 혹은 표시/광고와 다른 사실을 안 날로부터
+			30일 이내. 둘 중 하나 경과 시 반품/교환 불가 (판매자 반품배송비 부담)</h3>
+
+		<br> <br> <br> <br> <br> <br>
+		<h1>반품/교환 불가능 사유</h1>
+		<h3>아래와 같은 경우 반품/교환이 불가능합니다.</h3>
+		<br>
+		<h3>1. 반품요청기간이 지난 경우</h3>
+		<h3>2. 구매자의 책임 있는 사유로 상품 등이 멸실 또는 훼손된 경우 (단, 상품의 내용을 확인하기 위하여 포장
+			등을 훼손한 경우는 제외)</h3>
+		<h3>3. 포장을 개봉하였으나 포장이 훼손되어 상품가치가 현저히 상실된 경우 (예: 식품, 화장품)</h3>
+		<h3>4. 구매자의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 (라벨이 떨어진 의류 또는
+			태그가 떨어진 명품관 상품인 경우)</h3>
+		<h3>5. 시간의 경과에 의하여 재판매가 곤란할 정도로 상품 등의 가치가 현저히 감소한 경우 (예: 식품, 화장품)</h3>
+		<h3>6. 고객주문 확인 후 상품제작에 들어가는 주문제작상품</h3>
+		<h3>7. 복제가 가능한 상품 등의 포장을 훼손한 경우 (CD/DVD/GAME/도서의 경우 포장 개봉 시)</h3>
+
+	</div>
+
+	<!-- ------------------------------------------------------------------ -->
+	
 	<!------------- modal입니다 -------------------------------------------------------- -->
 
 	<!-- The Modal -->
@@ -217,8 +374,8 @@ table, th, td {
 				<input type="hidden" name="ptotalprice" id="result_price" >
 				<input type="hidden" name="pclpnt" id="result_cnt" >
 				
-				<label for="uname"><b>Username</b></label> 
-				<input id="pcuid" type="text" placeholder="Enter Username" name="pcuid" required> 
+				<label for="uname"><b>UserID</b></label> 
+				<input id="pcuid" type="text" placeholder="<%=session.getAttribute("id") %>" name="pcuid" value = <%=session.getAttribute("id") %> readonly="readonly" required> 
 				
 				<label for="addressnum"><b>addressNum</b></label>
 				 <input id="pcaddressnum" type="text"placeholder="우편번호 입력" name="pcaddressnum" required>

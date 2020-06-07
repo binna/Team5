@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yoon.write.ViewCommand;
 import com.yoon.write.Command;
 import com.yoon.write.pqListbypidCommand;
 import com.yoon.write.pqListbypquidCommand;
@@ -72,10 +73,10 @@ public class controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "QuestionUpdateOk.jsp";
 			break;
-		case "/detail_copy2.y":
+		case "/TODO.y":
 			command = new pqListbypidCommand();
 			command.execute(request, response);
-			viewPage = "detail_copy2.jsp";
+			viewPage = "TODO.jsp";
 			break;
 		case "/QuestionWriteOk.y":
 			/* command = new pqListbypidCommand(); */// TODO
@@ -93,6 +94,12 @@ public class controller extends HttpServlet {
 			command = new pqListbypquidCommand();
 			command.execute(request, response);
 			viewPage = "uQuestionList.jsp";
+			break;
+			
+		case "/productView.y":
+			command = new ViewCommand();
+			command.execute(request, response);
+			viewPage = "productView.jsp";
 			break;
 		}
 

@@ -10,8 +10,8 @@ public class D {
 	public static String SQL_WRITE_SELECT = // 모든물건가져오기
 			"SELECT * FROM product";
 
-	public static String SQL_WRITE_SELECT_BY_UID = // 카테고리별로 물건 가져오기
-			"SELECT * FROM product WHERE pcode=?";
+	//public static String SQL_WRITE_SELECT_BY_UID = // 카테고리별로 물건 가져오기
+	//		"SELECT * FROM product WHERE pcode=?";
 
 	public static String SQL_PQLIST_SELECT_ALL_TODO = // 관리자모드에서 모든 문의내역 확인
 			"SELECT p.PBRAND ,p.PNAME ,q.PQCONTENT ,q.PQANSWER " + "FROM PRODUCT p JOIN PQUESTION q "
@@ -32,5 +32,8 @@ public class D {
 	public static final String SQL_INSERT_QUESTION = "INSERT INTO PQUESTION VALUES (pquestion_seq.nextval,?,?,sysdate,?,?)";
 	public static final String SQL_DELEDTE_QUESTION 
 				= "DELETE FROM PQUESTION WHERE pqid = ?";
+	
+	 public static final String SQL_WRITE_SELECT_BY_UID =
+			  "SELECT * FROM product WHERE pid = ?";
 
 }

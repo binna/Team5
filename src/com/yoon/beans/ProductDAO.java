@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.kim.beans.WriteDTO;
 import com.yoon.common.D;
 
 public class ProductDAO {
@@ -88,6 +89,22 @@ public class ProductDAO {
 		  return arr;
 	  }
 	  
-	 
+
+		public ProductDTO [] readByUid(int pid) throws SQLException{
+			ProductDTO [] arr = null;
+			
+			try {
+				pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT_BY_UID);
+				pstmt.setInt(1, pid);
+				rs = pstmt.executeQuery();
+				arr = createArray(rs);
+			} finally {
+				close();
+			}
+			
+			return arr;
+		} // end readByUid()
+		
+		
 
 }
