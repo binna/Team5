@@ -109,7 +109,8 @@ font-family: 'Jua', sans-serif; -->
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">주문배송내역 조회</a></li>
+					
+						<li><a href="#" onclick="javascript:page_move('uOrderList.woo', '${id }');">주문배송내역 조회</a></li>
 						<li><a href="#">상품 스크랩북</a></li>
 						<li id="Q_li"><a href="#">상품문의내역</a></li>
 						<li><a href="#">포인트</a></li>
