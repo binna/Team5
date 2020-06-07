@@ -133,4 +133,51 @@ public class PQuestionDAO {
 
 		return arr;
 	}
+	public PQuestionDTO[] selectbypquid(String pquid) throws SQLException {
+		PQuestionDTO[] arr = null;
+		try {
+			System.out.println("try");
+			pstmt = conn.prepareStatement(D.SQL_PQLIST_SELECT_BY_UID);
+			pstmt.setString(1, pquid);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+			/* System.out.println(arr.length); */
+		} finally {
+			close();
+		}
+		
+		return arr;
+	}
+	
+	public int pqwrite(int pqpid, String pquid,String pqcontent,String pqanswer)throws SQLException{
+		int cnt = 0;
+		
+		
+		try {
+			  pstmt=conn.prepareStatement(D.SQL_INSERT_QUESTION);
+			  pstmt.setInt(1, pqpid);
+			  pstmt.setString(2, pquid);
+			  pstmt.setString(3, pqcontent);
+			  pstmt.setString(4, pqanswer);
+			  
+			  cnt = pstmt.executeUpdate();
+		  }finally {
+			  close();
+		  }
+		
+		return cnt;
+	}public int pqdelete(int pqid)throws SQLException{
+		int cnt = 0;
+		
+		
+		try {
+			  pstmt=conn.prepareStatement(D.SQL_DELEDTE_QUESTION);
+			  pstmt.setInt(1, pqid);
+			  cnt = pstmt.executeUpdate();
+		  }finally {
+			  close();
+		  }
+		
+		return cnt;
+	}
 }

@@ -3,11 +3,11 @@
 
 /*logo_menu*/
 /*TODO logo_menu delete*/
-.clear {
-	clear: both;
+*:focus { outline-style:none; }
+
+button{
+	outline-style: none;
 }
-
-
 header#main_header {
 	width: 90%;
 	height: auto;
@@ -514,4 +514,45 @@ input.Q_sort{
 
 #QModal_form{
 	border: 0;
+}
+
+/*------------------관리자 메인---------------------------------*/
+
+
+div.main_content_manager h1{
+	text-align: center;
+	margin: 50px 0;
+}
+div#main_content_managerMenu h2{
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+	font-weight: 900;
+}
+div#main_content_managerMenu button{
+	width: 150px;
+	border-radius: 50%;
+	font-size: 50px;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	border: 0px;
+	margin: 0px auto;
+	color: #fff;
+	box-shadow: 1px 1px 1px 1px #eee;
+}
+div#main_content_managerMenu div{
+	text-align: center;
+}
+
+#manager_btn_1:hover{
+	background-color: #FFC6C6
+}
+#manager_btn_2:hover{
+	background-color: #FFE08C
+}
+#manager_btn_3:hover{
+	background-color: #CEF279
+}
+#manager_btn_4:hover{
+	background-color: #B2EBF4
 }

@@ -206,12 +206,12 @@ table, th, td {
 					<br><br>
 					<div id ="detail_question_list_container" >
 					<h2 id="detail_question_list_2"><a>${dto.pqid }</a> | 구매 | 
-					<c:if test="${dto.pqanswer!=' ' }">
+					<c:if test="${dto.pqanswer!='답변준비중 입니다.' }">
 					<a id = "ql_status" style="color: #fff; background-color: rgb(53, 197, 240);">
 					답변완료
 					</a>
 					</c:if>
-					<c:if test="${dto.pqanswer==' ' }">
+					<c:if test="${dto.pqanswer=='답변준비중 입니다.' }">
 					<a id = "ql_status" style="color: rgb(53, 197, 240); background-color: #fff; border: 1px solid  rgb(53, 197, 240) ">
 					답변대기
 					</a>
@@ -220,7 +220,7 @@ table, th, td {
 					<br>
 					<h2 id="detail_question_list_1">[ ${dto.pbrand } ] ${dto.pname } </h2>
 					<br>
-					<h2 id="detail_question_list_3">${dto.pquid } | <a>${dto.pqregdate }</a></h2>
+					<h2 id="detail_question_list_3">s${dto.pquid } | <a>${dto.pqregdate }</a></h2>
 					<br>
 					<br>
 					<br>
@@ -256,12 +256,11 @@ table, th, td {
 	    <br>
 	    <br>
 	    <h2 class ="QModal_h2">문의내용</h2>
-	    <form id ="QModal_form" action="QuestionUpdateOk.y" method="post">
+	    <form id ="QModal_form" action="QuestionWriteOk.y" method="post">
 		    <input id="QModal_input" type="text" name="pqcontent" placeholder="문의내용을 입력하세요 ">
-		    <input type="hidden" name = "pquid" value="bhd4445"><!-- TODO uid 들어가ㅣ -->
-		    <input type="hidden" name = "pqanswer" value=" ">
-		    <input type="hidden" name = "pqpid" value="${param.pid }"> 
-	    
+		    <input type="hidden" name = "pquid" value="<%= session.getAttribute("id")%>"><!-- TODO uid 들어가ㅣ -->
+		    <input type="hidden" name = "pqanswer" value="답변준비중 입니다.">
+		    <input type="hidden" name = "pqpid" value="${param.pid }">
 	  	<br>
 	  	<br>
 	  	<br>

@@ -149,7 +149,7 @@ font-family: 'Jua', sans-serif; -->
 							<h1 id="A_mark">A.</h1>
 							<h3 class="pqanswer">${dto.pqanswer }</h3>
 							<br>
-							<form action="QuestionWriteOk.y" method="post">
+							<form action="QuestionUpdateOk.y" method="post">
 								<input type="hidden" name = "pqid" value="${dto.pqid}">
 								<input type="text" id="main_qlist_input_${dto.pqid}"
 									class="main_qlist_input" value="${dto.pqanswer}" name ="pqanswer"> <br> <br>

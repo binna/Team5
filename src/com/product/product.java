@@ -32,7 +32,7 @@ public class product implements Query{
 		String clientId = "Fd5OqnTUuUF6qX27jBWS"; // 애플리케이션 클라이언트 아이디값"
 		String clientSecret = "7xhDrhhGUJ"; // 애플리케이션 클라이언트 시크릿값"
 
-		String []category = new String[] {"쇼파","침구","커튼","책상"};
+		String []category = new String[] {"쇼파","침구","커튼","북유럽 조명","화분","가전","수납함","생활소품","주방인테리어소품","DIY인테리어","강아지 가구"};
 		
 		for (int i = 0; i < category.length; i++) {
 			
