@@ -11,7 +11,13 @@ public class D {
 	public static final String SQL_ORDER_SELECT =
 			"SELECT a.PIMAGE ,a.PNAME ,a.PBRAND ,a.pid, b.PCADDRESS ,b.PCADDRESSNUM , b.PTOTALPRICE ,b.PCCONTENT ,b.PCLPCNT,b.PCREGDATE,b.PCSTATUS "+
 			"FROM PRODUCT a inner join PURCHASE b "+
-			"on a.PID =b.PID" ; 	
+			"on a.PID =b.PID WHERE PCUID=?";
+	
+	/*
+	 * public static final String SQL_ORDER_SELECT =
+	 * "SELECT a.PIMAGE ,a.PNAME ,a.PBRAND ,a.pid, b.PCADDRESS ,b.PCADDRESSNUM , b.PTOTALPRICE ,b.PCCONTENT ,b.PCLPCNT,b.PCREGDATE,b.PCSTATUS "
+	 * + "FROM PRODUCT a inner join PURCHASE b "+ "on a.PID =b.PID" ;
+	 */
 	
 	public static final String SQL_WRITE_DELETE_BY_UID = 
 			"DELETE FROM PURCHASE WHERE pid = ?";
