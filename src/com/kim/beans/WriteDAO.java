@@ -92,12 +92,12 @@ public class WriteDAO {
 	} // end select()
 	
 	
-	public WriteDTO [] readByUid(int uid) throws SQLException{
+	public WriteDTO [] readByUid(int pid) throws SQLException{
 		WriteDTO [] arr = null;
 		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT_BY_UID);
-			pstmt.setInt(1, uid);
+			pstmt.setInt(1, pid);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} finally {
@@ -106,6 +106,8 @@ public class WriteDAO {
 		
 		return arr;
 	} // end readByUid()
+	
+	
 
 	
 } // end DAO

@@ -5,24 +5,22 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kim.beans.WriteDAO;
-import com.kim.beans.WriteDTO;
+import com.kim.beans.OrderDAO;
 
-public class ViewCommand implements Command {
+public class DeleteCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		WriteDAO dao = new WriteDAO(); //DAO 객체 생성
-		WriteDTO [] arr=null;
+		OrderDAO dao = new OrderDAO(); //DAO 객체 생성
+		int cnt=0;
 		int pid = Integer.parseInt(request.getParameter("pid"));
 		// 매개변수 받아오기
 
-
-
 		try {
 			//트랜직션수행
-			arr= dao.readByUid(pid);
-			request.setAttribute("view", arr);
+			cnt= dao.deleteByUid(pid);
+		
+			request.setAttribute("delete", cnt);
 			
 		} catch(SQLException e) {
 
@@ -30,4 +28,6 @@ public class ViewCommand implements Command {
 		}
 
 	}
+
+
 }

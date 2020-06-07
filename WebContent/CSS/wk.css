@@ -1,196 +1,343 @@
 @charset "UTF-8";
 
-div.s_info{
-	margin:30px auto;
+div.s_info {
+	margin: 30px auto;
 	width: 80%
-
 }
 
-
-div.buy{
-	padding-top:10px;
-	width:150px;
+button#cashBtn {
+	padding-top: 10px;
+	width: 150px;
 	background-color: #35c5f0;
-    border-color: #35c5f0;
-    color:#fff;
-    font-size: 12px;
-    line-height: 26px;
-    border:1px solid transparent;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    font-family: inherit;
-    font-weight: 700;
-    opacity: 0.7;
-    display: inline-block;
-}	
-
-
-div.s_image{
-	padding-right:30px;
-	padding-left:10px;
-	display:inline-block;
-	width:550px;
+	border-color: #35c5f0;
+	color: #fff;
+	font-size: 12px;	
+	line-height: 26px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+	font-family: inherit;
+	font-weight: 700;
+	opacity: 0.7;
+	display: inline-block;
 }
 
-img.p_image{
-	backgroud-size:cover;
-	width:100%;
+
+div.s_image {
+	padding-right: 30px;
+	padding-left: 10px;
+	display: inline-block;
+	width: 550px;
+}
+
+img.p_image {
+	backgroud-size: cover;
+	width: 100%;
 	border-radius: 6%;
 }
 
-
-div.s_content{
-	display:inline-block;
-	float:right;
+div.s_content {
+	display: inline-block;
+	float: right;
 	font-weight: 900;
-	width:200px;
-	
+	width: 200px;
 }
 
-
-div.s_brand{
-	color:#35c5f0;
+div.s_brand {
+	color: #35c5f0;
 	font-weight: 900;
-	line-height:19px;
-	font-size:13px;
-	
+	line-height: 19px;
+	font-size: 13px;
 }
 
-div.s_name{
-	font-size:25px;
-	line-height:34px;
+div.s_name {
+	font-size: 25px;
+	line-height: 34px;
 	font-weight: 400;
-	
 }
 
-div.p_content{
-	height:200px;
+div.p_content {
+	height: 200px;
 	border-bottom: 1px solid #ededed;
 }
 
-
-div.s_price{
-	font-size:32px;
+div.pc_price {
+	font-size: 32px;
 	font-weight: 900;
-	
+	height:auto;
 }
 
-div.p_fix{
-	padding-top:20px;
+div.p_fix {
+	padding-top: 20px;
 }
 
-div.total{
-	padding-top:10px;
-	height:30px;
-	padding-bottom:10px;
-	
+div.total {
+	padding-top: 10px;
+	height: 30px;
+	padding-bottom: 10px;
 }
 
 /*-------------------------modal-------------------------*/
-
-body {font-family: Arial, Helvetica, sans-serif;} /* 페이지 기본 글꼴 */
-form {border: 3px solid #f1f1f1;} /* 폼 테두리 */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+} /* 페이지 기본 글꼴 */
+form {
+	border: 3px solid #f1f1f1;
+} /* 폼 테두리 */
 
 /* Model */
 .modal {
-    width: 100%; 
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    overflow: auto;
-    padding-top: 60px;
-
-    display: none;  /* 처음에는 팝업 안보이게 하기 */
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	overflow: auto;
+	padding-top: 60px;
+	display: none; /* 처음에는 팝업 안보이게 하기 */
 }
 
-.modal-content {  /* 모달 팝업 안의 form */
-    background-color: #fefefe;
-    width: 80%;
-    margin: 5px auto;
-    border: 1px solid #888;
+.modal-content { /* 모달 팝업 안의 form */
+	background-color: #fefefe;
+	width: 80%;
+	margin: 5px auto;
+	border: 1px solid #888;
 }
 
 .imgcontainer {
-    text-align: center;  /* 이미지 중앙 정렬 */
-    margin: 24px 0 12px 0;  /* 바깥 여백 */
-    position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-top: 100px
 }
 
 .close { /* 닫기 버튼 (x) */
-    font-size: 35px;
-    font-weight: bold;
-    color: #000;
-    /* position 설정하여 우상단으로 배치 */
-    position: absolute;
-    right: 25px;
-    top: 0;
+	font-size: 35px;
+	font-weight: bold;
+	color: #000;
+	/* position 설정하여 우상단으로 배치 */
+	position: absolute;
+	right: 25px;
+	top: 0;
 }
 
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
+.close:hover, .close:focus {
+	color: red;
+	cursor: pointer;
 }
 
 img.avatar {
-    width: 40%;  /* 원래 이미지 크기의 40% */
-    border-radius: 50%;  /* 이미지 둥글게 */
+	width: 40%; /* 원래 이미지 크기의 40% */
+	border-radius: 5%; /* 이미지 둥글게 */
+	margin-left: 60px;
 }
 
 /* --------------------------------------- */
 /* form */
-
 .container {
-    padding: 16px;
+	padding: 16px;
 }
 
 input[type=text], input[type=password] {
-    width: 100%;
-    padding : 12px 20px;
-    margin : 8px 0;
-    border : 1px solid #ccc;
-    display: inline-block;
-    box-sizing: border-box;  /* border 등 size가 width 안으로 들어옴 */
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	display: inline-block;
+	box-sizing: border-box; /* border 등 size가 width 안으로 들어옴 */
 }
 
 button:hover {
-    opacity: 0.8;
+	opacity: 0.8;
 }
 
 .cancelbtn {
-    width: auto; /* 내부 담는 content 만큼의 폭 */
-    padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
-    background-color: #f44336;
+	width: auto; /* 내부 담는 content 만큼의 폭 */
+	padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
+	background-color: #35c5f0;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 900px
 }
 
 span.psw {
-    float: right; 
-    padding-top: 16px;
+	float: right;
+	padding-top: 16px;
+}
+
+div.modal_content {
+	height: 30px;
 }
 
 /* 380 px  이하 화면에서 RWD */
-@media (max-width: 380px){
-    .cancelbtn {
-        width: 100%;
-    }
-    span.psw {
-        float: none;
-        display: block;
-    }
+@media ( max-width : 380px) {
+	.cancelbtn {
+		width: 100%;
+	}
+	span.psw {
+		float: none;
+		display: block;
+	}
 }
 
-/* 애니메이션 zoom 효과 */
-
-.animate {
-    animation: animatezoom 0.6s;
+.imgcontainer>div {
+	display: inline-block;
 }
 
-@keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
+.p_content_price {
+	height: auto;
 }
 
+/* -------------------- order list------------------- */
+div.o_container {
+	width: 80%;
+	margin: 50px auto;
+}
+
+div.o_statusMenu {
+	display: flex;
+	margin-top: 50px;
+	margin-bottom:30px;
+	box-shadow: 0 1px 3px 0 #dbdbdb;
+	height: 100px;
+	border-radius: 4px;
+	padding: 20px;
+}
+
+div.o_list {
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	box-shadow: 0 1px 3px 0 #dbdbdb;
+	height: auto;
+	border-radius: 4px;
+	padding: 20px;
+}
+
+a.order_status_list {
+	font-weight: 700;
+	color: inherit;
+	text-decoration: none;
+	text-align: cetner;
+}
+
+div.status_list {
+	margin: 0px 0px 15px;
+	font-family: inherit;
+	font-size: 15px;
+}
+
+div.status_figure {
+	color : #35c5f0;
+	text-align: cetner;
+
+
+}
+div.status_figure_cancel {
+	color : #35c5f0;
+	text-align: cetner;
+
+
+}
+div.status_figure_buy {
+	color : #35c5f0;
+	text-align: cetner;
+
+
+}
+button#delete{
+	width: auto; /* 내부 담는 content 만큼의 폭 */
+	padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
+	background-color: #35c5f0;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 900px;
+	margin-bottom:20px;
+	
+}
+
+
+div.u_modify_2 button{
+	border:none;
+	padding: 10px 18px; 
+	width:auto;
+	background-color: #35c5f0;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 900px;
+	margin-bottom:20px;	
+}
+
+div.u_modify_1 button{
+	border:none;
+	background-color: #35c5f0;
+	border-radius: 5px;
+	color: #fff;
+	
+}
+
+div.u_cancel button{
+	width: auto; /* 내부 담는 content 만큼의 폭 */
+	padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
+	background-color: #35c5f0;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 900px
+}
+
+img.m_image{
+	weight:120px;
+	height:120px;
+	border-radius: 4px;
+}
+
+div.o_image{
+	weight:120px;
+	height:120px;
+}
+
+div.o_modify{
+	margin-top: 50px;
+	box-shadow: 0 1px 3px 0 #35c5f0;
+	height: auto;
+	border-radius: 4px;
+	padding: 20px;
+	
+}
+input.u_modify_1{
+	margin-top:15px;
+	width: auto; /* 내부 담는 content 만큼의 폭 */
+	padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
+	background-color: #35c5f0;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 900px
+}
+
+form.p_option{
+	
+	border:none;
+	
+}
+label{
+	color: #35c5f0;
+	font-weight: 900px
+	
+}
+div.date{
+	color: #35c5f0;
+	font-weight: 900px
+}
+
+div.u_cancel input{
+
+}
+div#ing{
+	color:red;
+}

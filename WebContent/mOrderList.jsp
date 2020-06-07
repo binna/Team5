@@ -128,10 +128,10 @@ font-family: 'Jua', sans-serif; -->
 		<div class="o_statusMenu row">
 			<a class="order_status_list col-md-2">
 				<div class="status_list">취소요청</div>
-				<div class="status_figure_cancel" id="status_figure_cancel"></div>
+				<div class="status_figure">0</div>
 			</a> <a class="order_status_list col-md-2">
 				<div class="status_list">결제완료</div>
-				<div class="status_figure_buy" id="status_figure_buy"></div>
+				<div class="status_figure">0</div>
 			</a> <a class="order_status_list col-md-2">
 				<div class="status_list">배송준비</div>
 				<div class="status_figure">0</div>
@@ -149,13 +149,13 @@ font-family: 'Jua', sans-serif; -->
 
 		<c:choose>
 			<c:when test="${empty list || fn:length(list) ==0}">
-				<div id="no_order">"구매하신 물품이 없습니다"</div>
+				<div id="no_order">
+				</div>
 			</c:when>
-
 			<c:otherwise>
 				<c:forEach var="dto" items='${list }'>
-					<div class="date" id="date">구매일: ${dto.pcregdate }</div>
-					<!-- 구매 시간  -->
+								구매일: ${dto.pcregdate }
+								<!-- 구매 시간  -->
 					<div class="o_list row">
 						<div class="o_image col-md-3">
 							<img class="m_image" id="m_image" src="${dto.pimage}" />
@@ -163,7 +163,6 @@ font-family: 'Jua', sans-serif; -->
 						</div>
 
 						<div class="o_content col-md-7">
-							<div class="ing" id="ing"></div>
 							상품명: ${dto.pname }<br>
 							<!-- 상품명 -->
 							브랜드: ${dto.pbrand }<br>
@@ -177,46 +176,13 @@ font-family: 'Jua', sans-serif; -->
 							합계: ${dto.ptotalprice }<br>
 							<!-- 총가격 -->
 							<div class="u_content" id="u_content">
-								배송 메모: ${dto.pccontent}<br>
+								배송 메모: ${dto.pccontent }<br>
 							</div>
 
-							<!-- 배송메모 -->
-							<div class="o_modify" id="u_modify_input_${dto.pid}">
-								<label><b>배송 메모 수정</b></label>
-
-
-								<form class="modify " action="updateOk.woo" method="post">
-									<input type="hidden" name="pid" value="${dto.pid}"> <input
-										id="memo_${dto.pid}" type="text"
-										placeholder="${dto.pccontent }" name="pccontent">
-
-
-									<div class="u_modify_1">
-										<button id="u_modify_1_${dto.pid}" type="submit">수정</button>
-									</div>
-
-
-								</form>
-							</div>
 						</div>
-
-
-
-
 						<div class="o_button col-md-2">
-							<div class="u_modify_2">
-								<button id="u_modify_2_${dto.pid}">수정하기</button>
-							</div>
-							<div class="u_cancel">
-								<form action="cancelOk.woo" method="post">
-									<button id="u_cancel_1_${dto.pid}">취소하기</button>
-									<input type="hidden" name="pid" type="submit" value="${dto.pid}"> 
-									<input id="u_pcstatus_${dto.pid}" type="hidden" name="pcstatus" value="${dto.pcstatus}">
-								</form>
-							</div>
+							<button id="delete" onclick="chkDelete(${dto.pid })">주문 취소</button>
 						</div>
-
-
 					</div>
 				</c:forEach>
 
