@@ -114,7 +114,7 @@ font-family: 'Jua', sans-serif; -->
 						<li><a href="#">상품 스크랩북</a></li>
 						<li id="Q_li"><a href="#">상품문의내역</a></li>
 						<li><a href="#">포인트</a></li>
-						<li><a href="#">고객센터</a></li>
+						<li><a href="#">고객센터 </a></li>
 
 					</ul>
 				</nav>
