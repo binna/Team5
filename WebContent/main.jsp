@@ -55,7 +55,7 @@
 <!-- 팝업설정 js경로  -->
 <script type="text/javascript" src="JS/popup.js"></script>
 <body>
-	<%
+	<%-- <%
 		System.out.print(session.getAttribute("id"));
 
 		if (session.getAttribute("id") != null) {
@@ -78,7 +78,7 @@
 	%>
 	<form action="MemberModifyAction_1.me">
 		<input type="submit" value="회원수정"><br>
-	</form>
+	</form> --%>
 <body onLoad="javascript:open_win();">
 	<!-- 팝업창 설정 -->
 
@@ -100,13 +100,17 @@
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
-				
+
 				<button id="write"
 					onclick="location.href='community/communityMain.jsp'">글쓰기</button>
-				
+
 				<!-- <button>
 					<i class="fas fa-search"></i>
 				</button> -->
+				<%
+					if (session.getAttribute("id") != null) {
+				%>
+
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -116,13 +120,35 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button onclick="location.href= 'MemberLogin.me'">
+				<button id="main_user_menu_icon" >
 					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a href="#">마이페이지</a></li>
+								<li><a href="#">나의쇼핑</a></li>
+								<li><a href="member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
 				</button>
+
+				<%
+					} else {
+				%>
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
+				<%
+					}
+				%>
+
 
 
 			</div>
 		</div>
+
 		<hr>
 		<div id="main_top2" class="row">
 			<div class="col-md-9" id="main_top2-1">
@@ -173,7 +199,6 @@
 		</div>
 		<hr>
 	</header>
-
 
 	<!--내용부분입니다.  -->
 	<div id="main_content">

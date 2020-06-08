@@ -132,7 +132,7 @@
 				<h2>커뮤니티 관리</h2>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_3"><i class="fas fa-store"></i></button>
+				<button id = "manager_btn_3" onclick="location.href= 'aQuestionList.y'"><i class="fas fa-store"></i></button>
 				<h2>스토어 관리</h2>
 			</div>
 			<div class="col-md-3 col-sm-6">
