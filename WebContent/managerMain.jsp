@@ -136,7 +136,7 @@
 				<h2>스토어 관리</h2>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_4"><i class="fas fa-tools"></i></button>
+				<button id = "manager_btn_4" onclick="location.href='consManager.cons'"><i class="fas fa-tools"></i></button>
 				<h2>인테리어 시공 관리</h2>
 			</div>
 
