@@ -81,9 +81,10 @@ public class ConsController extends HttpServlet {
 			
 		// 상담업데이트Ok
 		case "/consUpdateOk.cons":
+			System.out.println("들어옴");
 			command = new UpdateCommand();
 			command.execute(request, response);
-			viewPage = "consUpdateOk.jsp";
+			viewPage = "consManager.cons";
 			break;	
 		
 		// 상담신청 삭제

@@ -12,13 +12,14 @@ public class OrderDTO {
 	private int pclpcnt;
 	private String pcregdate;
 	private int pcstatus;
+	private String pcuid;
 
 	public OrderDTO() {
 		super();
 	}
 
 	public OrderDTO(String pimage, String pname, String pbrand, String pcaddress, int pcaddressnum, int ptotalprice,
-			String pccontent,int pid ,int pclpcnt, int pcstatus) {
+			String pccontent,int pid ,int pclpcnt, int pcstatus, String pcuid) {
 		super();
 		this.pimage = pimage;
 		this.pname = pname;
@@ -30,9 +31,18 @@ public class OrderDTO {
 		this.pid=pid;
 		this.pclpcnt = pclpcnt;
 		this.pcstatus=pcstatus;
+		this.pcuid=pcuid;
 
 	}
 	
+	public String getPcuid() {
+		return pcuid;
+	}
+
+	public void setPcuid(String pcuid) {
+		this.pcuid = pcuid;
+	}
+
 	public int getPcstatus() {
 		return pcstatus;
 	}

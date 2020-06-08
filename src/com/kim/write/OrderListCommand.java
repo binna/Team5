@@ -15,10 +15,10 @@ public class OrderListCommand implements Command {
 
 		OrderDAO dao = new OrderDAO(); //DAO 객체 생성
 		OrderDTO [] arr=null;
-		
+		String pcuid = request.getParameter("pcuid");
 		try {
 			//트랜직션수행
-			arr= dao.select();
+			arr= dao.select(pcuid);
 			
 			//"list" 란 name 으로 request 에 arr 값 전달
 			//즉 request 에 담아서 컨트롤러에 전달되는 셈.

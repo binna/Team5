@@ -61,6 +61,7 @@ public class OrderDAO {
 				int pid= rs.getInt("pid");
 				int pclpcnt = rs.getInt("pclpcnt");
 				int pcstatus= rs.getInt("pcstatus");
+				String pcuid = rs.getString("pcuid");
 				
 				Date d = rs.getDate("pcregdate");
 				Time t = rs.getTime("pcregdate");
@@ -72,7 +73,7 @@ public class OrderDAO {
 				}
 				
 				OrderDTO dto = new OrderDTO(pimage,pname,pbrand,pcaddress,pcaddressnum,
-						ptotalprice,pccontent,pid,pclpcnt,pcstatus);
+						ptotalprice,pccontent,pid,pclpcnt,pcstatus,pcuid);
 				dto.setPcregdate(pcregdate);
 				order.add(dto);
 				
@@ -88,11 +89,12 @@ public class OrderDAO {
 		}
 		
 		// 전체 SELECT
-		public OrderDTO [] select() throws SQLException {
+		public OrderDTO [] select(String pcuid) throws SQLException {
 			OrderDTO [] arr = null;
 			
 			try {
 				pstmt = conn.prepareStatement(D.SQL_ORDER_SELECT);
+				pstmt.setString(1, pcuid);
 				rs = pstmt.executeQuery();
 				arr = createArray(rs);
 			} finally {

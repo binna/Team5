@@ -19,8 +19,8 @@ public class UpdateCommand implements Command {
 		int csno = Integer.parseInt(request.getParameter("csno"));
 		String csuid = request.getParameter("csuid");
 		String csarea = request.getParameter("csarea");
-		System.out.println(csarea);
 		String cstel = request.getParameter("cstel");
+		System.out.println(csarea+"안녕안녕나는");
 
 		try {
 			cnt = dao.update(csno, csuid, csarea, cstel);

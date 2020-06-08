@@ -187,42 +187,8 @@ font-family: 'Jua', sans-serif; -->
 
 	<!--내용부분입니다.  -->
 	<div id="product_main_content" class="row">
-		<div id="product_main_content1" class="row col-md-3">
-			<nav id="product_category">
-				<ul>
-					<li>홈데코</li>
-					<li>가구</li>
-					<li>패브릭</li>
-					<li>가전</li>
-					<li>수납/정리</li>
-					<li>생활용품</li>
-					<li>주방</li>
-					<li>DIY셀프시공</li>
-				</ul>
-			</nav>
-
-		</div>
-		<div id="product_main_content2" class="row col-md-9">
-			<c:choose>
-				<c:when test="${empty list || fn:length(list) ==0}">
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="dto" items='${list }'>
-						<div class="product_td col-md-3 category_code_${dto.pcode }" >
-							<%-- <a href="productView.woo?pid=${dto.pid }"> --%>
-							<a href="productView.y?pid=${dto.pid }">
-								<div class="product_img"
-									style='background-image: url("${dto.pimage }")'></div> <%--<img class="thumbnail-img" src="${dto.pimage }" />  --%>
-								<br>
-								<h3 class="pbrand">[${dto.pbrand }]</h3> <br>
-								<h3 class="pname">${dto.pname }</h3> <br>
-								<h3 class="pprice">${dto.pprice }원</h3>
-							</a>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-			</c:choose>
-		</div>
+		<h1 class = "col-md-12" id = "uProduct_h1">너네 집 인기 매물</h1>
+		<hr>
 
 	</div>
 
