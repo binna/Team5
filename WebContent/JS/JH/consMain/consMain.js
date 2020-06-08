@@ -112,13 +112,15 @@ $(document)
 					moveScrollRight = function() {
 						
 						var _scrollX = $('#category').scrollLeft();
-						$('#category').animate({scrollLeft : (_scrollX + 292)},500,function(){isCheckLR()});
+						$('#category').animate({scrollLeft : (_scrollX + 1000)},500,function(){isCheckLR()});
 						isCheckLR();
+						console.log($(_scrollX));
+
 					}; // end left click
 
 					moveScrollLeft = function() {
 						var _scrollX = $('#category').scrollLeft();
-						$('#category').animate({scrollLeft : (_scrollX - 292)},500,function(){isCheckLR()});
+						$('#category').animate({scrollLeft : (_scrollX - 1000)},500,function(){isCheckLR()});
 						
 					}; // end right click
 
@@ -166,7 +168,7 @@ $(document)
 					}); // end mRight hover
 
 					function isCheckLR() {
-						if (_scrollX = $('#category').scrollLeft() >= 292) {
+						if (_scrollX = $('#category').scrollLeft() >= 1) {
 							$('.mRight').css({
 								'visibility' : 'hidden'
 							})

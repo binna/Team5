@@ -112,8 +112,7 @@
 						<option value="cname">업체명</option>
 						<option value="cstel">전화번호</option>
 						<option value="csarea">시공지역</option>
-					</select> <input type="text" name="value">
-					<input type="submit"
+					</select> <input type="text" name="value"> <input type="submit"
 						value="검색" class="searchBtn">
 				</form>
 			</div>
@@ -126,7 +125,7 @@
 				for (int i = 0; i < arr.length; i++) {
 		%>
 		<section class="consData">
-			<form action="consUpdateOk.cons" method="post" class ="Info">
+			<form action="consUpdateOk.cons" method="post" class="Info">
 				<div class="cname">
 					업체명 :
 					<%=arr[i].getCname()%></div>
@@ -144,19 +143,31 @@
 					신청tel :
 					<%=arr[i].getCstel()%></div>
 				<!------------------------------------------------------------------------------------------------------>
-				<input class="consUpdate csno01" style="display: none;" name="csno" value="<%=arr[i].getCsno()%>">
-				<input class="consUpdate" style="display: none;" name="csuid" value="<%=arr[i].getCsuid()%>">
-				<input class="consUpdate" style="display: none;" name="csarea" value="<%=arr[i].getCsarea()%>"> <input class="consUpdate"
+				<input class="consUpdate csno01" style="display: none;" name="csno"
+					value="<%=arr[i].getCsno()%>"> <input class="consUpdate"
+					style="display: none;" name="csuid" value="<%=arr[i].getCsuid()%>">
+				<input class="consUpdate" style="display: none;" name="csarea"
+					value="<%=arr[i].getCsarea()%>"> <input class="consUpdate"
 					style="display: none;" name="cstel" value="<%=arr[i].getCstel()%>">
-				<input type="button" class="update" value="수정">
-				<input	type="submit" class="delete" value="삭제" formaction="consDeleteOk.cons">
-				<input type="submit" class="updateComplete" value="완료">
-				<input type="button" class="cancel" value="취소">
+				<input type="button" class="update" value="수정"
+				formaction="consUpdateOk.cons"
+				> <input
+					type="submit" class="delete" value="삭제"
+					formaction="consDeleteOk.cons"> <input type="submit"
+					class="updateComplete" value="완료"> <input type="button"
+					class="cancel" value="취소">
 
 			</form>
 			<br> <br>
 			<%
 				} // end for
+				} else {
+			%>
+			<div style="line-height: 800px; vertical-align: middle;">
+				<div style="text-align: center;">존재하는
+					상담신청 정보가 없습니다.</div>
+			</div>
+			<%
 				} // end if
 			%>
 		</section>
