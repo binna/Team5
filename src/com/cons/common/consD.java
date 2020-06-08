@@ -20,7 +20,7 @@ public class consD {
 
 	// consManager페이지 SQL문-----------------------------------------------------------------------------------------------------------------------------------------
 	public static final String SQL_CONS_WRITE = // 상담 신청서 입력
-			"INSERT INTO Consulting VALUES(cons_write_seq.nextval,?,?,?,?)";
+			"INSERT INTO Consulting VALUES(cons_write_seq.nextval,?,?,?,?,?)";
 	// WHERE CAREA = '?'
 
 	// 상담신청 DB
@@ -29,7 +29,7 @@ public class consD {
 
 	// 상담신청수정 DB
 	public static final String SQL_CONS_UPDATE = // 회사 INFO 읽어오기
-			"UPDATE Consulting SET CSUID = ?, CSAREA = ?, CSTEL =? WHERE CSNO = ?";
+			"UPDATE Consulting SET CSNAME = ?, CSAREA = ?, CSTEL =? WHERE CSNO = ?";
 	
 	// 상담신청삭제 DB
 	public static final String SQL_CONS_DELETE = // 상담 신청서 삭제
@@ -38,23 +38,27 @@ public class consD {
 	// consManager 검색부분 SQL문-----------------------------------------------------------------------------------------------------------------------------------------
 	// 상담신청 순서로 검색
 	public static final String SQL_CONS_CSNO_SELECT =
-		"SELECT c2.CSNO, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSNO = ?";	
+		"SELECT c2.CSNO, c2.CSNAME, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSNO = ?";	
+
+	// 상담신청한 유저 아이디로 검색
+	public static final String SQL_CONS_CSUID_SELECT =
+			"SELECT c2.CSNO, c2.CSNAME, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSUID = ?";	
 
 	// 상담신청한 유저 이름으로 검색
-	public static final String SQL_CONS_CSUID_SELECT =
-			"SELECT c2.CSNO, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSUID = ?";	
+	public static final String SQL_CONS_CSNAME_SELECT =
+			"SELECT c2.CSNO, c2.CSNAME, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSNAME = ?";	
 
 	// 상담신청 업체명 검색
 	public static final String SQL_CONS_CNAME_SELECT =
-			"SELECT c2.CSNO, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c1.CNAME = ?";	
+			"SELECT c2.CSNO, c2.CSNAME, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c1.CNAME = ?";	
 
 	// 상담신청 전화번호 검색
 	public static final String SQL_CONS_CTEL_SELECT =
-			"SELECT c2.CSNO, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSTEL = ?";	
+			"SELECT c2.CSNO, c2.CSNAME, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSTEL = ?";	
 
 	// 상담신청 시공지역 검색
 	public static final String SQL_CONS_CSAREA_SELECT =
-			"SELECT c2.CSNO, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSAREA = ?";	
+			"SELECT c2.CSNO, c2.CSNAME, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSAREA = ?";	
 
 
 

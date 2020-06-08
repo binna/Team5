@@ -112,7 +112,7 @@ $(document)
 					moveScrollRight = function() {
 						
 						var _scrollX = $('#category').scrollLeft();
-						$('#category').animate({scrollLeft : (_scrollX + 1000)},500,function(){isCheckLR()});
+						$('#category').animate({scrollLeft : (_scrollX + 1000)},1000,function(){isCheckLR()});
 						isCheckLR();
 						console.log($(_scrollX));
 
@@ -120,7 +120,7 @@ $(document)
 
 					moveScrollLeft = function() {
 						var _scrollX = $('#category').scrollLeft();
-						$('#category').animate({scrollLeft : (_scrollX - 1000)},500,function(){isCheckLR()});
+						$('#category').animate({scrollLeft : (_scrollX - 1000)},1000,function(){isCheckLR()});
 						
 					}; // end right click
 
