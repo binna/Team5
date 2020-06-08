@@ -2,7 +2,17 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="com.cons.beans.*"%>
 
-
+<%	
+	
+	if (session.getAttribute("id") == null) {
+%>
+<script>
+	alert("로그인이필요한 페이지 입니다.")
+	location.href = "MemberLogin.me"
+</script>
+<%
+	}
+%>
 
 <!-- GET방식으로 Controller로 넘겨줌 Cno 값을 이용해서 컬럼값을 가져오는 소스코드 -->
 <%

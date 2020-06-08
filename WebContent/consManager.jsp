@@ -54,7 +54,7 @@
 					<ul>
 						<li><a href="#">커뮤니티</a></li>
 						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
+						<li><a href="consMain.jsp">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>

@@ -19,7 +19,7 @@ public class WriteCommand implements Command {
         HttpSession session = request.getSession();
 		
 		// 매개변수 받아오기
-		String csuid = (session.getAttribute("csuid") + "").trim();
+		String csuid = (session.getAttribute("id") + "").trim();
 		String csname = request.getParameter("csname").trim();
 		int cno = Integer.parseInt(request.getParameter("cno").trim());
 		String carea = request.getParameter("CompanyArea").trim();
