@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.yoon.beans.PQuestionDAO;
 import com.yoon.beans.PQuestionDTO;
@@ -14,7 +15,11 @@ public class pqListbypquidCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		PQuestionDAO dao = new PQuestionDAO();// DAO 객체 생성
 		PQuestionDTO [] arr = null;
-		String pquid = request.getParameter("pquid");
+		//String pquid = request.getParameter("pquid");
+		HttpSession session = request.getSession();
+		String pquid = session.getAttribute("id")+"";
+		
+		
 		try {
 			//트랜잭션 수행
 			arr = dao.selectbypquid(pquid);

@@ -18,11 +18,14 @@
 	} else {
 %>
 <script>
-	alert("삭제성공");
-	/* history.back();  */
-	location.href = document.referrer; 
-</script>
+	location.href = "uQuestionList.y";
+	</script>
 <%
 	}
 %>
+
+
+
+
+
 

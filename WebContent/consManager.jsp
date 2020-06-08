@@ -54,7 +54,7 @@
 					<ul>
 						<li><a href="#">커뮤니티</a></li>
 						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
+						<li><a href="consMain.jsp">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -108,13 +108,17 @@
 				<form class="searchForm" method="post">
 					<select id="searchSelect" name="valueName">
 						<option value="csno">번호</option>
-						<option value="csuid">이름</option>
+						<option value="csuid">유저아이디</option>
+						<option value="csname">유저이름</option>
 						<option value="cname">업체명</option>
 						<option value="cstel">전화번호</option>
 						<option value="csarea">시공지역</option>
 					</select> <input type="text" name="value"> <input type="submit"
 						value="검색" class="searchBtn">
 				</form>
+			</div>
+			<div id="selectAll">
+				전체보기
 			</div>
 		</section>
 
@@ -132,26 +136,34 @@
 				<div class="csno">
 					업체번호 :
 					<%=arr[i].getCsno()%></div>
-				<div class="consInfo csuid">
-					신청이름 :
+				<div class="csno">
+					신청아이디 :
 					<%=arr[i].getCsuid()%></div>
+				<div class="consInfo csname">
+					신청이름 :
+					<%=arr[i].getCsname()%></div>
 				<div class="consInfo csarea">
 					시공지역 :
 					<%=arr[i].getCsarea()%>
 				</div>
 				<div class="consInfo cstel">
-					신청tel :
+					전화번호 :
 					<%=arr[i].getCstel()%></div>
 				<!------------------------------------------------------------------------------------------------------>
 				<input class="consUpdate csno01" style="display: none;" name="csno"
-					value="<%=arr[i].getCsno()%>"> <input class="consUpdate"
-					style="display: none;" name="csuid" value="<%=arr[i].getCsuid()%>">
+					value="<%=arr[i].getCsno()%>" >
+				<input class="consUpdate csno01" style="display: none;" name="csuid" 
+					value="<%=arr[i].getCsuid()%>" placeholder="신청아이디">
+				<input class="consUpdate" style="display: none;" name="csname" 
+					value="<%=arr[i].getCsname()%>" placeholder="신청이름">
 				<input class="consUpdate" style="display: none;" name="csarea"
-					value="<%=arr[i].getCsarea()%>"> <input class="consUpdate"
-					style="display: none;" name="cstel" value="<%=arr[i].getCstel()%>">
-				<input type="button" class="update" value="수정"
-				formaction="consUpdateOk.cons"
-				> <input
+					value="<%=arr[i].getCsarea()%>" placeholder="시공지역">
+				<input class="consUpdate" style="display: none;" name="cstel" 
+					value="<%=arr[i].getCstel()%>" placeholder="신청번호">
+				<input type="button" class="update" 
+				value="수정" 	formaction="consUpdateOk.cons"
+				> 
+				<input
 					type="submit" class="delete" value="삭제"
 					formaction="consDeleteOk.cons"> <input type="submit"
 					class="updateComplete" value="완료"> <input type="button"

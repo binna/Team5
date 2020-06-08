@@ -3,11 +3,14 @@
 
 /*logo_menu*/
 /*TODO logo_menu delete*/
-*:focus { outline-style:none; }
-
-button{
+*:focus {
 	outline-style: none;
 }
+
+button {
+	outline-style: none;
+}
+
 header#main_header {
 	width: 90%;
 	height: auto;
@@ -15,13 +18,14 @@ header#main_header {
 	margin: 0px auto;
 }
 
-#main_top1_2 li, #main_top2 li,#main_top3 li {
+#main_top1_2 li, #main_top2 li, #main_top3 li {
 	display: inline-block;
 	height: 100%;
 	margin-left: 20px;
 }
 
-#main_top1_2 li a, #main_top2 li a, #main_top2 a, #main_top3 li a, #main_top3 a {
+#main_top1_2 li a, #main_top2 li a, #main_top2 a, #main_top3 li a,
+	#main_top3 a {
 	/* font-family: 'Do Hyeon', sans-serif; */
 	/* font-weight: bold; */
 	font-weight: 900;
@@ -29,7 +33,8 @@ header#main_header {
 	color: #444;
 }
 
-#main_top1_2 li a:hover, #main_top2 li a:hover, #main_top2 a:hover,#main_top3 li a:hover, #main_top3 a:hover  {
+#main_top1_2 li a:hover, #main_top2 li a:hover, #main_top2 a:hover,
+	#main_top3 li a:hover, #main_top3 a:hover {
 	color: rgb(53, 197, 240)
 }
 /*---------*/
@@ -41,7 +46,7 @@ div#main_top1 {
 	padding-top: 40px
 }
 
-div#main_top2 li,div#main_top3 li {
+div#main_top2 li, div#main_top3 li {
 	margin-left: 10px
 }
 
@@ -88,10 +93,40 @@ div#main_top2 li,div#main_top3 li {
 	color: white;
 }
 
+#main_top1_3 a {
+	font-weight: 900;
+	color: #444;
+}
+
+#main_user_menu {
+	position: relative;
+	right: 50px;
+	top: 30px;
+	width: 150px;
+	background-color: #fff;
+	box-shadow: 1px 1px 1px 1px #eee;
+	border: 1px solid #ddd;
+	padding: 6px;
+	display: none;
+	z-index: 8;
+}
+
+#main_user_menu li {
+	text-align: left;
+	font-size: small;
+	padding: 10px;
+	background-color: #fff
+}
+
+#main_user_menu a:hover {
+	color: rgb(53, 197, 240);
+}
+
 button#write {
 	font-weight: 900;
 	color: rgb(53, 197, 240);
-	width: 90px; border : 1px solid rgb( 53, 197, 240);
+	width: 90px;
+	border: 1px solid rgb(53, 197, 240);
 	font-size: 15px;
 	border: 1px solid rgb(53, 197, 240);
 }
@@ -182,7 +217,7 @@ footer#main_footer {
 }
 
 /*---------main content--------*/
-#main_content, #product_main_content,#product_main_nav{
+#main_content, #product_main_content, #product_main_nav {
 	width: 70%;
 	margin: 50px auto;
 }
@@ -192,10 +227,12 @@ footer#main_footer {
 	font-size: 20px;
 	font-weight: 900;
 }
-#main_content ul{
+
+#main_content ul {
 	padding: 0px;
 	margin: 0px;
 }
+
 #main_content li {
 	display: inline-block;
 	width: 12%;
@@ -203,7 +240,7 @@ footer#main_footer {
 	font-weight: 900;
 	color: #333;
 	border: none;
-	margin : 0px;
+	margin: 0px;
 	padding: 0px;
 }
 
@@ -211,137 +248,144 @@ footer#main_footer {
 	width: 100%
 }
 
-
-
 /*--------store main---------------*/
-div.product_img{
+div.product_img {
 	width: 100%;
 	background-size: cover;
 	padding-top: 100%;
 	border-radius: 6%
 }
-h3.pbrand{
+
+h3.pbrand {
 	font-weight: 900;
 	font-size: x-small;
 }
 
-h3.pname{
+h3.pname {
 	font-weight: 900;
 	font-size: small;
 	color: #333;
 }
-h3.pprice{
+
+h3.pprice {
 	font-weight: 900;
 	font-size: medium;
 	color: #333;
-	
-}
-div.product_td{
-	margin-bottom: 50px;
-}
-.product_td a{
-	text-decoration: none;
-	
-	
 }
 
-#product_category li{
+div.product_td {
+	margin-bottom: 50px;
+}
+
+.product_td a {
+	text-decoration: none;
+}
+
+#product_category li {
 	padding: 10px;
 	font-weight: 900;
 	color: #333;
 	font-size: large;
 }
+
 #product_category li:hover {
 	color: #555;
 }
 
-
-
-.product_main_nav{
+.product_main_nav {
 	display: inline-block;
 	padding: 0px;
 	margin: 0px;
 	border: 0px;
 	text-align: center;
-}	
+}
 
-.product_main_nav_img{
+.product_main_nav_img {
 	width: 90%;
 	margin: 0px auto;
 	background-size: contain;
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	padding-top: 100%;
-
 }
-.product_main_nav h3{
+
+.product_main_nav h3 {
 	font-weight: 700;
 	font-size: small;
 }
 
-.product_main_nav h3:hover{
-	font-weight:bolder;
+.product_main_nav h3:hover {
+	font-weight: bolder;
 	font-size: small;
 	color: rgb(53, 197, 240);
 }
 
-li#Q_li a, li#menu_myshopping a{
+li#Q_li a, li#menu_myshopping a {
 	color: rgb(53, 197, 240);
 }
 
-#main_content_qlist{
+#main_content_qlist {
 	box-shadow: 1px 1px 1px 1px #eee;
 	border: 0.5px solid #eee;
 	border-radius: 8px;
 	min-height: 300px;
 	padding: 75px
 }
-#main_qlist{
+
+#main_qlist {
 	min-height: 125px;
 	border-top: 1px solid #ccc;
 	padding: 20px;
 	margin-top: 30px
 }
-#main_content_qlist>h1{
+
+#main_content_qlist>h1 {
 	color: #333;
 }
-#main_qlist h3{
+
+#main_qlist h3 {
 	font-size: 15px;
 	margin: 10px 0;
 }
-#main_qlist h1#Q_mark, #pinfo{
+
+#main_qlist h1#Q_mark, #pinfo {
 	color: rgb(53, 197, 240);
 }
-#pinfo{
+
+#pinfo {
 	font-weight: 700;
 }
-#pqregdate{
+
+#pqregdate {
 	display: inline-block;
 	text-align: right;
 }
 
-.main_qlist_answer_1, .main_qlist_answer_2{
-	padding : 10px;
+.main_qlist_answer_1, .main_qlist_answer_2 {
+	padding: 10px;
 	background-color: rgb(53, 197, 240);
 	color: #fff;
 	font-weight: 900;
 	border: none;
 	border-radius: 3px;
 }
-.main_qlist_answer_1:hover,.main_qlist_answer_2:hover {
+
+.main_qlist_answer_1:hover, .main_qlist_answer_2:hover {
 	background-color: rgb(17, 167, 210);
 }
-.main_qlist_input{
+
+.main_qlist_input {
 	width: 100%;
 	min-height: 150px;
 	border: 1.5px solid #666;
 	border-radius: 5px;
 }
- 
-.main_qlist_answer_2{
- display: none;
+
+.main_qlist_answer_2 {
+	display: none;
 }
-.A_status{
-	padding:5px;
+
+.A_status {
+	padding: 5px;
 	color: #fff;
 	background-color: #bbb;
 	border-radius: 3px;
@@ -350,7 +394,7 @@ li#Q_li a, li#menu_myshopping a{
 	font-weight: 900;
 }
 
-#detail_delivery h1,#detail_question h1{
+#detail_delivery h1, #detail_question h1 {
 	color: #666;
 	font-weight: 900;
 	font-size: x-large;
@@ -358,37 +402,41 @@ li#Q_li a, li#menu_myshopping a{
 	margin-top: 30px;
 	display: block;
 	width: 100%
-	
 }
-#detail_delivery table, #detail_delivery tr,#detail_delivery td{
+
+#detail_delivery table, #detail_delivery tr, #detail_delivery td {
 	border: 0px;
 }
-#detail_delivery table tr td:first-child{
+
+#detail_delivery table tr td:first-child {
 	color: #666;
 	width: 20%
 }
-#detail_delivery table td{
+
+#detail_delivery table td {
 	padding: 20px;
 	font-size: small;
 	font-weight: 700;
 }
 
-#detail_delivery table tr{
+#detail_delivery table tr {
 	border-bottom: 2px solid #ccc
 }
-#detail_delivery h3{
+
+#detail_delivery h3 {
 	font-size: small;
 	font-weight: 300;
 	margin-bottom: 5px;
 	color: #888;
-	}
-	
+}
+
 /* ----------------- detail: 문의------------------- */
-#detail_question, #detail_delivery{
+#detail_question, #detail_delivery {
 	width: 70%;
 	margin: 50px auto;
 }
-h1#detail_question_2{
+
+h1#detail_question_2 {
 	color: rgb(53, 197, 240);
 	text-align: center;
 	font-size: medium;
@@ -397,139 +445,146 @@ h1#detail_question_2{
 	width: 100px;
 	border-radius: 15px;
 	display: inline-block;
-	
 }
+
 h1#detail_question_2:hover {
-	background-color:rgb(53, 197, 240);
+	background-color: rgb(53, 197, 240);
 	color: #fff;
 }
-h1#detail_question_1 a{
-	color:  rgb(53, 197, 240);
+
+h1#detail_question_1 a {
+	color: rgb(53, 197, 240);
 }
-#detail_question_list h2{
+
+#detail_question_list h2 {
 	color: #666;
 	font-weight: 600;
 }
-h2#detail_question_list_4, h2#detail_question_list_5{
+
+h2#detail_question_list_4, h2#detail_question_list_5 {
 	color: rgb(53, 197, 240);
 	font-weight: 900;
 	font-size: x-large;
 }
-h2#detail_question_list_4 a, h2#detail_question_list_5 a{
 
+h2#detail_question_list_4 a, h2#detail_question_list_5 a {
 	color: #666;
 	font-weight: 600;
 	font-size: medium;
 	margin-left: 30px
-	}
-a#ql_status{
+}
+
+a#ql_status {
 	margin-left: 10px;
-	padding :5px;
+	padding: 5px;
 	border-radius: 6px
 }
-div#detail_question_list_container{
+
+div#detail_question_list_container {
 	box-shadow: 1px 1px 1px 1px #eee;
 	border: 0.5px solid #eee;
 	border-radius: 8px;
 	padding: 75px
 }
-div#detail_questiondiv_2{
+
+div#detail_questiondiv_2 {
 	text-align: right;
-	
 }
 
 /*-- Qmodal --*/
 div#QModal {
-    width: 100%; /*윈도우 전체차지*/
-    height: 100%;/*윈도우 전체차지*/
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.4);
-    left: 0;
-    top: 0;
-    z-index: 1; /*최상단에 보이게 하기*/
-    overflow: auto;/*필요한 경우 스크롤바 생기기*/
-    display: none;/* 기본적으로 팝업 안보이기  */
-}
-div.QModal_content {
-    width: 50%;
-    padding : 40px;
-    background-color: #fefefe;
-    margin: 5% auto;
-    /* top에서 15%, 좌우 균일 (중앙정렬) */
-    
-    border: 1px solid #888;
-}
-span.Qclose{
-    font-size: 28px;
-    font-weight: bold;
-    color: #aaa;
-    float: right;
-}
-span.Qclose:hover, span.Qclose:focus{
-    color: #666;
-    text-decoration: none;
-    cursor: pointer;
+	width: 100%; /*윈도우 전체차지*/
+	height: 100%; /*윈도우 전체차지*/
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.4);
+	left: 0;
+	top: 0;
+	z-index: 1; /*최상단에 보이게 하기*/
+	overflow: auto; /*필요한 경우 스크롤바 생기기*/
+	display: none; /* 기본적으로 팝업 안보이기  */
 }
 
-h1#QModal_title{
+div.QModal_content {
+	width: 50%;
+	padding: 40px;
+	background-color: #fefefe;
+	margin: 5% auto;
+	/* top에서 15%, 좌우 균일 (중앙정렬) */
+	border: 1px solid #888;
+}
+
+span.Qclose {
+	font-size: 28px;
+	font-weight: bold;
+	color: #aaa;
+	float: right;
+}
+
+span.Qclose:hover, span.Qclose:focus {
+	color: #666;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+h1#QModal_title {
 	text-align: center;
 	font-weight: 900;
 	font-size: medium;
 	color: #444;
 }
 
-h2.QModal_h2{
+h2.QModal_h2 {
 	font-weight: 900;
 	font-size: medium;
 	color: #444;
 }
 
-#QModal_btn{
+#QModal_btn {
 	width: 100%;
 	padding: 20px;
-	border:0;
+	border: 0;
 	border-radius: 8px;
 	background-color: rgb(53, 197, 240);
 	color: #fff;
 	text-align: center;
 	font-weight: 900;
-	font-size: large; 
+	font-size: large;
 }
 
-#QModal_input{
-	
+#QModal_input {
 	height: 200px;
 }
 
-h3#QModal_detail{
+h3#QModal_detail {
 	font-size: small;
-	margin-bottom:20px 
+	margin-bottom: 20px
 }
-input.Q_sort{
-	margin:0;
+
+input.Q_sort {
+	margin: 0;
 	width: 32%;
 	border: 0px;
 	padding: 0;
 }
 
-#QModal_form{
+#QModal_form {
 	border: 0;
 }
 
 /*------------------관리자 메인---------------------------------*/
-
-
-div.main_content_manager h1{
+div.main_content_manager h1 {
 	text-align: center;
 	margin: 50px 0;
 }
-div#main_content_managerMenu h2{
+
+div#main_content_managerMenu h2 {
 	width: 100%;
 	text-align: center;
 	margin-top: 50px;
 	font-weight: 900;
 }
-div#main_content_managerMenu button{
+
+div#main_content_managerMenu button {
 	width: 150px;
 	border-radius: 50%;
 	font-size: 50px;
@@ -540,19 +595,28 @@ div#main_content_managerMenu button{
 	color: #fff;
 	box-shadow: 1px 1px 1px 1px #eee;
 }
-div#main_content_managerMenu div{
+
+div#main_content_managerMenu div {
 	text-align: center;
 }
 
-#manager_btn_1:hover{
+#manager_btn_1:hover {
 	background-color: #FFC6C6
 }
-#manager_btn_2:hover{
+
+#manager_btn_2:hover {
 	background-color: #FFE08C
 }
-#manager_btn_3:hover{
+
+#manager_btn_3:hover {
 	background-color: #CEF279
 }
-#manager_btn_4:hover{
+
+#manager_btn_4:hover {
 	background-color: #B2EBF4
+}
+
+
+#uQuestionList_form{
+	display: inline-block;
 }

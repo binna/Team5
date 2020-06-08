@@ -1,13 +1,17 @@
 package com.cons.controller;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionContext;
 
 import com.cons.write.Command;
 import com.cons.write.ConsListCommand;
@@ -106,6 +110,14 @@ public class ConsController extends HttpServlet {
 		// 상담신청아이디
 		case "/consCsuidSelect.cons":
 			//System.out.println("들어옴 consCsuidSelect");
+			command = new SelectCommand();
+			command.execute(request, response);
+			viewPage = "consManager.jsp";
+			break;
+
+		// 상담신청이름
+		case "/consCsnameSelect.cons":
+			System.out.println("들어옴 consCsnameSelect");
 			command = new SelectCommand();
 			command.execute(request, response);
 			viewPage = "consManager.jsp";

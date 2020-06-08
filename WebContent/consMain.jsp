@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	if (session.getAttribute("id") == null) {
+%>
+<script>
+	
+</script>
+<%
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,23 +45,14 @@
 
 <title>너네 집</title>
 </head>
-<%
-	session.setAttribute("csuid", "1234");
-%>
+
 <script type="text/javascript">
-	var csuid =
-<%=session.getAttribute("csuid")%>
-	;
 	$(document).on('click', '.btnCons', function() {
 		// console.log(csuid);
-		if (csuid == '1234') {
-			//			console.log($(this).parent().children('.comNo').text().trim());
-			//			alert('로그인 했슴다.');
-			var str = $(this).parent().children('.comNo').text().trim();
-			location.href = "consWrite.cons?cno=" + str;
-		} else {
-			//			alert('로그인 안됬어요임마.');
-		}
+		//			console.log($(this).parent().children('.comNo').text().trim());
+		//			alert('로그인 했슴다.');
+		var str = $(this).parent().children('.comNo').text().trim();
+		location.href = "consWrite.cons?cno=" + str;
 	});
 </script>
 
@@ -70,8 +70,8 @@
 				<nav>
 					<ul>
 						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
+						<li><a href="storeMain.y">스토어</a></li>
+						<li><a href="consMain.jsp">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>

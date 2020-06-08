@@ -65,6 +65,22 @@ $(document).ready(function() {
 		$("#main_top2-2").hide()
 	});
 	
+	
+	$("#main_user_menu_icon").mouseenter(function() {
+		$("#main_user_menu").show();
+	});
+	$("#main_user_menu").mouseleave(function() {
+		$("#main_user_menu").hide();
+
+	});
+	
+	function goData(){
+	    var form = document.uQuestionList_form;
+	    
+	    form.submit();
+	}
+	
+	
 	/*
 	 * $('button[id^="main_qlist_answer_1_"]').click(function(){ var id =
 	 * $(this).attr('id').split("_")[4];

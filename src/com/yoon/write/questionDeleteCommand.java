@@ -26,6 +26,7 @@ public class questionDeleteCommand implements Command {
 	  
 		request.setAttribute("PQdelete", cnt);
 		
+		
 	}
 
 }

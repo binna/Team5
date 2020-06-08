@@ -1,3 +1,18 @@
+var comImg = [
+		"https://shopping-phinf.pstatic.net/main_1590071/15900717776.20181031093411.jpg",
+		"https://shopping-phinf.pstatic.net/main_2259546/22595462726.20200423162345.jpg",
+		"https://shopping-phinf.pstatic.net/main_1855796/18557969001.20190408023734.jpg",
+		"https://shopping-phinf.pstatic.net/main_1313805/13138057807.20191231185849.jpg",
+		"https://shopping-phinf.pstatic.net/main_1314825/13148254276.20180116145415.jpg",
+		"https://shopping-phinf.pstatic.net/main_1997485/19974859000.20190628180301.jpg",
+		"https://shopping-phinf.pstatic.net/main_2282800/22828002639.20200511232757.jpg",
+		"https://shopping-phinf.pstatic.net/main_5374722/5374722468.20191120112240.jpg",
+		"https://shopping-phinf.pstatic.net/main_2084307/20843079794.20190909143646.jpg",
+		"https://shopping-phinf.pstatic.net/main_1453461/14534617503.20180614165123.jpg",
+		"https://shopping-phinf.pstatic.net/main_2242193/22421934241.20200408153623.jpg" ];
+
+var k = 0;
+
 $(document)
 		.ready(
 				function() {
@@ -28,13 +43,18 @@ $(document)
 											var table = "<div id = \"comList\">";
 											// 본문 태그 아이디
 											if (area != "기타") {
+												k = 0;
 												for (var i = 0; i < data.length; i++) {
 													if (category == data[i].ccategory
 															&& $('#consArea')
 																	.val()
 																	.trim() == data[i].carea
 																	.trim()) {
-														table += "<div class = \"comList\">"
+														table += "<div class = \"comList\">";
+														table += "<img class = \"comImg\" src ="
+																+ comImg[k]
+																+ ">";
+														table += "<div class =\"comInfoImdang\">";
 														table += "<div class = \"comname\">"
 																+ data[i].cname
 																+ "</div>";
@@ -47,12 +67,15 @@ $(document)
 														table += "<div class = \"btnCons\">상담신청</div>"
 														table += "<div class = \"comNo\">"
 																+ data[i].cno
-																+ "</div>"
+																+ "</div>";
+														table += "</div>";
 														table += "</div class = \"comList\">"
 														cnt++;
+														k++;
 													} // end if
 												} // end for
 											} else {
+												k = 0;
 												for (var i = 0; i < data.length; i++) {
 													switch (data[i].carea
 															.trim()) {
@@ -63,7 +86,11 @@ $(document)
 														break;
 													default:
 														if (category == data[i].ccategory) {
-															table += "<div class = \"comList\">"
+															table += "<div class = \"comList\">";
+															table += "<img class = \"comImg\" src ="
+																	+ comImg[k]
+																	+ ">";
+															table += "<div class =\"comInfoImdang\">";
 															table += "<div class = \"comname\">"
 																	+ data[i].cname
 																	+ "</div>";
@@ -73,12 +100,14 @@ $(document)
 															table += "<div class = \"cominfo\">"
 																	+ data[i].ctel
 																	+ "</div>";
-															table += "<div class=\"btnCons\">상담신청</div>";
+															table += "<div class = \"btnCons\">상담신청</div>"
 															table += "<div class = \"comNo\">"
 																	+ data[i].cno
-																	+ "</div>"
+																	+ "</div>";
+															table += "</div>";
 															table += "</div class = \"comList\">"
 															cnt++;
+															k++;
 														}
 													} // end switch
 												} // end for
@@ -110,9 +139,13 @@ $(document)
 					}); // end click function
 
 					moveScrollRight = function() {
-						
+
 						var _scrollX = $('#category').scrollLeft();
-						$('#category').animate({scrollLeft : (_scrollX + 1000)},500,function(){isCheckLR()});
+						$('#category').animate({
+							scrollLeft : (_scrollX + 1000)
+						}, 1000, function() {
+							isCheckLR()
+						});
 						isCheckLR();
 						console.log($(_scrollX));
 
@@ -120,14 +153,20 @@ $(document)
 
 					moveScrollLeft = function() {
 						var _scrollX = $('#category').scrollLeft();
-						$('#category').animate({scrollLeft : (_scrollX - 1000)},500,function(){isCheckLR()});
-						
+						$('#category').animate({
+							scrollLeft : (_scrollX - 1000)
+						}, 1000, function() {
+							isCheckLR()
+						});
+
 					}; // end right click
 
 					$('#category')
 							.hover(
 									function() {
-										console.log($('#category').scrollLeft());
+										console
+												.log($('#category')
+														.scrollLeft());
 										if (_scrollX = $('#category')
 												.scrollLeft() != 292) {
 											$('.mRight').css({
@@ -184,5 +223,5 @@ $(document)
 							})
 						}
 					} // end isCheckLR
-				
+
 				}) // end JS

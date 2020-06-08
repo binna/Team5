@@ -88,7 +88,7 @@ font-family: 'Jua', sans-serif; -->
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<form action="uQuestionList.y" method="post">
+				<form action="uQuestionList.y" method="post" id = "uQuestionList_form" name="uQuestionList_form">
 					<input type="hidden" name="pquid"
 						value=<%=session.getAttribute("id")%>>
 					<button type="submit">

@@ -6,25 +6,25 @@ $(document).ready(
 					.click(
 							function() {
 								console.log($(this).text());
+								// 상담정보 숨기기
 								$(this).parents('.Info').children(
 										'.consInfo').hide();
-								// 상담정보 숨기기
+								// 상담수정 입력창 보이기
 								$(this).parents('.Info').children(
 									'.consUpdate:not(".csno01")').css({
 									'display' : 'block'
-								}); // end .consUpdate CSS
-								// 상담수정 입력창 보이기
-								$(this).hide();
+								});
 								// 수정버튼 숨기기
+								$(this).hide();
+								// 삭제버튼 숨기기
 								$(this).parents('.Info')
 										.children('.delete').hide();
-								// 삭제버튼 숨기기
+								// 완료버튼 보이기
 								$(this).parents('.Info').children(
 										'.updateComplete').show();
-								// 완료버튼 보이기
+								// 취소버튼 보이기
 								$(this).parents('.Info')
 										.children('.cancel').show();
-								// 취소버튼 보이기
 
 							} // end function
 
@@ -33,22 +33,22 @@ $(document).ready(
 			$('.cancel')
 					.click(
 							function() {
-								// console.log("update 들어옴")
-								$(this).parents('.consData').children(
-										'div:not(.cname)').show();
+								 console.log("cancle 들어옴")
 								// 상담정보 보이기
-								$(this).parents('.consData').children(
-										'.consUpdate').hide();
+								$(this).parents('.Info').children(
+										'div:not(.cname)').show();
 								// 상담수정 입력창 보이기
-								$(this).parents('.consData').children(
-										'.updateComplete').hide();
+								$(this).parents('.Info').children(
+										'.consUpdate').hide();
 								// 완료버튼 숨기기
-								$(this).parents('.consData')
-										.children('.update').show();
+								$(this).parents('.Info').children(
+										'.updateComplete').hide();
 								// 수정버튼 보이기
-								$(this).parents('.consData')
-										.children('.delete').show();
+								$(this).parents('.Info')
+										.children('.update').show();
 								// 삭제버튼 보이기
+								$(this).parents('.Info')
+										.children('.delete').show();
 								$(this).hide();
 							} // end function
 					) // end update click
@@ -70,6 +70,11 @@ $(document).ready(
 					// console.log("들어오냐?");
 					$(".searchForm").attr("action", "consCsuidSelect.cons");
 					break;
+			
+				case "csname":
+					 console.log("들어오냐?");
+					$(".searchForm").attr("action", "consCsnameSelect.cons");
+					break;
 
 				case "cname":
 					// console.log("들어오냐?");
@@ -88,6 +93,11 @@ $(document).ready(
 				} // end switch
 			});
 
+		$('#selectAll').click(function(){
+			location.href= "consManager.cons";
+		}) // end selectAll
+			
+			
 			
 		}) // end JS
 
