@@ -106,9 +106,10 @@
 
 				<!-- <button>
 					<i class="fas fa-search"></i>
-				</button> -->
+				</button> --->
 				<%
 					if (session.getAttribute("id") != null) {
+						
 				%>
 
 				<button>
