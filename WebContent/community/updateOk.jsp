@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%  // Controller 로부터 결과 데이터 받음
-	int cnt = (Integer)request.getAttribute("select");
+	int cnt = (Integer)request.getAttribute("update");
 	int no = Integer.parseInt(request.getParameter("no"));
 %>  
 

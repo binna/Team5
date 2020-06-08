@@ -14,15 +14,16 @@ public class UpdateCommand implements Command{
 		int cnt = 0;
 
 		WriteDAO dao = new WriteDAO();
+		
 
 		//입력한 값을 받아오기
 		int no = Integer.parseInt(request.getParameter("no"));
-		String title = request.getParameter("title");
+		String title = request.getParameter("question[title]");
 		String content = request.getParameter("content");
 		String keyword = request.getParameter("keyword");
-
+		
 		try {			
-			cnt = dao.update(no, title, content, keyword);
+			cnt = dao.update(title, content, keyword, no);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

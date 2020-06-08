@@ -50,25 +50,24 @@ $(document).ready(function () {
 	}
 	
 	
+	// 택스트 박스------------------------------------------------------------------
+	// 기존에 저장한 문의 내용 값 적용
+	var $text_value = $("#get_content_value").val();
+	$(".question-form__body__content__input").text($text_value);
+	$('.question-form__body__content__placeholder').hide();
+	$('.question-form__body__content__placeholder__cs').hide();
+	$('.question-form__body__content__input').show();
+	
 	// Hint에서 문의사항 텍스트로 변경하기
 	$('.question-form__body__content__placeholder').click(function() {
 		$('.question-form__body__content__placeholder').hide();
 		$('.question-form__body__content__placeholder__cs').hide();
-		$('.question-form__body__content__input').css('display', 'block');
+		$('.question-form__body__content__input').show();
 		$('#error3').css('display', 'none');
 		
 		// 포커스일 때도 실행될 수 있도록 문구 추가
 		$('.question-form__body__content__input').focus();
 	});
-	
-	// 기존에 저장한 문의 내용 값 적용
-	var $text_value = $("#get_content_value").val();
-	$(".question-form__body__content__input").text($text_value);
-	
-	// 기존 값 불러오면서 Hint 숨기고 작성창 보여주기
-	$('.question-form__body__content__placeholder').hide();
-	$('.question-form__body__content__placeholder__cs').hide();
-	$('.question-form__body__content__input').show();
 	
 	// 텍스트 박스에 글씨를 작성했는가 확인하기
 	$(".question-form__body__content__input").focusout(function() {
@@ -80,13 +79,21 @@ $(document).ready(function () {
 			$('.question-form__body__content__placeholder__cs').show();
 			$('.question-form__body__content__input').hide();
 			$('.question-form__body__content__placeholder').css('border', '1px solid red');
-			
+		} 
+		
+		// 텍스트 10자 미만 경고창
+		if(count < 10) {
 			$('#error3').css('display', 'block');
+			$('.question-form__body__content__input').css('border', '1px solid red');
+		} else {
+			$('#error3').css('display', 'none');
+			$('.question-form__body__content__input').css('border', '1px solid #ced4da');
 		}
 		
 		// 텍스트 박스에 글씨를 작성내용 저장, 리퀘스트하기 위해 저장함
 		$("#content_value").attr('value', txt);
 	});
+	//---------------------------------------------------------------------
 	
 	
 	// 모델 버튼 활성화

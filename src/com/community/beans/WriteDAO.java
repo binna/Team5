@@ -269,8 +269,9 @@ public class WriteDAO {
 	}
 	
 	// 특정 uid 의 글 수정 (제목, 내용)
-	public int update(int no, String title, String content, String keyword) throws SQLException {
+	public int update(String title, String content, String keyword, int no) throws SQLException {
 		int cnt = 0;
+		
 		try {
 			pstmt = conn.prepareStatement(CommunityD.SQL_WRITE_UPDATE);
 			pstmt.setString(1, title);

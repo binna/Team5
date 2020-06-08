@@ -52,6 +52,16 @@
 
 <body>
 
+<%
+      if (session.getAttribute("id") == null) {
+%>
+   <script>
+      alert("로그인이 필요한 페이지입니다.")
+      location.href = "../MemberLogin.me"
+   </script>
+<%
+      }
+%>
 
 	<!-- header -->
 	<header style="padding: 0px;" class="col-md-12" id="main_header">

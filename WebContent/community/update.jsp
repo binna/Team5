@@ -62,13 +62,13 @@
 
 	<div class="question-form container">
 	
-	<form id="question-form" class="new_question" action="writeOk.community" accept-charset="UTF-8" method="post">
+	<form id="question-form" class="new_question" action="updateOk.community?no=<%= no %>" accept-charset="UTF-8" method="post">
 
 	<header class="question-form__header">
 		<h2 class="question-form__header__heading text-black bold">질문하기</h2>
 		<div class="question-form__header__title form-group">
 		<input value="<%= title %>"
-			placeholder="제목을 적어주세요." class="form-control" maxlength="60" size="1" type="text" name="question[title]" id="question_title">
+			placeholder="제목을 적어주세요." class="form-control" maxlength="60" size="1" type="text" name="question[title]">
 		
         <p id="error1">제목을 7자 이상으로 적어주세요.</p>
         
@@ -135,15 +135,14 @@
     <input id="get_keyword_value" value="<%= keyword %>" hidden="true">
 
     
-    <!-- 키워드 값을 DB에 저장하기 위한 input value 설정 -->
-    <input id="keyword_value" name="keyword" value="" hidden="true">
     <!-- content 값을 리퀘스트 보내기 위해 -->
-    <input id="content_value" name="content" value="" hidden="true">
-    
-    
+    <input id="content_value" name="content" value="<%= content %>">
+    <!-- 키워드 값을 DB에 저장하기 위한 input value 설정 -->
+    <input id="keyword_value" name="keyword" value="<%= keyword %>">
+
     <footer class="question-form__footer">
       <div class="question-form__footer__submit row">
-        <input type="submit" name="commit" value="질문 저장하기" class="btn btn-lg">
+        <input id="btn_write_form" type="submit" name="commit" value="질문 저장하기" class="btn btn-lg">
       </div>
     </footer>
 	</form>
