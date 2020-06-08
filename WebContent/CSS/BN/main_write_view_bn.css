@@ -785,26 +785,6 @@ li {list-style: none;}
     margin-top: 30px;
 }
 
-
-
-
-
-/* 이건 정말 필요한지 최종적으로 댓글 구현 해보고 한 번 더 확인 필요*/
-.comment-feed__form__content__text::-webkit-input-placeholder {
-    color: #bdbdbd;
-}
-.comment-feed__form__content__text::-moz-placeholder {
-    color: #bdbdbd;
-    opacity: 1;
-}
-.comment-feed__form__content__text:-ms-input-placeholder {
-    color: #bdbdbd;
-}
-.comment-feed__form__content__text:-moz-placeholder {
-    color: #bdbdbd;
-}
-
-
 /* 반응형을 위한 테블릿 */
 @media (min-width: 768px) {
 	/* 댓글이 몇개인지 확인 */
@@ -870,7 +850,28 @@ li {list-style: none;}
         display:block;
         width:334px;
     }
-
 }
 
-
+/* 질문하기 */
+.modal-header .title {
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 28px;
+    color: #424242;
+}
+.ui-checked-right-left-text {
+    padding: 20px;
+    overflow: hidden;
+}
+.close_popup {
+    margin-top: 22px;
+    border-radius: 4px;
+    border: 1px solid #35c5f0;
+    color: #35c5f0;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    background: transparent;
+}

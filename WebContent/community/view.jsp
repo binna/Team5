@@ -197,8 +197,9 @@
 		  <time><%= regDate %></time>
 		  <!-- 조회수 chlickCnt 들어가는 곳 -->
 		  <span>조회 <span class="qna-detail__footer__metadata-view-count-value"><%= clickCnt %></span></span>
-		  <!-- 신고버튼 -->
-		  <button class="qna-detail__footer__metadata-report-link" type="button">신고</button>
+		  <!-- 신고버튼, 모달창 여는 버튼, data-toggle="modal" -->
+		  <button data-toggle="modal" data-target="#create_report" 
+		  	class="qna-detail__footer__metadata-report-link" type="button">신고</button>
 		</div>
       
       </footer>
@@ -358,6 +359,81 @@
     
   </nav>
 </article>
+
+
+
+
+<!-- 신고 페이지, 모달 열기 -->
+<div id="create_report" class="modal fade" role="dialog">
+ <div class="modal-dialog">
+        
+  <!-- Modal content-->
+  <div class="modal-content modal-tag-select__wrap">
+  
+  <!-- Modal 헤더 -->
+  <header class="modal-header">
+    <div class="title">신고사유를 선택해주세요.</div>
+  </header>
+  
+  <!-- Modal 텍스트 문구 -->
+  <div class="modal-body">
+  
+  <!--<input value="Question" type="hidden" name="report[reportable_type]" id="report_reportable_type">--> 
+  
+    <div class="ui-checked-right-left-text">
+      <input type="radio" value="0" name="report[report_type]" id="report_report_type_0">
+      <label for="report_report_type_0">주제와 맞지 않음</label>
+    </div>
+        
+    <div class="ui-checked-right-left-text">
+          <input type="radio" value="1" name="report[report_type]" id="report_report_type_1">
+          <label for="report_report_type_1">정보가 부정확함</label>
+    </div>
+        
+    <div class="ui-checked-right-left-text">
+          <input type="radio" value="2" name="report[report_type]" id="report_report_type_2">
+          <label for="report_report_type_2">지나친 광고성 게시물</label>
+    </div>
+        
+    <div class="ui-checked-right-left-text">
+          <input type="radio" value="3" name="report[report_type]" id="report_report_type_3">
+          <label for="report_report_type_3">도배 및 중복 게시물</label>
+    </div>
+        
+    <div class="ui-checked-right-left-text">
+    <input type="radio" value="4" name="report[report_type]" id="report_report_type_4">
+    <label for="report_report_type_4">저작권 침해가 우려됨</label>
+    </div>
+        
+    <div class="ui-checked-right-left-text">
+      <input type="radio" value="5" name="report[report_type]" id="report_report_type_5">
+      <label for="report_report_type_5">욕설/비방이 심함</label>
+    </div>
+    
+    <div class="ui-checked-right-left-text">
+      <input type="radio" value="6" name="report[report_type]" id="report_report_type_6">
+      <label for="report_report_type_6">외설적인 게시물</label>
+    </div>
+        
+    <div class="ui-checked-right-left-text">
+      <input type="radio" value="7" name="report[report_type]" id="report_report_type_7">
+      <label for="report_report_type_7">개인정보노출</label>
+    </div>
+  </div>
+
+  <footer class="modal-footer modal-tag-select__footer">
+    <button name="button" type="submit" class="close_popup">신고하기</button>
+  </footer>
+  
+  <!-- Modal content-->
+  </div>
+ <!-- modal-dialog -->
+ </div>
+<!-- 신고 모달창 종료 -->
+</div>
+
+
+
 
 <!-- end 작업해야할 메인 -->
 </main>
