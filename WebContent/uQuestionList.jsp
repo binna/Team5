@@ -54,6 +54,17 @@ font-family: 'Jua', sans-serif; -->
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
+
+	<%
+		if (session.getAttribute("id") == null) {
+	%>
+	<script>
+		alert("로그인이필요한 페이지 입니다.")
+		location.href = "MemberLogin.me"
+	</script>
+	<%
+		}
+	%>
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -109,8 +120,10 @@ font-family: 'Jua', sans-serif; -->
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-					
-						<li><a href="#" onclick="javascript:page_move('uOrderList.woo', '${id }');">주문배송내역 조회</a></li>
+
+						<li><a href="#"
+							onclick="javascript:page_move('uOrderList.woo', '${id }');">주문배송내역
+								조회</a></li>
 						<li><a href="#">상품 스크랩북</a></li>
 						<li id="Q_li"><a href="#">상품문의내역</a></li>
 						<li><a href="#">포인트</a></li>
@@ -132,7 +145,7 @@ font-family: 'Jua', sans-serif; -->
 				<c:when test="${empty Qlist || fn:length(Qlist) ==0}">
 					<div id="main_qlist">
 						<h1>문의한 내역이 없습니다.</h1>
-						
+
 					</div>
 				</c:when>
 				<c:otherwise>
@@ -152,7 +165,7 @@ font-family: 'Jua', sans-serif; -->
 							<h3 class="pqanswer">${dto.pqanswer }</h3>
 							<br>
 							<form action="QuestionDeleteOk.y" method="post">
-								<input type="hidden" name = "pqid" value="${dto.pqid}">
+								<input type="hidden" name="pqid" value="${dto.pqid}">
 								<button class="main_qlist_delete"
 									id="main_qlist_delete_${dto.pqid}" type="submit">삭제 하기</button>
 							</form>

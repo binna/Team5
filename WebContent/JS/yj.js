@@ -35,11 +35,36 @@ $(document).ready(function() {
 
 	$('div[id^="category_"]').click(function() {
 		var code = $(this).attr('id').split("_")[1];
-		for (var i = 1; i <=10; i++) {
+		for (var i = 1; i <= 10; i++) {
 			$('.category_code_' + i).hide()
 		}
-		$('.category_code_' + code).show(1000)
+		$('.category_code_' + code).show(300)
 	});
+
+	// main js
+
+	$("#main_top2-1").css("display", "none");
+	$("#main_top2-3").css("display", "none");
+	
+	$("#main_a_comunity").mouseenter(function() {
+		$("#main_top2-1").hide();
+		$("#main_top2-3").hide();
+		$("#main_top2-2").show()
+
+	});
+	
+	$("#main_a_store").mouseenter(function() {
+		$("#main_top2-2").hide();
+		$("#main_top2-3").hide();
+		$("#main_top2-1").show()
+	});
+	
+	$("#main_a_cons").mouseenter(function() {
+		$("#main_top2-1").hide();
+		$("#main_top2-3").show();
+		$("#main_top2-2").hide()
+	});
+	
 	/*
 	 * $('button[id^="main_qlist_answer_1_"]').click(function(){ var id =
 	 * $(this).attr('id').split("_")[4];
@@ -81,37 +106,26 @@ $(document).ready(function() {
 	}
 
 	// store_main : category
-	
-	
-	  function page_move(url, pcuid) {
-	        var form = document.createElement("form");
-	        var parm = new Array();
-	        var input = new Array();
 
-	        form.action = url;
-	        form.method = "post";
+	function page_move(url, pcuid) {
+		var form = document.createElement("form");
+		var parm = new Array();
+		var input = new Array();
 
+		form.action = url;
+		form.method = "post";
 
-	        
-	        parm.push( ['pcuid', pcuid] );
+		parm.push([ 'pcuid', pcuid ]);
 
-
-	        for (var i = 0; i < parm.length; i++) {
-	            input[i] = document.createElement("input");
-	            input[i].setAttribute("type", "hidden");
-	            input[i].setAttribute('name', parm[i][0]);
-	            input[i].setAttribute("value", parm[i][1]);
-	            form.appendChild(input[i]);
-	        }
-	        document.body.appendChild(form);
-	        form.submit();
-	    }
-	
-	
-	
-	
-	
-
-
+		for (var i = 0; i < parm.length; i++) {
+			input[i] = document.createElement("input");
+			input[i].setAttribute("type", "hidden");
+			input[i].setAttribute('name', parm[i][0]);
+			input[i].setAttribute("value", parm[i][1]);
+			form.appendChild(input[i]);
+		}
+		document.body.appendChild(form);
+		form.submit();
+	}
 
 });

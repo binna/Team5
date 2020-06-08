@@ -44,7 +44,7 @@
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
-
+<script type="text/javascript" src="JS/yj.js"></script>
 
 
 
@@ -56,30 +56,31 @@
 <script type="text/javascript" src="JS/popup.js"></script>
 <body>
 	<%
-	System.out.print(session.getAttribute("id"));
+		System.out.print(session.getAttribute("id"));
 
-	if (session.getAttribute("id") != null) {
-%>
-<h2>로그인 상태입니다</h2>
-<form action="./member/logout.jsp">
-	<input type="submit" value="로그아웃"><br>
-</form>
-<%
-	} else {
-%>
-<h2>로그인 상태가 아닙니다</h2>
-<form action="loginOk.jsp">
-	id: <input type="text" name="userid"><br> pw: <input
-		type="password" name="pw"><br> <input type="submit"
-		value="로그인"><br>
-</form>
-<%
-	}
-%>
-<form action="MemberModifyAction_1.me">
-	<input type="submit" value="회원수정"><br>
-</form>
-<body onLoad="javascript:open_win();"> <!-- 팝업창 설정 -->
+		if (session.getAttribute("id") != null) {
+	%>
+	<h2>로그인 상태입니다</h2>
+	<form action="./member/logout.jsp">
+		<input type="submit" value="로그아웃"><br>
+	</form>
+	<%
+		} else {
+	%>
+	<h2>로그인 상태가 아닙니다</h2>
+	<form action="loginOk.jsp">
+		id: <input type="text" name="userid"><br> pw: <input
+			type="password" name="pw"><br> <input type="submit"
+			value="로그인"><br>
+	</form>
+	<%
+		}
+	%>
+	<form action="MemberModifyAction_1.me">
+		<input type="submit" value="회원수정"><br>
+	</form>
+<body onLoad="javascript:open_win();">
+	<!-- 팝업창 설정 -->
 
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
@@ -89,9 +90,9 @@
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="storeMain.jsp">스토어</a></li>
-						<li><a href="consMain.jsp">인테리어시공</a></li>
+						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -99,7 +100,10 @@
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
-				<button id="write">글쓰기</button>
+				
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+				
 				<!-- <button>
 					<i class="fas fa-search"></i>
 				</button> -->
@@ -121,7 +125,7 @@
 		</div>
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-9">
+			<div class="col-md-9" id="main_top2-1">
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">스토어홈</a></li>
@@ -132,6 +136,32 @@
 						<li><a href="#">여름패브릭</a></li>
 						<li><a href="#">여름가전</a></li>
 						<li><a href="#">기획전</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-2">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">홈</a></li>
+						<li><a href="#">사진</a></li>
+						<li><a href="#">집들이</a></li>
+						<li><a href="#">노하우</a></li>
+						<li><a href="#">전문가집들이</a></li>
+						<li><a href="#">셀프가이드</a></li>
+						<li><a href="#">질문과답변</a></li>
+						<li><a href="#">이벤트</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-3">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">시공홈</a></li>
+						<li><a href="#">견적계산</a></li>
+						<li><a href="#">전문가찾기</a></li>
+						<li><a href="#">시공스토어</a></li>
+						<li><a href="#">방산시장</a></li>
+
 					</ul>
 				</nav>
 			</div>
