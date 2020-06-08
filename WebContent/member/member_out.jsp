@@ -31,7 +31,8 @@
 	<tr>
 		<td align="center" colspan="2" height="35">
 			<input type="submit" value="회원 탈퇴" />
-			<input type="reset" value="취 소" />
+			<input type="reset" value="다시입력" />
+			<input type="button" name="cancle"value="취소" onclick="location.href='./main.jsp'">
 		</td>
 	</tr>				
 </table>

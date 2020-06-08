@@ -52,6 +52,8 @@
 <title>너네집</title>
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- 팝업설정 js경로  -->
+<script type="text/javascript" src="JS/popup.js"></script>
 <body>
 	<%
 	System.out.print(session.getAttribute("id"));
@@ -74,7 +76,10 @@
 <%
 	}
 %>
-
+<form action="MemberModifyAction_1.me">
+	<input type="submit" value="회원수정"><br>
+</form>
+<body onLoad="javascript:open_win();"> <!-- 팝업창 설정 -->
 
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">

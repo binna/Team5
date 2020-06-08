@@ -9,7 +9,7 @@
 <script>
 	$(document)
 			.ready( 
-					function() {
+					
 						function check() {
 							var id = loginform.MEMBER_ID.value;
 							var pass = loginform.MEMBER_PW.value;
@@ -26,7 +26,9 @@
 							}
 
 							return true;
-						}
+						
+					})
+				
 						function openConfirmId(loginform) {
 							var url = "./MemberFind.me";
 							open(
@@ -35,11 +37,16 @@
 									"toolbar=no,location=no,status=no,menubar=no,"
 											+ "scrollbars=no,resizable=no,width=450px,height=300");
 						}
-					})
 </script>
 </head>
 <body>
-
+<header style="padding: 0px;" class="col-md-12" id="main_header">
+		<div id="main_top1" class="row">
+			<div id="main_top1_1" class="col-md-2">
+			<a href="main.jsp" style="text-decoration:none"><h1 align="center">너네 집</h1></a>
+			</div>
+			</div>
+			</header>
 
 
 
@@ -92,6 +99,9 @@
 																			<a href="#"> <input type="button"
 																				value="아이디/비밀번호 찾기"
 																				onclick="openConfirmId(this.form)">
+																				<input
+																			type="button" value="취소"
+																			onclick="javascript:window.location='./main.jsp'">
 																		</a></td>
 																	</tr>
 																</table>

@@ -24,7 +24,9 @@ public class MemberDeleteAction implements Action{
 				
 				session.invalidate();
 				
-				forward.setPath("./member/member_out_ok.jsp"); 
+				/* forward.setPath("./member/member_out_ok.jsp"); */
+				forward.setPath("./main.jsp"); 
+				
 				
 			}else{
 				response.setContentType("text/html; charset=utf-8");
