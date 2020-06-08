@@ -180,6 +180,13 @@ $(document).ready(function () {
 	}
 	$("#keyword_list_group").append($keywordHtml);
 	
+	// 신고하기 버튼 클릭, 모달창 닫힘과 동시에 DB에 submit
+	$(".close_popup").click(function(){});
+	 // btnCommit 버튼 클릭시 조건 맞으면 모달 창 종료
+	if(cheLength > 0 && cheLength <= 5){
+		$(".question-form__keywords__keyword__name")
+		$(".btn-dismiss").trigger("click");
+	}
 	
 }); // end ready()
 

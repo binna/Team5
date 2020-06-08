@@ -369,7 +369,9 @@
         
   <!-- Modal content-->
   <div class="modal-content modal-tag-select__wrap">
-  
+  <span style="float: right;">
+  <button class="dismiss_popup" type="button"><i class="far fa-times-circle" style="font-size: 30px;"></i></button>
+  </span>
   <!-- Modal 헤더 -->
   <header class="modal-header">
     <div class="title">신고사유를 선택해주세요.</div>
@@ -379,7 +381,6 @@
   <div class="modal-body">
   
   <!--<input value="Question" type="hidden" name="report[reportable_type]" id="report_reportable_type">--> 
-  
     <div class="ui-checked-right-left-text">
       <input type="radio" value="0" name="report[report_type]" id="report_report_type_0">
       <label for="report_report_type_0">주제와 맞지 않음</label>
@@ -420,7 +421,7 @@
       <label for="report_report_type_7">개인정보노출</label>
     </div>
   </div>
-
+  
   <footer class="modal-footer modal-tag-select__footer">
     <button name="button" type="submit" class="close_popup">신고하기</button>
   </footer>

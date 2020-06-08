@@ -84,6 +84,11 @@ public class CommunityD {
 	/* 각각의 게시글에 맞는 댓글 전체 조회하기 */
 	public static final String SQL_COMMENT_SELECT_ALL
 		= "SELECT * FROM QComment WHERE Cqno=?";
+	
+	/* 신고 접수 */
+	public static final String SQL_REPOT_INSERT
+		= "INSERT INTO Qrepor(Rno, Rmember_id, Rtype, Rqno)"
+		+ "VALUES(SEQ_Qrepor_Rno.nextval, ?, ?, ?)";
 
 	
 	

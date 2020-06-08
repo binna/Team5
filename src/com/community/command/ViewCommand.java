@@ -19,7 +19,6 @@ public class ViewCommand implements Command {
 		
 		// Qno 값 받아 오기, id 값 받아오기
 		int no = Integer.parseInt(request.getParameter("no"));
-		String qid = request.getParameter("qid");
 		
 		try {
 			// 트랜잭션 수행
@@ -33,8 +32,6 @@ public class ViewCommand implements Command {
 		// 등록된 댓글 모두 보기
 		CommentDAO dao2 = new CommentDAO();	// DAO 객체 생성
 		CommentDTO[] arr2 = null;
-		
-		no = Integer.parseInt(request.getParameter("no"));
 		
 		try {
 			// 트랜젝션 수행

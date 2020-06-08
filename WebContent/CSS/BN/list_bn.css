@@ -73,6 +73,7 @@
 .questions-filter__actions {
     margin: 0 -5px;
     font-size: 0;
+    float: right;
 }
 .questions-filter__actions .btn {
     padding-left: 13px;
@@ -81,22 +82,7 @@
     margin: 0 5px;
 }
 
-/* 답변을 기다리는 질문 버튼*/
-.set-reply {
-	padding-left: 13px;
-    padding-right: 13px;
-    font-size: 13px;
-    margin: 0 5px;
-    background-color: #fafafa;
-    color: #424242;
-    line-height: 1;
-    height: 40px;
-    padding: 10px 20px;
-    border: 1px solid #dbdbdb;
-    text-align: center;
-    border-radius: 4px;
-    font-weight: bold;
-}
+/* 질문하기 버튼 */
 .questions-filter__actions__new-question {
 	padding-left: 13px;
     padding-right: 13px;
@@ -112,7 +98,11 @@
     border-radius: 4px;
     font-weight: bold;
 }
-
+.questions-filter__actions__new-question:hover {
+	text-decoration: none;
+	background-color: #10aedc;
+    color: #ffffff;
+}
 
 /* 리스트 노출 */
 /* 각기 리스트별로 hover시 스타일링 */

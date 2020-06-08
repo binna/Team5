@@ -48,7 +48,6 @@
 <!-- CSS 적용 -->
 <link rel="stylesheet" href="../CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="../CSS/yj.css" type="text/css">
-<link rel="stylesheet" href="test.css" type="text/css">
 <link rel="stylesheet" href="../CSS/BN/list_bn.css" type="text/css">
 
 
@@ -57,7 +56,7 @@
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
-	<!-- 헤더 부분 -->
+   <!-- 헤더 부분 -->
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -66,9 +65,9 @@
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
+						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -76,10 +75,18 @@
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
-				<button id="write">글쓰기</button>
+
+				<button id="write"
+					onclick="location.href='communityMain.jsp'">글쓰기</button>
+
 				<!-- <button>
 					<i class="fas fa-search"></i>
-				</button> -->
+				</button> --->
+				<%
+					if (session.getAttribute("id") != null) {
+						
+				%>
+
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -89,14 +96,39 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button>
+				<button id="main_user_menu_icon" >
 					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a href="#">마이페이지</a></li>
+								<li><a href="#">나의쇼핑</a></li>
+								<li><a href="../member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
 				</button>
+				<a><%= session.getAttribute("id") %> 님</a>
+
+				<%
+					} else {
+				%>
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<a href="../MemberLogin.me">로그인 </a> | <a href="../MemberJoin.me">회원가입</a>
+				<%
+					}
+				%>
+
+
+
 			</div>
 		</div>
+
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-9">
+			<div class="col-md-9" id="main_top2-1">
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">스토어홈</a></li>
@@ -107,6 +139,26 @@
 						<li><a href="#">여름패브릭</a></li>
 						<li><a href="#">여름가전</a></li>
 						<li><a href="#">기획전</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-2">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">홈</a></li>
+						<li><a href="list.community?page=1">질문과답변</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-3">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">시공홈</a></li>
+						<li><a href="#">견적계산</a></li>
+						<li><a href="#">전문가찾기</a></li>
+						<li><a href="#">시공스토어</a></li>
+						<li><a href="#">방산시장</a></li>
+
 					</ul>
 				</nav>
 			</div>
@@ -152,11 +204,10 @@
   
   
   <!-- 답변을 기다리는 질문, 질문하기 버튼 -->
-  <section id="questions-filter" class="sticky-top" style="height: auto;">
-    <div class="questions-filter__float sticky-content open" data-sticky-enabled="false" data-offset="131" style="position: relative;">
+  <section id="questions-filter">
+    <div class="questions-filter__float">
       <div class="questions-filter__content container">
         <div class="questions-filter__actions">
-          <a class="set-reply" href="#">답변을 기다리는 질문</a>
           <a class="questions-filter__actions__new-question" href="write.community">질문하기</a>
         </div>  
       </div>
