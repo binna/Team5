@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="com.cons.beans.*"%>
 
+
+
 <!-- GET방식으로 Controller로 넘겨줌 Cno 값을 이용해서 컬럼값을 가져오는 소스코드 -->
 <%
 	// Controller 로부터 결과 데이터 받음
@@ -57,20 +59,6 @@
 <title>너네 집</title>
 </head>
 <body>
-	<!-- 로그인 유효성 검사 -->
-	<%
-		if (session.getAttribute("csuid") != null) {
-			String csuid = (String) session.getAttribute("csuid");
-		} else {
-	%>
-	<script>
-		alert('로그인 상태가 아닙니다.');
-		location.href = "main.jsp";
-	</script>
-	<%
-		}
-	%>
-
 	<!-- 로고부분 -->
 	<header id="cons_header">
 		<div class="cons_header">
@@ -81,7 +69,8 @@
 
 
 	<!-- post방식  action="consWriteOk.cons" -->
-	<form name="frm" method="post"  action="consWriteOk.cons" class="searchForm">
+	<form name="frm" method="post" action="consWriteOk.cons"
+		class="searchForm">
 		<section id="cons_section">
 			<article id="cons_section_header">
 				<h1 class="consultation-form__header__title">
@@ -118,7 +107,7 @@
 
 			<article id="cons_section_userInfo">
 				<div class="userNameInfo">고객님의 이름을 알려주세요.</div>
-				<input type="text" name="csuid" placeholder="집순이"
+				<input type="text" name="csname" placeholder="집순이"
 					class="userNameInput"></input>
 				<div class="userTelInfo">
 					상담받을 전화번호를 알려주세요.
@@ -128,11 +117,9 @@
 						class="ctel02"> - <input type="text" name="cstel03"
 						placeholder="5678" class="ctel03">
 				</div>
-				<input type="hidden" value="<%=cno%>" name="cno">
-
-
-					<input type="submit" class="submit" value="SUBMIT">
-					<input type="button" class="cancel" value="CANCEL">
+				<input type="hidden" value="<%=cno%>" name="cno"> <input
+					type="submit" class="submit" value="SUBMIT"> <input
+					type="button" class="cancel" value="CANCEL">
 			</article>
 		</section>
 	</form>

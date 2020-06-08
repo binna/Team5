@@ -17,13 +17,13 @@ public class UpdateCommand implements Command {
 
 		// 입력한 값을 받아오기
 		int csno = Integer.parseInt(request.getParameter("csno"));
-		String csuid = request.getParameter("csuid");
+		String csname = request.getParameter("csname");
 		String csarea = request.getParameter("csarea");
 		String cstel = request.getParameter("cstel");
 		System.out.println(csarea+"안녕안녕나는");
 
 		try {
-			cnt = dao.update(csno, csuid, csarea, cstel);
+			cnt = dao.update(csno, csname, csarea, cstel);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

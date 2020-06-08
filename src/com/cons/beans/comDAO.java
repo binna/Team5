@@ -115,16 +115,17 @@ public class comDAO {
 	} // end readByUid()
 
 	// 새글 작성 <-- 제목, 내용, 작성자
-	public int insert(String csuid, int cno, String carea, String cstel) throws SQLException {
+	public int insert(String csuid, String csname, int cno, String carea, String cstel) throws SQLException {
 		int cnt = 0;
-
+		System.out.println("들어오나요?");
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_WRITE);
 			pstmt.setString(1, csuid);
-			pstmt.setInt(2, cno);
-			pstmt.setString(3, carea);
-			pstmt.setString(4, cstel);
-
+			pstmt.setString(2, csname);
+			pstmt.setInt(3, cno);
+			pstmt.setString(4, carea);
+			pstmt.setString(5, cstel);
+			System.out.println("여기는 들어오나요?");
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cons.beans.comDAO;
 import com.cons.beans.comDTO;
@@ -14,7 +15,8 @@ public class ViewCommand implements Command {
 		comDAO dao = new comDAO();
 		comDTO [] arr = null;
 		int uid = Integer.parseInt(request.getParameter("cno"));  // 매개변수 검증 필요
-
+		HttpSession session = request.getSession();
+		String id = session.getAttribute("id") + "";
 		try {
 			arr = dao.readByUid(uid);  // 읽기 + 조회수 증가
 			request.setAttribute("list", arr);

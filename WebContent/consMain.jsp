@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<% session.setAttribute("csuid", "1234"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,23 +37,14 @@
 
 <title>너네 집</title>
 </head>
-<%
-	session.setAttribute("csuid", "1234");
-%>
+
 <script type="text/javascript">
-	var csuid =
-<%=session.getAttribute("csuid")%>
-	;
 	$(document).on('click', '.btnCons', function() {
 		// console.log(csuid);
-		if (csuid == '1234') {
 			//			console.log($(this).parent().children('.comNo').text().trim());
 			//			alert('로그인 했슴다.');
 			var str = $(this).parent().children('.comNo').text().trim();
 			location.href = "consWrite.cons?cno=" + str;
-		} else {
-			//			alert('로그인 안됬어요임마.');
-		}
 	});
 </script>
 
