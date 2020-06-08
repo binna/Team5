@@ -126,7 +126,7 @@
     
     <footer class="question-form__footer">
       <div class="question-form__footer__submit row">
-        <input type="submit" name="commit" value="질문 저장하기" class="btn btn-lg">
+        <input id="btn_write_form" type="submit" name="commit" value="질문 저장하기" class="btn btn-lg">
       </div>
     </footer>
 	</form>

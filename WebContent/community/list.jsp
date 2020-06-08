@@ -182,7 +182,7 @@
     	if(arr != null) {
     		for(int i = startPoint; i < endPoint; i++) {
     %>
-    <a class="questions-item__link" href="http://localhost:8888/Team5/community/view.community?no=<%= arr[i].getNo() %>">
+    <a class="questions-item__link" href="view.community?no=<%= arr[i].getNo() %>">
       <article class="questions-item">
         <h1 class="questions-item__title"><%= arr[i].getTitle() %></h1>
         <p class="questions-item__content"><%= arr[i].getContent() %></p>

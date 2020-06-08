@@ -70,25 +70,25 @@ public class CommunityController extends HttpServlet {
 		case "/community/update.community":
 			command = new SelectCommand();
 			command.execute(request, response);
-			viewPage = "update.jsp";
+			viewPage = "/community/update.jsp";
 			break;
 			
 		case "/community/updateOk.community":
 			command = new UpdateCommand();
 			command.execute(request, response);
-			viewPage = "updateOk.jsp";
+			viewPage = "/community/updateOk.jsp";
 			break;
 			
 		case "/community/deleteOk.community":
 			command = new DeleteCommand();
 			command.execute(request, response);
-			viewPage = "deleteOk.jsp";
+			viewPage = "/community/deleteOk.jsp";
 			break;
 			
 		case "/community/commentWriteOk.community":
 			command = new CommentWriteCommend();
 			command.execute(request, response);
-			viewPage = "commentWriteOk.jsp";
+			viewPage = "/community/commentWriteOk.jsp";
 			break;
 		
 		} // end switch()

@@ -6,6 +6,7 @@
 	//Controller로부터 결과 데이터 받음
 	WriteDTO[] arr = (WriteDTO[])request.getAttribute("view");
 	CommentDTO[] arr2 = (CommentDTO[])request.getAttribute("CommentList");
+	System.out.println(arr2);
 %> 
 
 <%
@@ -197,7 +198,9 @@
       
       </footer>
 
-
+      <% // 댓글이 1개라도 있을때
+      	if(arr2 != null) {
+      %>
       <!-- 댓글  작성하는 총 화면 노출단-->
       <section class="qna-detail__comment-section">
 	      <section class="comment-feed">
@@ -225,8 +228,7 @@
 		      <!-- 댓글 리스트 보는 곳 -->
 		      <ul class="comment-feed__list">
 		        <%
-			        if(arr2 != null) {
-			    		for(int i = 0; i < arr2.length; i++) {
+			    	for(int i = 0; i < arr2.length; i++) {
 		        %>
 		        <!-- 실제 댓글 , 댓글 하나당 아래의 li 전체가 추가되어야 함-->
 		        <li class="comment-feed__list__item">
@@ -244,16 +246,46 @@
 		          </article>
 		        </li>
 		        <%
-			    		} // end for
-			        } // end if
-		        %>
+			    	} // end for
+			    %>
+			   
 		      </ul>
 		      
 	      </section>
 	      
 	  <!-- end 댓글  작성하는 총 화면 노출단 -->
       </section>
-
+      <%
+        } else {	// 댓글이 하나도 없을때
+      %>		      
+      <!-- 댓글  작성하는 총 화면 노출단-->
+      <section class="qna-detail__comment-section">
+	      <section class="comment-feed">
+	      	<!-- 댓글이 몇개인지 파악하여 노출 -->
+		    <h1 class="comment-feed__header">댓글&nbsp;<span class="comment-feed__header__count">0</span></h1>
+		      
+		    <!-- 작성한 댓글 db에 보내기 위한 form -->
+		    <form class="comment-feed__form" action="commentWriteOk.community?no=<%= no %>" accept-charset="UTF-8" method="post">
+		      <div class="comment-feed__form__input">
+		        <!-- 댓글 택스트 작성 영역 -->
+		        <div class="comment-feed__form__content">
+		          <!-- 댓글 hint, 댓글이 없을때만 노출하기 -->
+		          <div class="comment-content-input">
+		            <input class="comment-content-iDDt comment-feed__form__content__text" placeholder="댓글을 남겨 보세요." name="commentContent">
+		          </div>
+		        </div>
+		        <!-- 댓글 등록 버튼, 등록하는 순간 DB에 저장되어야 함 -->
+		        <div class="comment-feed__form__actions">
+		          <button class="comment-feed__form__submit" aria-label="등록" type="submit">등록</button>
+		        </div>
+		      </div>
+		    </form>
+	      </section>
+	  <!-- end 댓글  작성하는 총 화면 노출단 -->
+      </section>
+      <%
+        } // end if
+      %>
 
       <!-- 질문하러 가기, 모바일 버전에서 보여지기 위해서 필요...!! -->
       <aside class="qna-detail-aside qna-detail__aside">

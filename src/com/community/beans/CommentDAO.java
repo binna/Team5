@@ -69,11 +69,12 @@ public class CommentDAO {
 	
 	// list.jsp
 	// 전체 SELECT
-	public CommentDTO[] select() throws SQLException {
+	public CommentDTO[] select(int cQno) throws SQLException {
 		CommentDTO[] arr = null;
 		
 		try {
 			pstmt = conn.prepareStatement(CommunityD.SQL_COMMENT_SELECT_ALL);
+			pstmt.setInt(1, cQno);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} finally {
@@ -110,7 +111,7 @@ public class CommentDAO {
 		
 		int size = list.size();
 		
-		if(size == 0) return null;
+		if(size == 0) {return null;}
 		
 		arr = new CommentDTO[size];
 		list.toArray(arr);  // List -> 배열		
@@ -118,12 +119,3 @@ public class CommentDAO {
 	}
 
 } // end DAO
-
-
-
-
-
-
-
-
-

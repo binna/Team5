@@ -14,6 +14,6 @@
 <% } else { %>
 	<script>
 		alert('수정 성공');
-		location.href = "/Team5/community/view.community?no=<%= no %>";
+		location.href = "view.community?no=<%= no %>";
 	</script>
 <% } %>

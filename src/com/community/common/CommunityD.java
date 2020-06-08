@@ -81,9 +81,9 @@ public class CommunityD {
 	public static final String SQL_COMMENT_INSERT = "INSERT INTO QComment(Cno, Cqno, Ccontent) "
 		+ "VALUES(SEQ_QComment_Cno.nextval, ?, ?)";
 	
-	/* 댓글 전체 조회하기 */
+	/* 각각의 게시글에 맞는 댓글 전체 조회하기 */
 	public static final String SQL_COMMENT_SELECT_ALL
-		= "SELECT * FROM QComment";
+		= "SELECT * FROM QComment WHERE Cqno=?";
 	
 	
 	

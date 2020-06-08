@@ -5,7 +5,7 @@ $(document).ready(function () {
 		// 7자 미만 에러 메시지
 		if($(this).val().length < 7) {
 			$('#error1').css('display', 'block');
-			$('.form-control').css('border', '2px solid red');
+			$('.form-control').css('border', '1px solid red');
 		}
 		// 7자 이상, 본래의 모습으로
 		if($(this).val().length >= 7) {
@@ -21,7 +21,7 @@ $(document).ready(function () {
 	$('.question-form__body__content__placeholder').click(function() {
 		$('.question-form__body__content__placeholder').hide();
 		$('.question-form__body__content__placeholder__cs').hide();
-		$('.question-form__body__content__input').css('display', 'block');
+		$('.question-form__body__content__input').show();
 		$('#error3').css('display', 'none');
 		
 		// 포커스일 때도 실행될 수 있도록 문구 추가
@@ -36,10 +36,17 @@ $(document).ready(function () {
 		if(count == 0){
 			$('.question-form__body__content__placeholder').show();
 			$('.question-form__body__content__placeholder__cs').show();
-			$('.question-form__body__content__input').css('display', 'none');
-			$('.question-form__body__content__placeholder').css('border', '2px solid red');
-			
+			$('.question-form__body__content__input').hide();
+			$('.question-form__body__content__placeholder').css('border', '1px solid red');
+		}
+		
+		// 텍스트 10자 미만 경고창
+		if(count < 10) {
 			$('#error3').css('display', 'block');
+			$('.question-form__body__content__input').css('border', '1px solid red');
+		} else {
+			$('#error3').css('display', 'none');
+			$('.question-form__body__content__input').css('border', '1px solid #ced4da');
 		}
 		
 		// 텍스트 박스에 글씨를 작성내용 저장, 리퀘스트하기 위해 저장함
@@ -128,6 +135,32 @@ $(document).ready(function () {
 		$("#keyword_value").attr('value', keyword);
 		
 	}); // end 배열 이용 체크박스
+	
+	// 최종적으로 write 버튼 클릭했을때 유효성 검사
+	$('#btn_write_form').click(function() {
+		// 7자 미만 불가
+		if($("#question_title").val().length < 7) {
+			alert('필수 모든 항목을 입력해주세요(제목)');
+			$("#question_title").focus();
+			return false;
+		}
+		
+		// 택스트 10자 미만 불가
+		if(($.trim($(".question-form__body__content__input").text()).length) < 10) {
+			alert('필수 모든 항목을 입력해주세요(내용)');
+			$(".question-form__body__content__input").focus();
+			$('.question-form__body__content__placeholder').css('border', '1px solid red');
+			return false;
+		}
+		
+		// 키워드가 한개 미만 불가
+		if($("input[class='form-che']:checked").length < 1) {
+			alert('필수 모든 항목을 입력해주세요(키워드)');
+			$(".question-form__keywords__keyword--new").focus();
+			return false;
+		}
+	
+	});
 	
 	
 	

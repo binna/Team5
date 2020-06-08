@@ -33,10 +33,13 @@ public class ViewCommand implements Command {
 		CommentDAO dao2 = new CommentDAO();	// DAO 객체 생성
 		CommentDTO[] arr2 = null;
 		
+		no = Integer.parseInt(request.getParameter("no"));
+		
 		try {
 			// 트랜젝션 수행
-			arr2 = dao2.select();
+			arr2 = dao2.select(no);
 			request.setAttribute("CommentList", arr2);
+			
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
