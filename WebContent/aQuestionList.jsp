@@ -110,8 +110,8 @@ font-family: 'Jua', sans-serif; -->
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li id="Q_li"><a href="#">문의</a></li>
-						<li><a href="aProductList.jsp">상품</a></li>
-						<li><a href="#">주문배송내역</a></li>
+						<li><a href="aProductList.y">상품</a></li>
+						<li><a href="mOrderList.woo">주문배송내역</a></li>
 					</ul>
 				</nav>
 			</div>
