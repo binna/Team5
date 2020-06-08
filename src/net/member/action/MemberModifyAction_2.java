@@ -26,13 +26,13 @@ public class MemberModifyAction_2 implements Action{
 		dto.setMEMBER_ID(id);
 		dto.setMEMBER_NAME(request.getParameter("MEMBER_NAME"));
 		dto.setMEMBER_PW(request.getParameter("MEMBER_PW"));
-		dto.setMEMBER_EMAIL(request.getParameter("MEMBER_EMAIL1")+"@"+
-				request.getParameter("MEMBER_EMAIL2"));
+		dto.setMEMBER_EMAIL(request.getParameter("MEMBER_EMAIL1"));/*+"@"+
+				request.getParameter("MEMBER_EMAIL2"));*/
 		dto.setMEMBER_EMAIL_GET(request.getParameter("MEMBER_EMAIL_GET"));
 		dto.setMEMBER_MOBILE(request.getParameter("MEMBER_MOBILE"));
 		dto.setMEMBER_PHONE(request.getParameter("MEMBER_PHONE"));
-		dto.setMEMBER_ZIPCODE(request.getParameter("MEMBER_ZIPCODE1")+" - "+
-				request.getParameter("MEMBER_ZIPCODE2"));
+		dto.setMEMBER_ZIPCODE(request.getParameter("MEMBER_ZIPCODE1"));/*+" - "+
+				request.getParameter("MEMBER_ZIPCODE2"));*/
 		dto.setMEMBER_ADDR1(request.getParameter("MEMBER_ADDR1"));
 		dto.setMEMBER_ADDR2(request.getParameter("MEMBER_ADDR2"));
 		
@@ -43,7 +43,8 @@ public class MemberModifyAction_2 implements Action{
 		out.println("<script>");
 		out.println("alert('회원정보 수정에 성공하였습니다.');");
 		out.println("</script>");
-		forward.setPath("./MemberModifyAction_1.me");
+		/* forward.setPath("./MemberModifyAction_1.me"); */
+		forward.setPath("./main.jsp");
 		return forward;
 	}
 }

@@ -25,8 +25,8 @@ public class MemberJoinAction implements Action{
 		dto.setMEMBER_EMAIL_GET(request.getParameter("MEMBER_EMAIL_GET"));
 		dto.setMEMBER_MOBILE(request.getParameter("MEMBER_MOBILE"));
 		dto.setMEMBER_PHONE(request.getParameter("MEMBER_PHONE"));
-		dto.setMEMBER_ZIPCODE(request.getParameter("MEMBER_ZIPCODE1")+ " - " +
-				request.getParameter("MEMBER_ZIPCODE2"));
+		dto.setMEMBER_ZIPCODE(request.getParameter("MEMBER_ZIPCODE1"));/*+ " - " +*/
+				/*request.getParameter("MEMBER_ZIPCODE2"));*/
 		dto.setMEMBER_ADDR1(request.getParameter("MEMBER_ADDR1"));
 		dto.setMEMBER_ADDR2(request.getParameter("MEMBER_ADDR2"));
 		dto.setMEMBER_ADMIN(0);
