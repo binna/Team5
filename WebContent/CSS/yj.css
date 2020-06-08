@@ -615,3 +615,8 @@ div#main_content_managerMenu div {
 #manager_btn_4:hover {
 	background-color: #B2EBF4
 }
+
+
+#uQuestionList_form{
+	display: inline-block;
+}

@@ -96,7 +96,7 @@ font-family: 'Jua', sans-serif; -->
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">프로필</a></li>
-						<li id="menu_myshopping"><a href="#">나의 쇼핑</a></li>
+						<li id="menu_myshopping"><a href="#">스토어 관리</a></li>
 						<li><a href="#">나의 리뷰</a></li>
 						<li><a href="#">설정</a></li>
 
@@ -109,12 +109,9 @@ font-family: 'Jua', sans-serif; -->
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">주문배송내역 조회</a></li>
-						<li><a href="#">상품 스크랩북</a></li>
-						<li id="Q_li"><a href="#">상품문의내역</a></li>
-						<li><a href="#">포인트</a></li>
-						<li><a href="#">고객센터</a></li>
-
+						<li id="Q_li"><a href="#">문의</a></li>
+						<li><a href="aProductList.jsp">상품</a></li>
+						<li><a href="#">주문배송내역</a></li>
 					</ul>
 				</nav>
 			</div>

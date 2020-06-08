@@ -1,8 +1,7 @@
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -10,7 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 
 
@@ -35,7 +33,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
 	rel="stylesheet">
-
+<!-- font-family: 'Do Hyeon', sans-serif;
+font-family: 'Jua', sans-serif; -->
 
 
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
@@ -46,16 +45,15 @@
 
 
 
+<script type="text/javascript" src="JS/yj.js"></script>
+
 
 
 
 <title>너네집</title>
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script type="text/javascript" src="JS/yj.js"></script>
 <body>
-
-
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -65,8 +63,8 @@
 				<nav>
 					<ul>
 						<li><a href="#">커뮤니티</a></li>
-						<li><a href="storeMain.jsp">스토어</a></li>
-						<li><a href="consMain.jsp">인테리어시공</a></li>
+						<li><a href="#">스토어</a></li>
+						<li><a href="#">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -78,11 +76,6 @@
 				<!-- <button>
 					<i class="fas fa-search"></i>
 				</button> -->
-				<%
-					if (session.getAttribute("id") != null) {
-						
-				%>
-
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -92,82 +85,60 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button id="main_user_menu_icon" >
-					<i class="far fa-user"></i>
-					<div id="main_user_menu">
-						<nav style="padding: 0px;">
-							<ul class="menu">
-								<li><a href="#">마이페이지</a></li>
-								<li><a href="#">나의쇼핑</a></li>
-								<li><a href="member/logout.jsp">로그아웃</a></li>
-							</ul>
-						</nav>
-					</div>
-				</button>
-
-				<%
-					} else {
-				%>
 				<button>
-					<i class="fas fa-shopping-cart"></i>
+					<i class="far fa-user"></i>
 				</button>
-				<a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
-				<%
-					}
-				%>
-
-
 			</div>
 		</div>
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-9">
+			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">스토어홈</a></li>
-						<li><a href="#">카테고리</a></li>
-						<li><a href="#">신혼가구</a></li>
-						<li><a href="#">베스트</a></li>
-						<li><a href="#">특가</a></li>
-						<li><a href="#">여름패브릭</a></li>
-						<li><a href="#">여름가전</a></li>
-						<li><a href="#">기획전</a></li>
+						<li><a href="#">프로필</a></li>
+						<li id="menu_myshopping"><a href="#">스토어 관리</a></li>
+						<li><a href="#">나의 리뷰</a></li>
+						<li><a href="#">설정</a></li>
+
 					</ul>
 				</nav>
 			</div>
-			<div calss="col-md-3">
-				<button id="main_top2_app"></button>
-				<a href="#">앱 다운로드</a>
+		</div>
+		<hr>
+		<div id="main_top3" class="row">
+			<div class="col-md-12">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li ><a href="#">문의</a></li>
+						<li id="Q_li"><a href="#">상품</a></li>
+						<li><a href="#">주문배송내역</a></li>
+					</ul>
+				</nav>
 			</div>
-
 		</div>
 		<hr>
 	</header>
 
 
 	<!--내용부분입니다.  -->
-	<div id="main_content" class="row main_content_manager">
-		<h1 class = "col-md-12">관리자 메인입니다</h1>
-
-		<div id="main_content_managerMenu" class="row col-md-12">
-			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_1"><i class="fas fa-users"></i></button>
-				<h2>회원 관리</h2>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_2"><i class="fas fa-comments"></i></button>
-				<h2>커뮤니티 관리</h2>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_3" onclick="location.href= 'aQuestionList.y'"><i class="fas fa-store"></i></button>
-				<h2>스토어 관리</h2>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_4" onclick="location.href='consManager.cons'"><i class="fas fa-tools"></i></button>
-				<h2>인테리어 시공 관리</h2>
-			</div>
-
+	<div id="main_content">
+		<div id="main_content_qlist">
+			<h1 id="main_content_qlist_h">상품 상세페이지 관리</h1>
+					<br>
+			<c:choose>
+				<c:when test="${empty list || fn:length(list) ==0}">
+				<h1>상품 준비중입니다</h1>
+				</c:when>
+				<c:otherwise>
+					<select name = "aProduct_list">
+					<c:forEach var="dto" items='${list }'>
+						<option value="select_product_${dto.pid }">[${dto.pbrand }] ${dto.pname }</option>
+					</c:forEach>
+					</select>
+				</c:otherwise>
+			</c:choose>
 		</div>
+
 	</div>
 
 

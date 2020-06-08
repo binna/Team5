@@ -63,6 +63,11 @@ public class controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "storeMain.jsp";
 			break;
+		case "/aProductList.y":
+			command = new productListCommand();
+			command.execute(request, response);
+			viewPage = "aProductList.jsp";
+			break;
 		case "/aQuestionList.y":
 			command = new pquestionListCommand();
 			command.execute(request, response);

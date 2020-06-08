@@ -133,6 +133,7 @@
 						</nav>
 					</div>
 				</button>
+				<a><%= session.getAttribute("id") %> 님</a>
 
 				<%
 					} else {
@@ -170,13 +171,7 @@
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">홈</a></li>
-						<li><a href="#">사진</a></li>
-						<li><a href="#">집들이</a></li>
-						<li><a href="#">노하우</a></li>
-						<li><a href="#">전문가집들이</a></li>
-						<li><a href="#">셀프가이드</a></li>
-						<li><a href="#">질문과답변</a></li>
-						<li><a href="#">이벤트</a></li>
+						<li><a href="community/list.community?page=1">질문과답변</a></li>
 					</ul>
 				</nav>
 			</div>

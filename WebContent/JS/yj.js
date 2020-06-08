@@ -74,6 +74,12 @@ $(document).ready(function() {
 
 	});
 	
+	function goData(){
+	    var form = document.uQuestionList_form;
+	    
+	    form.submit();
+	}
+	
 	
 	/*
 	 * $('button[id^="main_qlist_answer_1_"]').click(function(){ var id =
