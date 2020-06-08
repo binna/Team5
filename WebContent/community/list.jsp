@@ -5,14 +5,13 @@
 <%
 	//Controller로부터 결과 데이터 받음
 	WriteDTO[] arr = (WriteDTO[])request.getAttribute("list");
+	//Integer[] commentCnt = (Integer[])request.getAttribute("commentCnt");
 
 	int writePages = (Integer)request.getAttribute("writePages");
 	int totalPage = (Integer)request.getAttribute("totalPage");
 	int curPage = (Integer)request.getAttribute("curPage");
 	int pageRows = (Integer)request.getAttribute("pageRows");
 	int totalCnt = (Integer)request.getAttribute("totalCnt");
-	
-	// http://localhost:8888/Team5/community/list.community?page=
 %>
 
 <!DOCTYPE html>
@@ -189,14 +188,12 @@
           
         <footer class="questions-item__footer">
           <span class="questions-item__footer__author">
-            <span class="questions-item__footer__author__content"><%= arr[i].getNo() %> 작성자 아이디</span>
+            <span class="questions-item__footer__author__content"><%= arr[i].getQid() %></span>
           </span>
             
           <!-- 글 올린 시간, 댓글, 조회수 -->
           <span class="questions-item__footer__meta">
             <time class="questions-item__footer__date"><%= arr[i].getRegDate() %></time>
-            <span class="questions-item__footer__comments">댓글 <span class="questions-item__footer__comments__content">댓글갯수</span></span>
-            <span class="questions-item__footer__views">조회 <span class="questions-item__footer__views__content"><%= arr[i].getClickCnt() %></span></span>
           </span>
             
           <!-- 키워드 -->

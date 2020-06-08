@@ -17,8 +17,9 @@ public class ViewCommand implements Command {
 		WriteDAO dao = new WriteDAO();	// DAO 객체 생성
 		WriteDTO[] arr = null;
 		
-		// Qno 값 받아 오기
+		// Qno 값 받아 오기, id 값 받아오기
 		int no = Integer.parseInt(request.getParameter("no"));
+		String qid = request.getParameter("qid");
 		
 		try {
 			// 트랜잭션 수행

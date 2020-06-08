@@ -36,6 +36,20 @@
 
 <body>
 
+<!-- 로그인 확인 -->
+<%
+	System.out.print(session.getAttribute("id"));
+
+	if (session.getAttribute("id") == null) {
+%>
+	<script>
+		alert("로그인이 필요한 페이지입니다.")
+		location.href = "../MemberLogin.me"
+	</script>
+<%
+	}
+%>
+
 <header id="simplified-gnb" class="simplified-gnb">
     <div class="container simplified-gnb__container">
 		<a class="simplified-gnb__logo" href="../main.jsp">
@@ -119,10 +133,10 @@
     
     <!-- 키워드 값을 DB에 저장하기 위한 input value 설정 -->
     <input id="keyword_value" name="keyword" value="" hidden="true">
-    
     <!-- content 값을 리퀘스트 보내기 위해 -->
     <input id="content_value" name="content" value="" hidden="true">
-    
+    <!-- id 값을 리퀘스트 보내기 위해 -->
+    <input name="qid" value="<%= session.getAttribute("id") %>" hidden="true">
     
     <footer class="question-form__footer">
       <div class="question-form__footer__submit row">

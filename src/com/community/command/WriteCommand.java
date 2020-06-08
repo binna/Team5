@@ -26,13 +26,14 @@ public class WriteCommand implements Command {
 		String title = request.getParameter("question[title]");	// 제목
 		String content = request.getParameter("content");		// 질문 내용
 		String keyword = request.getParameter("keyword");		// 키워드
+		String qid = request.getParameter("qid");				// 작성자
 		
 		// title과 content는 null 이면 안됨
 		if(title != null && content != null
 				&& title.trim().length() > 0 && content.trim().length() > 0) {
 			
 			try {
-				cnt = dao.insert(title, content, keyword);
+				cnt = dao.insert(title, content, keyword, qid);
 				
 			} catch(SQLException e) {
 				e.printStackTrace();

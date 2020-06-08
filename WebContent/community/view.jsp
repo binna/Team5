@@ -6,7 +6,6 @@
 	//Controller로부터 결과 데이터 받음
 	WriteDTO[] arr = (WriteDTO[])request.getAttribute("view");
 	CommentDTO[] arr2 = (CommentDTO[])request.getAttribute("CommentList");
-	System.out.println(arr2);
 %> 
 
 <%
@@ -16,6 +15,7 @@
 	String regDate = arr[0].getRegDate();
 	int clickCnt = arr[0].getClickCnt();
 	String keyword = arr[0].getKeyword();
+	String qid = arr[0].getQid();
 %>
 
 <!DOCTYPE html>
@@ -142,19 +142,24 @@
 
       <!-- 질문 제목 title -->
       <h1 class="qna-detail__content__header-title"><%= title %></h1>
-      
+      <!-- 수정 삭제 버튼은 해당 글 작성자만 노출 -->
+      <%
+      	if(session.getAttribute("id").equals(qid)) {
+      %>
       <!-- 수정 삭제 버튼 -->
       <div class="qna-detail__content__action-group">
       <a class="button button--color-gray-14-inverted button--size-30 button--shape-4 qna-detail__content__action-item" href="update.community?no=<%= no %>">수정</a>
-
       <button onclick="chkDelete(<%= no %>)" class="button button--color-gray-14-inverted button--size-30 button--shape-4 qna-detail__content__action-item" type="button">삭제</button>
       </div>
+      <%
+      	} // end if
+      %>
       </header>
 	
       <!-- 모바일 버전 사용자 아이디 노출 -->
       <div class="qna-detail-author__profile-link__summary">
         <div class="qna-detail-author__profile-link__summary-section">
-          <span class="qna-detail-author__profile-link__summary-nickname">모바일용 아이디 노출</span>
+          <span class="qna-detail-author__profile-link__summary-nickname"><%= qid %></span>
         </div>
         <div class="qna-detail-author__profile-link__summary-introduction"></div>
       </div>
@@ -198,6 +203,7 @@
       
       </footer>
 
+
       <% // 댓글이 1개라도 있을때
       	if(arr2 != null) {
       %>
@@ -209,6 +215,10 @@
 		      
 		    <!-- 작성한 댓글 db에 보내기 위한 form -->
 		    <form class="comment-feed__form" action="commentWriteOk.community?no=<%= no %>" accept-charset="UTF-8" method="post">
+		      
+	          <!-- id 값을 리퀘스트 보내기 위해 -->
+	          <input name="Comment_id" value="<%= session.getAttribute("id") %>" hidden="true">
+	          
 		      <div class="comment-feed__form__input">
 		        <!-- 댓글 택스트 작성 영역 -->
 		        <div class="comment-feed__form__content">
@@ -223,6 +233,7 @@
 		        </div>
 							
 		      </div>
+		      
 		      </form>
 		      
 		      <!-- 댓글 리스트 보는 곳 -->
@@ -235,7 +246,7 @@
 		          <article class="comment-feed__item">
 		            <!-- 댓글 남긴 사람과 댓글 내용 -->
 		            <p class="comment-feed__item__content">
-		              <span class="comment-feed__item__content__author__name">아이디</span>
+		              <span class="comment-feed__item__content__author__name"><%= arr2[i].getCid()%></span>
 		              <span class="comment-feed__item__content__content"><%= arr2[i].getCcomment() %></span>
 		            </p>
 		        
@@ -261,12 +272,18 @@
       <!-- 댓글  작성하는 총 화면 노출단-->
       <section class="qna-detail__comment-section">
 	      <section class="comment-feed">
+	      
+	        
 	      	<!-- 댓글이 몇개인지 파악하여 노출 -->
 		    <h1 class="comment-feed__header">댓글&nbsp;<span class="comment-feed__header__count">0</span></h1>
 		      
 		    <!-- 작성한 댓글 db에 보내기 위한 form -->
 		    <form class="comment-feed__form" action="commentWriteOk.community?no=<%= no %>" accept-charset="UTF-8" method="post">
+
+	        <!-- id 값을 리퀘스트 보내기 위해 -->
+	        <input name="Comment_id" value="<%= session.getAttribute("id") %>" hidden="true">
 		      <div class="comment-feed__form__input">
+
 		        <!-- 댓글 택스트 작성 영역 -->
 		        <div class="comment-feed__form__content">
 		          <!-- 댓글 hint, 댓글이 없을때만 노출하기 -->
@@ -307,7 +324,7 @@
         <address class="qna-detail-author qna-detail__container__sidebar__author">
 						
           <!-- 작성자 아이디 -->
-          <div class="qna-detail-author__profile-link__summary-section qna-detail-author__profile-link__summary-nickname">사용자 이름</div>
+          <div class="qna-detail-author__profile-link__summary-section qna-detail-author__profile-link__summary-nickname"><%= qid %></div>
           
         </address>
 					

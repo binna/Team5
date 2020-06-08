@@ -57,13 +57,14 @@ public class WriteDAO {
 		String title = dto.getTitle();
 		String content = dto.getContent();
 		String keyword = dto.getKeyword();
+		String qid = dto.getQid();
 		
-		int cnt = this.insert(title, content, keyword);
+		int cnt = this.insert(title, content, keyword, qid);
 		return cnt;
 	}
 	
 	// 새 글 작성 <-- 제목, 내용, 키워드 
-	public int insert(String title, String content, String keyword) throws SQLException {
+	public int insert(String title, String content, String keyword, String qid) throws SQLException {
 		int cnt = 0;
 		
 		try {			
@@ -72,6 +73,7 @@ public class WriteDAO {
 			pstmt.setString(1, title);
 			pstmt.setString(2, content);
 			pstmt.setString(3, keyword);
+			pstmt.setString(4, qid);
 			
 			cnt = pstmt.executeUpdate();
 		} finally {
@@ -137,6 +139,7 @@ public class WriteDAO {
 			Time t = rs.getTime("Qregdate");
 			int clickCnt = rs.getInt("Qclickcnt");
 			String keyword = rs.getString("Qkeyword");
+			String qid = rs.getString("Qmember_id");
 			
 			String regDate = "";
 			if(d != null){
@@ -144,7 +147,7 @@ public class WriteDAO {
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 			
-			WriteDTO dto = new WriteDTO(no, title, content, clickCnt, keyword);
+			WriteDTO dto = new WriteDTO(no, title, content, clickCnt, keyword, qid);
 			dto.setRegDate(regDate);
 			list.add(dto);
 			
@@ -183,6 +186,7 @@ public class WriteDAO {
 			rs = pstmt.executeQuery();
 			
 			arr = createArray(rs);
+			
 			conn.commit();
 			
 		} catch(SQLException e) {

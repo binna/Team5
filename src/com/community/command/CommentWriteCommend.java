@@ -16,17 +16,19 @@ public class CommentWriteCommend implements Command {
 		
 		CommentDAO dao = new CommentDAO();	// DAO 객체 생성
 		
-		// 게시글 번호 받아오기 - 반드시 들어가야 할  PK
-		int cQno = Integer.parseInt(request.getParameter("no"));
-		
 		// 매개변수 받아오기
+		int cQno = Integer.parseInt(request.getParameter("no"));
+		String cid = request.getParameter("Comment_id");
 		String content = request.getParameter("commentContent");
 		
-		System.out.println(content);
+		System.out.println("no " + cQno);
+		System.out.println("content " + content);
+		System.out.println("cid " + cid);
 		
 		try {
 			// 트랜잭션 수행하기
-			cnt = dao.insert(cQno, content);
+			cnt = dao.insert(cQno, content, cid);
+			
 		} catch(SQLException e) {}
 		
 		request.setAttribute("CommentInsert", cnt);

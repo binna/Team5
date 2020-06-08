@@ -189,7 +189,6 @@
 /* 구분점 */
 .questions-item__footer__date:after,
 .questions-item__footer__comments:after {
-    content: '·';
     margin: 0 4px;
     color: #757575;
 }

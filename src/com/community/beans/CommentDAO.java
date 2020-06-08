@@ -50,13 +50,14 @@ public class CommentDAO {
 	//--------------------------------------------------------
 	
 	// 댓글 작성
-	public int insert(int cQno, String content) throws SQLException {
+	public int insert(int cQno, String content, String cid) throws SQLException {
 		int cnt = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(CommunityD.SQL_COMMENT_INSERT);
 			pstmt.setInt(1, cQno);
 			pstmt.setString(2, content);
+			pstmt.setString(3, cid);
 			
 			cnt = pstmt.executeUpdate();
 		} finally {
@@ -96,14 +97,15 @@ public class CommentDAO {
 			String content = rs.getString("Ccontent");
 			Date d = rs.getDate("Cregdate");
 			Time t = rs.getTime("Cregdate");
-			
+			String cId = rs.getString("Cmember_id");
 			String regDate = "";
+			
 			if(d != null){
 				regDate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 			
-			CommentDTO dto = new CommentDTO(cNo, cQno, content);
+			CommentDTO dto = new CommentDTO(cNo, cQno, content, cId);
 			dto.setCregDate(regDate);
 			list.add(dto);
 			
@@ -117,5 +119,5 @@ public class CommentDAO {
 		list.toArray(arr);  // List -> 배열		
 		return arr;
 	}
-
+	
 } // end DAO

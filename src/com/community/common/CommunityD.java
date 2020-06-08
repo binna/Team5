@@ -39,8 +39,8 @@ public class CommunityD {
 	// 쿼리문 작성하기
 	// Insert 쿼리문
 	public static final String SQL_WRITE_INSERT = "INSERT INTO Question"
-		+ "(Qno, Qtitle, Qcontent, Qkeyword) "
-		+ "VALUES(SEQ_question_Qno.nextval, ?, ?, ?)";
+		+ "(Qno, Qtitle, Qcontent, Qkeyword, Qmember_id) "
+		+ "VALUES(SEQ_question_Qno.nextval, ?, ?, ?, ?)";
 	
 	
 	// View 화면에서 사용하는 쿼리문
@@ -78,14 +78,13 @@ public class CommunityD {
 		= "DELETE FROM Question WHERE Qno = ?";
 	
 	/* 댓글 삽입하기 */
-	public static final String SQL_COMMENT_INSERT = "INSERT INTO QComment(Cno, Cqno, Ccontent) "
-		+ "VALUES(SEQ_QComment_Cno.nextval, ?, ?)";
+	public static final String SQL_COMMENT_INSERT = "INSERT INTO QComment(Cno, Cqno, Ccontent, Cmember_id) "
+		+ "VALUES(SEQ_QComment_Cno.nextval, ?, ?, ?)";
 	
 	/* 각각의 게시글에 맞는 댓글 전체 조회하기 */
 	public static final String SQL_COMMENT_SELECT_ALL
 		= "SELECT * FROM QComment WHERE Cqno=?";
-	
-	
+
 	
 	
 }

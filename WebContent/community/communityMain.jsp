@@ -52,6 +52,7 @@
 
 <body>
 
+<!-- 로그인 확인 -->
 <%
       if (session.getAttribute("id") == null) {
 %>
