@@ -37,11 +37,11 @@
 font-family: 'Jua', sans-serif; -->
 
 
-<script type="text/javascript" src="JS/wk.js"></script>
-<script type="text/javascript" src="JS/yj.js"></script>
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="CSS/yj.css" type="text/css">
 <link rel="stylesheet" href="CSS/wk.css" type="text/css">
+<script type="text/javascript" src="JS/wk.js"></script>
+<script type="text/javascript" src="JS/yj.js"></script>
 <!-- <link rel="stylesheet" href="CSS/logo_menu.css" type="text/css"> -->
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
@@ -168,7 +168,7 @@ table, th, td {
 							<option value="3">3</option>
 							<option value="" selected>선택</option>
 						</select>
-						
+
 
 						<div class="total" id="total"></div>
 
@@ -183,54 +183,105 @@ table, th, td {
 		</div>
 
 	</div>
-	
-	
-	
+	<div id="product_nav" class="floating-menu">
+			<nav style="padding: 0px;">
+				<ul class="menu">
+				<%-- 	<li>상품정보</li>
+					<li>문의 ${fn:length(Qlist) }</li>
+					<li>배송/환불</li> --%>
+					<li class="m"><a href="#section-01" class="menu-01"><span>상품정보</span></a></li>
+					<li class="m"><a href="#section-02" class="menu-02"><span>문의</span></a></li>
+					<li class="m"><a href="#section-03" class="menu-03"><span>배송안내</span></a></li>
+
+				</ul>
+			</nav>
+
+	</div>
+	<div id="detail_image" class="section-01 scroll">
+	<br>
+	<br>
+	<br>
+	<br>
+		<h1>상품 정보</h1>
+		<c:if test="${fn:length(file) > 0 }">
+			<ul>
+				<c:forEach var="element" items="${file }">
+					<c:if test="${element.image == true }">
+						<div class="detail_image_div">
+							<img class="detail_image_img" src="upload/${element.file }" />
+						</div>
+					</c:if>
+
+				</c:forEach>
+			</ul>
+		</c:if>
+		<c:if test="${fn:length(file) < 0 }">
+			<h2>이미지 중비중 입니다.</h2>
+		</c:if>
+	</div>
+
+
 	<!-------------------------------문의입니다. ******복사할부분----------------------------------------------->
-	<div id="detail_question">
+	<div id="detail_question" class="section-02 scroll">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<div class="row">
-		<h1 id = "detail_question_1" class="col-md-10">문의<a> ${fn:length(Qlist) }</a> </h1>
-		<div class="col-md-2" id = "detail_questiondiv_2"><h1 id = "detail_question_2">문의하기</h1></div>
+		
+			<h1 id="detail_question_1" class="col-md-10">
+				문의<a> ${fn:length(Qlist) }</a>
+			</h1>
+			<div class="col-md-2" id="detail_questiondiv_2">
+				<h1 id="detail_question_2">문의하기</h1>
+			</div>
 		</div>
 
 		<div id="detail_question_list">
-		<c:choose>
+			<c:choose>
 				<c:when test="${empty Qlist || fn:length(Qlist) ==0}">
 					<div id="main_qlist">
-						<h1>아직 문의한 내역이 없습니다.</h1>
+						<h2>아직 문의한 내역이 없습니다.</h2>
 					</div>
 				</c:when>
 				<c:otherwise>
-					
-					
+
+
 					<c:forEach var="dto" items='${Qlist }'>
-					<br><br>
-					<div id ="detail_question_list_container" >
-					<h2 id="detail_question_list_2"><a>${dto.pqid }</a> | 구매 | 
-					<c:if test="${dto.pqanswer!='답변준비중 입니다.' }">
-					<a id = "ql_status" style="color: #fff; background-color: rgb(53, 197, 240);">
-					답변완료
-					</a>
-					</c:if>
-					<c:if test="${dto.pqanswer=='답변준비중 입니다.' }">
-					<a id = "ql_status" style="color: rgb(53, 197, 240); background-color: #fff; border: 1px solid  rgb(53, 197, 240) ">
-					답변대기
-					</a>
-					</c:if>
-					</h2>
-					<br>
-					<h2 id="detail_question_list_1">[ ${dto.pbrand } ] ${dto.pname } </h2>
-					<br>
-					<h2 id="detail_question_list_3">${dto.pquid } | <a>${dto.pqregdate }</a></h2>
-					<br>
-					<br>
-					<br>
-					<br>
-					<h2 id="detail_question_list_4">Q. <a> ${dto.pqcontent }</a></h2>
-					<br>
-					<h2 id="detail_question_list_5">A. <a> ${dto.pqanswer }</a></h2>
-					
-						
+						<br>
+						<br>
+						<div id="detail_question_list_container">
+							<h2 id="detail_question_list_2">
+								<a>${dto.pqid }</a> | 구매 |
+								<c:if test="${dto.pqanswer!='답변준비중 입니다.' }">
+									<a id="ql_status"
+										style="color: #fff; background-color: rgb(53, 197, 240);">
+										답변완료 </a>
+								</c:if>
+								<c:if test="${dto.pqanswer=='답변준비중 입니다.' }">
+									<a id="ql_status"
+										style="color: rgb(53, 197, 240); background-color: #fff; border: 1px solid rgb(53, 197, 240)">
+										답변대기 </a>
+								</c:if>
+							</h2>
+							<br>
+							<h2 id="detail_question_list_1">[ ${dto.pbrand } ]
+								${dto.pname }</h2>
+							<br>
+							<h2 id="detail_question_list_3">${dto.pquid }
+								| <a>${dto.pqregdate }</a>
+							</h2>
+							<br> <br> <br> <br>
+							<h2 id="detail_question_list_4">
+								Q. <a> ${dto.pqcontent }</a>
+							</h2>
+							<br>
+							<h2 id="detail_question_list_5">
+								A. <a> ${dto.pqanswer }</a>
+							</h2>
+
+
 						</div>
 					</c:forEach>
 				</c:otherwise>
@@ -239,37 +290,33 @@ table, th, td {
 
 
 	</div>
-	
-	<!-- --문의 등록 -->
-	<div id="QModal" >
 
-	  <!-- Modal content -->
-	  <div class="QModal_content">
-	    <span class="Qclose">&times;</span>
-	    <br>
-	    <br>
-	    <br>
-	  
-	  
-	  
-	    <h1 id="QModal_title">상품 문의하기</h1>
-	    <br>
-	    <br>
-	    <br>
-	    <h2 class ="QModal_h2">문의내용</h2>
-	    <form id ="QModal_form" action="QuestionWriteOk.y" method="post">
-		    <input id="QModal_input" type="text" name="pqcontent" placeholder="문의내용을 입력하세요 ">
-		    <input type="hidden" name = "pquid" value="<%= session.getAttribute("id")%>"><!-- TODO uid 들어가ㅣ -->
-		    <input type="hidden" name = "pqanswer" value="답변준비중 입니다.">
-		    <input type="hidden" name = "pqpid" value="${param.pid }">
-	  	<br>
-	  	<br>
-	  	<br>
-	  	<h3 id="QModal_detail">문의내용에 대한 답변은 ‘마이페이지 > 나의 쇼핑 > 나의 문의내역’ 또는 ‘상품 상세페이지’에서 확인 가능합니다.</h3>
-	  	<button id ="QModal_btn" type="submit">완료</button>
-	  	</form>
-	  </div>
-	
+	<!-- --문의 등록 -->
+	<div id="QModal">
+
+		<!-- Modal content -->
+		<div class="QModal_content">
+			<span class="Qclose">&times;</span> <br> <br> <br>
+
+
+
+			<h1 id="QModal_title">상품 문의하기</h1>
+			<br> <br> <br>
+			<h2 class="QModal_h2">문의내용</h2>
+			<form id="QModal_form" action="QuestionWriteOk.y" method="post">
+				<input id="QModal_input" type="text" name="pqcontent"
+					placeholder="문의내용을 입력하세요 "> <input type="hidden"
+					name="pquid" value="<%=session.getAttribute("id")%>">
+				<!-- TODO uid 들어가ㅣ -->
+				<input type="hidden" name="pqanswer" value="답변준비중 입니다."> <input
+					type="hidden" name="pqpid" value="${param.pid }"> <br>
+				<br> <br>
+				<h3 id="QModal_detail">문의내용에 대한 답변은 ‘마이페이지 > 나의 쇼핑 > 나의 문의내역’
+					또는 ‘상품 상세페이지’에서 확인 가능합니다.</h3>
+				<button id="QModal_btn" type="submit">완료</button>
+			</form>
+		</div>
+
 	</div>
 
 
@@ -277,7 +324,13 @@ table, th, td {
 	<!-------------------------------배송안내입니다. ******복사할 부분----------------------------------------------->
 	<div class="clear"></div>
 	<br>
-	<div id="detail_delivery">
+	<div id="detail_delivery" class="section-03 scroll">
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<h1>배송</h1>
 		<table>
 			<tr>
@@ -338,14 +391,14 @@ table, th, td {
 	</div>
 
 	<!-- ------------------------------------------------------------------ -->
-	
+
 	<!------------- modal입니다 -------------------------------------------------------- -->
 
 	<!-- The Modal -->
 	<div id="id01" class="modal">
-		<form class="modal-content animate" action="purchaseOk.woo" method="post">
-				<span class="close" id="close">&times;</span>
-				<br>
+		<form class="modal-content animate" action="purchaseOk.woo"
+			method="post">
+			<span class="close" id="close">&times;</span> <br>
 			<div class="imgcontainer row">
 				<div class="col-md-4">
 					<img src="${view[0].pimage}" class="avatar" id="avatar"
@@ -370,27 +423,25 @@ table, th, td {
 			<div class="container">
 				<!-- 로그인 form 스크립트넣어주기-->
 
-				<input type="hidden" name="pclpid" id="resutlt_pid" value="${view[0].pid}">
-				<input type="hidden" name="ptotalprice" id="result_price" >
-				<input type="hidden" name="pclpnt" id="result_cnt" >
-				
-				<label for="uname"><b>UserID</b></label> 
-				<input id="pcuid" type="text" placeholder="<%=session.getAttribute("id") %>" name="pcuid" value = <%=session.getAttribute("id") %> readonly="readonly" required> 
-				
-				<label for="addressnum"><b>addressNum</b></label>
-				 <input id="pcaddressnum" type="text"placeholder="우편번호 입력" name="pcaddressnum" required>
-				 
-				<label for="address"><b>Address</b></label>
-				 <input id="pcaddress" type="text"placeholder="주소" name="pcaddress" required>
-				 
-				<label for="tel"><b>요청 사항</b></label>
-				 <input id="pccontent" type="text"placeholder="배송메모" name="pccontent" required>
-				 
-				<label for="psw"><b>CardNum</b></label>
-				 <input id="pccardnum"  type="text"placeholder="카드번호입력" name="pccardnum" required>
+				<input type="hidden" name="pclpid" id="resutlt_pid"
+					value="${view[0].pid}"> <input type="hidden"
+					name="ptotalprice" id="result_price"> <input type="hidden"
+					name="pclpnt" id="result_cnt"> <label for="uname"><b>UserID</b></label>
+				<input id="pcuid" type="text"
+					placeholder="<%=session.getAttribute("id")%>" name="pcuid"
+					value=<%=session.getAttribute("id")%> readonly="readonly" required>
 
-				<input class="okay" id="okay" type="submit" value="구매 하기" >
-				<label> <input type="checkbox" name="remember" checked>Remember
+				<label for="addressnum"><b>addressNum</b></label> <input
+					id="pcaddressnum" type="text" placeholder="우편번호 입력"
+					name="pcaddressnum" required> <label for="address"><b>Address</b></label>
+				<input id="pcaddress" type="text" placeholder="주소" name="pcaddress"
+					required> <label for="tel"><b>요청 사항</b></label> <input
+					id="pccontent" type="text" placeholder="배송메모" name="pccontent"
+					required> <label for="psw"><b>CardNum</b></label> <input
+					id="pccardnum" type="text" placeholder="카드번호입력" name="pccardnum"
+					required> <input class="okay" id="okay" type="submit"
+					value="구매 하기"> <label> <input type="checkbox"
+					name="remember" checked>Remember
 				</label>
 			</div>
 

@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.yoon.write.ViewCommand;
 import com.yoon.write.Command;
+import com.yoon.write.ViewCommand;
+import com.yoon.write.managerCommand;
 import com.yoon.write.pqListbypidCommand;
 import com.yoon.write.pqListbypquidCommand;
 import com.yoon.write.pquestionListCommand;
@@ -106,7 +107,13 @@ public class controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "productView.jsp";
 			break;
+		case "/pfileUploadOk.y":
+			command = new managerCommand();
+			command.execute(request, response);
+			viewPage = "pfileUploadOk.jsp";
+			break;
 		}
+	
 
 		if (viewPage != null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
