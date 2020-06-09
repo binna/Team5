@@ -89,34 +89,17 @@ public class CommunityD {
 	public static final String SQL_COMMENT_DELETE
 		= "DELETE FROM QComment WHERE Cno = ?";
 	
+	/* 관리자가 볼 수 있는 댓글 전체 관리 보기 */
+	public static final String SQL_COMMENT_SELECT_ADMIN_ALL
+		= "SELECT * FROM QComment";
+	
 	/* 신고 접수 */
 	public static final String SQL_REPOT_INSERT
 		= "INSERT INTO Qrepor(Rno, Rmember_id, Rtype, Rqno)"
 		+ "VALUES(SEQ_Qrepor_Rno.nextval, ?, ?, ?)";
-
 	
+	/* 관리자가 볼 수 있는 신고 전체 리스트 보기 */
+	public static final String SQL_REPOT_ADMIN_SELECT_ALL
+		= "SELECT * FROM Qrepor";
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <%@ page import="com.community.beans.*" %>
 
 <%
 	//Controller로부터 결과 데이터 받음
-	WriteDTO[] arr = (WriteDTO[])request.getAttribute("list");
+	CommentDTO[] arr = (CommentDTO[])request.getAttribute("selectAdmin");
 %>
 
 <!DOCTYPE html>
@@ -112,9 +113,8 @@
 	
 	
 	
-	
-<!-- 리스트 노출  -->
-<main role="main" id="root">
+	<!-- 리스트 목록 -->
+	<main role="main" id="root">
 <div id="questions-index-page">
 
   <!-- 헤더창, 질문과 답변 검색 -->
@@ -133,27 +133,27 @@
     	if(arr != null) {
     		for(int i = 0; i < arr.length; i++) {
     %>
-    <a class="questions-item__link" href="view.community?no=<%= arr[i].getNo() %>">
+    <a class="questions-item__link" href="view.community?no=<%= arr[i].getCcomment() %>">
       <article class="questions-item">
       
        <table>
         <tr style="width: 100%">
         
         <td style="width: 60%">
-        <h1 class="questions-item__title"><%= arr[i].getTitle() %></h1>
+        <h1 class="questions-item__title"></h1>
         </td>
         
         <!-- 글 남긴 사람 아이디 -->
         <td style="width: 10%">
         <span class="questions-item__footer__author">
-          <span class="questions-item__footer__author__content"><%= arr[i].getQid() %></span>
+          <span class="questions-item__footer__author__content"><%= arr[i].getCid() %></span>
         </span>
         </td>
         
         <!-- 글 올린 시간, 댓글, 조회수 -->
         <td style="width: 20%">
         <span class="questions-item__footer__meta">
-          <time class="questions-item__footer__date"><%= arr[i].getRegDate() %></time>
+          <time class="questions-item__footer__date"></time>
         </span>
         </td>
         
@@ -169,9 +169,6 @@
    		} // end if
     %>
   </section>
-  
-
-	
 	
 	
 	
@@ -206,7 +203,3 @@
 </body>
 
 </html>
-	
-	
-	
-	

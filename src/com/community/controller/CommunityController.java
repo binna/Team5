@@ -100,8 +100,25 @@ public class CommunityController extends HttpServlet {
 		case "/community/comentDeleteOk.community":
 			command = new CommentDeleteCommand();
 			command.execute(request, response);
-			System.out.println("들어오니?");
 			viewPage = "/community/comentDeleteOk.jsp";
+			break;
+			
+		case "/community/communityAdmin.community":
+			command = new ListCommand();
+			command.execute(request, response);
+			viewPage = "/community/communityAdmin.jsp";
+			break;
+			
+		case "/community/communityAdminReport.community":
+			command = new ReportListAdmin();
+			command.execute(request, response);
+			viewPage = "/community/communityAdminReport.jsp";
+			break;
+			
+		case "/community/communityAdminComment.community":
+			command = new CommentSelectAllAdmin();
+			command.execute(request, response);
+			viewPage = "/community/communityAdminComment.jsp";
 			break;
 		
 		} // end switch()

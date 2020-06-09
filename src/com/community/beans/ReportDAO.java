@@ -1,11 +1,15 @@
 package com.community.beans;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import com.community.common.*;
 
@@ -58,14 +62,49 @@ public class ReportDAO {
 		return cnt;
 		
 	} // end insert()
+	
+	
+	// 신고된 내역 모두 보기, 전체 SELECT
+	//Report DAO
+	public ReportDTO [] select() throws SQLException {
+		ReportDTO [] arr = null;
+		
+		try {
+			pstmt = conn.prepareStatement(CommunityD.SQL_REPOT_ADMIN_SELECT_ALL);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		}		
+		
+		return arr;
+	} // end select()
+	
+	// ResultSet --> DTO 배열로 리턴
+	public ReportDTO[] createArray(ResultSet rs) throws SQLException {
+		ReportDTO[] arr = null;  // DTO 배열
+		
+		ArrayList<ReportDTO> list = new ArrayList<ReportDTO>();
+		
+		while(rs.next()) {
+			int rno = rs.getInt("Rno");
+			String rid = rs.getString("Rmember_id");
+			int rtype = rs.getInt("Rtype");
+			int rqno = rs.getInt("Rqno");
+			
+			ReportDTO dto = new ReportDTO(rno, rid, rtype, rqno);
+			list.add(dto);
+			
+		} // end while
+		
+		int size = list.size();
+		
+		if(size == 0) return null;
+		
+		arr = new ReportDTO[size];
+		list.toArray(arr);  // List -> 배열		
+		return arr;
+	}
+	
 
 } //end ReportDAO()
-
-
-
-
-
-
-
-
-

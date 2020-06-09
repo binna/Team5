@@ -69,7 +69,7 @@ public class CommentDAO {
 	} // end insert()
 	
 	// list.jsp
-	// 전체 SELECT
+	// 게시글 별로 SELECT
 	public CommentDTO[] select(int cQno) throws SQLException {
 		CommentDTO[] arr = null;
 		
@@ -132,5 +132,21 @@ public class CommentDAO {
 		}		
 		return cnt;
 	} // end deleteByQno()
+	
+	// 관리자 댓글 전체 검색
+	public CommentDTO[] select() throws SQLException {
+		CommentDTO[] arr = null;
+		
+		try {
+			pstmt = conn.prepareStatement(CommunityD.SQL_COMMENT_SELECT_ADMIN_ALL);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		}
+		
+		return arr;
+	} // end select()
+	
 	
 } // end DAO

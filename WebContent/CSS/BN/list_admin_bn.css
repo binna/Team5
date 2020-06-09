@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+#questions-index-page .container {
+    max-width: 942px;
+}
+#questions-header {
+	margin: 0px;
+}
+
+/* 게시글 전체적인 화면 */
+.questions-item {
+    padding: 30px 0;
+    border-top: 1px solid #ededed;
+}
+
+/* 질문과 답변 */
+.questions-header__title {
+    text-align: center;
+}
+.questions-header__title h1 {
+    font-size: 22px;
+	color: black;
+	font-weight: bold;
+    margin-bottom: 15px;
+	}
+}
+#questions-header>.container {
+    max-width: 688px;
+}
+
+
+/* 리스트 노출 */
+/* 각기 리스트별로 hover시 스타일링 */
+.questions-item__link:hover {
+	text-decoration:none;
+}
+.questions-item:hover {
+	text-decoration:none;
+	background-color: #fafafa;
+}
+
+/* 게시글 목록 위 아래 구분하기 위한 구분선 */
+.questions-item {
+    padding: 20px 0;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+
+/* 게시글 제목 */
+.questions-item__title {
+    color: black;
+    font-weight: bold;
+}
+
+/* 작성자 아이디, 올린 시간, 댓글, 조회수 */
+.questions-item__footer {
+    line-height: 19px;
+}
+
+/* 작성자 아이디 */
+.questions-item__footer__author {
+    color: #424242;
+    font-weight: bold;
+    margin-right: 8px;
+}
+.questions-item__footer__author__content {
+    font-size: 11px;
+	
+}
+
+/* 글올리는 시간, 댓글, 조회수 */
+.questions-item__footer__meta {
+    margin-right: 8px;
+    color: #757575;
+	font-size: 11px;
+}
+/* 구분점 */
+.questions-item__footer__date:after,
+.questions-item__footer__comments:after {
+    margin: 0 4px;
+    color: #757575;
+}
+.questions-item__footer__comments,
+.questions-item__footer__views {
+	color: #757575;
+}
+
+
+
+/* 모바일 */
+@media (min-width: 768px) {
+	/* 리스트 노출 */
+	/* 각기 리스트별로 hover시 스타일링 */
+	.questions-item__link:hover {
+		text-decoration: underline;
+		color: black;
+	}
+	.questions-item:hover {
+		text-decoration:none;
+		background-color: white;
+	}
+	
+	/* 질문과 답변 */
+	.questions-header__title h1 {
+	    margin-bottom: 15px;
+		font-size: 32px;
+	}
+	/* 게시글 제목*/
+	.questions-item__title {
+		font-size: 18px;
+	}
+	/* 게시글 내용*/
+	.questions-item__content {
+		/* 테블릿 모드부터 보일 수 있도록 설정해놓기 */
+		display: block;
+		font-size: 13px;
+	}
+	/* 작성자 아이디 */
+	 .questions-item__footer__author {
+        margin-right: 20px;
+    }
+	.questions-item__footer__author__content {
+    	font-size: 13px;
+	}
+	/* 글올리는 시간, 댓글, 조회수 */
+    .questions-item__footer__meta {
+        margin-right:20px;
+        font-size: 13px;
+    }
+    /* 키워드 */
+    .questions-item__footer__tags>.keyword-item {
+    position: relative;
+    font-size: 13px;
+	}
+	.keyword-list>li {
+	    display: inline-block;
+	}
+
+}
+
+
+/* PC */
+@media (min-width: 1256px) {
+	.container {
+	    margin-right: auto;
+	    margin-left: auto;
+	    box-sizing: border-box;
+	    width: 1136px;
+	    max-width: 100%;
+	    box-sizing: border-box;
+	    min-height: 1px;
+	}
+	/* 게시글 제목 */
+	.questions-item__title {
+		font-size: 21px;
+	}
+}
