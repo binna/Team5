@@ -117,44 +117,61 @@
 <main role="main" id="root">
 <div id="questions-index-page">
 
-  <!-- 헤더창, 질문과 답변 검색 -->
+  <!-- 헤더창 -->
   <section id="questions-header">
     <div class="container">
       <div class="questions-header__title">
         <h1>등록된 질문</h1>
       </div>
+    </div>
   </section>
+  
   
   
   <!-- 실질적으로 리스트 노출하는 화면  -->
   <section id="questions-list" class="container">
-    <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
+   <article class="questions-item">
+    <table>
+   
+     <tr style="width: 100%;">
+       <!-- 게시글 제목 -->
+       <td class="questions-item__title" style="width: 7%; text-align: center;">제목</td>
+       <!-- 작성자 -->
+       <td class="questions-item__title" style="width: 10%; text-align: center;">아이디</td>
+       <!-- 게시글 올린 시간 -->
+       <td class="questions-item__title" style="width: 20%; text-align: center;">시간</td>
+     </tr>
+    
+     </table>
+    </article>
+   
     <%
     	if(arr != null) {
     		for(int i = 0; i < arr.length; i++) {
     %>
+    
+    <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
     <a class="questions-item__link" href="view.community?no=<%= arr[i].getNo() %>">
       <article class="questions-item">
       
        <table>
         <tr style="width: 100%">
         
-        <td style="width: 60%">
-        <h1 class="questions-item__title"><%= arr[i].getTitle() %></h1>
+        <!-- 게시글 제목 -->
+        <td style="width: 70%;">
+          <h1 class="questions-item__title"><%= arr[i].getTitle() %></h1>
         </td>
         
         <!-- 글 남긴 사람 아이디 -->
         <td style="width: 10%">
-        <span class="questions-item__footer__author">
-          <span class="questions-item__footer__author__content"><%= arr[i].getQid() %></span>
-        </span>
+          <span class="questions-item__footer__author"><%= arr[i].getQid() %></span>
         </td>
         
-        <!-- 글 올린 시간, 댓글, 조회수 -->
+        <!-- 글 올린 시간 -->
         <td style="width: 20%">
-        <span class="questions-item__footer__meta">
-          <time class="questions-item__footer__date"><%= arr[i].getRegDate() %></time>
-        </span>
+         <span class="questions-item__footer__time">
+           <time class="questions-item__footer__date"><%= arr[i].getRegDate() %></time>
+         </span>
         </td>
         
         </tr>
@@ -169,11 +186,14 @@
    		} // end if
     %>
   </section>
+
+  
+</div>
+</main>
   
 
 	
-	
-	
+
 	
 	<!-- 바닥입니다. -->
 	<footer id="main_footer">

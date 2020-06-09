@@ -113,8 +113,7 @@
 	
 	
 	
-	<!-- 리스트 노출 -->
-	<!-- 리스트 노출  -->
+<!-- 리스트 노출  -->
 <main role="main" id="root">
 <div id="questions-index-page">
 
@@ -129,11 +128,24 @@
   
   <!-- 실질적으로 리스트 노출하는 화면  -->
   <section id="questions-list" class="container">
-    <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
+  
+   <!-- 테이블 제목 -->
+   <article class="questions-item">
+     <table>
+    
+      <tr style="width: 100%;">
+        <td class="questions-item__title" style="width: 7%; text-align: center;">신고내용</td>
+        <td class="questions-item__title" style="width: 60%; text-align: center;">신고자</td>
+      </tr>
+    
+      </table>
+     </article>
+   
     <%
     	if(arr != null) {
     		for(int i = 0; i < arr.length; i++) {
     %>
+    <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
     <a class="questions-item__link" href="view.community?no=<%= arr[i].getRqno() %>">
       <article class="questions-item">
       
@@ -174,15 +186,13 @@
         	break;
         }
         %>
-        <td style="width: 80%">
-        <h1 class="questions-item__title"><%= txt %></h1>
+        <td style="width: 80%;">
+          <h1 class="questions-item__title"><%= txt %></h1>
         </td>
         
         <!-- 신고 아이디 -->
-        <td style="width: 15%">
-        <span class="questions-item__footer__author">
-          <span class="questions-item__footer__author__content"><%= arr[i].getRid() %></span>
-        </span>
+        <td style="width: 15%; text-align: right;">
+          <span class="questions-item__footer__author"><%= arr[i].getRid() %></span>
         </td>
         
         </tr>
@@ -197,6 +207,11 @@
    		} // end if
     %>
   </section>
+
+<!-- end questions-index-page -->
+</div>
+<!-- end 메인 -->
+</main>
 	
 	
 	
