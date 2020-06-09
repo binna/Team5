@@ -3,8 +3,16 @@
 <%@ page import="com.cons.beans.*"%>
 
 <%
+	int curPage = 0;
+	int totalPage = 0;
 	// Controller 로부터 결과 데이터 받음.
 	consDTO[] arr = (consDTO[]) request.getAttribute("list");
+	if((Integer) request.getAttribute("curPage") != null){
+	curPage = (Integer) request.getAttribute("curPage");
+	} else if((Integer) request.getAttribute("totalPage") != null){
+	totalPage = (Integer) request.getAttribute("totalPage");
+	}
+	int writePages = 10;
 %>
 <!DOCTYPE html>
 <html>
@@ -117,9 +125,7 @@
 						value="검색" class="searchBtn">
 				</form>
 			</div>
-			<div id="selectAll">
-				전체보기
-			</div>
+			<div id="selectAll">전체보기</div>
 		</section>
 
 
@@ -151,23 +157,20 @@
 					<%=arr[i].getCstel()%></div>
 				<!------------------------------------------------------------------------------------------------------>
 				<input class="consUpdate csno01" style="display: none;" name="csno"
-					value="<%=arr[i].getCsno()%>" >
-				<input class="consUpdate csno01" style="display: none;" name="csuid" 
-					value="<%=arr[i].getCsuid()%>" placeholder="신청아이디">
-				<input class="consUpdate" style="display: none;" name="csname" 
-					value="<%=arr[i].getCsname()%>" placeholder="신청이름">
-				<input class="consUpdate" style="display: none;" name="csarea"
-					value="<%=arr[i].getCsarea()%>" placeholder="시공지역">
-				<input class="consUpdate" style="display: none;" name="cstel" 
-					value="<%=arr[i].getCstel()%>" placeholder="신청번호">
-				<input type="button" class="update" 
-				value="수정" 	formaction="consUpdateOk.cons"
-				> 
-				<input
-					type="submit" class="delete" value="삭제"
-					formaction="consDeleteOk.cons"> <input type="submit"
-					class="updateComplete" value="완료"> <input type="button"
-					class="cancel" value="취소">
+					value="<%=arr[i].getCsno()%>"> <input
+					class="consUpdate csno01" style="display: none;" name="csuid"
+					value="<%=arr[i].getCsuid()%>" placeholder="신청아이디"> <input
+					class="consUpdate" style="display: none;" name="csname"
+					value="<%=arr[i].getCsname()%>" placeholder="신청이름"> <input
+					class="consUpdate" style="display: none;" name="csarea"
+					value="<%=arr[i].getCsarea()%>" placeholder="시공지역"> <input
+					class="consUpdate" style="display: none;" name="cstel"
+					value="<%=arr[i].getCstel()%>" placeholder="신청번호"> <input
+					type="button" class="update" value="수정"
+					formaction="consUpdateOk.cons"> <input type="submit"
+					class="delete" value="삭제" formaction="consDeleteOk.cons"> <input
+					type="submit" class="updateComplete" value="완료"> <input
+					type="button" class="cancel" value="취소">
 
 			</form>
 			<br> <br>
@@ -176,14 +179,28 @@
 				} else {
 			%>
 			<div style="line-height: 800px; vertical-align: middle;">
-				<div style="text-align: center;">존재하는
-					상담신청 정보가 없습니다.</div>
+				<div style="text-align: center;">존재하는 상담신청 정보가 없습니다.</div>
 			</div>
 			<%
 				} // end if
+
+				if (writePages != 0 && totalPage != 10 && curPage != 0) {
+			%>
+			<div class="pagination">
+				<%-- 페이징 --%>
+				<jsp:include page="consPagination.jsp">
+					<jsp:param value="<%=writePages%>" name="writePages" />
+					<jsp:param value="<%=totalPage%>" name="totalPage" />
+					<jsp:param value="<%=curPage%>" name="curPage" />
+				</jsp:include>
+			</div>
+			<%
+				}
 			%>
 		</section>
 	</article>
+
+
 
 	<!-- 바닥입니다. -->
 	<footer id="main_footer">

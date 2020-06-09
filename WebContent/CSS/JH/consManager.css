@@ -27,7 +27,7 @@ section {
 }
 
 .consData {
-	padding: 10px 0px;
+	padding: 0px 0px;
 }
 
 .Info>div {
@@ -72,4 +72,24 @@ section {
 
 .i1{
 	display: inline-block;
+}
+
+ul.pagination{
+	display: table;
+}
+
+ul.pagination>li{
+	display: inline-block;
+}
+ul.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+ul.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.center{
+	margin-left: auto;
+ 	margin-right: auto;
 }

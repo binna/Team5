@@ -46,7 +46,7 @@ public class consDAO {
 	public consDTO[] createArray(ResultSet rs) throws SQLException {
 		consDTO[] arr = null; // DTO 배열
 		ArrayList<consDTO> list = new ArrayList<consDTO>();
-		
+
 		while (rs.next()) {
 			int csno = rs.getInt("CSno");
 			String csuid = rs.getString("CSuid");
@@ -56,11 +56,11 @@ public class consDAO {
 			String cstel = rs.getString("CStel");
 			String cname = rs.getString("Cname");
 
-			consDTO dto = new consDTO(csno, csuid,csname, cno, csarea, cstel, cname);
+			consDTO dto = new consDTO(csno, csuid, csname, cno, csarea, cstel, cname);
 			list.add(dto);
 
 		} // end while
-		// System.out.println("여기는 들어왔나요?");
+			// System.out.println("여기는 들어왔나요?");
 
 		int size = list.size();
 
@@ -101,11 +101,11 @@ public class consDAO {
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
-		}		
-		
+		}
+
 		return cnt;
 	} // end update()
-	
+
 	// 특정 uid 글 삭제하기
 	public int deleteByUid(int uid) throws SQLException {
 		int cnt = 0;
@@ -115,20 +115,20 @@ public class consDAO {
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
-		}		
+		}
 		return cnt;
 	} // end deleteByUid()
-	
+
 	// 특정 CSNO 의 글 만 SELECT (조회수 증가 없슴!)
-	public consDTO [] selectByCsno(int csno) throws SQLException {
-		consDTO [] arr = null;
-		
+	public consDTO[] selectByCsno(int csno) throws SQLException {
+		consDTO[] arr = null;
+
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_CSNO_SELECT);
 			pstmt.setInt(1, csno);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-			
+
 		} finally {
 			close();
 		}
@@ -136,32 +136,33 @@ public class consDAO {
 	}
 
 	// 특정 CSUID 의 글 만 SELECT (조회수 증가 없슴!)
-	public consDTO [] selectByCsuid(String csuid) throws SQLException {
-		consDTO [] arr = null;
+	public consDTO[] selectByCsuid(String csuid) throws SQLException {
+		consDTO[] arr = null;
 		System.out.println("selectByCsuid 들어옴");
-		
+
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_CSUID_SELECT);
 			pstmt.setString(1, csuid);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-			
+
 		} finally {
 			close();
 		}
 		return arr;
 	}
+
 	// 특정 CSNAME 의 글 만 SELECT (조회수 증가 없슴!)
-	public consDTO [] selectByCSNAME(String csname) throws SQLException {
-		consDTO [] arr = null;
+	public consDTO[] selectByCSNAME(String csname) throws SQLException {
+		consDTO[] arr = null;
 		System.out.println("selectByCSNAME 들어옴");
-		
+
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_CSNAME_SELECT);
 			pstmt.setString(1, csname);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-			
+
 		} finally {
 			close();
 		}
@@ -169,33 +170,33 @@ public class consDAO {
 	}
 
 	// 특정 CNAME 의 글 만 SELECT (조회수 증가 없슴!)
-	public consDTO [] selectByCNAME(String csname) throws SQLException {
-		consDTO [] arr = null;
+	public consDTO[] selectByCNAME(String csname) throws SQLException {
+		consDTO[] arr = null;
 		System.out.println("selectByCsuid 들어옴");
-		
+
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_CNAME_SELECT);
 			pstmt.setString(1, csname);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-			
+
 		} finally {
 			close();
 		}
 		return arr;
 	}
-	
+
 	// 특정 CTEL 의 글 만 SELECT (조회수 증가 없슴!)
-	public consDTO [] selectByCTEL(String csuid) throws SQLException {
-		consDTO [] arr = null;
+	public consDTO[] selectByCTEL(String csuid) throws SQLException {
+		consDTO[] arr = null;
 		System.out.println("selectByCsuid 들어옴");
-		
+
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_CTEL_SELECT);
 			pstmt.setString(1, csuid);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-			
+
 		} finally {
 			close();
 		}
@@ -203,22 +204,61 @@ public class consDAO {
 	}
 
 	// 특정 CSAREA 의 글 만 SELECT (조회수 증가 없슴!)
-	public consDTO [] selectByCSAREA(String csuid) throws SQLException {
-		consDTO [] arr = null;
+	public consDTO[] selectByCSAREA(String csuid) throws SQLException {
+		consDTO[] arr = null;
 		System.out.println("selectByCSAREA 들어옴");
-		
+
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_CSAREA_SELECT);
 			pstmt.setString(1, csuid);
 			rs = pstmt.executeQuery();
 			System.out.println("실행됬나요?");
 			arr = createArray(rs);
-			
+
 		} finally {
 			close();
 		}
 		return arr;
 	}
-	
+
+	// 특정 CSAREA 의 글 만 SELECT (조회수 증가 없슴!)
+	public consDTO[] selectByRows(int curPage, int cnt, int totalPage, int pageRows) throws SQLException {
+		final String SQL_WRITE_SELECT_FROM_ROW = "SELECT * FROM "
+				+ "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT c2.*, c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO) T) "
+				+ "WHERE RNUM >= ? AND RNUM < ?";
+
+		consDTO[] arr = null;
+
+		int fromRow = (curPage - 1) * pageRows + 1; // 몇번째 row 부터?
+		try {
+			pstmt = conn.prepareStatement(SQL_WRITE_SELECT_FROM_ROW);
+			pstmt.setInt(1, fromRow);
+			pstmt.setInt(2, fromRow + pageRows);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		}
+		return arr;
+	}
+
+	public int cntAll() throws SQLException {
+		int cnt = 0;
+		// 글 목록 전체 개수 가져오기
+		final String SQL_WRITE_COUNT_ALL = "SELECT count(*) FROM Consulting";
+
+		try {
+			// 트랜잭션 실행
+			pstmt = conn.prepareStatement(SQL_WRITE_COUNT_ALL);
+			rs = pstmt.executeQuery();
+
+			if (rs.next())
+				cnt = rs.getInt(1); // count(*), 전체 글의 개수
+
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 
 } // end class

@@ -79,6 +79,7 @@ public class ConsController extends HttpServlet {
 			command = new ConsListCommand();
 			command.execute(request, response);
 			viewPage = "consManager.jsp";
+			System.out.println("consManager.cons 들어옴?");
 			break;
 			
 		// 상담업데이트Ok
@@ -107,7 +108,7 @@ public class ConsController extends HttpServlet {
 		
 		// 상담신청아이디
 		case "/consCsuidSelect.cons":
-			//System.out.println("들어옴 consCsuidSelect");
+			System.out.println("들어옴 consCsuidSelect");
 			command = new SelectCommand();
 			command.execute(request, response);
 			viewPage = "consManager.jsp";
