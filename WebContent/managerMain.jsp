@@ -155,7 +155,7 @@
 				<h2>회원 관리</h2>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_2" onclick="location.href='community/communityAdmin.jsp'"><i class="fas fa-comments"></i></button>
+				<button id = "manager_btn_2" onclick="location.href='community/communityAdmin.community?page=1'"><i class="fas fa-comments"></i></button>
 				<h2>커뮤니티 관리</h2>
 			</div>
 			<div class="col-md-3 col-sm-6">
