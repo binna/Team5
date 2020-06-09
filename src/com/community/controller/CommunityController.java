@@ -104,7 +104,7 @@ public class CommunityController extends HttpServlet {
 			break;
 			
 		case "/community/communityAdmin.community":
-			command = new ListCommand();
+			command = new ListAdminCommand();
 			command.execute(request, response);
 			viewPage = "/community/communityAdmin.jsp";
 			break;

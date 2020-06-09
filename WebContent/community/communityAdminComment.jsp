@@ -5,7 +5,7 @@
 
 <%
 	//Controller로부터 결과 데이터 받음
-	CommentDTO[] arr = (CommentDTO[])request.getAttribute("selectAdmin");
+	CommentDTO[] arr = (CommentDTO[])request.getAttribute("selectCommentAdmin");
 %>
 
 <!DOCTYPE html>
@@ -100,7 +100,7 @@
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="communityAdmin.community?page=1">등록된 게시글</a></li>
+						<li><a href="communityAdmin.community">등록된 게시글</a></li>
 						<li><a href="communityAdminComment.community">댓글 목록</a></li>
 						<li><a href="communityAdminReport.community">신고 현황</a></li>
 					</ul>
@@ -113,62 +113,88 @@
 	
 	
 	
-	<!-- 리스트 목록 -->
-	<main role="main" id="root">
+	
+<!-- 리스트 목록 -->
+<main role="main" id="root">
 <div id="questions-index-page">
 
-  <!-- 헤더창, 질문과 답변 검색 -->
+  <!-- 헤더창 -->
   <section id="questions-header">
     <div class="container">
       <div class="questions-header__title">
-        <h1>등록된 질문</h1>
+        <h1>등록된 댓글</h1>
       </div>
+    </div>
   </section>
   
   
   <!-- 실질적으로 리스트 노출하는 화면  -->
   <section id="questions-list" class="container">
-    <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
-    <%
-    	if(arr != null) {
-    		for(int i = 0; i < arr.length; i++) {
+   <%
+	   if(arr != null) {
+   		for(int i = 0; i < arr.length; i++) {
     %>
-    <a class="questions-item__link" href="view.community?no=<%= arr[i].getCcomment() %>">
-      <article class="questions-item">
+    <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
+    <a class="questions-item__link" href="view.community?no=<%= arr[i].getCqno() %>">
+     <article class="questions-item">
       
-       <table>
-        <tr style="width: 100%">
+    <table>
+    <tr style="width: 100%">
+    
+     <!-- 게시글 번호 -->
+    <td style="width: 20%">
+      <span class="questions-item__footer__meta"><%= arr[i].getCqno() %></span>
+    </td>
+    
+    <!-- 댓글 내용 -->    
+    <td style="width: 60%">
+      <h1 class="questions-item__title"><%= arr[i].getCcomment() %></h1>
+    </td>
         
-        <td style="width: 60%">
-        <h1 class="questions-item__title"></h1>
-        </td>
+    <!-- 댓글 남긴 아이디 -->
+    <td style="width: 10%">
+      <span class="questions-item__footer__author"><%= arr[i].getCid() %></span>
+    </td>
+    
+    <!-- 댓글 올린 시간 -->
+    <td style="width: 20%">
+    <span class="questions-item__footer__meta">
+      <time class="questions-item__footer__date"><%= arr[i].getCregDate() %></time>
+    </span>
+    </td>
         
-        <!-- 글 남긴 사람 아이디 -->
-        <td style="width: 10%">
-        <span class="questions-item__footer__author">
-          <span class="questions-item__footer__author__content"><%= arr[i].getCid() %></span>
-        </span>
-        </td>
+   
         
-        <!-- 글 올린 시간, 댓글, 조회수 -->
-        <td style="width: 20%">
-        <span class="questions-item__footer__meta">
-          <time class="questions-item__footer__date"></time>
-        </span>
-        </td>
-        
-        </tr>
-       </table>
+    </tr>
+    </table>
             
         
-      </article>
+     </article>
     </a> 
-      
     <%
    			} // end for
    		} // end if
     %>
+      
   </section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+<!-- end questions-index-page -->
+</div>
+<!-- end 메인 -->
+</main>	
+	
 	
 	
 	

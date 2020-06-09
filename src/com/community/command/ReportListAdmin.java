@@ -16,7 +16,7 @@ public class ReportListAdmin implements Command {
 		
 		try {
 			arr = dao.select();
-			request.setAttribute("select", arr);
+			request.setAttribute("selectReportAdmin", arr);
 			
 		} catch (SQLException e) {  
 			e.printStackTrace();

@@ -17,7 +17,7 @@ public class CommentSelectAllAdmin implements Command {
 		
 		try {
 			arr = dao.select();
-			request.setAttribute("selectAdmin", arr);
+			request.setAttribute("selectCommentAdmin", arr);
 			
 		} catch (SQLException e) {  
 			e.printStackTrace();

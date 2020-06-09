@@ -99,7 +99,7 @@
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="communityAdmin.community?page=1">등록된 게시글</a></li>
+						<li><a href="communityAdmin.community">등록된 게시글</a></li>
 						<li><a href="communityAdminComment.community">댓글 목록</a></li>
 						<li><a href="communityAdminReport.community">신고 현황</a></li>
 					</ul>

@@ -4,7 +4,7 @@
 
 <%
 	//Controller로부터 결과 데이터 받음
-	ReportDTO[] arr = (ReportDTO[])request.getAttribute("select");
+	ReportDTO[] arr = (ReportDTO[])request.getAttribute("selectReportAdmin");
 %>
 
 <!DOCTYPE html>
@@ -99,7 +99,7 @@
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="communityAdmin.community?page=1">등록된 게시글</a></li>
+						<li><a href="communityAdmin.community">등록된 게시글</a></li>
 						<li><a href="communityAdminComment.community">댓글 목록</a></li>
 						<li><a href="communityAdminReport.community">신고 현황</a></li>
 					</ul>
@@ -138,22 +138,50 @@
       <article class="questions-item">
       
        <table>
-        <tr style="width: 100%">
+        <tr>
         
-        <td style="width: 60%">
-        <h1 class="questions-item__title"><%= arr[i].getRtype() %></h1>
+        <!-- 신고 유형 -->
+        <%
+        String txt = "";
+        
+        switch(arr[i].getRtype()) {
+        case 0:
+        	txt = "주제와 맞지 않음";
+        	break;
+        case 1:
+        	txt = "정보가 부정확함";
+        	break;
+        case 2:
+        	txt = "지나친 광고성 게시물";
+        	break;
+        case 3:
+        	txt = "도배 및 중복 게시물";
+        	break;
+        case 4:
+        	txt = " 저작권 침해가 우려됨";
+        	break;
+        case 5:
+        	txt = "욕설/비방이 심함";
+        	break;
+        case 6:
+        	txt = "외설적인 게시물";
+        	break;
+        case 7:
+        	txt = "개인정보노출";
+        	break;
+        default:
+        	txt = "에러, 데이터가 넘어오지 않았습니다.";
+        	break;
+        }
+        %>
+        <td style="width: 80%">
+        <h1 class="questions-item__title"><%= txt %></h1>
         </td>
         
-        <!-- 글 남긴 사람 아이디 -->
-        <td style="width: 10%">
+        <!-- 신고 아이디 -->
+        <td style="width: 15%">
         <span class="questions-item__footer__author">
           <span class="questions-item__footer__author__content"><%= arr[i].getRid() %></span>
-        </span>
-        </td>
-        
-        <!-- 글 올린 시간, 댓글, 조회수 -->
-        <td style="width: 20%">
-        <span class="questions-item__footer__meta">
         </span>
         </td>
         
