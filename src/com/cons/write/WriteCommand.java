@@ -23,12 +23,8 @@ public class WriteCommand implements Command {
 		String csname = request.getParameter("csname").trim();
 		int cno = Integer.parseInt(request.getParameter("cno").trim());
 		String carea = request.getParameter("CompanyArea").trim();
-		String c1 = request.getParameter("cstel01").trim();
-		String c2 = request.getParameter("cstel02").trim();
-		String c3 = request.getParameter("cstel03").trim();
-		String cstel = c1 + c2 + c3;
+		String cstel = request.getParameter("cstel").trim();
 
-		// System.out.println(csuid + " " + cno + " " + carea + " " + cstel);
 		try {
 			cnt = dao.insert(csuid, csname, cno, carea, cstel);
 		} catch (SQLException e) {

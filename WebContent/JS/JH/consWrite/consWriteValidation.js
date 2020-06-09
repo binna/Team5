@@ -8,27 +8,23 @@ $(document)
 					$('form').on('submit', function(){
 						frm = document.forms["frm"];
 						
-						var csuid = frm["csuid"].value.trim();
+						var csname = frm["csname"].value.trim();
 						
-						var cstel = frm["cstel01"].value.trim()
-						+ frm["cstel02"].value.trim()
-						+ frm["cstel03"].value.trim();
-						var cstel01 = frm["cstel01"].value.trim()
-						var cstel02 = frm["cstel02"].value.trim()
-						var cstel03 = frm["cstel03"].value.trim()
-						if (csuid == "") {
+						var cstel = frm["cstel"].value.trim()
+						if (csname == "") {
 							alert("신청이름은 반드시 작성해야 합니다");
-							frm["csuid"].focus();
+							frm["csname"].focus();
 							return false;
-						} else if (cstel01 == "" || cstel02 == ""
-								|| cstel03 == "") {
+						} else if (cstel=="") {
 							alert("전화번호는 반드시 작성해야 합니다");
-							frm["cstel01"].focus();
+							frm["cstel"].focus();
 							return false;
 						} else {
 							return true;
 						}
 					})
+					
+					
 					// console.log(frm["csuid"].value.trim());
 					// $('.submit')
 					// .click(

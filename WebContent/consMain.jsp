@@ -201,8 +201,14 @@
 		<div id="ex">
 			<div class="ex">지역을 선택한 후 카테고리를 눌러 주세요~</div>
 		</div>
-	</section>
 
+		<%-- 페이징 --%>
+		<div class="center">
+			<ul class="pagination" id="pagination">
+
+			</ul>
+		</div>
+	</section>
 
 
 	<!-- 바닥입니다. -->
