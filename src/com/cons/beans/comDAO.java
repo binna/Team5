@@ -22,7 +22,7 @@ public class comDAO {
 		try {
 			Class.forName(consD.DRIVER);
 			conn = DriverManager.getConnection(consD.URL, consD.USERID, consD.USERPW);
-			System.out.println("WriteDAO 생성, 데이터 베이스 연결!");
+			System.out.println("comDAO 생성, 데이터 베이스 연결!");
 		} catch (Exception e) {
 			e.printStackTrace();
 			// throw e;
@@ -134,4 +134,38 @@ public class comDAO {
 		return cnt;
 	} // end insert()
 
-}
+	// 전체 글의 개수
+	public int countAll() throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_COM_COUNT_ALL);
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt(1);
+		} finally {
+			close();
+		} // end try
+		
+		return cnt;
+	} // countAll()
+	
+	// 페이징 관련
+	// 몇번째 from 부터 몇개 rows 를 SELECT
+	public comDTO [] selectFromRow(int from, int rows) throws SQLException {
+		comDTO [] arr = null;
+		
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_COM_SELECT_FROM_ROW);
+			pstmt.setInt(1,  from);
+			pstmt.setInt(2,  from + rows);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);			
+		} finally {
+			close();
+		} // end try
+		
+		return arr;
+	} // end selectFromRow()
+	
+} // end comDAO

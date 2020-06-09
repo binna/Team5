@@ -6,7 +6,7 @@ import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cons.beans.AjaxWriteListJson;
+import com.cons.beans.AjaxWriteList;
 import com.cons.beans.comDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,46 +15,52 @@ public class AjaxListCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		// parameter 받아오기, 없으면 json 동작 디폴트로
-		String reqType = request.getParameter("reqType");
-		if (reqType == null)
-			reqType = "json";
-
-		// "xml" 혹은 "json" 으로 response 하기
-		switch (reqType) {
-		default:
-			// responseJSON(request, response); // org.json 사용
-			responseJSON2(request, response); // Jackson 사용
-		} // end switch
-
-	} // end execute()
-
-	private void responseJSON2(HttpServletRequest request, HttpServletResponse response) {
 		comDTO[] dtoArr = (comDTO[]) request.getAttribute("list");
 
-		AjaxWriteListJson list = new AjaxWriteListJson(); // response 할 Java 객체
-
-		if (dtoArr == null) {
-			list.setStatus("FAIL");
-		} else {
-			list.setStatus("OK");
-			list.setCount(dtoArr.length);
-			list.setList(Arrays.asList(dtoArr));
+		AjaxWriteList result = new AjaxWriteList(); // response 할 Java 객체
+	
+		result.setStatus((String)request.getAttribute("status"));
+		result.setMessage((String)request.getAttribute("message"));
+		
+		if(dtoArr != null) {
+			result.setCount(dtoArr.length);
+			result.setList(Arrays.asList(dtoArr));
+			System.out.println(dtoArr.length);
+				System.out.println(dtoArr[0]);
 		}
-
-		ObjectMapper mapper = new ObjectMapper();// JSON 으로 매핑할 Mapper 객체
-
+		
+		// 페이징 할때 필요한 값들
+		try {			
+			result.setPage((Integer)request.getAttribute("page"));
+			result.setTotalPage((Integer)request.getAttribute("totalPage"));
+			result.setWritePages((Integer)request.getAttribute("writePages"));
+			result.setPageRows((Integer)request.getAttribute("pageRows"));
+			result.setTotalCnt((Integer)request.getAttribute("totalCnt"));
+			System.out.println(	(Integer)request.getAttribute("page")+ " " +
+			(Integer)request.getAttribute("totalPage")  + " " +
+			(Integer)request.getAttribute("writePages")  + " " +
+			(Integer)request.getAttribute("pageRows")  + " " +
+			(Integer)request.getAttribute("totalCnt"));
+		} catch(Exception e) {
+			// 개 무시..    /view.ajax 에선 페이징 관련 변수값들이 없다..
+		}
+		
+		
+		
+		ObjectMapper mapper = new ObjectMapper();  // Json 매핑할 객체
+		
 		try {
-			// Java객체 --> JSON 문자열로 변환
-			String jsonString = mapper.writeValueAsString(list);
-
-			response.setContentType("application/json; charset=utf-8"); // MIME 설정
-			response.getWriter().write(jsonString); // response 보내기.
+			String jsonString = 
+					mapper.writerWithDefaultPrettyPrinter()
+						.writeValueAsString(result);
+			response.setContentType("application/json; charset=utf-8"); 
+			response.getWriter().write(jsonString);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	} // end responseJSON2()
+	} // end execute()
+
 
 }

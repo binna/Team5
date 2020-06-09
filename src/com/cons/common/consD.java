@@ -60,6 +60,18 @@ public class consD {
 	public static final String SQL_CONS_CSAREA_SELECT =
 			"SELECT c2.CSNO, c2.CSNAME, c2.CSUID, c1.CNO, c2.CSAREA , c2.CSTEL , c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO WHERE c2.CSAREA = ?";	
 
+	
+	// 페이징
+	// 글 목록 전체 개수 가져오기
+	public static final String SQL_COM_COUNT_ALL = 
+			"SELECT count(*) FROM Company";
+	
+	// fromRow 부터 pageRows 만큼 SELECT
+	// (몇번째) 부터 (몇개) 만큼
+	public static final String SQL_COM_SELECT_FROM_ROW = 
+			"SELECT * FROM " + 
+			"(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM Company ORDER BY CNO DESC) T) " + 
+			"WHERE RNUM >= ? AND RNUM < ?";
 
 
 } // end class
