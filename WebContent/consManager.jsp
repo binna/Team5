@@ -7,10 +7,11 @@
 	int totalPage = 0;
 	// Controller 로부터 결과 데이터 받음.
 	consDTO[] arr = (consDTO[]) request.getAttribute("list");
-	if((Integer) request.getAttribute("curPage") != null){
-	curPage = (Integer) request.getAttribute("curPage");
-	} else if((Integer) request.getAttribute("totalPage") != null){
-	totalPage = (Integer) request.getAttribute("totalPage");
+	if ((Integer) request.getAttribute("curPage") != null) {
+		curPage = (Integer) request.getAttribute("curPage");
+	}
+	if ((Integer) request.getAttribute("totalPage") != null) {
+		totalPage = (Integer) request.getAttribute("totalPage");
 	}
 	int writePages = 10;
 %>
@@ -184,7 +185,7 @@
 			<%
 				} // end if
 
-				if (writePages != 0 && totalPage != 10 && curPage != 0) {
+				if (writePages != 0 && curPage != 0) {
 			%>
 			<div class="pagination">
 				<%-- 페이징 --%>

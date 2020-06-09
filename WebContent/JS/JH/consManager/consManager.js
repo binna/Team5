@@ -94,7 +94,7 @@ $(document).ready(
 			});
 
 		$('#selectAll').click(function(){
-			location.href= "consManager.cons";
+			location.href= "consManager.cons?page=1";
 		}) // end selectAll
 			
 			
