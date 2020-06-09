@@ -468,6 +468,17 @@ li {list-style: none;}
     word-wrap: break-word;
 }
 
+/* 삭제 수정 버튼 */
+.qna-detail__content__action-item {
+	margin-top: 20px;
+	padding: 5px 10px;
+    vertical-align: bottom;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+    color: #666666;
+}
+
 /* 질문 내용 content */
 .qna-detail__content__body {
     margin-bottom: 40px;

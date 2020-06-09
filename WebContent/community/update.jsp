@@ -136,9 +136,9 @@
 
     
     <!-- content 값을 리퀘스트 보내기 위해 -->
-    <input id="content_value" name="content" value="<%= content %>">
+    <input id="content_value" name="content" value="<%= content %>" hidden="true">
     <!-- 키워드 값을 DB에 저장하기 위한 input value 설정 -->
-    <input id="keyword_value" name="keyword" value="<%= keyword %>">
+    <input id="keyword_value" name="keyword" value="<%= keyword %>" hidden="true">
 
     <footer class="question-form__footer">
       <div class="question-form__footer__submit row">

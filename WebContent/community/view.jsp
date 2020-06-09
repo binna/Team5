@@ -47,7 +47,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <!-- 내 스크립트 적용 -->
-<script type="text/javascript" src="../JS/BN/write_view_bn.js"></script>
+<script type="text/javascript" src="../JS/BN/view_bn.js"></script>
 
 <!-- CSS 적용 -->
 <link rel="stylesheet" href="../CSS/initialValue.css" type="text/css">
@@ -70,9 +70,9 @@
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
+						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -80,10 +80,18 @@
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
-				<button id="write">글쓰기</button>
+
+				<button id="write"
+					onclick="location.href='communityMain.jsp'">글쓰기</button>
+
 				<!-- <button>
 					<i class="fas fa-search"></i>
-				</button> -->
+				</button> --->
+				<%
+					if (session.getAttribute("id") != null) {
+						
+				%>
+
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -93,14 +101,39 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button>
+				<button id="main_user_menu_icon" >
 					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a href="#">마이페이지</a></li>
+								<li><a href="#">나의쇼핑</a></li>
+								<li><a href="../member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
 				</button>
+				<a><%= session.getAttribute("id") %> 님</a>
+
+				<%
+					} else {
+				%>
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<a href="../MemberLogin.me">로그인 </a> | <a href="../MemberJoin.me">회원가입</a>
+				<%
+					}
+				%>
+
+
+
 			</div>
 		</div>
+
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-9">
+			<div class="col-md-9" id="main_top2-1">
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">스토어홈</a></li>
@@ -114,6 +147,26 @@
 					</ul>
 				</nav>
 			</div>
+			<div class="col-md-9" id="main_top2-2">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">홈</a></li>
+						<li><a href="list.community?page=1">질문과답변</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-3">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">시공홈</a></li>
+						<li><a href="#">견적계산</a></li>
+						<li><a href="#">전문가찾기</a></li>
+						<li><a href="#">시공스토어</a></li>
+						<li><a href="#">방산시장</a></li>
+
+					</ul>
+				</nav>
+			</div>
 			<div calss="col-md-3">
 				<button id="main_top2_app"></button>
 				<a href="#">앱 다운로드</a>
@@ -122,6 +175,9 @@
 		</div>
 		<hr>
 	</header>
+	
+	
+	
 
 
 <!-- 작업해야할 메인 화면 -->
@@ -148,8 +204,8 @@
       %>
       <!-- 수정 삭제 버튼 -->
       <div class="qna-detail__content__action-group">
-      <a class="button button--color-gray-14-inverted button--size-30 button--shape-4 qna-detail__content__action-item" href="update.community?no=<%= no %>">수정</a>
-      <button onclick="chkDelete(<%= no %>)" class="button button--color-gray-14-inverted button--size-30 button--shape-4 qna-detail__content__action-item" type="button">삭제</button>
+      <a href="update.community?no=<%= no %>"><button class="qna-detail__content__action-item" type="button">수정</button></a>
+      <button onclick="chkDelete(<%= no %>)" class="qna-detail__content__action-item" type="button">삭제</button>
       </div>
       <%
       	} // end if
@@ -370,7 +426,7 @@
   <!-- Modal content-->
   <div class="modal-content modal-tag-select__wrap">
   <span style="float: right;">
-  <button class="dismiss_popup" type="button"><i class="far fa-times-circle" style="font-size: 30px;"></i></button>
+  <button class="dismiss_popup" type="button" data-dismiss="modal"><i class="far fa-times-circle" style="font-size: 30px;"></i></button>
   </span>
   <!-- Modal 헤더 -->
   <header class="modal-header">
@@ -381,49 +437,50 @@
   <div class="modal-body">
   
   <!--<input value="Question" type="hidden" name="report[reportable_type]" id="report_reportable_type">--> 
+    <!-- 총 8개(0 ~ 7) -->
     <div class="ui-checked-right-left-text">
-      <input type="radio" value="0" name="report[report_type]" id="report_report_type_0">
+      <input type="radio" value="0" name="report_type" id="report_report_type_0">
       <label for="report_report_type_0">주제와 맞지 않음</label>
     </div>
         
     <div class="ui-checked-right-left-text">
-          <input type="radio" value="1" name="report[report_type]" id="report_report_type_1">
+          <input type="radio" value="1" name="report_type" id="report_report_type_1">
           <label for="report_report_type_1">정보가 부정확함</label>
     </div>
         
     <div class="ui-checked-right-left-text">
-          <input type="radio" value="2" name="report[report_type]" id="report_report_type_2">
+          <input type="radio" value="2" name="report_type" id="report_report_type_2">
           <label for="report_report_type_2">지나친 광고성 게시물</label>
     </div>
         
     <div class="ui-checked-right-left-text">
-          <input type="radio" value="3" name="report[report_type]" id="report_report_type_3">
+          <input type="radio" value="3" name="report_type" id="report_report_type_3">
           <label for="report_report_type_3">도배 및 중복 게시물</label>
     </div>
         
     <div class="ui-checked-right-left-text">
-    <input type="radio" value="4" name="report[report_type]" id="report_report_type_4">
+    <input type="radio" value="4" name="report_type" id="report_report_type_4">
     <label for="report_report_type_4">저작권 침해가 우려됨</label>
     </div>
         
     <div class="ui-checked-right-left-text">
-      <input type="radio" value="5" name="report[report_type]" id="report_report_type_5">
+      <input type="radio" value="5" name="report_type" id="report_report_type_5">
       <label for="report_report_type_5">욕설/비방이 심함</label>
     </div>
     
     <div class="ui-checked-right-left-text">
-      <input type="radio" value="6" name="report[report_type]" id="report_report_type_6">
+      <input type="radio" value="6" name="report_type" id="report_report_type_6">
       <label for="report_report_type_6">외설적인 게시물</label>
     </div>
         
     <div class="ui-checked-right-left-text">
-      <input type="radio" value="7" name="report[report_type]" id="report_report_type_7">
+      <input type="radio" value="7" name="report_type" id="report_report_type_7">
       <label for="report_report_type_7">개인정보노출</label>
     </div>
   </div>
   
   <footer class="modal-footer modal-tag-select__footer">
-    <button name="button" type="submit" class="close_popup">신고하기</button>
+    <button name="button" type="button" class="close_popup">신고하기</button>
   </footer>
   
   <!-- Modal content-->
