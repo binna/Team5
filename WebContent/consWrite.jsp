@@ -122,10 +122,7 @@
 				<div class="userTelInfo">
 					상담받을 전화번호를 알려주세요.
 					<div class="userTelHint">전화번호를 적어주세요.</div>
-					<input type="text" name="cstel01" placeholder="010" class="ctel01">
-					- <input type="text" name="cstel02" placeholder="1234"
-						class="ctel02"> - <input type="text" name="cstel03"
-						placeholder="5678" class="ctel03">
+					<input type="text" name="cstel" placeholder="-를 제외한 번호를 적어주세요" class="ctel">
 				</div>
 				<input type="hidden" value="<%=cno%>" name="cno"> <input
 					type="submit" class="submit" value="SUBMIT"> <input

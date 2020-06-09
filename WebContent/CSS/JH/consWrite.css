@@ -159,9 +159,9 @@ html, body {
 	padding-left: 10px;
 }
 
-.ctel01, .ctel02, .ctel03 {
+.ctel{
 	display: inline-block;
-	width: 28.7%;
+	width: 92.8%;
 	height: 30px;
 	border-radius: 5px;
 	text-align: center;

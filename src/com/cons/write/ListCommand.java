@@ -22,7 +22,7 @@ public class ListCommand implements Command {
 		// 페이징 관련 세팅값들
 		int page = 1;  // 현재 페이지 (디폴트는 1 page)
 		int pageRows = 8;   // 한 '페이지' 에 몇개의 글을 리스트? (디폴트 8개)
-		int writePages = 10;  // 한 [페이징] 에 몇개의 '페이지' 를 표시? (디폴트 10)
+		int writePages = 20;  // 한 [페이징] 에 몇개의 '페이지' 를 표시? (디폴트 10)
 		int totalCnt = 0;    // 글은 총 몇개인지?
 		int totalPage = 0;   // 총 몇 '페이지' 분량인지?
 		
