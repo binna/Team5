@@ -200,15 +200,17 @@
       <h1 class="qna-detail__content__header-title"><%= title %></h1>
       <!-- 수정 삭제 버튼은 해당 글 작성자만 노출 -->
       <%
-      	if(session.getAttribute("id").equals(qid)) {
+      	if(session.getAttribute("id") != null) {	// 로그인을 한 상태에
+      		if(session.getAttribute("id").equals(qid)) {	// 아이디도 일치하면
       %>
-      <!-- 수정 삭제 버튼 -->
+      <!-- 수정 삭제 버튼 노출시키기 -->
       <div class="qna-detail__content__action-group">
       <a href="update.community?no=<%= no %>"><button class="qna-detail__content__action-item" type="button">수정</button></a>
       <button onclick="chkDelete(<%= no %>)" class="qna-detail__content__action-item" type="button">삭제</button>
       </div>
       <%
-      	} // end if
+      		} // end if
+      	}
       %>
       </header>
 	
@@ -277,6 +279,7 @@
 	          <input name="Comment_id" value="<%= session.getAttribute("id") %>" hidden="true">
 	          
 		      <div class="comment-feed__form__input">
+		      
 		        <!-- 댓글 택스트 작성 영역 -->
 		        <div class="comment-feed__form__content">
 		          <!-- 댓글 hint, 댓글이 없을때만 노출하기 -->
@@ -284,10 +287,28 @@
 		            <input class="comment-content-iDDt comment-feed__form__content__text" placeholder="댓글을 남겨 보세요." name="commentContent">
 		          </div>
 		        </div>
+		        
+		        
+		        
+		        <!-- 댓글 등록 버튼, 로그인시 활성화, 비로그인시 비활성화 -->
+		        <%
+		        	if (session.getAttribute("id") != null) {	// 로그인 했을때
+		        %>
 		        <!-- 댓글 등록 버튼, 등록하는 순간 DB에 저장되어야 함 -->
 		        <div class="comment-feed__form__actions">
 		          <button class="comment-feed__form__submit" aria-label="등록" type="submit">등록</button>
 		        </div>
+		        <%
+		        	} else { // 로그인 안했을때 비활성화
+		        %>
+		        <div class="comment-feed__form__actions">
+		          <button class="comment-feed__form__submit" aria-label="등록" type="submit" disabled="disabled">등록</button>
+		        </div>
+		        <%
+		        	}
+		        %>
+
+
 							
 		      </div>
 		      
@@ -305,6 +326,26 @@
 		            <p class="comment-feed__item__content">
 		              <span class="comment-feed__item__content__author__name"><%= arr2[i].getCid()%></span>
 		              <span class="comment-feed__item__content__content"><%= arr2[i].getCcomment() %></span>
+		              
+		             
+		              <% // 댓글 삭제란
+		              	if(session.getAttribute("id") != null) {	// 로그인을 한 상태에
+			          		if(session.getAttribute("id").equals(arr2[i].getCid())) {	// 아이디도 일치하면
+		              %> 
+		              <!-- 삭제 버튼 -->
+		              <a href="comentDeleteOk.community?Cno=<%= arr2[i].getCno()%>&qno=<%= no %>">
+		                <span>
+		                  <i class="far fa-times-circle" style="float: right; color: #ff0000;" 
+		                  onmouseover="this.style.color='#ff00006b';" onmouseout="this.style.color='#ff0000';"></i>
+		                </span>
+		              </a>
+		              <%
+			          		}
+			          	}
+		              %>
+		              
+		              
+		              
 		            </p>
 		        
 		            <!-- 댓글 등록 시간 노출 -->
@@ -348,10 +389,28 @@
 		            <input class="comment-content-iDDt comment-feed__form__content__text" placeholder="댓글을 남겨 보세요." name="commentContent">
 		          </div>
 		        </div>
+		        
+		        
+		        <!-- 댓글 등록 버튼, 로그인시 활성화, 비로그인시 비활성화 -->
+		        <%
+		        	if (session.getAttribute("id") != null) {	// 로그인 했을때
+		        %>
 		        <!-- 댓글 등록 버튼, 등록하는 순간 DB에 저장되어야 함 -->
 		        <div class="comment-feed__form__actions">
 		          <button class="comment-feed__form__submit" aria-label="등록" type="submit">등록</button>
 		        </div>
+		        <%
+		        	} else { // 로그인 안했을때 비활성화
+		        %>
+		        <div class="comment-feed__form__actions">
+		          <button class="comment-feed__form__submit" aria-label="등록" type="submit" disabled="disabled">등록</button>
+		        </div>
+		        <%
+		        	}
+		        %>
+		        
+		        
+		        
 		      </div>
 		    </form>
 	      </section>

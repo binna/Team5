@@ -85,6 +85,10 @@ public class CommunityD {
 	public static final String SQL_COMMENT_SELECT_ALL
 		= "SELECT * FROM QComment WHERE Cqno=?";
 	
+	/* 댓글 삭제하기 */
+	public static final String SQL_COMMENT_DELETE
+		= "DELETE FROM QComment WHERE Cno = ?";
+	
 	/* 신고 접수 */
 	public static final String SQL_REPOT_INSERT
 		= "INSERT INTO Qrepor(Rno, Rmember_id, Rtype, Rqno)"

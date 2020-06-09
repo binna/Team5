@@ -120,4 +120,17 @@ public class CommentDAO {
 		return arr;
 	}
 	
+	// 댓글 삭제
+	public int deleteComment(int Cno) throws SQLException {
+		int cnt = 0;
+		try {
+			pstmt = conn.prepareStatement(CommunityD.SQL_COMMENT_DELETE);
+			pstmt.setInt(1, Cno);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}		
+		return cnt;
+	} // end deleteByQno()
+	
 } // end DAO

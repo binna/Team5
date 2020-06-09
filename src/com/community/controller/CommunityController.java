@@ -96,6 +96,13 @@ public class CommunityController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "/community/reportWriteOk.jsp";
 			break;
+			
+		case "/community/comentDeleteOk.community":
+			command = new CommentDeleteCommand();
+			command.execute(request, response);
+			System.out.println("들어오니?");
+			viewPage = "/community/comentDeleteOk.jsp";
+			break;
 		
 		} // end switch()
 		
