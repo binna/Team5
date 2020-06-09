@@ -21,6 +21,7 @@
 
 </head>
 <script src="JS/SJ/info_js.js"></script>
+<script src="JS/SJ/sj.js"></script>
 <body>
 <table style="width:960; cellspacing:0'' cellpadding:0; border:0; align:center;">
 <tr>
@@ -83,7 +84,7 @@
 			${member.MEMBER_JUMIN1 } - ${member.MEMBER_JUMIN2}
 		</td>
 	</tr>
-	<tr>
+	<%-- <tr>
 		<td bgcolor="pink" align="center">
 			<div style="font-weight: bold;">메일주소:</div>
 		</td>
@@ -91,7 +92,37 @@
 		
 		<input type="text" id="MEMBER_EMAIL1" name="MEMBER_EMAIL1" size="13" value="${member.MEMBER_EMAIL }" />
 		</td>
-	</tr>
+	</tr> --%>
+	<tr>
+    <td bgcolor="pink" align="center">
+        <div style="font-weight: bold;">메일주소:</div></td>
+   
+  
+   <td>
+    <input type="text"id="MEMBER_EMAIL1" name="MEMBER_EMAIL1" value="" /> @
+    
+	<input type="text" id="MEMBER_EMAIL2" name="MEMBER_EMAIL2" value="" ReadOnly="true"/>
+<select name="emailCheck"
+onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
+    <option value="notSelected" >::선택하세요::</option>
+    <option value="etc">직접입력</option>
+    <option value="naver.com">naver.com</option>
+    <option value="nate.com">nate.com</option>
+    <option value="empal.com">empal.com</option>
+    <option value="hotmail.com">hotmail.com</option>
+    <option value="lycos.co.kr">lycos.co.kr</option>
+    <option value="msn.com">msn.com</option>
+    <option value="hanmail.net">hanmail.net</option>
+    <option value="yahoo.com">yahoo.com</option>
+    <option value="korea.com">korea.com</option>
+    <option value="kornet.net">kornet.net</option>
+    <option value="yahoo.co.kr">yahoo.co.kr</option>
+    <option value="kebi.com">kebi.com</option>
+    <option value="orgio.net">orgio.net</option>
+    <option value="paran.com">paran.com</option>    
+    <option value="gmail.com">gmail.com</option>
+   </select>
+</td>
 	<tr>
 		<td bgcolor="pink" align="center">
 			 <div style="font-weight: bold;">메일 수신 여부:</div>
