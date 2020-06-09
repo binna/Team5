@@ -133,34 +133,37 @@ font-family: 'Jua', sans-serif; -->
 					<br>
 					<br>
 					<div class="row" id="main_content_aProduct_btn">
-						<button class="col-md-3">상품업데이트</button>
-						<button class="col-md-3">상품삭제</button>
-						<button class="col-md-3">상품수정</button>
-						<button class="col-md-3">이미지등록</button>
+						<button class="col-md-3" id="pManager1">상품업데이트</button>
+						<button class="col-md-3" id="pManager2">상품삭제</button>
+						<button class="col-md-3" id="pManager3">상품수정</button>
+						<button class="col-md-3" id="pManager4">이미지등록</button>
 					</div>
 					<div>
 						<div id="pfiles">
 							<br>
 
 							<form name="frm" action="pfileUploadOk.y" method="post"
-								 enctype="Multipart/form-data">
-								
-							<h4>이미지 등록할 상품을 선택해주세요</h4>
-							<br> <select name="pid">
-								<c:forEach var="dto" items='${list }'>
-									<option value="${dto.pid }">[${dto.pbrand }]
-										${dto.pname }</option>
-								</c:forEach>
-							</select> <br> <br>
-								<br>
+								enctype="Multipart/form-data">
+
+								<h4>이미지 등록할 상품을 선택해주세요</h4>
+								<br> <select name="pid">
+									<c:forEach var="dto" items='${list }'>
+										<option value="${dto.pid }">[${dto.pbrand }]
+											${dto.pname }</option>
+									</c:forEach>
+								</select> <br>
+								<hr>
 								<br>
 
 								<%-- 첨부파일 --%>
-								<div
-									style="background-color: beige; padding: 2px 10px; margin-bottom: 5px; border: 1px solid black;">
-									<h4>첨부파일</h4>
-									<button type="button" id="btnAdd">추가</button>
+								<div>
+									<h4>첨부파일을 추가해주세요</h4>
+									<br>
 									<div id='files'></div>
+
+									<button type="button" id="btnAdd">추가</button>
+									<input type="submit" value="등록" id="pSubmitbtn" />
+
 								</div>
 								<script
 									src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -171,23 +174,56 @@ font-family: 'Jua', sans-serif; -->
 													function() {
 														$("#files")
 																.append(
-																		"<div><input type='file' name='upfile" + i + "'/><button type='button' onclick='$(this).parent().remove()'>삭제</button></div>");
+																		"<div><input type='file' name='upfile" + i + "'/><button type='button' class='product_delete_btn' onclick='$(this).parent().remove()'>삭제</button></div>");
 														i++;
 													});
 								</script>
-
-								<input type="submit" value="등록" />
 							</form>
 						</div>
-						<!-- <script>
-	var i = 0;
-	
-		$("#btnAdd").click(function(){
-		   $("#files").append("<div><input type='file' name='upfile"+i+"'/><button type='button' onclick='$(this).parent().remove()'> - </button></div>");
-			i++;
-		});
-	</script> -->
+						<div id="aProduct_delete">
+							<br>
+							<h4>삭제할 상품을 선택해주세요</h4>
+							<br>
+							<form>
+								<select name="pid">
+									<c:forEach var="dto" items='${list }'>
+										<option value="${dto.pid }">[${dto.pbrand }]
+											${dto.pname }</option>
+									</c:forEach>
+								</select> <br> <br>
+								<button>삭제</button>
+							</form>
 
+
+						</div>
+						<div id="aProduct_update">
+							<br>
+							<h4>수정할 상품을 선택해 주세요</h4>
+							<br> <select name="pid" id ="sort">
+								<c:forEach var="dto" items='${list }'>
+									<option value="${dto.pid }">[${dto.pbrand }]
+										${dto.pname } : ${dto.pprice }원</option>
+								</c:forEach>
+							</select> <br> <br>
+							<c:forEach var="dto" items='${list }'>
+								<form id="updateform_${dto.pid }" class="updateform">
+									<h4>상품정보를 수정해주세요</h4>
+									<input type="hidden" value="${dto.pid }">
+									<br> 상품이름 : <input type="text" value="${dto.pname }"><br>
+									상품가격 : <input type="text" value="${dto.pprice }"><br>
+									상품브랜드 : <input type="text" value="${dto.pbrand }"><br>
+									<button type="submit">수정</button>
+								</form>
+							</c:forEach>
+
+						</div>
+
+						<div id="aProduct_set">
+							<br>
+							<h4>상품업데이트</h4>
+							<br> <br>
+							<button>상품 불러오기</button>
+						</div>
 
 					</div>
 

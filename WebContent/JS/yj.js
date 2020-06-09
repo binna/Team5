@@ -36,7 +36,16 @@ $(document).ready(function() {
 	});
 	
 //------------------------------------------------------
-	
+	$('.updateform').hide();
+	$('#sort').on('change', function() {
+			$('.updateform').hide();
+		      var select = document.getElementById("sort");
+		      pid = select.options[select.selectedIndex].value;
+		      
+		      $('#updateform_'+pid).show();
+		   
+
+		   });
 	//----------------------------------------------
 	
 	//aQuestionList

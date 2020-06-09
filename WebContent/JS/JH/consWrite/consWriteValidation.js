@@ -22,7 +22,7 @@ $(document)
 						} else {
 							return true;
 						}
-					})
+					}) // end function()
 					
 					
 					// console.log(frm["csuid"].value.trim());

@@ -59,8 +59,37 @@
 <!-- 본문 JS -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="JS/JH/consMain/consMain.js"></script>
-
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- 팝업설정 js경로  -->
+<script type="text/javascript" src="JS/popup.js"></script>
 <body>
+	<%-- <%
+		System.out.print(session.getAttribute("id"));
+
+		if (session.getAttribute("id") != null) {
+	%>
+	<h2>로그인 상태입니다</h2>
+	<form action="./member/logout.jsp">
+		<input type="submit" value="로그아웃"><br>
+	</form>
+	<%
+		} else {
+	%>
+	<h2>로그인 상태가 아닙니다</h2>
+	<form action="loginOk.jsp">
+		id: <input type="text" name="userid"><br> pw: <input
+			type="password" name="pw"><br> <input type="submit"
+			value="로그인"><br>
+	</form>
+	<%
+		}
+	%>
+	<form action="MemberModifyAction_1.me">
+		<input type="submit" value="회원수정"><br>
+	</form> --%>
+<body onLoad="javascript:open_win();">
+	<!-- 팝업창 설정 -->
+
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -69,9 +98,9 @@
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="storeMain.y">스토어</a></li>
-						<li><a href="consMain.jsp">인테리어시공</a></li>
+						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -79,7 +108,17 @@
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
-				<button id="write">글쓰기</button>
+
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+
+				<!-- <button>
+					<i class="fas fa-search"></i>
+				</button> --->
+				<%
+					if (session.getAttribute("id") != null) {
+				%>
+
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -89,28 +128,47 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button>
+				<button id="main_user_menu_icon">
 					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a href="#">마이페이지</a></li>
+								<li><a href="#">나의쇼핑</a></li>
+								<li><a href="member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
 				</button>
+				<a><%=session.getAttribute("id")%> 님</a>
+				<%
+					} else {
+				%>
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
+				<%
+					}
+				%>
 			</div>
 		</div>
+
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-9">
+			<div class="col-md-9" id="main_top2-3">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">스토어홈</a></li>
-						<li><a href="#">카테고리</a></li>
-						<li><a href="#">신혼가구</a></li>
-						<li><a href="#">베스트</a></li>
-						<li><a href="#">특가</a></li>
-						<li><a href="#">여름패브릭</a></li>
-						<li><a href="#">여름가전</a></li>
-						<li><a href="#">기획전</a></li>
+						<li><a href="#">시공홈</a></li>
+						<li><a href="#">견적계산</a></li>
+						<li><a href="#">전문가찾기</a></li>
+						<li><a href="#">시공스토어</a></li>
+						<li><a href="#">방산시장</a></li>
+
 					</ul>
 				</nav>
 			</div>
-			<div class="col-md-3">
+			<div calss="col-md-3">
 				<button id="main_top2_app"></button>
 				<a href="#">앱 다운로드</a>
 			</div>
@@ -118,7 +176,6 @@
 		</div>
 		<hr>
 	</header>
-
 	<!-- 메인입니다. -->
 	<section style="position: relative;">
 		<article id="consMenu">

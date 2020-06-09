@@ -639,7 +639,7 @@ div#main_content_managerMenu div {
 	margin: auto;
 }
 
-#main_content_aProduct button {
+#main_content_aProduct button,#pSubmitbtn {
 	border: 5px solid #fff;
 	color: #fff;
 	padding: 13px 15px;
@@ -649,7 +649,7 @@ div#main_content_managerMenu div {
 	border-radius: 10px
 }
 
-#pfiles {
+#pfiles, #aProduct_delete,#aProduct_update,#aProduct_set{
 	padding: 20px;
 	border: 0.5px solid #ccc;
 	border-radius: 5px;
@@ -716,4 +716,9 @@ div#product_nav a {
 	left: 5%; width : 80%;
 	margin: 0 auto;
 	width: 80%;
+}
+
+div#pfiles h4,div#aProduct_delete h4,div#aProduct_update h4,div#aProduct_set h4{
+	font-weight: 900;
+	color:#666;
 }
