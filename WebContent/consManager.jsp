@@ -141,7 +141,7 @@
 					업체명 :
 					<%=arr[i].getCname()%></div>
 				<div class="csno">
-					업체번호 :
+					신청순서 :
 					<%=arr[i].getCsno()%></div>
 				<div class="csno">
 					신청아이디 :

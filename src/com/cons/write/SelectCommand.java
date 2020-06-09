@@ -28,7 +28,6 @@ public class SelectCommand implements Command {
 			try {
 				arr = dao.selectByCsno(csno);
 				request.setAttribute("list", arr);
-				System.out.println("csno switch 나옴");
 
 			} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
 				e.printStackTrace();
