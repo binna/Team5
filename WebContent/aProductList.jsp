@@ -109,7 +109,7 @@ font-family: 'Jua', sans-serif; -->
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li ><a href="#">문의</a></li>
+						<li><a href="#">문의</a></li>
 						<li id="Q_li"><a href="#">상품</a></li>
 						<li><a href="#">주문배송내역</a></li>
 					</ul>
@@ -122,19 +122,75 @@ font-family: 'Jua', sans-serif; -->
 
 	<!--내용부분입니다.  -->
 	<div id="main_content">
-		<div id="main_content_qlist">
-			<h1 id="main_content_qlist_h">상품 상세페이지 관리</h1>
-					<br>
+		<div id="main_content_aProduct">
+			<h1 id="main_content_qlist_h">상품 관리</h1>
+			<br>
 			<c:choose>
 				<c:when test="${empty list || fn:length(list) ==0}">
-				<h1>상품 준비중입니다</h1>
+					<h1>상품 준비중입니다</h1>
 				</c:when>
 				<c:otherwise>
-					<select name = "aProduct_list">
-					<c:forEach var="dto" items='${list }'>
-						<option value="select_product_${dto.pid }">[${dto.pbrand }] ${dto.pname }</option>
-					</c:forEach>
-					</select>
+					<br>
+					<br>
+					<div class="row" id="main_content_aProduct_btn">
+						<button class="col-md-3">상품업데이트</button>
+						<button class="col-md-3">상품삭제</button>
+						<button class="col-md-3">상품수정</button>
+						<button class="col-md-3">이미지등록</button>
+					</div>
+					<div>
+						<div id="pfiles">
+							<br>
+
+							<form name="frm" action="pfileUploadOk.y" method="post"
+								 enctype="Multipart/form-data">
+								
+							<h4>이미지 등록할 상품을 선택해주세요</h4>
+							<br> <select name="pid">
+								<c:forEach var="dto" items='${list }'>
+									<option value="${dto.pid }">[${dto.pbrand }]
+										${dto.pname }</option>
+								</c:forEach>
+							</select> <br> <br>
+								<br>
+								<br>
+
+								<%-- 첨부파일 --%>
+								<div
+									style="background-color: beige; padding: 2px 10px; margin-bottom: 5px; border: 1px solid black;">
+									<h4>첨부파일</h4>
+									<button type="button" id="btnAdd">추가</button>
+									<div id='files'></div>
+								</div>
+								<script
+									src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+								<script>
+									var i = 0;
+									$("#btnAdd")
+											.click(
+													function() {
+														$("#files")
+																.append(
+																		"<div><input type='file' name='upfile" + i + "'/><button type='button' onclick='$(this).parent().remove()'>삭제</button></div>");
+														i++;
+													});
+								</script>
+
+								<input type="submit" value="등록" />
+							</form>
+						</div>
+						<!-- <script>
+	var i = 0;
+	
+		$("#btnAdd").click(function(){
+		   $("#files").append("<div><input type='file' name='upfile"+i+"'/><button type='button' onclick='$(this).parent().remove()'> - </button></div>");
+			i++;
+		});
+	</script> -->
+
+
+					</div>
+
 				</c:otherwise>
 			</c:choose>
 		</div>

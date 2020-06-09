@@ -2,45 +2,6 @@
 
 $(document).ready(function() {
 
-	$("#product_main_nav").slideUp(0);
-
-	$("#category_li").mouseenter(function() {
-		$("#product_main_nav").slideDown(300);
-
-	});
-	$("#product_main_nav").mouseleave(function() {
-		$("#product_main_nav").slideUp(300);
-
-	});
-
-	// $('button[id^="main_qlist_answer_2_"]').hide();
-	$('input[id^="main_qlist_input_"]').hide()
-
-	$('button[id^="main_qlist_answer_1_"]').click(function() {
-		var id = $(this).attr('id').split("_")[4];
-
-		$('#main_qlist_input_' + id).show()
-		$('#main_qlist_answer_1_' + id).hide();
-		$('#main_qlist_answer_2_' + id).show();
-
-	});
-	$('button[id^="main_qlist_answer_2_"]').click(function() {
-		var id = $(this).attr('id').split("_")[4];
-
-		$('#main_qlist_input_' + id).hide()
-		$('#main_qlist_answer_2_' + id).hide();
-		$('#main_qlist_answer_1_' + id).show();
-
-	});
-
-	$('div[id^="category_"]').click(function() {
-		var code = $(this).attr('id').split("_")[1];
-		for (var i = 1; i <= 10; i++) {
-			$('.category_code_' + i).hide()
-		}
-		$('.category_code_' + code).show(300)
-	});
-
 	// main js
 
 	$("#main_top2-1").css("display", "none");
@@ -74,22 +35,84 @@ $(document).ready(function() {
 
 	});
 	
-	function goData(){
-	    var form = document.uQuestionList_form;
-	    
-	    form.submit();
+//------------------------------------------------------
+	
+	//----------------------------------------------
+	
+	//aQuestionList
+	// $('button[id^="main_qlist_answer_2_"]').hide();
+	$('input[id^="main_qlist_input_"]').hide()
+	
+	$('button[id^="main_qlist_answer_1_"]').click(function() {
+		var id = $(this).attr('id').split("_")[4];
+		
+		$('#main_qlist_input_' + id).show()
+		$('#main_qlist_answer_1_' + id).hide();
+		$('#main_qlist_answer_2_' + id).show();
+		
+	});
+	$('button[id^="main_qlist_answer_2_"]').click(function() {
+		var id = $(this).attr('id').split("_")[4];
+		
+		$('#main_qlist_input_' + id).hide()
+		$('#main_qlist_answer_2_' + id).hide();
+		$('#main_qlist_answer_1_' + id).show();
+		
+	});
+	
+	//------------------------------------------
+	
+	//-storemain
+	$("#product_main_nav").slideUp(0);
+
+	$("#category_li").mouseenter(function() {
+		$("#product_main_nav").slideDown(300);
+
+	});
+	$("#product_main_nav").mouseleave(function() {
+		$("#product_main_nav").slideUp(300);
+
+	});
+	//-----------------------------
+	//store_main :category
+	$('div[id^="category_"]').click(function() {
+		var code = $(this).attr('id').split("_")[1];
+		for (var i = 1; i <= 10; i++) {
+			$('.category_code_' + i).hide()
+		}
+		$('.category_code_' + code).show(300)
+	});
+	
+	//-------------------------------------
+	
+	//productview
+	window.onscroll = function(){myFunction()};
+
+	var div = document.getElementById("product_nav");
+	var sticky = div.offsetTop;
+
+	function myFunction() {
+		alert("sticky")
+	  if (window.pageYOffset > sticky) {
+	    div.classList.add("sticky");
+	  } else {
+	    div.classList.remove("sticky");
+	  }
 	}
-	
-	
-	/*
-	 * $('button[id^="main_qlist_answer_1_"]').click(function(){ var id =
-	 * $(this).attr('id').split("_")[4];
-	 * 
-	 * var text = $(this).text().trim(); if(text=="등록 완료"){
-	 * $('#main_qlist_input_'+id).hide() $(this).text("답변 등록") }else{
-	 * $('#main_qlist_input_'+id).show() $(this).text("등록 완료") }
-	 * 
-	 * });
+	//-----------------------------------
+
+
+/*	
+	 $('button[id^="main_qlist_answer_1_"]').click(function(){ var id =
+	 $(this).attr('id').split("_")[4];
+	 
+	 var text = $(this).text().trim(); 
+	 if(text=="등록 완료"){
+	 $('#main_qlist_input_'+id).hide() $(this).text("답변 등록") }
+	 else{
+	 $('#main_qlist_input_'+id).show() $(this).text("등록 완료") }
+	 
+	 });
 	 */
 
 	/*
@@ -123,7 +146,7 @@ $(document).ready(function() {
 
 	// store_main : category
 
-	function page_move(url, pcuid) {
+	/*function page_move(url, pcuid) {
 		var form = document.createElement("form");
 		var parm = new Array();
 		var input = new Array();
@@ -142,6 +165,55 @@ $(document).ready(function() {
 		}
 		document.body.appendChild(form);
 		form.submit();
-	}
+	}*/
+	
+	//------------------------------------------
+	//prductview nav
 
+	var $menu = $('.floating-menu li.m'), 
+		$contents = $('.scroll'), 
+		$doc = $('html, body'); 
+	$(function () { // 해당 섹션으로 스크롤 이동
+		$menu.on('click','a',function(e){
+			var $target = $(this).parent(), 
+				idx = $target.index(), 
+				section = $contents.eq(idx), 
+				offsetTop = section.offset().top; 
+			$doc.stop() 
+				.animate({ 
+					scrollTop :offsetTop 
+					}, 800); 
+			return false; }); 
+		}); 
+	// menu class 추가
+	$(window).scroll(
+			function(){ var scltop = $(window).scrollTop(); 
+			$.each($contents, function(idx, item){ 
+				var $target = $contents.eq(idx), 
+					i = $target.index(), 
+					targetTop = $target.offset().top; 
+				if (targetTop <= scltop) { 
+					$menu.removeClass('on'); 
+					$menu.eq(idx).addClass('on'); } 
+				if (!(200 <= scltop))
+					{ $menu.removeClass('on'); 
+					} 
+			}) 
+	});
+	
+
+	window.onscroll = function() {myFunction()};
+
+	var header = document.getElementById("product_nav");
+	var sticky = header.offsetTop;
+
+	function myFunction() {
+	  if (window.pageYOffset > sticky) {
+	    header.classList.add("sticky");
+	  } else {
+	    header.classList.remove("sticky");
+	  }
+	}
+//------------------------------------------------------
 });
+
