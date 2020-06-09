@@ -28,6 +28,7 @@ $(document).ready(function () {
 		location.href="reportWriteOk.community?type=" + reportType + "&no=" + no + "&reportId=" + reportId;
 	});
 	
+	
 }); // end ready()
 
 function chkDelete(no) {

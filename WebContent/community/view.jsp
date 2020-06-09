@@ -60,6 +60,7 @@
 
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 <body>
 	<!-- 헤더 부분 -->
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
@@ -226,6 +227,7 @@
       <section class="qna-detail__content__body">
       	<!-- 사용자가 작성한 문의내용이 들어와야 할 곳 -->
         <p><%= content %></p>
+        
       </section>
       
       
@@ -242,10 +244,15 @@
 		<!-- 사용자 정보와 공유 버튼 -->
 		<aside class="qna-detail-actions qna-detail__footer__action-group">
 			<div class="drop-down qna-detail-actions__wrapper">
-				<button class="view_btn button--color-gray-14-inverted button--size-30 qna-detail-actions__action" type="button">
+
+				<button id="shareKakao" class="view_btn button--color-gray-14-inverted button--size-30 qna-detail-actions__action" type="button">
 					<span class="qna-detail-actions__action__label">공유</span>
 				</button>
+				
+				
+
 			</div>
+			
 		</aside>
 		
 
@@ -589,5 +596,6 @@
 	</footer>
 
 </body>
+
 
 </html>
