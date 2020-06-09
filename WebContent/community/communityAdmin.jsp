@@ -91,11 +91,10 @@ font-family: 'Jua', sans-serif; -->
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">게시글 목록</a></li>
+						<li><a href="communityAdmin.jsp">홈</a></li>
+						<li><a href="list.community?page=1">게시글 목록</a></li>
 						<li><a href="#">댓글 목록</a></li>
 						<li><a href="#">신고 현황</a></li>
-						<li><a href="#">설정</a></li>
-
 					</ul>
 				</nav>
 			</div>
@@ -106,12 +105,10 @@ font-family: 'Jua', sans-serif; -->
 	
 	
 	
-	
-	
-	
-	
 	<!-- 내용입니다 -->
-	
+	<div style="text-align: center; margin-top: 100px; margin-bottom: 300px;">
+		<h1>관리자 <%= session.getAttribute("id") %> 님의 방문을 환영합니다</h1>
+	</div>
 	
 	
 	

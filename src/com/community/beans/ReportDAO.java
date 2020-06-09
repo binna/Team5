@@ -41,15 +41,14 @@ public class ReportDAO {
 	
 	
 	// 신고 접수
-	public int insert(int rno, String rid, int rtype, int rqno) throws SQLException {
+	public int insert(String rid, int rtype, int rqno) throws SQLException {
 		int cnt = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(CommunityD.SQL_REPOT_INSERT);
-			pstmt.setInt(1, rno);
-			pstmt.setString(2, rid);
-			pstmt.setInt(3, rtype);
-			pstmt.setInt(4, rqno);
+			pstmt.setString(1, rid);
+			pstmt.setInt(2, rtype);
+			pstmt.setInt(3, rqno);
 			
 			cnt = pstmt.executeUpdate();
 		} finally {

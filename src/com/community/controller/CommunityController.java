@@ -90,6 +90,12 @@ public class CommunityController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "/community/commentWriteOk.jsp";
 			break;
+			
+		case "/community/reportWriteOk.community":
+			command = new ReportWriteCommand();
+			command.execute(request, response);
+			viewPage = "/community/reportWriteOk.jsp";
+			break;
 		
 		} // end switch()
 		

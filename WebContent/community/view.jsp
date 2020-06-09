@@ -435,8 +435,6 @@
   
   <!-- Modal 텍스트 문구 -->
   <div class="modal-body">
-  
-  <!--<input value="Question" type="hidden" name="report[reportable_type]" id="report_reportable_type">--> 
     <!-- 총 8개(0 ~ 7) -->
     <div class="ui-checked-right-left-text">
       <input type="radio" value="0" name="report_type" id="report_report_type_0">
@@ -482,6 +480,12 @@
   <footer class="modal-footer modal-tag-select__footer">
     <button name="button" type="button" class="close_popup">신고하기</button>
   </footer>
+  
+  <!-- 신고 아이디 -->
+  <input id="reportID" value="<%= session.getAttribute("id") %>" hidden="true"> 
+  
+  <!-- 게시글 번호 -->
+  <input id="reportQno" value="<%= no %>" hidden="true">
   
   <!-- Modal content-->
   </div>

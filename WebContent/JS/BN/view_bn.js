@@ -13,12 +13,19 @@ $(document).ready(function () {
 			+ $keyword_length[i] + "</li>";
 	}
 	$("#keyword_list_group").append($keywordHtml);
+
 	
 	// 라디오 값 추출하기
-	
 	$('.close_popup').click(function(){
-		$("input:radio[name=report_type]:checked").val();
-		$(".dismiss_popup").trigger("click");
+		// 신고 유형
+		var reportType = $("input:radio[name=report_type]:checked").val();
+		// 신고 게시글
+		var no = $("#reportQno").val();
+		// 신고 아이디
+		var reportId = $("#reportID").val();
+		
+		// 신고페이지로 이동
+		location.href="reportWriteOk.community?type=" + reportType + "&no=" + no + "&reportId=" + reportId;
 	});
 	
 }); // end ready()
