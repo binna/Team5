@@ -23,7 +23,7 @@ public class MemberLoginAction implements Action{
 				return forward;
 			} else{ 
 				forward.setRedirect(true); 
-				forward.setPath("./main.jsp"); 
+				forward.setPath("./main.team"); 
 				return forward; 
 				}
 				 

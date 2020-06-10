@@ -193,7 +193,7 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
     <p align="center">
     <input type="submit" name="submit" value="회원 가입" >
     <input type="reset" value="다시 입력">
-    <input type="button" name="cancle"value="취소" onclick="location.href='./main.jsp'">
+    <input type="button" name="cancle"value="취소" onclick="location.href='./main.team'">
     </FORM>
 
 </body>

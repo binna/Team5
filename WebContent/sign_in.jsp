@@ -91,7 +91,7 @@
     <h1 class="sign-in-form__header">
         
          
-<a href="main.jsp" style="text-decoration:none"><h1 align="center">너네 집</h1></a>
+<a href="main.team" style="text-decoration:none"><h1 align="center">너네 집</h1></a>
    </h1>
     <form name="loginform" action="./MemberLoginAction.me" method="post"  onsubmit="return check()">
       
@@ -109,7 +109,7 @@
        
         <a href="#"> <input type="button" value="아이디/비밀번호 찾기" onclick="openConfirmId(this.form)">
         <a class="sign-in-form__action__entry" href="./MemberJoin.me">회원가입</a>
-         <a class="sign-in-form__action__entry" href="./main.jsp">취소</a>
+         <a class="sign-in-form__action__entry" href="./main.team">취소</a>
     </div>
       <section class="sign-in-form__sns">
         <h2 class="sign-in-form__sns__title">SNS계정으로 간편 로그인/회원가입</h2>
