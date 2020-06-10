@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.cons.common.consD;
+import com.yoon.beans.ProductDTO;
+import com.yoon.common.D;
 
 public class comDAO {
 	Connection conn = null;
@@ -165,5 +167,25 @@ public class comDAO {
 		
 		return arr;
 	} // end selectFromRow()
+	
+	//----------------------------- 오늘의 집 메인 --------------------------------
+	
+	public comDTO[] selectRandom() throws SQLException {//main화면에 보여주기 위함
+		comDTO[] arr = null;
+		comDTO[] arrRan = new comDTO[6];
+		try {
+			pstmt = conn.prepareStatement(consD.SQL_COM_SELECT);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		}
+		for (int i = 0; i < 6; i++) {
+			arrRan[i]=arr[(int)(Math.random()*arr.length)];
+		}
+		
+		return arrRan;
+	} // end insert()
+	
 	
 } // end comDAO

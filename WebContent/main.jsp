@@ -66,6 +66,13 @@
 
 
 
+
+<!-- css,js 정종훈 -->
+<link rel="stylesheet" href="CSS/JH/main.css" type="text/css">
+<script src="JS/JH/main/main.js"></script>
+
+
+
 <title>너네집</title>
 <!-- <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -295,13 +302,13 @@
 			%>
 			<div class="m_nav_menu">
 				<h1 class="Hpointer">
-					<i class="fas fa-comments" ></i> 커뮤니티
+					<i class="fas fa-comments"></i> 커뮤니티
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
 					<h4>홈</h4>
 					<h4 Onclick="location.href='community/list.community?page=1'"
-					class="Hpointer">질문과 답변</h4>
+						class="Hpointer">질문과 답변</h4>
 				</div>
 			</div>
 			<div class="m_nav_menu">
@@ -322,7 +329,8 @@
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
-					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공 홈</h4>
+					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공
+						홈</h4>
 					<h4>견적계산</h4>
 					<h4>시공스토어</h4>
 					<h4>전문가 찾기</h4>
@@ -330,7 +338,7 @@
 			</div>
 			<div class="m_nav_menu" id="m_nav_menu_bottom">
 				<h4>마이페이지</h4>
-				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'" >나의쇼핑</h4>
+				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'">나의쇼핑</h4>
 				<h4>스크랩북</h4>
 				<h4>질문하기</h4>
 
@@ -339,7 +347,7 @@
 	</header>
 
 
-<!-- 여기까지  복사-->
+	<!-- 여기까지  복사-->
 
 	<div id="demo" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
@@ -402,13 +410,6 @@
 				</nav>
 			</div>
 			<br> <br> <br> <br> <br> <br>
-			<div id="content_community">
-				<h1 class="Hpointer"
-					Onclick="location.href='community/write.community'">오늘의
-					스토리</h1>
-				<br> <br> <br>
-
-			</div>
 			<div id="content_main_store" class="row">
 				<h1 class="col-md-12 Hpointer"
 					OnClick="location.href ='storeMain.y'">오늘의 딜</h1>
@@ -420,7 +421,7 @@
 					<c:otherwise>
 						<c:forEach var="ranP" items='${randomProduct }'>
 							<div OnClick="location.href ='productView.y?pid=${ranP.pid }'"
-								class="col-md-2 col-sm-6 col-6ranProducts">
+								class="col-md-2 col-sm-6 col-6 ranProducts">
 								<div class="product_img"
 									style='background-image: url("${ranP.pimage }")'></div>
 								<!--<img class="thumbnail-img" src="${dto.pimage }" />  -->
@@ -436,13 +437,31 @@
 				</c:choose>
 			</div>
 
-			<br>
-			<br>
-			<div id="content_interior">
-				<h1 Onclick="location.href='consMain.jsp'"
-				class="Hpointer">인테리어 시공</h1>
+			<br> <br>
+			<div id="content_interior" class="row">
+				<h1 Onclick="location.href='consMain.jsp'" class="Hpointer col-md-12">인테리어
+					시공</h1>
 				<br> <br> <br>
-
+				<c:choose>
+					<c:when
+						test="${empty randomCompany || fn:length(randomCompany) ==0}">
+					</c:when>
+					<c:otherwise>
+						<c:forEach var="ranC" items='${randomCompany }' varStatus="count">
+							<div
+								class="col-md-2 col-sm-6 randomCompany btnCons">
+								<div class="comImg${count.index}"></div>
+								<br>
+								<h3 class="cname">[${ranC.cname}]</h3>
+								<br>
+								<h3 style="height: 40px" class="cadr">${ranC.cadr}</h3>
+								<br>
+								<h3 class="ctel">${ranC.ctel}</h3>
+								<h1 style="visibility: hidden;" class="cno">${ranC.cno}</h1>
+							</div>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
 			</div>
 
 

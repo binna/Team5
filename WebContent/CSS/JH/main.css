@@ -1,0 +1,25 @@
+.cname {
+	font-weight: 900;
+	font-size: x-small;
+}
+
+.randomCompany>div>IMG {
+	width: 100%;
+	border-radius: 6%;
+}
+
+.cadr {
+	font-weight: 600;
+	font-size: 13px;
+	color: #333;
+}
+
+.ctel {
+	font-weight: 900;
+	font-size: x-small;
+	color: #333;
+}
+
+.randomCompany>div{
+	cursor: pointer;
+}

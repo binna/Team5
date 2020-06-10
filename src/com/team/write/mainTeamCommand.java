@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cons.beans.comDAO;
+import com.cons.beans.comDTO;
 import com.yoon.beans.ProductDAO;
 import com.yoon.beans.ProductDTO;
 
@@ -23,10 +25,14 @@ public class mainTeamCommand implements Command{
 			// 즉 request 에 담아서 컨트롤러에 전달되는 셈
 			request.setAttribute("randomProduct", arr);
 			
-			//정종훈	------------------------------------
+			//정종훈	--------------------------------------------------
+			comDAO daoJH = new comDAO();
+			comDTO[] arrJH = null;
 			
+			arrJH = daoJH.selectRandom();
+			request.setAttribute("randomCompany", arrJH);
 			
-			// ------------------------------------------
+			// -------------------------------------------------------
 			
 			
 			
