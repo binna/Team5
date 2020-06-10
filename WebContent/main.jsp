@@ -153,7 +153,7 @@
 					<div id="main_user_menu">
 						<nav style="padding: 0px;">
 							<ul class="menu">
-								<li><a href="#">마이페이지</a></li>
+								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
 								<li><a href="#">나의쇼핑</a></li>
 								<li><a href="member/logout.jsp">로그아웃</a></li>
 							</ul>
@@ -168,7 +168,8 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
+				<!-- <a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a> -->
+				  <a href="sign_in.jsp">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
 				<%
 					}
 				%>

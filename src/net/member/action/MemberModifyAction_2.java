@@ -26,8 +26,8 @@ public class MemberModifyAction_2 implements Action{
 		dto.setMEMBER_ID(id);
 		dto.setMEMBER_NAME(request.getParameter("MEMBER_NAME"));
 		dto.setMEMBER_PW(request.getParameter("MEMBER_PW"));
-		dto.setMEMBER_EMAIL(request.getParameter("MEMBER_EMAIL1"));/*+"@"+
-				request.getParameter("MEMBER_EMAIL2"));*/
+		dto.setMEMBER_EMAIL(request.getParameter("MEMBER_EMAIL1")+"@"+
+				request.getParameter("MEMBER_EMAIL2"));
 		dto.setMEMBER_EMAIL_GET(request.getParameter("MEMBER_EMAIL_GET"));
 		dto.setMEMBER_MOBILE(request.getParameter("MEMBER_MOBILE"));
 		dto.setMEMBER_PHONE(request.getParameter("MEMBER_PHONE"));

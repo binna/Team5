@@ -127,43 +127,64 @@
     </div>
   </section>
   
+ 
+  
   
   <!-- 실질적으로 리스트 노출하는 화면  -->
   <section id="questions-list" class="container">
+   
+   <article class="questions-item">
+    <table>
+   
+      <tr style="width: 100%;">
+      <!-- 게시글 번호 -->
+      <td class="questions-item__title" style="width: 7%; text-align: center;">번호</td>
+      <!-- 댓글 내용 -->    
+      <td class="questions-item__title" style="width: 60%; text-align: center;">댓글 내용</td>
+      <!-- 댓글 남긴 아이디 -->
+      <td class="questions-item__title" style="width: 10%; text-align: center;">아이디</td>
+      <!-- 댓글 올린 시간 -->
+      <td class="questions-item__title" style="width: 20%; text-align: center;">시간</td>
+    </tr>
+    
+    </table>
+   </article>
+    
    <%
 	   if(arr != null) {
    		for(int i = 0; i < arr.length; i++) {
     %>
+    
+    
     <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
     <a class="questions-item__link" href="view.community?no=<%= arr[i].getCqno() %>">
      <article class="questions-item">
       
-    <table>
-    <tr style="width: 100%">
+      <table>
+      <tr style="width: 100%;">
     
-     <!-- 게시글 번호 -->
-    <td style="width: 20%">
-      <span class="questions-item__footer__meta"><%= arr[i].getCqno() %></span>
-    </td>
+       <!-- 게시글 번호 -->
+      <td style="width: 7%; text-align: center;">
+        <span class="questions-item__title"><%= arr[i].getCqno() %></span>
+      </td>
     
-    <!-- 댓글 내용 -->    
-    <td style="width: 60%">
-      <h1 class="questions-item__title"><%= arr[i].getCcomment() %></h1>
-    </td>
+      <!-- 댓글 내용 -->    
+      <td style="width: 60%;">
+        <h1 class="questions-item__title"><%= arr[i].getCcomment() %></h1>
+      </td>
         
-    <!-- 댓글 남긴 아이디 -->
-    <td style="width: 10%">
-      <span class="questions-item__footer__author"><%= arr[i].getCid() %></span>
-    </td>
+      <!-- 댓글 남긴 아이디 -->
+      <td style="width: 10%; text-align: center;">
+        <span class="questions-item__footer__author"><%= arr[i].getCid() %></span>
+      </td>
     
-    <!-- 댓글 올린 시간 -->
-    <td style="width: 20%">
-    <span class="questions-item__footer__meta">
-      <time class="questions-item__footer__date"><%= arr[i].getCregDate() %></time>
-    </span>
-    </td>
+      <!-- 댓글 올린 시간 -->
+      <td style="width: 20%; text-align: right;">
+       <span class="questions-item__footer__time">
+         <time class="questions-item__footer__date"><%= arr[i].getCregDate() %></time>
+       </span>
+      </td>
         
-   
         
     </tr>
     </table>
@@ -177,17 +198,6 @@
     %>
       
   </section>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
   
 <!-- end questions-index-page -->

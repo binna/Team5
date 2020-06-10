@@ -195,7 +195,7 @@
         var objPwd1 = document.getElementById("MEMBER_PW");
         var objPwd2 = document.getElementById("MEMBER_PW2");
         var objEmail = document.getElementById("MEMBER_EMAIL1");
-/*         var objEmail2= document.getElementById("MEMBER_EMAIL2"); */
+        var objEmail2= document.getElementById("MEMBER_EMAIL2"); 
         var objName = document.getElementById("MEMBER_NAME");
         var objNum1 = document.getElementById("MEMBER_JUMIN1");
         var objNum2 = document.getElementById("MEMBER_JUMIN2");
@@ -277,7 +277,12 @@
             return false;
         }
         //이메일이 잘못된 경우
-        if (!check(regul2,objEmail,"이메일을 잘못 입력 했습니다.")) {
+       /* if (!check(regul2,objEmail,"이메일을 잘못 입력 했습니다.")) {
+            return false;
+        }*/
+        if ((objEmail2.value)=="") {
+            alert("이메일을 입력해 주세요");
+            objEmail2.focus();
             return false;
         }
         //-------0604----------------
@@ -436,3 +441,22 @@ function openZipcode(joinform){
 						+"scrollbars=yes,resizable=no,"
 						+"width=410,height=400");
 }	
+
+
+function SetEmailTail(emailValue) {
+	  var email = document.all("MEMBER_EMAIL2")    // 사용자 입력
+	  var emailTail = document.all("MEMBER_EMAIL2") // Select box
+	  
+	  if ( emailValue == "notSelected" )
+	   return;
+	  else if ( emailValue == "etc" ) {
+	   emailTail.readOnly = false;
+	   emailTail.value = "";
+	   emailTail.focus();
+	  } else {
+	   emailTail.readOnly = true;
+	   emailTail.value = emailValue;
+	  }
+	 }
+
+	

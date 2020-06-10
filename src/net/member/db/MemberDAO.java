@@ -144,7 +144,7 @@ public class MemberDAO {
 				member.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
 				member.setMEMBER_JUMIN1(rs.getInt("MEMBER_JUMIN1"));
 				member.setMEMBER_JUMIN2(rs.getInt("MEMBER_JUMIN2"));
-				member.setMEMBER_EMAIL(rs.getString("MEMBER_EMAIL"));
+				member.setMEMBER_EMAIL(rs.getString("MEMBER_EMAIL1"));
 				member.setMEMBER_EMAIL_GET(
 						rs.getString("MEMBER_EMAIL_GET"));
 				member.setMEMBER_MOBILE(
@@ -177,7 +177,7 @@ public class MemberDAO {
 		try{
 			con = ds.getConnection();
 			sql="update member set MEMBER_PW=?,MEMBER_NAME=?,"+
-			"MEMBER_EMAIL=?,MEMBER_EMAIL_GET=?,MEMBER_MOBILE=?,"+
+			"MEMBER_EMAIL1=?,MEMBER_EMAIL_GET=?,MEMBER_MOBILE=?,"+
 			"MEMBER_PHONE=?,MEMBER_ZIPCODE=?,MEMBER_ADDR1=?,"+
 			"MEMBER_ADDR2=? where MEMBER_ID=?";
 			
