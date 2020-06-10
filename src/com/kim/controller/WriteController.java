@@ -9,14 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kim.write.WriteCommand;
 import com.kim.write.CancelCommand;
 import com.kim.write.Command;
 import com.kim.write.DeleteCommand;
-import com.kim.write.ListCommand;
 import com.kim.write.OrderListCommand;
 import com.kim.write.UpdateCommand;
-import com.kim.write.ViewCommand;
+import com.kim.write.WriteCommand;
+import com.kim.write.mOrderListCommand;
 
 @WebServlet("*.woo")
 public class WriteController extends HttpServlet {
@@ -57,32 +56,24 @@ public class WriteController extends HttpServlet {
 		// view결정
 		// command 선택
 		switch (com) {
-		case "/storeMain.woo":
-			command = new ListCommand();
-			command.execute(request, response);
-			viewPage = "storeMain.jsp";
-			break;
+
 			
-		case "/productView.woo":
-			command = new ViewCommand();
-			command.execute(request, response);
-			viewPage = "productView.jsp";
-			break;
-		case "/purchaseOk.woo":
+		case "/purchaseOk.woo":			
 			command = new WriteCommand();
 			command.execute(request, response);
 			viewPage = "purchaseOk.jsp";
 			break;
 			
 		case "/mOrderList.woo":
-			command = new OrderListCommand();
+			command = new mOrderListCommand();
 			command.execute(request, response);
 			viewPage = "mOrderList.jsp";
 			break;
-		case "/mOrderDelete.woo":
+			
+		case "/mOrderDeleteOk.woo":
 			command = new DeleteCommand();
 			command.execute(request, response);
-			viewPage = "mOrderDelete.jsp";
+			viewPage = "mOrderDeleteOk.jsp";
 			break;
 		case "/uOrderList.woo":
 			command = new OrderListCommand();

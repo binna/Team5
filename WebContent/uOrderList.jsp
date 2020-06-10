@@ -63,7 +63,7 @@ font-family: 'Jua', sans-serif; -->
 				<nav>
 					<ul>
 						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">스토어</a></li>
+						<li><a href="storeMain.y">스토어</a></li>
 						<li><a href="#">인테리어시공</a></li>
 					</ul>
 				</nav>
@@ -163,21 +163,48 @@ font-family: 'Jua', sans-serif; -->
 						</div>
 
 						<div class="o_content col-md-7">
-							<div class="ing" id="ing"></div>
-							상품명: ${dto.pname }<br>
-							<!-- 상품명 -->
-							브랜드: ${dto.pbrand }<br>
-							<!-- 브랜드 -->
-							주소: ${dto.pcaddress }<br>
-							<!-- 주소  -->
-							우편번호: ${dto.pcaddressnum }<br>
-							<!-- 우편번호 -->
-							수량 :${dto.pclpcnt }<br>
-							<!-- 수량 -->
-							합계: ${dto.ptotalprice }<br>
-							<!-- 총가격 -->
+							<div class="ing" id="o_ing_1_${dto.pid}">
+								<c:if test="${dto.pcstatus == 0 }">
+									<a id="ing" style="color: rgb(255, 0, 0)"> 취소 요청 </a>
+								</c:if>
+
+								<c:if test="${dto.pcstatus == 1 }">
+									<a id="ing" style="color: #35c5f0;"> 결제 완료</a>
+								</c:if>
+							</div>
+
+							<div id="o_info">
+								구매자:${dto.pcuid}<br>
+							</div>
+
+							<div id="o_info">
+								상품명: ${dto.pname }<br>
+							</div>
+
+							<div id="o_info">
+								브랜드: ${dto.pbrand }<br>
+							</div>
+
+							<div id="o_info">
+								우편번호: ${dto.pcaddressnum }<br>
+							</div>
+							<div id="o_info">
+								주소: ${dto.pcaddress }<br>
+							</div>
+
+							<div id="o_info">
+								상세주소: ${dto.pcaddress2 }<br>
+							</div>
+
+							<div id="o_info">
+								수량 :${dto.pclpcnt }<br>
+							</div>
+							<div id="o_info">
+								합계: ${dto.ptotalprice }<br>
+							</div>
+
 							<div class="u_content" id="u_content">
-								배송 메모: ${dto.pccontent}<br>
+								배송 메모: ${dto.pccontent }<br>
 							</div>
 
 							<!-- 배송메모 -->
@@ -189,7 +216,6 @@ font-family: 'Jua', sans-serif; -->
 									<input type="hidden" name="pid" value="${dto.pid}"> <input
 										id="memo_${dto.pid}" type="text"
 										placeholder="${dto.pccontent }" name="pccontent">
-
 
 									<div class="u_modify_1">
 										<button id="u_modify_1_${dto.pid}" type="submit">수정</button>
@@ -209,9 +235,10 @@ font-family: 'Jua', sans-serif; -->
 							</div>
 							<div class="u_cancel">
 								<form action="cancelOk.woo" method="post">
-									<button id="u_cancel_1_${dto.pid}">취소하기</button>
-									<input type="hidden" name="pid" type="submit" value="${dto.pid}"> 
-									<input id="u_pcstatus_${dto.pid}" type="hidden" name="pcstatus" value="${dto.pcstatus}">
+									<button id="u_cancel_1_${dto.pid}" type="submit">취소 요청</button>
+									<input type="hidden" name="pid" value="${dto.pid}"> <input
+										id="u_pcstatus_${dto.pid}" type="hidden" name="pcstatus"
+										value="${dto.pcstatus}">
 								</form>
 							</div>
 						</div>

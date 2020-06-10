@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kim.beans.OrderDAO;
 import com.kim.beans.OrderDTO;
@@ -15,14 +16,16 @@ public class OrderListCommand implements Command {
 
 		OrderDAO dao = new OrderDAO(); //DAO 객체 생성
 		OrderDTO [] arr=null;
-		String pcuid = request.getParameter("pcuid");
+		HttpSession session = request.getSession();
+//		String pcuid = request.getParameter("pcuid");
+		String pcuid = session.getAttribute("id")+"";
 		try {
 			//트랜직션수행
 			arr= dao.select(pcuid);
+			request.setAttribute("list", arr);
 			
 			//"list" 란 name 으로 request 에 arr 값 전달
 			//즉 request 에 담아서 컨트롤러에 전달되는 셈.
-			request.setAttribute("list", arr);
 			
 		} catch(SQLException e) {
 			// 만약 CP 사용한다면

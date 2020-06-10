@@ -12,13 +12,14 @@ public class PurchaseDTO {
 	private int pccardnum;
 	private int pid;
 	private int pclpcnt;
+	private String pcaddress2;
 
 	public PurchaseDTO() {
 		super();
 	}
 
 	public PurchaseDTO(int pcid, String pcuid, int ptotalprice, int pcstatus, String pcaddress,
-			int pcaddressnum, String pccontent, int pccardnum,int pid, int pclpcnt) {
+			int pcaddressnum, String pccontent, int pccardnum,int pid, int pclpcnt,String pcaddress2) {
 		super();
 		this.pcid = pcid;
 		this.pcuid = pcuid;
@@ -30,6 +31,16 @@ public class PurchaseDTO {
 		this.pccardnum = pccardnum;
 		this.pid = pid;
 		this.pclpcnt = pclpcnt;
+		this.pcaddress2=pcaddress2;
+
+	}
+
+	public String getPcaddress2() {
+		return pcaddress2;
+	}
+
+	public void setPcaddress2(String pcaddress2) {
+		this.pcaddress2 = pcaddress2;
 	}
 
 	public int getPid() {
