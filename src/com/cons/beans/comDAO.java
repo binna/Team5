@@ -117,7 +117,6 @@ public class comDAO {
 	// 새글 작성 <-- 제목, 내용, 작성자
 	public int insert(String csuid, String csname, int cno, String carea, String cstel) throws SQLException {
 		int cnt = 0;
-		System.out.println("들어오나요?");
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_WRITE);
 			pstmt.setString(1, csuid);
@@ -125,7 +124,6 @@ public class comDAO {
 			pstmt.setInt(3, cno);
 			pstmt.setString(4, carea);
 			pstmt.setString(5, cstel);
-			System.out.println("여기는 들어오나요?");
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

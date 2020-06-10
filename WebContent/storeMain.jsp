@@ -56,7 +56,7 @@ font-family: 'Jua', sans-serif; -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
 
-	<header style="padding: 0px;" class="col-md-12" id="main_header">
+		<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
 				<h1 id="main_title">너네 집</h1>
@@ -64,9 +64,9 @@ font-family: 'Jua', sans-serif; -->
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
+						<li><a href="community/write.community" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -74,10 +74,17 @@ font-family: 'Jua', sans-serif; -->
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
-				<button id="write">글쓰기</button>
+
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+
 				<!-- <button>
 					<i class="fas fa-search"></i>
-				</button> -->
+				</button> --->
+				<%
+					if (session.getAttribute("id") != null) {
+				%>
+
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -87,23 +94,45 @@ font-family: 'Jua', sans-serif; -->
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<form action="uQuestionList.y" method="post" id = "uQuestionList_form" name="uQuestionList_form">
-					<input type="hidden" name="pquid"
-						value=<%=session.getAttribute("id")%>>
-					<button type="submit">
-						<i class="far fa-user"></i>
-					</button>
-				</form>
+				<button id="main_user_menu_icon">
+					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
+								<li><a href="uOrderList.woo">나의쇼핑</a></li>
+								<li><a href="member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
+				</button>
+				<a><%=session.getAttribute("id")%> 님</a>
+
+				<%
+					} else {
+				%>
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<!-- <a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a> -->
+				<a href="sign_in.jsp">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
+				<%
+					}
+				%>
+
+
+
 			</div>
 		</div>
+
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-9">
+			<div class="col-md-9" id="main_top2-1">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">스토어홈</a></li>
-						<li id="category_li"><a href="#">카테고리</a></li>
-						<li><a href="#">중고장터</a></li>
+						<li><a href="storeMain.y">스토어홈</a></li>
+						<li><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
 						<li><a href="#">베스트</a></li>
 						<li><a href="#">특가</a></li>
 						<li><a href="#">여름패브릭</a></li>
@@ -112,7 +141,26 @@ font-family: 'Jua', sans-serif; -->
 					</ul>
 				</nav>
 			</div>
-			<div calss="col-md-3">
+			<div class="col-md-9" id="main_top2-2">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="main.team">홈</a></li>
+						<li><a href="community/write.community">질문과답변</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-3">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="consMain.jsp">시공홈</a></li>
+						<li><a href="#">견적계산</a></li>
+						<li><a href="#">전문가찾기</a></li>
+						<li><a href="#">시공스토어</a></li>
+						<li><a href="#">방산시장</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div calss="col-md-3 col-sm-offset-0">
 				<button id="main_top2_app"></button>
 				<a href="#">앱 다운로드</a>
 			</div>
@@ -120,6 +168,123 @@ font-family: 'Jua', sans-serif; -->
 		</div>
 		<hr>
 	</header>
+
+	<header style="padding: 0px;" class="col-md-12" id="main_header_m">
+		<div id="main_top1" class="row">
+			<div id="main_top1_1" class="col-sm-1 col-1">
+
+				<button id="main_bar_btn">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+			<div id="main_top1_2" class="col-sm-5 col-5">
+				<h1 id="main_title">너네 집</h1>
+			</div>
+
+			<div id="main_top1_3" class="col-sm-6 col-6">
+
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기
+				</button>
+				<button id="search">
+					<i class="fas fa-search"></i>
+				</button>
+
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+			</div>
+		</div>
+		<!-- 
+		<hr>
+		<div id="main_top2" class="row">
+			<div class="col-sm-12 col-12" id="main_top2-1">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">스토어홈</a></li>
+						<li><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">특가</a></li>
+						<li><a href="#">여름패브릭</a></li>
+						<li><a href="#">여름가전</a></li>
+						<li><a href="#">기획전</a></li>
+					</ul>
+				</nav>
+			</div>
+
+
+		</div>
+		<hr> -->
+		<div id="m_nav_menu">
+			<button id="m_menu_close">
+				<i class="far fa-times-circle"></i>
+			</button>
+
+			<h1 id="main_title" class="m_nav_menu_title">너네 집</h1>
+			<%
+				if (session.getAttribute("id") != null) {
+			%>
+			<h1><%=session.getAttribute("id")%>
+				님
+			</h1>
+			<br>
+			<button id="m_menu_logout">로그아웃</button>
+			<%
+				} else {
+			%>
+			<button id="m_menu_login" OnClick="location.href ='sign_in.jsp'">로그인</button>
+			<button id="m_menu_join" OnClick="location.href ='MemberJoin.me'">회원가입</button>
+
+			<%
+				}
+			%>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-comments" ></i> 커뮤니티
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4>홈</h4>
+					<h4 Onclick="location.href='community/list.community?page=1'"
+					class="Hpointer">질문과 답변</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-store"></i> 스토어
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4>카테고리</h4>
+					<h4 OnClick="location.href ='storeMain.y'">스토어홈</h4>
+					<h4>베스트</h4>
+					<h4>특가</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-tools"></i> 인테리어 시공
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공 홈</h4>
+					<h4>견적계산</h4>
+					<h4>시공스토어</h4>
+					<h4>전문가 찾기</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu" id="m_nav_menu_bottom">
+				<h4>마이페이지</h4>
+				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'" >나의쇼핑</h4>
+				<h4>스크랩북</h4>
+				<h4>질문하기</h4>
+
+			</div>
+		</div>
+	</header>
+	
+	
 	<div id="product_main_nav" class="row">
 		<div class="product_main_nav col-md-1" id="category_1" id="category_1">
 			<div class="product_main_nav_img"

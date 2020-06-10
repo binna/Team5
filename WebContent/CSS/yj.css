@@ -21,7 +21,7 @@ header#main_header {
 #main_top1_2 li, #main_top2 li, #main_top3 li, #product_nav li {
 	display: inline-block;
 	height: 100%;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 
 #main_top1_2 li a, #main_top2 li a, #main_top2 a, #main_top3 li a,
@@ -29,7 +29,7 @@ header#main_header {
 	/* font-family: 'Do Hyeon', sans-serif; */
 	/* font-weight: bold; */
 	font-weight: 900;
-	font-size: 17px;
+	font-size: 0.8em;
 	color: #444;
 }
 
@@ -96,6 +96,7 @@ div#main_top2 li, div#main_top3 li {
 #main_top1_3 a {
 	font-weight: 900;
 	color: #444;
+	font-size: 0.8em;
 }
 
 #main_user_menu {
@@ -639,7 +640,7 @@ div#main_content_managerMenu div {
 	margin: auto;
 }
 
-#main_content_aProduct button,#pSubmitbtn {
+#main_content_aProduct button, #pSubmitbtn {
 	border: 5px solid #fff;
 	color: #fff;
 	padding: 13px 15px;
@@ -649,7 +650,7 @@ div#main_content_managerMenu div {
 	border-radius: 10px
 }
 
-#pfiles, #aProduct_delete,#aProduct_update,#aProduct_set{
+#pfiles, #aProduct_delete, #aProduct_update, #aProduct_set {
 	padding: 20px;
 	border: 0.5px solid #ccc;
 	border-radius: 5px;
@@ -693,12 +694,9 @@ div#product_nav {
 	margin: 0 auto;
 }
 
-
-
 div#product_nav li {
 	text-align: center;
 	margin-left: 100px
-	
 }
 
 div#product_nav a:hover {
@@ -713,39 +711,164 @@ div#product_nav a {
 .sticky {
 	position: fixed;
 	top: 0px;
-	left: 5%; width : 80%;
+	left: 5%;
+	width: 80%;
 	margin: 0 auto;
 	width: 80%;
 }
 
-div#pfiles h4,div#aProduct_delete h4,div#aProduct_update h4,div#aProduct_set h4{
+div#pfiles h4, div#aProduct_delete h4, div#aProduct_update h4, div#aProduct_set h4
+	{
 	font-weight: 900;
-	color:#666;
+	color: #666;
 }
 
-
-div.product_main_nav_img:hover, .Hpointer:hover{
+div.product_main_nav_img:hover, .Hpointer:hover {
 	cursor: pointer;
 }
 
-
 /* main_store부분 */
-div.ranProducts{
-	padding :15px
+div.ranProducts {
+	padding: 15px
 }
 
+* {
+	box-sizing: border-box;
+}
 
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
+body {
+	font-family: Verdana, sans-serif;
+}
+
+.mySlides {
+	display: none;
+}
+
+img {
+	vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
 }
-div.slideshow-container{
+
+div.slideshow-container {
 	z-index: 13;
+}
+
+/*모바일 헤더----------------------------*/
+div#main_top1 {
+	width: 90%;
+	margin: 0 auto;
+}
+
+div#main_header_m div {
+	display: inline-block;
+}
+
+button#main_bar_btn,button#m_menu_close {
+	background: #fff;
+	border: 0;
+	color: rgb(53, 197, 240);
+}
+button#m_menu_close{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 30px;
+}
+header#main_header_m #main_top2-1 ul {
+	text-align: center;
+}
+
+header#main_header_m div#main_top1_3 {
+	text-align: right;
+}
+
+div#m_nav_menu {
+	height: 937px;
+	width: 30%;
+	background-color: #fff; 
+	position : fixed;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	border-right: 1px solid rgb(53, 197, 240);
+	display: none;
+	text-align: center;
+}
+#m_menu_login{
+	background-color: white;
+	border: 1px solid rgb(53, 197, 240);
+	color: rgb(53, 197, 240);
+	font-weight: 900;
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px;
+	width: 40%
+}
+#m_menu_join{
+	background-color: rgb(53, 197, 240);
+	border: 1px solid rgb(53, 197, 240);
+	color: white;
+	font-weight: 900;
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px;
+	width: 40%
+}
+#m_menu_logout{
+	background-color: rgb(53, 197, 240);
+	border: 1px solid rgb(53, 197, 240);
+	color: white;
+	font-weight: 900;
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px;
+	width: 80%
+}
+h1.m_nav_menu_title{
+	margin-top: 50px
+}
+.m_nav_menu{
+	width: 80%;
+	margin: 10px auto;
+	text-align: left;
+	border-top: 1px solid #aaa;
+	padding: 15px;
+	color: #666;
+	font-weight: 900
+}
+.m_nav_menu div{
+	padding:20px;
+	padding-bottom: 0px
+}
+.m_nav_menu div h4{
+	margin-bottom: 15px
+}
+#m_nav_menu_bottom h4{
+	font-size: 0.8em;
+	margin: 20px
+	
+}
+/*반응형------------------------------------------------*/
+@media only screen and (max-width: 1160px) {
+	header#main_header {
+		display: none;
+	}
+	header#main_header_m {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 1160px) {
+	header#main_header {
+		display: block;
+	}
+	header#main_header_m {
+		display: none;
+	}
 }

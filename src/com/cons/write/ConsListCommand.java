@@ -35,13 +35,11 @@ public class ConsListCommand implements Command{
 		try {
 			System.out.println("try 시작");
 			int cnt = dao.cntAll();
-			System.out.println(cnt);
 			
 			
 			int totalPage = 0;
 			int pageRows = 4;
 			totalPage = (int)Math.ceil(cnt / (double)pageRows); // 총 몇페이지 분량
-			System.out.println(totalPage);
 			
 			
 			request.setAttribute("totalPage", totalPage);
@@ -49,7 +47,6 @@ public class ConsListCommand implements Command{
 			dao = new consDAO(); // DAO 객체 생성
 			arr = dao.selectByRows(curPage, cnt, totalPage, pageRows);
 			
-			System.out.println(arr);
 			// "list" 란 name 으로 request 에 arr 값 전달
 			// 즉 request 에 담아서 컨트롤러에 전달되는 셈.
 			request.setAttribute("list", arr);

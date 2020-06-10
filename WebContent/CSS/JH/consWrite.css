@@ -147,6 +147,10 @@ html, body {
 	margin-bottom: 10px;
 }
 
+.userNameInput:focus, .ctel:focus{
+	outline: 2px solid skyblue;
+}
+
 .userTelInfo {
 	padding: 20px 0 30px;
 }

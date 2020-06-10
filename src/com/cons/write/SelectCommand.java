@@ -14,79 +14,79 @@ public class SelectCommand implements Command {
 		System.out.println("Selectcommand 들어옴");
 		consDAO dao = new consDAO();
 		consDTO[] arr = null;
-		String value = request.getParameter("value"); // 매개변수 검증 필요
+		String value = request.getParameter("value").trim(); // 매개변수 검증 필요
 		String valueName = request.getParameter("valueName"); // 매개변수 검증 필요
-		// System.out.println(value);
-		// System.out.println(valueName);
+		if (value.length() == 0) {
+			request.setAttribute("list", arr);
+		} else {
+			switch (valueName) {
+			// 상담신청순서
+			case "csno":
+				int csno = Integer.parseInt(value);
+				System.out.println("csno switch 들어옴");
 
-		switch (valueName) {
-		// 상담신청순서
-		case "csno":
-			int csno = Integer.parseInt(value);
-			System.out.println("csno switch 들어옴");
+				try {
+					arr = dao.selectByCsno(csno);
+					request.setAttribute("list", arr);
 
-			try {
-				arr = dao.selectByCsno(csno);
-				request.setAttribute("list", arr);
+				} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
+					e.printStackTrace();
+				}
+				break;
 
-			} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
-				e.printStackTrace();
-			}
-			break;
+			// 유저아이디
+			case "csuid":
+				try {
+					arr = dao.selectByCsuid(value);
+					request.setAttribute("list", arr);
+				} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
+					e.printStackTrace();
+				}
 
-		// 유저아이디
-		case "csuid":
-			try {
-				arr = dao.selectByCsuid(value);
-				request.setAttribute("list", arr);
-			} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
-				e.printStackTrace();
-			}
+				break;
 
-			break;
+			// 유저이름
+			case "csname":
+				try {
+					arr = dao.selectByCSNAME(value);
+					request.setAttribute("list", arr);
+				} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
+					e.printStackTrace();
+				}
 
-		// 유저이름
-		case "csname":
-			try {
-				System.out.println("정종훈 열일중");
-				arr = dao.selectByCSNAME(value);
-				request.setAttribute("list", arr);
-			} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
-				e.printStackTrace();
-			}
+				break;
 
-			break;
+			// 업체이름
+			case "cname":
+				try {
+					arr = dao.selectByCNAME(value);
+					request.setAttribute("list", arr);
+				} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
+					e.printStackTrace();
+				}
+				break;
 
-		// 업체이름
-		case "cname":
-			try {
-				arr = dao.selectByCNAME(value);
-				request.setAttribute("list", arr);
-			} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
-				e.printStackTrace();
-			}
-			break;
+			// 전화번호
+			case "cstel":
+				try {
+					arr = dao.selectByCTEL(value);
+					request.setAttribute("list", arr);
+				} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
+					e.printStackTrace();
+				}
+				break;
 
-		// 전화번호
-		case "cstel":
-			try {
-				arr = dao.selectByCTEL(value);
-				request.setAttribute("list", arr);
-			} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
-				e.printStackTrace();
-			}
-			break;
-
-		// 시공지역
-		case "csarea":
-			try {
-				arr = dao.selectByCSAREA(value);
-				request.setAttribute("list", arr);
-			} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
-				e.printStackTrace();
-			}
-			break;
-		} // end switch
-
+			// 시공지역
+			case "csarea":
+				try {
+					arr = dao.selectByCSAREA(value);
+					request.setAttribute("list", arr);
+				} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
+					e.printStackTrace();
+				}
+				break;
+			} // end switch
+		}
+	
 	}
 } // end class
