@@ -24,7 +24,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<!-- 내 스크립트 적용 -->
+<!-- 스크립트 적용 -->
 <script type="text/javascript" src="../JS/BN/write_bn.js"></script>
 
 <!-- 내 CSS 적용 -->

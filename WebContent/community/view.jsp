@@ -46,7 +46,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<!-- 내 스크립트 적용 -->
+<!-- 스크립트 적용 -->
+<script type="text/javascript" src="../JS/yj.js"></script>
 <script type="text/javascript" src="../JS/BN/view_bn.js"></script>
 
 <!-- CSS 적용 -->
@@ -72,8 +73,8 @@
 				<nav>
 					<ul>
 						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
-						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
-						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
+						<li><a href="../storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="../consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -107,7 +108,7 @@
 					<div id="main_user_menu">
 						<nav style="padding: 0px;">
 							<ul class="menu">
-								<li><a href="#">마이페이지</a></li>
+								<li><a href="../MemberModifyAction_1.me">마이페이지</a></li>
 								<li><a href="#">나의쇼핑</a></li>
 								<li><a href="../member/logout.jsp">로그아웃</a></li>
 							</ul>
@@ -151,7 +152,7 @@
 			<div class="col-md-9" id="main_top2-2">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">홈</a></li>
+						<li><a href="../main.jsp">홈</a></li>
 						<li><a href="list.community?page=1">질문과답변</a></li>
 					</ul>
 				</nav>
@@ -191,12 +192,7 @@
   
     <!-- 질문과 답변, 질문 제목 노출 화면 -->
     <header class="qna-detail__content__header-container">
-      <!-- 질문가 답변 헤더 -->
-      <div class="qna-detail__content__header-top">
-        <!-- 나중에 리스트 만들고 링크 설정하기 -->
-        <a class="qna-detail__content__header-subtitle" href="#">질문과 답변</a>
-      </div>
-
+    
       <!-- 질문 제목 title -->
       <h1 class="qna-detail__content__header-title"><%= title %></h1>
       <!-- 수정 삭제 버튼은 해당 글 작성자만 노출 -->
@@ -340,12 +336,13 @@
 			          		if(session.getAttribute("id").equals(arr2[i].getCid())) {	// 아이디도 일치하면
 		              %> 
 		              <!-- 삭제 버튼 -->
-		              <a href="comentDeleteOk.community?Cno=<%= arr2[i].getCno()%>&qno=<%= no %>">
+		              <input id="cno_comment_value" value="<%= arr2[i].getCno() %>" hidden="true">
+		              <button id="btn_comment_delete">
 		                <span>
 		                  <i class="far fa-times-circle" style="float: right; color: #ff0000;" 
 		                  onmouseover="this.style.color='#ff00006b';" onmouseout="this.style.color='#ff0000';"></i>
 		                </span>
-		              </a>
+		              </button>
 		              <%
 			          		}
 			          	}

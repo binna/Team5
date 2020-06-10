@@ -28,15 +28,34 @@ $(document).ready(function () {
 		location.href="reportWriteOk.community?type=" + reportType + "&no=" + no + "&reportId=" + reportId;
 	});
 	
+	// 댓글을 정말 삭제할 것인가 물어보기
+	$("#btn_comment_delete").click(function(){
+		
+		// 아니오 눌렀을때 삭제되지 않기
+		if(!confirm('정말로 댓글을 삭제하시겠습니까?')){
+			alert('댓글 삭제 취소를 선택하셨습니다');
+			return false;
+		}
+		
+		// 예 눌렀을 때 삭제 페이지로 가기
+		var no = $("#reportQno").val();
+		var cno = $("#cno_comment_value").val();
+		
+		// 삭제 페이지로 이동
+		location.href = href="comentDeleteOk.community?Cno=" + cno + "&qno=" + no ;
+		
+	});
 	
 }); // end ready()
 
 function chkDelete(no) {
 	// 삭제 여부, 다시 확인하고 진행하기
-	var message = confirm('삭제하시겠습니까?')
+	var message = confirm('정말로 게시글을 삭제하시겠습니까?');
 	
 	if(message) {
 		location.href = "deleteOk.community?no=" + no;
+	} else {
+		alert('게시글 삭제 취소를 선택하셨습니다');
 	}
 }
 

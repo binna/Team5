@@ -48,7 +48,9 @@
 
 </head>
 
+<!-- 자바스크립트 적용 -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script type="text/javascript" src="../JS/yj.js"></script>
 
 <body>
 
@@ -74,8 +76,8 @@
 				<nav>
 					<ul>
 						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
-						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
-						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
+						<li><a href="../storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="../consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -109,7 +111,7 @@
 					<div id="main_user_menu">
 						<nav style="padding: 0px;">
 							<ul class="menu">
-								<li><a href="#">마이페이지</a></li>
+								<li><a href="../MemberModifyAction_1.me">마이페이지</a></li>
 								<li><a href="#">나의쇼핑</a></li>
 								<li><a href="../member/logout.jsp">로그아웃</a></li>
 							</ul>
@@ -153,7 +155,7 @@
 			<div class="col-md-9" id="main_top2-2">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">홈</a></li>
+						<li><a href="../main.jsp">홈</a></li>
 						<li><a href="list.community?page=1">질문과답변</a></li>
 					</ul>
 				</nav>
