@@ -47,6 +47,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <!-- 스크립트 적용 -->
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="../JS/yj.js"></script>
 <script type="text/javascript" src="../JS/BN/view_bn.js"></script>
 
@@ -237,18 +238,35 @@
           <!-- keyword 내용 들어가는 곳, JS로 유동적으로 만듦 -->
 		</ul>
 		
+		<!-- 공유하기 -->
+		<script type="text/javascript">
+		
+		  Kakao.init('7991917d4f0d79e81d524ea00682946b');
+		  
+		  function sendLink() {
+		    Kakao.Link.sendDefault({
+		      objectType: 'text',
+		      text:
+		        '<%= title %>',
+		      link: {
+		        mobileWebUrl:
+		          'http://localhost:8888/Team5/community/view.community?no=<%= no %>',
+		        webUrl:
+		          'http://localhost:8888/Team5/community/view.community?no=<%= no %>',
+		      },
+		    })
+		  }
+		</script>
+		
 		<!-- 사용자 정보와 공유 버튼 -->
 		<aside class="qna-detail-actions qna-detail__footer__action-group">
-			<div class="drop-down qna-detail-actions__wrapper">
-
-				<button id="shareKakao" class="view_btn button--color-gray-14-inverted button--size-30 qna-detail-actions__action" type="button">
-					<span class="qna-detail-actions__action__label">공유</span>
-				</button>
-				
-				
-
-			</div>
-			
+		 <div class="drop-down qna-detail-actions__wrapper">
+		  <a href="javascript:sendLink()">
+			<button class="view_btn button--color-gray-14-inverted qna-detail-actions__action" type="button">
+			  <span class="qna-detail-actions__action__label">공유</span>
+			</button>
+		  </a>
+		 </div>
 		</aside>
 		
 
@@ -448,12 +466,13 @@
           
         </address>
 					
-		<!-- 공유하기 버튼 -->
 		<aside class="qna-detail-actions question__sidebar__actions">
           <div class="drop-down qna-detail-actions__wrapper">
-	        <button class="view_btn button--color-gray-14-inverted button--size-30 qna-detail-actions__action" type="button">
-              <span class="qna-detail-actions__action__label">공유</span>
-            </button>
+            <a href="javascript:sendLink()">
+	          <button class="view_btn qna-detail-actions__action" type="button">
+                <div class="qna-detail-actions__action__label">공유</div>
+              </button>
+            </a>
           </div>
 		</aside>
 

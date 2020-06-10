@@ -713,15 +713,29 @@ li {list-style: none;}
 .qna-detail-actions__wrapper {
     position: relative;
 }
+.qna-detail-actions__wrapper a {
+	width: 100%;
+}
+.qna-detail-actions__wrapper a:hover {
+	text-decoration: none;
+}
 .qna-detail-actions__action,
 .qna-detail-actions__wrapper {
     display: flex;
 }
 .qna-detail-actions__action {
     flex: 1;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #757575;
+}
+.qna-detail-actions__action:hover{
+	background-color: #dbdbdb;
+    color: #5d5d5d;
 }
 .qna-detail-author__profile-link__summary-nickname {
     margin-right: 4px;

@@ -35,6 +35,23 @@ $(document).ready(function() {
 		$("#main_user_menu").hide();
 
 	});
+	//----------------------------------------
+	//main_m
+	
+	$("#main_bar_btn").click(function(){
+		$("#m_nav_menu").show(1000);
+	});
+	$("#m_menu_close").click(function(){
+		$("#m_nav_menu").hide(1000);
+	});
+	  
+	
+	$(".m_nav_menu_inner").hide();
+	$(".m_nav_menu").click(function(){
+		$(".m_nav_menu_inner").hide();
+		$(this).children('.m_nav_menu_inner').show(500)
+	})
+	
 	//-----------------------------------------
 
 	//aProductList
