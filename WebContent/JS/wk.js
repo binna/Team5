@@ -6,10 +6,7 @@ $(document).ready(function() {
 		var p = parseInt(res) * selectOption;
 		a= makeComma(p)	;
 		$('#total').text("주문금액:    " + a + "원")
-
-		 
-
-
+		
 		$("#cashBtn").click(function() {
 			$('#id01').show();
 			$('#pc_price').text("결제 금액: " + p + "원");
@@ -67,15 +64,13 @@ $(document).ready(function() {
 		var id = $(this).attr('id').split("_")[3];
 		$('#u_modify_input_' + id).hide();
 	});
+	$('button[id^="u_modify_3_"]').click(function() {
+		var id = $(this).attr('id').split("_")[3];
+		$('#u_modify_input_' + id).hide();
+	});
 	// 배송 메모 수정 끝
 
-	// var bb =$('.ing').attr('id').split("_")[3];
-	// aa = $('#o_ing_1_'+bb).text();
-	// if(aa == 1){
-	// $('#o_ing_1_'+bb).text(aa);
-	// }else{
-	// $('#o_ing_1_'+bb).text(aa);
-	// }
+
 
 }); // Main document end
 

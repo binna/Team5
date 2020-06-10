@@ -43,7 +43,8 @@
 <script type="text/javascript" src="JS/yj.js"></script>
 <script type="text/javascript" src="JS/WOO/ajax.js"></script>
 <script type="text/javascript" src="JS/WOO/postcode.v2.js"></script>
-<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script
+	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
@@ -134,16 +135,14 @@ table, th, td {
 	<div class="s_info row">
 		<br>
 
-		<div class="s_image col-md-6">
+		<div class="s_image col-md-6 col-sm-12 col-12">
 			<h3 class="s_title">가구 > ${view[0].pname }</h3>
 			<br> <img class="p_image" id="p_image" src="${view[0].pimage}" />
-			<div id="k_url">
-				${view[0].pimage}
-			</div>
+			<div id="k_url">${view[0].pimage}</div>
 		</div>
 		<br>
 
-		<div class="s_content col-md-6">
+		<div class="s_content col-md-6 col-sm-12 col-12">
 			<br> <br>
 
 
@@ -155,23 +154,35 @@ table, th, td {
 				${view[0].pname }<br>
 			</div>
 
+
+			<div class="p_star" id="p_star">
+				<pre id="star"></pre>
+				<pre id="star"></pre>
+				<pre id="star"></pre>
+				<pre id="star"></pre>
+				<pre id="halfStar"></pre>
+				75개리뷰
+			</div>
+			<div class="p_link" id="p_link">
+				<button id="kakaoBtn"></button>
+				<button id="linkBtn"></button>
+			</div>
 			<div class="p_content">
 				<div class="s_price" id="s_price">${view[0].pprice}원</div>
 				<fmt:formatNumber value="${view[0].pprice}" />
 				원
 			</div>
+			<div class="low" id="low">최저가</div>
+			<div class="free" id="free">무료배송</div>
+			<div class="team5" id="team5">team5</div>
 
-			<div class="p_star" id="p_star">
-				<pre id="star"></pre> <pre id="star"></pre> <pre id="star"></pre>
-				<pre id="star"></pre> <pre id="halfStar"></pre>
 
+			<div class="ignore" id="ignore">
+				<div id="i_1">일반택배</div>
+				<div id="i_2">
+					(3개월) 무이자할부<br><br>*조건에 따라 추가비용 발생 가능 (상품 상세 정보 참고)<br><br> 제주도/도서산간 지역 배송 불가
+				</div>
 			</div>
-			<div class="p_link" id="p_link">
-				<button id="kakaoBtn">
-					<img src="IMG_WOO/link.png">
-				</button>
-			</div>
-
 
 			<div class="p_fix">
 				<form class="p_option" name="myform1" action="">
@@ -179,7 +190,7 @@ table, th, td {
 						<!-- 						<div >
 							<span>수량 :</span> <input class="figure" type="number" name="number" min="1" max="50" step="1" /><br>
 						</div> -->
-						<span>수량 : </span> <select id="figure" class="figure"
+						<span id="s_option">수량 : </span> <select id="figure" class="figure"
 							name="figure">
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -411,11 +422,11 @@ table, th, td {
 			method="post">
 			<span class="close" id="close">&times;</span> <br>
 			<div class="imgcontainer row">
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-12 col-12">
 					<img src="${view[0].pimage}" class="avatar" id="avatar"
 						alt="Avatar">
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-7 col-sm-12 col-12">
 					<div class="s_brand" id="s_brand">
 						${view[0].pbrand }<br>
 					</div>
@@ -443,29 +454,30 @@ table, th, td {
 					value=<%=session.getAttribute("id")%> readonly="readonly" required>
 
 				<div class="o_button">
-							<button id="daum" onclick="Daum()"></button>
-						</div>
-				<label for="addressnum"><b>AddressNum</b></label> 
-				<input
+					<button id="daum" onclick="Daum()"></button>
+				</div>
+				<label for="addressnum"><b>AddressNum</b></label> <input
 					id="pcaddressnum" type="text" placeholder="우편번호 입력"
-					name="pcaddressnum" > 
-					<label for="address"><b>Address</b></label>
-				<input id="pcaddress" type="text" placeholder="주소입력" name="pcaddress"
-					><label for="address2"><b>AddressDetail</b></label>
-				<input id="pcaddress2" type="text" placeholder="상세주소 입력" name="pcaddress2"
-					> 
+					name="pcaddressnum"> <label for="address"><b>Address</b></label>
+				<input id="pcaddress" type="text" placeholder="주소입력"
+					name="pcaddress"><label for="address2"><b>AddressDetail</b></label>
+				<input id="pcaddress2" type="text" placeholder="상세주소 입력"
+					name="pcaddress2"> <label for="tel"><b>request</b></label>
+				<input id="pccontent" type="text" placeholder="배송메모"
+					name="pccontent" required> <label for="psw"><b>CardNumber</b></label>
+				<input id="pccardnum" type="text" placeholder="카드번호입력"
+					name="pccardnum" required> 
 					
-					 <label for="tel"><b>request</b></label> <input
-					id="pccontent" type="text" placeholder="배송메모" name="pccontent"
-					required> <label for="psw"><b>CardNumber</b></label> <input
-					id="pccardnum" type="text" placeholder="카드번호입력" name="pccardnum"
-					required> <input class="okay" id="okay" type="submit"
-					value="구매 하기"> <label> <input type="checkbox"
-					name="remember" checked>Remember
+					
+					<input class="okay" id="okay"
+					type="submit" value="구매 하기"> <label>
+					
+					 <input
+					type="checkbox" name="remember" checked>Remember
 				</label>
 			</div>
 
-			
+
 
 
 

@@ -157,12 +157,12 @@ font-family: 'Jua', sans-serif; -->
 					<div class="date" id="date">구매일: ${dto.pcregdate }</div>
 					<!-- 구매 시간  -->
 					<div class="o_list row">
-						<div class="o_image col-md-3">
+						<div class="o_image col-md-3 col-sm-12 col-12">
 							<img class="m_image" id="m_image" src="${dto.pimage}" />
 							<!-- 이미지  -->
 						</div>
 
-						<div class="o_content col-md-7">
+						<div class="o_content col-md-7 col-sm-12 col-12">
 							<div class="ing" id="o_ing_1_${dto.pid}">
 								<c:if test="${dto.pcstatus == 0 }">
 									<a id="ing" style="color: rgb(255, 0, 0)"> 취소 요청 </a>
@@ -219,21 +219,25 @@ font-family: 'Jua', sans-serif; -->
 
 									<div class="u_modify_1">
 										<button id="u_modify_1_${dto.pid}" type="submit">수정</button>
+										<button id="u_modify_3_${dto.pid}" type="button">취소</button>
 									</div>
-
-
 								</form>
+
+
 							</div>
 						</div>
 
 
 
 
-						<div class="o_button col-md-2">
-							<div class="u_modify_2">
-								<button id="u_modify_2_${dto.pid}">수정하기</button>
-							</div>
-							<div class="u_cancel">
+						<div class="row o_button col-md-2 ">
+
+							<div class="u_cancel col-md-12 ">
+
+								<div class="u_modify_2">
+									<button id="u_modify_2_${dto.pid}">수정하기</button>
+								</div>
+
 								<form action="cancelOk.woo" method="post">
 									<button id="u_cancel_1_${dto.pid}" type="submit">취소 요청</button>
 									<input type="hidden" name="pid" value="${dto.pid}"> <input
@@ -241,6 +245,7 @@ font-family: 'Jua', sans-serif; -->
 										value="${dto.pcstatus}">
 								</form>
 							</div>
+
 						</div>
 
 
