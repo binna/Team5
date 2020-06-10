@@ -43,7 +43,7 @@
 <header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
-			<a href="main.jsp" style="text-decoration:none"><h1 align="center">너네 집</h1></a>
+			<a href="main.team" style="text-decoration:none"><h1 align="center">너네 집</h1></a>
 			</div>
 			</div>
 			</header>
@@ -101,7 +101,7 @@
 																				onclick="openConfirmId(this.form)">
 																				<input
 																			type="button" value="취소"
-																			onclick="javascript:window.location='./main.jsp'">
+																			onclick="javascript:window.location='./main.team'">
 																		</a></td>
 																	</tr>
 																</table>

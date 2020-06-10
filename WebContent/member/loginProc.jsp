@@ -15,10 +15,10 @@
     {
         session.setAttribute("Member_Name",userName);
         session.setAttribute("Member_Id", userID);
-        response.sendRedirect("./main.jsp"); // main.jsp 에 session 정보를 보낸다
+        response.sendRedirect("./main.team"); // main.jsp 에 session 정보를 보낸다
     }
     else
     {
-        response.sendRedirect("./main.jsp");
+        response.sendRedirect("./main.team");
     }
 %>

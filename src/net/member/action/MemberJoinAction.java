@@ -37,7 +37,8 @@ public class MemberJoinAction implements Action{
 		PrintWriter out = response.getWriter();
 		out.println("<script>");
 		out.println("alert('회원가입에 성공하였습니다.');");
-		out.println("location.href='./MemberLogin.me';");
+//		out.println("location.href='./MemberLogin.me';");
+		out.println("location.href='./sign_in.jsp';");
 		out.println("</script>");			
 		out.close();	
 		return forward;
