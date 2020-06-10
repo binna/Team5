@@ -1,9 +1,8 @@
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -39,17 +38,46 @@
 
 
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
-<link rel="stylesheet" href="CSS/yj.css" type="text/css">
 <!-- <link rel="stylesheet" href="CSS/logo_menu.css" type="text/css"> -->
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
+<!-- banner관련 -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script>
+	$('.carousel').carousel({
+		interval : 100
+	})
+</script>
+
 <script type="text/javascript" src="JS/yj.js"></script>
+<link rel="stylesheet" href="CSS/yj.css" type="text/css">
 
 
 
 
 <title>너네집</title>
+<!-- <link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous"> -->
+<style>
+.carousel-inner>.carousel-item>img { /* width: 640px; height: 720px; */
+	
+}
+</style>
+
+
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!-- 팝업설정 js경로  -->
@@ -109,7 +137,6 @@
 				</button> --->
 				<%
 					if (session.getAttribute("id") != null) {
-						
 				%>
 
 				<button>
@@ -121,7 +148,7 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button id="main_user_menu_icon" >
+				<button id="main_user_menu_icon">
 					<i class="far fa-user"></i>
 					<div id="main_user_menu">
 						<nav style="padding: 0px;">
@@ -133,7 +160,7 @@
 						</nav>
 					</div>
 				</button>
-				<a><%= session.getAttribute("id") %> 님</a>
+				<a><%=session.getAttribute("id")%> 님</a>
 
 				<%
 					} else {
@@ -183,11 +210,10 @@
 						<li><a href="#">전문가찾기</a></li>
 						<li><a href="#">시공스토어</a></li>
 						<li><a href="#">방산시장</a></li>
-
 					</ul>
 				</nav>
 			</div>
-			<div calss="col-md-3">
+			<div calss="col-md-3 col-sm-offset">
 				<button id="main_top2_app"></button>
 				<a href="#">앱 다운로드</a>
 			</div>
@@ -196,60 +222,112 @@
 		<hr>
 	</header>
 
+
+
+
+		<div id="demo" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<!-- 슬라이드 쇼 -->
+				<div class="carousel-item active">
+					<!--가로-->
+					<img class="d-block w-100" src="banner/banner1.PNG"
+						alt="First slide">
+					<div class="carousel-caption d-none d-md-block"></div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="banner/banner2.png"
+						alt="Second slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="banner/banner3.png"
+						alt="Third slide">
+				</div>
+			</div>
 	<!--내용부분입니다.  -->
 	<div id="main_content">
-		<div id="content_banner"></div>
-		<div id="content_nav">
-			<nav style="padding: 0px;">
-				<ul>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--158709154758244185.png/512/none">
-						신혼가구</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060163925021105.png/512/none">
-						쇼핑하기</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060166588410696.png/512/none">
-						평수별 집구경</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060167898474932.png/512/none">
-						공간별사진</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
-						시공간편상당</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
-						시공스토어</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157560539045245526.png/512/none">
-						가이드북</li>
-					<li><img
-						src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060175107066373.png/512/none">
-						질문과답변</li>
 
 
-				</ul>
-			</nav>
-		</div>
-		<br> <br> <br> <br> <br> <br>
-		<div id="content_community">
-			<h1>오늘의 스토리</h1>
-			<br> <br> <br>
-		</div>
-		<div id="content_store">
-			<h1>오늘의 딜</h1>
-			<br> <br> <br>
-		</div>
-		<div id="content_interior">
-			<h1>인테리어 시공</h1>
-			<br> <br> <br>
+
+
+
+			<div style="text-align: center">
+				<span class="dot"></span> <span class="dot"></span> <span
+					class="dot"></span>
+			</div>
+			<div id="content_nav">
+				<nav style="padding: 0px;">
+					<ul>
+						<li><img
+							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--158709154758244185.png/512/none">
+							신혼가구</li>
+						<li><img
+							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060163925021105.png/512/none">
+							쇼핑하기</li>
+						<li><img
+							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060166588410696.png/512/none">
+							평수별 집구경</li>
+						<li><img
+							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060167898474932.png/512/none">
+							공간별사진</li>
+						<li><img
+							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
+							시공간편상당</li>
+						<li><img
+							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
+							시공스토어</li>
+						<li><img
+							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157560539045245526.png/512/none">
+							가이드북</li>
+						<li><img
+							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060175107066373.png/512/none">
+							질문과답변</li>
+
+
+					</ul>
+				</nav>
+			</div>
+			<br> <br> <br> <br> <br> <br>
+			<div id="content_community">
+				<h1>오늘의 스토리</h1>
+				<br> <br> <br>
+
+			</div>
+			<div id="content_main_store" class="row">
+				<h1 class="col-md-12 Hpointer"
+					OnClick="location.href ='storeMain.y'">오늘의 딜</h1>
+				<br> <br> <br>
+				<c:choose>
+					<c:when
+						test="${empty randomProduct || fn:length(randomProduct) ==0}">
+					</c:when>
+					<c:otherwise>
+						<c:forEach var="ranP" items='${randomProduct }'>
+							<div OnClick="location.href ='productView.y?pid=${ranP.pid }'"
+								class="col-md-2 ranProducts">
+								<div class="product_img"
+									style='background-image: url("${ranP.pimage }")'></div>
+								<!--<img class="thumbnail-img" src="${dto.pimage }" />  -->
+								<br>
+								<h3 class="pbrand">[${ranP.pbrand }]</h3>
+								<br>
+								<h3 style="height: 40px" class="pname">${ranP.pname }</h3>
+								<br>
+								<h3 class="pprice">${ranP.pprice }원</h3>
+							</div>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
+			</div>
+			<div id="content_interior">
+				<h1>인테리어 시공</h1>
+				<br> <br> <br>
+
+			</div>
+
 
 		</div>
-
 
 	</div>
-
-
 
 	<!-- 바닥입니다. -->
 	<footer id="main_footer">
@@ -278,7 +356,6 @@
 				Inc. All rights reserved</h1>
 		</div>
 	</footer>
-
 </body>
 
 </html>
