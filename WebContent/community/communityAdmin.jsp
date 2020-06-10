@@ -131,11 +131,11 @@
   <!-- 실질적으로 리스트 노출하는 화면  -->
   <section id="questions-list" class="container">
    <article class="questions-item">
-    <table>
+    <table style="width: 100%;">
    
      <tr style="width: 100%;">
        <!-- 게시글 제목 -->
-       <td class="questions-item__title" style="width: 7%; text-align: center;">제목</td>
+       <td class="questions-item__title" style="width: 70%; text-align: center;">제목</td>
        <!-- 작성자 -->
        <td class="questions-item__title" style="width: 10%; text-align: center;">아이디</td>
        <!-- 게시글 올린 시간 -->
@@ -154,8 +154,8 @@
     <a class="questions-item__link" href="view.community?no=<%= arr[i].getNo() %>">
       <article class="questions-item">
       
-       <table>
-        <tr style="width: 100%">
+       <table style="width: 100%;">
+        <tr style="width: 100%;">
         
         <!-- 게시글 제목 -->
         <td style="width: 70%;">
@@ -163,12 +163,12 @@
         </td>
         
         <!-- 글 남긴 사람 아이디 -->
-        <td style="width: 10%">
+        <td style="width: 10%; text-align: center;">
           <span class="questions-item__footer__author"><%= arr[i].getQid() %></span>
         </td>
         
         <!-- 글 올린 시간 -->
-        <td style="width: 20%">
+        <td style="width: 20%; text-align: right;">
          <span class="questions-item__footer__time">
            <time class="questions-item__footer__date"><%= arr[i].getRegDate() %></time>
          </span>
