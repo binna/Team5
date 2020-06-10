@@ -1,7 +1,8 @@
 // 윤주
 
 $(document).ready(function() {
-
+	
+//------------------------------------------------------
 	// main js
 
 	$("#main_top2-1").css("display", "none");
@@ -34,8 +35,14 @@ $(document).ready(function() {
 		$("#main_user_menu").hide();
 
 	});
+	//-----------------------------------------
+
+	//aProductList
+	$('#pfiles').hide();
+	$('#aProduct_delete').hide();
+	$('#aProduct_update').hide();
+	$('#aProduct_set').hide();
 	
-//------------------------------------------------------
 	$('.updateform').hide();
 	$('#sort').on('change', function() {
 			$('.updateform').hide();
@@ -46,6 +53,31 @@ $(document).ready(function() {
 		   
 
 		   });
+	
+	$("#pManager1").click(function() {
+		$('#pfiles').hide();
+		$('#aProduct_delete').hide();
+		$('#aProduct_update').hide();
+		$('#aProduct_set'). show(100);
+	});
+	$("#pManager2").click(function() {
+		$('#pfiles').hide();
+		$('#aProduct_delete').show(100);
+		$('#aProduct_update').hide();
+		$('#aProduct_set'). hide();
+	});
+	$("#pManager3").click(function() {
+		$('#pfiles').hide();
+		$('#aProduct_delete').hide();
+		$('#aProduct_update').show(100);
+		$('#aProduct_set').hide();
+	});
+	$("#pManager4").click(function() {
+		$('#pfiles').show(100);
+		$('#aProduct_delete').hide();
+		$('#aProduct_update').hide();
+		$('#aProduct_set').hide();
+	});
 	//----------------------------------------------
 	
 	//aQuestionList

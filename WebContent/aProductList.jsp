@@ -127,7 +127,9 @@ font-family: 'Jua', sans-serif; -->
 			<br>
 			<c:choose>
 				<c:when test="${empty list || fn:length(list) ==0}">
-					<h1>상품 준비중입니다</h1>
+					<h4>상품 준비중입니다</h4>
+					<br>
+					<form action="aProductSetOk.y"><button type="submit">상품 불러오기</button></form>
 				</c:when>
 				<c:otherwise>
 					<br>
@@ -184,14 +186,14 @@ font-family: 'Jua', sans-serif; -->
 							<br>
 							<h4>삭제할 상품을 선택해주세요</h4>
 							<br>
-							<form>
+							<form action="aProductDeleteOk.y" method="post" id = "delete_form_${dto.pid }">
 								<select name="pid">
 									<c:forEach var="dto" items='${list }'>
 										<option value="${dto.pid }">[${dto.pbrand }]
 											${dto.pname }</option>
 									</c:forEach>
 								</select> <br> <br>
-								<button>삭제</button>
+								<button type="submit">삭제</button>
 							</form>
 
 
@@ -206,12 +208,12 @@ font-family: 'Jua', sans-serif; -->
 								</c:forEach>
 							</select> <br> <br>
 							<c:forEach var="dto" items='${list }'>
-								<form id="updateform_${dto.pid }" class="updateform">
+								<form id="updateform_${dto.pid }" class="updateform" action="aProductUpdateOk.y" >
 									<h4>상품정보를 수정해주세요</h4>
-									<input type="hidden" value="${dto.pid }">
-									<br> 상품이름 : <input type="text" value="${dto.pname }"><br>
-									상품가격 : <input type="text" value="${dto.pprice }"><br>
-									상품브랜드 : <input type="text" value="${dto.pbrand }"><br>
+									<input type="hidden" value="${dto.pid }" name ="pid">
+									<br> 상품이름 : <input type="text" name="pname" value="${dto.pname }"><br>
+									상품가격 : <input type="text" name="pprice" value="${dto.pprice }"><br>
+									상품브랜드 : <input type="text" name="pbrand" value="${dto.pbrand }"><br>
 									<button type="submit">수정</button>
 								</form>
 							</c:forEach>
@@ -222,7 +224,8 @@ font-family: 'Jua', sans-serif; -->
 							<br>
 							<h4>상품업데이트</h4>
 							<br> <br>
-							<button>상품 불러오기</button>
+							<form action="aProductSetOk.y"><button type="submit">상품 불러오기</button></form>
+							
 						</div>
 
 					</div>

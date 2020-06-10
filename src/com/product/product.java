@@ -28,7 +28,7 @@ public class product implements Query{
 	public static void main(String[] args) {
 		setProductList();//세팅		
 		
-		
+		int result=0;
 		String clientId = "Fd5OqnTUuUF6qX27jBWS"; // 애플리케이션 클라이언트 아이디값"
 		String clientSecret = "7xhDrhhGUJ"; // 애플리케이션 클라이언트 시크릿값"
 
@@ -52,10 +52,10 @@ public class product implements Query{
 
 			//System.out.println(responseBody);
 
-			parseJSON(responseBody,i);
+			result+=parseJSON(responseBody,i);
 			
 		}
-		
+		System.out.println(result);
 		
 	}
 	
@@ -187,10 +187,10 @@ public class product implements Query{
 		}
 	}
 
-	public static void parseJSON(String jsonText,int pcode) {
+	public static int parseJSON(String jsonText,int pcode) {
 		JSONObject jObj = new JSONObject(jsonText);
 		JSONArray items = jObj.getJSONArray("items");
-		
+		int cnt=0;
 		for (int i = 0; i < items.length(); i++) {
 			JSONObject product = items.getJSONObject(i);
 			String ptitle = product.getString("title").split("<b>")[0];
@@ -227,8 +227,8 @@ public class product implements Query{
 				pstmt.setString(3, pbrand);
 				pstmt.setString(4, pimage);
 				pstmt.setInt(5, pcode+1);
-				pstmt.executeUpdate();
-				//System.out.println(cnt + "개 행 INSERT 성공");
+				cnt+=pstmt.executeUpdate();
+				System.out.println(cnt + "개 행 INSERT 성공");
 				
 				
 				// auto-generated keys 값 뽑아오기
@@ -265,6 +265,7 @@ public class product implements Query{
 			
 
 		}
+		return cnt;
 	}
 }
 

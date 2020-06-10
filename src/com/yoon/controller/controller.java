@@ -12,10 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.yoon.write.Command;
 import com.yoon.write.ViewCommand;
 import com.yoon.write.managerCommand;
+import com.yoon.write.pdeleteCommand;
 import com.yoon.write.pqListbypidCommand;
 import com.yoon.write.pqListbypquidCommand;
 import com.yoon.write.pquestionListCommand;
+import com.yoon.write.prandomListCommand;
 import com.yoon.write.productListCommand;
+import com.yoon.write.psetCommand;
+import com.yoon.write.pupdateCommand;
 import com.yoon.write.questionDeleteCommand;
 import com.yoon.write.questionUpdateCommand;
 import com.yoon.write.questionWriteCommand;
@@ -112,7 +116,28 @@ public class controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "pfileUploadOk.jsp";
 			break;
+		case "/aProductDeleteOk.y":
+			command = new pdeleteCommand();
+			command.execute(request, response);
+			viewPage = "aProductDeleteOk.jsp";
+			break;
+		case "/aProductUpdateOk.y":
+			command = new pupdateCommand();
+			command.execute(request, response);
+			viewPage = "aProductUpdateOk.jsp";
+			break;
+		case "/aProductSetOk.y":
+			command = new psetCommand();
+			command.execute(request, response);
+			viewPage = "aProductSetOk.jsp";
+			break;
+		case "/main.y":
+			command = new prandomListCommand();
+			command.execute(request, response);
+			viewPage = "main.jsp";
+			break;
 		}
+	
 	
 
 		if (viewPage != null) {

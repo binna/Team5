@@ -112,7 +112,7 @@ div#main_top2 li, div#main_top3 li {
 }
 
 #main_user_menu li {
-	text-align: left;
+	text-align: center;
 	font-size: small;
 	padding: 10px;
 	background-color: #fff
@@ -721,4 +721,31 @@ div#product_nav a {
 div#pfiles h4,div#aProduct_delete h4,div#aProduct_update h4,div#aProduct_set h4{
 	font-weight: 900;
 	color:#666;
+}
+
+
+div.product_main_nav_img:hover, .Hpointer:hover{
+	cursor: pointer;
+}
+
+
+/* main_store부분 */
+div.ranProducts{
+	padding :15px
+}
+
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+div.slideshow-container{
+	z-index: 13;
 }

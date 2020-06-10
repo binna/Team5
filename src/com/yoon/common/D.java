@@ -52,4 +52,8 @@ public class D {
 	// 특정 글의 (wr_uid) 의 첨부파일 DELETE
 	public static final String SQL_FILE_DELETE_BY_WRUID = "DELETE FROM Pimage WHERE wr_uid = ?";
 
+
+	public static final String SQL_DELEDTE_PRODUCT = "DELETE FROM PRODUCT WHERE pid = ?";
+	public static String SQL_UPDATE_PRODUCT = "UPDATE PRODUCT SET pname=?,pprice=?,pbrand=? WHERE PID =?";
+
 }

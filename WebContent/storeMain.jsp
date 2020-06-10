@@ -56,7 +56,6 @@ font-family: 'Jua', sans-serif; -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
 
-
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -216,8 +215,7 @@ font-family: 'Jua', sans-serif; -->
 						<div class="product_td col-md-3 category_code_${dto.pcode }">
 							<%-- <a href="productView.woo?pid=${dto.pid }"> --%>
 							<a href="productView.y?pid=${dto.pid }">
-								<div class="product_img"
-									style='background-image: url("${dto.pimage }")'></div> <%--<img class="thumbnail-img" src="${dto.pimage }" />  --%>
+								<div class="product_img" style='background-image: url("${dto.pimage }")'></div> <!--<img class="thumbnail-img" src="${dto.pimage }" />  -->
 								<br>
 								<h3 class="pbrand">[${dto.pbrand }]</h3> <br>
 								<h3 class="pname">${dto.pname }</h3> <br>
