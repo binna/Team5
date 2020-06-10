@@ -1,16 +1,24 @@
 @charset "UTF-8";
 /* communityMain CSS */
+#Main_root{
+	margin-left: auto; 
+	margin-right: auto; 
+}
+.upload-types__item__wrap {
+	padding: 0 auto;
+    width: 100%;
+}
+.upload-types>h2 {
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
 .upload-types {
     padding-top: 60px;
     padding-bottom: 100px;
 }
-
-.upload-types>h2 {
-    margin-bottom: 60px;
-    font-size: 25px;
-    font-weight: bold;
-}
-
 .upload-types__item {
     display: block;
     max-width: 160px;
