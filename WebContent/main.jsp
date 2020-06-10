@@ -109,7 +109,7 @@
 	</form> --%>
 <body onLoad="javascript:open_win();">
 	<!-- 팝업창 설정 -->
-
+	<!-- 여기부터  복사-->
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -118,7 +118,7 @@
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="community/write.community" id="main_a_comunity">커뮤니티</a></li>
 						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
 						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
@@ -154,7 +154,7 @@
 						<nav style="padding: 0px;">
 							<ul class="menu">
 								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
-								<li><a href="#">나의쇼핑</a></li>
+								<li><a href="uOrderList.woo">나의쇼핑</a></li>
 								<li><a href="member/logout.jsp">로그아웃</a></li>
 							</ul>
 						</nav>
@@ -169,7 +169,7 @@
 					<i class="fas fa-shopping-cart"></i>
 				</button>
 				<!-- <a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a> -->
-				  <a href="sign_in.jsp">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
+				<a href="sign_in.jsp">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
 				<%
 					}
 				%>
@@ -184,7 +184,7 @@
 			<div class="col-md-9" id="main_top2-1">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">스토어홈</a></li>
+						<li><a href="storeMain.y">스토어홈</a></li>
 						<li><a href="#">카테고리</a></li>
 						<li><a href="#">신혼가구</a></li>
 						<li><a href="#">베스트</a></li>
@@ -198,15 +198,15 @@
 			<div class="col-md-9" id="main_top2-2">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">홈</a></li>
-						<li><a href="community/list.community?page=1">질문과답변</a></li>
+						<li><a href="main.team">홈</a></li>
+						<li><a href="community/write.community">질문과답변</a></li>
 					</ul>
 				</nav>
 			</div>
 			<div class="col-md-9" id="main_top2-3">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">시공홈</a></li>
+						<li><a href="consMain.jsp">시공홈</a></li>
 						<li><a href="#">견적계산</a></li>
 						<li><a href="#">전문가찾기</a></li>
 						<li><a href="#">시공스토어</a></li>
@@ -214,7 +214,7 @@
 					</ul>
 				</nav>
 			</div>
-			<div calss="col-md-3 col-sm-offset">
+			<div calss="col-md-3 col-sm-offset-0">
 				<button id="main_top2_app"></button>
 				<a href="#">앱 다운로드</a>
 			</div>
@@ -223,29 +223,144 @@
 		<hr>
 	</header>
 
+	<header style="padding: 0px;" class="col-md-12" id="main_header_m">
+		<div id="main_top1" class="row">
+			<div id="main_top1_1" class="col-sm-1 col-1">
+
+				<button id="main_bar_btn">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+			<div id="main_top1_2" class="col-sm-5 col-5">
+				<h1 id="main_title">너네 집</h1>
+			</div>
+
+			<div id="main_top1_3" class="col-sm-6 col-6">
+
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기
+				</button>
+				<button id="search">
+					<i class="fas fa-search"></i>
+				</button>
+
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+			</div>
+		</div>
+		<!-- 
+		<hr>
+		<div id="main_top2" class="row">
+			<div class="col-sm-12 col-12" id="main_top2-1">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">스토어홈</a></li>
+						<li><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">특가</a></li>
+						<li><a href="#">여름패브릭</a></li>
+						<li><a href="#">여름가전</a></li>
+						<li><a href="#">기획전</a></li>
+					</ul>
+				</nav>
+			</div>
 
 
+		</div>
+		<hr> -->
+		<div id="m_nav_menu">
+			<button id="m_menu_close">
+				<i class="far fa-times-circle"></i>
+			</button>
 
-		<div id="demo" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				<!-- 슬라이드 쇼 -->
-				<div class="carousel-item active">
-					<!--가로-->
-					<img class="d-block w-100" src="banner/banner1.PNG"
-						alt="First slide">
-					<div class="carousel-caption d-none d-md-block"></div>
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="banner/banner2.png"
-						alt="Second slide">
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="banner/banner3.png"
-						alt="Third slide">
+			<h1 id="main_title" class="m_nav_menu_title">너네 집</h1>
+			<%
+				if (session.getAttribute("id") != null) {
+			%>
+			<h1><%=session.getAttribute("id")%>
+				님
+			</h1>
+			<br>
+			<button id="m_menu_logout">로그아웃</button>
+			<%
+				} else {
+			%>
+			<button id="m_menu_login" OnClick="location.href ='sign_in.jsp'">로그인</button>
+			<button id="m_menu_join" OnClick="location.href ='MemberJoin.me'">회원가입</button>
+
+			<%
+				}
+			%>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-comments" ></i> 커뮤니티
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4>홈</h4>
+					<h4 Onclick="location.href='community/list.community?page=1'"
+					class="Hpointer">질문과 답변</h4>
 				</div>
 			</div>
-	<!--내용부분입니다.  -->
-	<div id="main_content">
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-store"></i> 스토어
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4>카테고리</h4>
+					<h4 OnClick="location.href ='storeMain.y'">스토어홈</h4>
+					<h4>베스트</h4>
+					<h4>특가</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-tools"></i> 인테리어 시공
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공 홈</h4>
+					<h4>견적계산</h4>
+					<h4>시공스토어</h4>
+					<h4>전문가 찾기</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu" id="m_nav_menu_bottom">
+				<h4>마이페이지</h4>
+				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'" >나의쇼핑</h4>
+				<h4>스크랩북</h4>
+				<h4>질문하기</h4>
+
+			</div>
+		</div>
+	</header>
+
+
+<!-- 여기까지  복사-->
+
+	<div id="demo" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<!-- 슬라이드 쇼 -->
+			<div class="carousel-item active">
+				<!--가로-->
+				<img class="d-block w-100" src="banner/banner1.PNG"
+					alt="First slide">
+				<div class="carousel-caption d-none d-md-block"></div>
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="banner/banner2.png"
+					alt="Second slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="banner/banner3.png"
+					alt="Third slide">
+			</div>
+		</div>
+		<!--내용부분입니다.  -->
+		<div id="main_content">
 
 
 
@@ -257,39 +372,40 @@
 			</div>
 			<div id="content_nav">
 				<nav style="padding: 0px;">
-					<ul>
-						<li><img
+					<ul class="row">
+						<li class="col-md col-sm-3 col-3"><img
 							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--158709154758244185.png/512/none">
 							신혼가구</li>
-						<li><img
+						<li class="col-md col-sm-3 col-3"><img
 							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060163925021105.png/512/none">
 							쇼핑하기</li>
-						<li><img
+						<li class="col-md col-sm-3 col-3"><img
 							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060166588410696.png/512/none">
 							평수별 집구경</li>
-						<li><img
+						<li class="col-md col-sm-3 col-3"><img
 							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060167898474932.png/512/none">
 							공간별사진</li>
-						<li><img
+						<li class="col-md col-sm-3 col-3"><img
 							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
 							시공간편상당</li>
-						<li><img
+						<li class="col-md col-sm-3 col-3"><img
 							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060169059665624.png/512/none">
 							시공스토어</li>
-						<li><img
+						<li class="col-md col-sm-3 col-3"><img
 							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157560539045245526.png/512/none">
 							가이드북</li>
-						<li><img
+						<li class="col-md col-sm-3 col-3"><img
 							src="https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-shortcut-home_feed_shortcut_sets--157060175107066373.png/512/none">
 							질문과답변</li>
-
 
 					</ul>
 				</nav>
 			</div>
 			<br> <br> <br> <br> <br> <br>
 			<div id="content_community">
-				<h1>오늘의 스토리</h1>
+				<h1 class="Hpointer"
+					Onclick="location.href='community/write.community'">오늘의
+					스토리</h1>
 				<br> <br> <br>
 
 			</div>
@@ -304,7 +420,7 @@
 					<c:otherwise>
 						<c:forEach var="ranP" items='${randomProduct }'>
 							<div OnClick="location.href ='productView.y?pid=${ranP.pid }'"
-								class="col-md-2 ranProducts">
+								class="col-md-2 col-sm-6 col-6ranProducts">
 								<div class="product_img"
 									style='background-image: url("${ranP.pimage }")'></div>
 								<!--<img class="thumbnail-img" src="${dto.pimage }" />  -->
@@ -319,8 +435,12 @@
 					</c:otherwise>
 				</c:choose>
 			</div>
+
+			<br>
+			<br>
 			<div id="content_interior">
-				<h1>인테리어 시공</h1>
+				<h1 Onclick="location.href='consMain.jsp'"
+				class="Hpointer">인테리어 시공</h1>
 				<br> <br> <br>
 
 			</div>
