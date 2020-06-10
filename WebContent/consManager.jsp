@@ -183,7 +183,7 @@
 				} // end for
 				} else {
 			%>
-			<div style="line-height: 800px; vertical-align: middle;">
+			<div style="line-height: 400px; vertical-align: middle;">
 				<div style="text-align: center;">존재하는 상담신청 정보가 없습니다.</div>
 			</div>
 			<%

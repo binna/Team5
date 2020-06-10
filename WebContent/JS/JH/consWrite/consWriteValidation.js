@@ -24,7 +24,7 @@ $(document).ready(function() {
 				if (chk.match(/[0-9]|[a-z]|[A-Z]/)) {
 
 					alert("이름을 정확히 입력해주세요");
-
+					frm["csname"].focus();
 					return false;
 
 				} // end 숫자 영문
@@ -32,15 +32,15 @@ $(document).ready(function() {
 				if (chk.match(/([^가-힣\x20])/i)) {
 
 					alert("이름을 정확히 입력해주세요");
-
+					frm["csname"].focus();
 					return false;
 
 				} // end 자음사용
 
-				if ($("#name").val() == " ") {
+				if ($("#cstel").val() == " ") {
 
 					alert("이름을 정확히 입력해주세요");
-
+					frm["csname"].focus();
 					return false;
 
 				} // end 공백

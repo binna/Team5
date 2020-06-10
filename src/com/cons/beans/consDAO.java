@@ -60,7 +60,6 @@ public class consDAO {
 			list.add(dto);
 
 		} // end while
-			// System.out.println("여기는 들어왔나요?");
 
 		int size = list.size();
 
@@ -204,13 +203,11 @@ public class consDAO {
 	// 특정 CSAREA 의 글 만 SELECT (조회수 증가 없슴!)
 	public consDTO[] selectByCSAREA(String csuid) throws SQLException {
 		consDTO[] arr = null;
-		System.out.println("selectByCSAREA 들어옴");
 
 		try {
 			pstmt = conn.prepareStatement(consD.SQL_CONS_CSAREA_SELECT);
 			pstmt.setString(1, csuid);
 			rs = pstmt.executeQuery();
-			System.out.println("실행됬나요?");
 			arr = createArray(rs);
 
 		} finally {
@@ -223,7 +220,7 @@ public class consDAO {
 	public consDTO[] selectByRows(int curPage, int cnt, int totalPage, int pageRows) throws SQLException {
 		final String SQL_WRITE_SELECT_FROM_ROW = "SELECT * FROM "
 				+ "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT c2.*, c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO) T) "
-				+ "WHERE RNUM >= ? AND RNUM < ?";
+				+ "WHERE RNUM >= ? AND RNUM < ? ORDER BY CSNO DESC";
 
 		consDTO[] arr = null;
 

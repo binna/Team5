@@ -52,18 +52,15 @@ public class ListCommand implements Command {
 		try {
 			// 글 전체 개수 구하기
 			totalCnt = dao.countAll();
-			System.out.println(totalCnt);
 			//140개
 			
 			// 총 몇 페이지 분량인가?
 			totalPage = (int)Math.ceil(totalCnt / (double)pageRows);
-			System.out.println(totalPage);
 			//18개
 			
 			// 몇번재 row 부터 ?
 			int fromRow = (page - 1) * pageRows + 1;  // ORACLE 은 1부터 ROWNUM시작
 			//int fromRow = (page - 1) * pageRows;  // MySQL 은 0부터 시작
-			System.out.println(fromRow);
 			//1번째
 			
 			dao = new comDAO();

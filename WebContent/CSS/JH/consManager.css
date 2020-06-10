@@ -15,11 +15,32 @@ section {
 	margin-bottom: 30px;
 }
 
+.searchForm>input{
+	border: 1px solid skyblue;
+	border-radius: 5px;
+}
+
+#searchSelect{
+	border: 1px solid skyblue;
+	border-radius: 5px;
+	color : black;
+}
+
 #searchMenu>div {
 	display: inline-block;
 	padding: 5px 3px;
-	border: 1px solid #bebebe;
 	border-radius: 5px;
+	height: 24px;
+}
+
+.searchBtn{
+	height: 23px;
+	padding-left: 0px;
+	color : white;
+	background-color: skyblue;
+	border-radius: 5px;
+	text-align: center;
+	padding: 3px;
 }
 
 #searchMenu {
@@ -36,7 +57,7 @@ section {
 
 .Info {
 	position: relative;
-	border: 1px solid #bebebe;
+	border: 1px solid #e9e9e9;
 	border-radius: 5px;
 	padding: 10px;
 }
@@ -75,7 +96,7 @@ section {
 }
 
 .areaSelect{
-	width: 167.5px;
+	width: 204.5px;
 }
 
 
