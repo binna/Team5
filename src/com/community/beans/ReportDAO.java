@@ -106,5 +106,41 @@ public class ReportDAO {
 		return arr;
 	}
 	
+	
+	// 페이징 관련 ------------------------------------
+	// 몇 번째 form부터 몇 개 rows들 SELECT
+	public ReportDTO[] selectFromRow(int from, int rows) throws SQLException {
+		ReportDTO[] arr = null;
+		
+		try {
+			pstmt = conn.prepareStatement(CommunityD.SQL_COMMENT_SELECT_FROM_ROW);
+			pstmt.setInt(1, from);
+			pstmt.setInt(2, from + rows);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+		
+		return null;
+	} // end selectFromRow()
+	
+	// 전체 글의 개수
+	public int countAll() throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(CommunityD.SQL_COMMENT_COUNT_ALL);
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt(1);
+		} finally {
+			close();
+		} // end try
+		
+		return cnt;
+	} // end countAll()
+	//---------------------------------------------
+
 
 } //end ReportDAO()

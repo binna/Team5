@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+option{text-align: center;}
+
 /* 제목 부분*/
 #questions-index-page .container {
     max-width: 942px;
@@ -69,6 +72,54 @@
 
 #root {
 	margin-bottom: 100px;
+}
+
+#questions-paginator {
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+nav.paginator>ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+nav.paginator>ul {
+    justify-content: center;
+    align-items: center;
+}
+nav.paginator>ul>li {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    line-height: 26px;
+    text-align: center;
+}
+nav.paginator>ul>li.active {
+    background-color: #35C5F0;
+    color: #ffffff;
+    cursor: default
+}
+nav.paginator>ul>li[role=button]:hover {
+    color: #35C5F0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+nav.paginator>ul>li:not([rel]) {
+    margin: 0 2px;
+}
+nav.paginator>ul>li[rel=prev] {
+    margin-right: 4px;
+}
+
+/* prev, next 버튼 */
+.icon-pointer-button-square-left,
+.icon-pointer-button-square-right {
+	background: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 3px 6px;
 }
 
 

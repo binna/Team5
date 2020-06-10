@@ -6,6 +6,12 @@
 <%
 	//Controller로부터 결과 데이터 받음
 	CommentDTO[] arr = (CommentDTO[])request.getAttribute("selectCommentAdmin");
+
+	int writePages = (Integer)request.getAttribute("writePages");
+	int totalPage = (Integer)request.getAttribute("totalPage");
+	int curPage = (Integer)request.getAttribute("curPage");
+	int pageRows = (Integer)request.getAttribute("pageRows");
+	int totalCnt = (Integer)request.getAttribute("totalCnt");
 %>
 
 <!DOCTYPE html>
@@ -44,7 +50,8 @@
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
 
-<script type="text/javascript" src="JS/wk.js"></script>
+<script type="text/javascript" src="../JS/wk.js"></script>
+<script type="text/javascript" src="../JS/BN/admin_bn.js"></script>
 
 <link rel="stylesheet" href="../CSS/wk.css" type="text/css">
 <link rel="stylesheet" href="../CSS/initialValue.css" type="text/css">
@@ -100,9 +107,9 @@
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="communityAdmin.community">등록된 게시글</a></li>
-						<li><a href="communityAdminComment.community">댓글 목록</a></li>
-						<li><a href="communityAdminReport.community">신고 현황</a></li>
+						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
+						<li><a href="communityAdmin.community?page=1&pagerow=10">댓글 목록</a></li>
+						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -132,6 +139,21 @@
   
   <!-- 실질적으로 리스트 노출하는 화면  -->
   <section id="questions-list" class="container">
+  
+   <div id="page_change" style="margin-bottom: 5px;">
+     <select id="page_choice" 
+     	style="padding: 7px 15px;border: 1px solid rgb(200, 200, 200);border-radius: 5px">
+      <option value="none" selected disabled>==선택==</option>
+      <option value="10">10개</option>
+      <option value="10">10개</option>
+      <option value="20">20개</option>
+      <option value="50">50개</option>
+      <option value="100">100개</option>
+     </select>
+     <button id="btn_page_choice" type="button"
+     	style="background-color: #35C5F0;color: #ffffff;cursor: default;
+     		padding: 10px; border: none; border-radius: 20px;">선택</button>
+    </div>
    
    <article class="questions-item">
     <table style="width: 100%;">
@@ -151,10 +173,14 @@
    </article>
     
    <%
-	   if(arr != null) {
-   		for(int i = 0; i < arr.length; i++) {
+   	int startPoint = (curPage - 1) * pageRows;
+   	int endPoint = curPage * pageRows;
+	
+	if(endPoint > totalCnt) {endPoint = totalCnt;}
+	
+	if(arr != null) {
+		for(int i = startPoint; i < endPoint; i++) {
     %>
-    
     
     <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
     <a class="questions-item__link" href="view.community?no=<%= arr[i].getCqno() %>">
@@ -198,6 +224,15 @@
     %>
       
   </section>
+  
+  
+  <!-- 페이징 -->
+  <jsp:include page="paginationAdmin.jsp">
+	<jsp:param value="<%= writePages %>" name="writePages"/>
+	<jsp:param value="<%= totalPage %>" name="totalPage"/>
+	<jsp:param value="<%= curPage %>" name="curPage"/>
+	<jsp:param value="<%= pageRows %>" name="pageRows"/>
+  </jsp:include>
 
   
 <!-- end questions-index-page -->

@@ -8,13 +8,16 @@
 	int totalPage = Integer.parseInt(request.getParameter("totalPage"));
    	// 현재 페이지
 	int curPage = Integer.parseInt(request.getParameter("curPage"));
+   	// 한 페이지에 몇개의 리스트가 노출될 것인가?
+   	int pageRows = Integer.parseInt(request.getParameter("pageRows"));
+   	
    	
 	// 위 url에 추가로 붙어야 할 것들.
 	String add = request.getParameter("add"); 
 	if(add == null){ add = ""; }
 	
-	// 페이징 버튼 링크 url 주소에 넣을 문자열 준비
-	String url = request.getContextPath().toString() + "/community/list.community?page=";
+	// 페이징 버튼 링크 url 주소에 넣을 문자열 준비, http://localhost:8888/Team5/community/communityAdmin.community?page=1&pagerow=10
+	String url = request.getContextPath().toString() + "/community/communityAdmin.community?page=";
 	
 	String str = "";   // 최종적으로 페이징에 나타날 HTML 문자열 <li> 태그로 구성
 	
@@ -31,7 +34,7 @@
 	// prev 표시 여부
 	if (start_page > 1){
 		str += "<li rel='prev' role='button' class='pointer-left'>"
-			+ "<a href='" + url + (start_page - 1) + add + "' class='tooltip-top' title='이전'>"
+			+ "<a href='" + url + (start_page - 1) + add + "&pagerow=" + pageRows + "' class='tooltip-top' title='이전'>"
 			+ "<span class='icon-pointer-button-square-left'><i class='fas fa-chevron-left'></i></span></li>\n";
 	}
 	
@@ -39,7 +42,7 @@
 	if (totalPage > 1) {
     	for (int k = start_page; k <= end_page; k++) {
         	if (curPage != k){
-        		str += "<li role='button' class='' data-page='" + k + "'><a href='" + url + k + add + "'>" + k + "</a></li>\n";
+        		str += "<li role='button' class='' data-page='" + k + "'><a href='" + url + k + add + "&pagerow=" + pageRows + "'>" + k + "</a></li>\n";
         	} else {
         		str += "<li role='' class='active' data-page='" + k + "'>" + k + "</li>\n";
         	}
@@ -49,7 +52,7 @@
 	// next
     if (totalPage > end_page){
     	str += "<li rel='next' role='button' class='pointer-right'>"
-    		+ "<a href='" + url + (end_page + 1) + add + "' class='tooltip-top' title='다음'>"
+    		+ "<a href='" + url + (end_page + 1) + add + "&pagerow=" + pageRows + "' class='tooltip-top' title='다음'>"
     		+ "<span class='icon-pointer-button-square-right'><i class='fas fa-chevron-right'></i></span></a></li>";
     }
 %>

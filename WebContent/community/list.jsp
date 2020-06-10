@@ -5,7 +5,6 @@
 <%
 	//Controller로부터 결과 데이터 받음
 	WriteDTO[] arr = (WriteDTO[])request.getAttribute("list");
-	//Integer[] commentCnt = (Integer[])request.getAttribute("commentCnt");
 
 	int writePages = (Integer)request.getAttribute("writePages");
 	int totalPage = (Integer)request.getAttribute("totalPage");

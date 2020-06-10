@@ -93,6 +93,15 @@ public class CommunityD {
 	public static final String SQL_COMMENT_SELECT_ADMIN_ALL
 		= "SELECT * FROM QComment";
 	
+	/* 댓글 관리자 페이지 페이징 */
+	public static final String SQL_COMMENT_COUNT_ALL
+		= "SELECT count(*) FROM QComment";
+
+	public static final String SQL_COMMENT_SELECT_FROM_ROW
+		= "SELECT * FROM "
+		+ "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM QComment ORDER BY Cno DESC) T) "
+		+ "WHERE RNUM >= ? AND RNUM < ?";
+	
 	/* 신고 접수 */
 	public static final String SQL_REPOT_INSERT
 		= "INSERT INTO Qrepor(Rno, Rmember_id, Rtype, Rqno)"
@@ -101,5 +110,13 @@ public class CommunityD {
 	/* 관리자가 볼 수 있는 신고 전체 리스트 보기 */
 	public static final String SQL_REPOT_ADMIN_SELECT_ALL
 		= "SELECT * FROM Qrepor";
+	
+	/* 신고하기 관리자 페이지 페이징 */
+	public static final String SQL_REPORT_SELECT_ADMIN_ALL
+		= "SELECT count(*) FROM Qrepor";
+
+	public static final String SQL_REPOR_SELECT_FROM_ROW = "SELECT * FROM " 
+		+ "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM Qrepor ORDER BY Rno DESC) T) " 
+		+ "WHERE RNUM >= ? AND RNUM < ?";
 	
 }

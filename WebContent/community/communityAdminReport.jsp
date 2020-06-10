@@ -5,6 +5,12 @@
 <%
 	//Controller로부터 결과 데이터 받음
 	ReportDTO[] arr = (ReportDTO[])request.getAttribute("selectReportAdmin");
+
+	int writePages = (Integer)request.getAttribute("writePages");
+	int totalPage = (Integer)request.getAttribute("totalPage");
+	int curPage = (Integer)request.getAttribute("curPage");
+	int pageRows = (Integer)request.getAttribute("pageRows");
+	int totalCnt = (Integer)request.getAttribute("totalCnt");
 %>
 
 <!DOCTYPE html>
@@ -99,9 +105,9 @@
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="communityAdmin.community">등록된 게시글</a></li>
-						<li><a href="communityAdminComment.community">댓글 목록</a></li>
-						<li><a href="communityAdminReport.community">신고 현황</a></li>
+						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
+						<li><a href="communityAdmin.community?page=1&pagerow=10">댓글 목록</a></li>
+						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -129,6 +135,21 @@
   <!-- 실질적으로 리스트 노출하는 화면  -->
   <section id="questions-list" class="container">
   
+  <div id="page_change" style="margin-bottom: 5px;">
+     <select id="page_choice" 
+     	style="padding: 7px 15px;border: 1px solid rgb(200, 200, 200);border-radius: 5px">
+      <option value="none" selected disabled>==선택==</option>
+      <option value="10">10개</option>
+      <option value="10">10개</option>
+      <option value="20">20개</option>
+      <option value="50">50개</option>
+      <option value="100">100개</option>
+     </select>
+     <button id="btn_page_choice" type="button"
+     	style="background-color: #35C5F0;color: #ffffff;cursor: default;
+     		padding: 10px; border: none; border-radius: 20px;">선택</button>
+    </div>
+  
    <!-- 테이블 제목 -->
    <article class="questions-item">
      <table style="width: 100%;">
@@ -142,8 +163,13 @@
      </article>
    
     <%
-    	if(arr != null) {
-    		for(int i = 0; i < arr.length; i++) {
+	    int startPoint = (curPage - 1) * pageRows;
+	   	int endPoint = curPage * pageRows;
+		
+		if(endPoint > totalCnt) {endPoint = totalCnt;}
+		
+		if(arr != null) {
+			for(int i = startPoint; i < endPoint; i++) {
     %>
     <!-- 아래의 a태그는 view 화면에 갈수 있도록 주소 설정하기 -->
     <a class="questions-item__link" href="view.community?no=<%= arr[i].getRqno() %>">
@@ -207,6 +233,16 @@
    		} // end if
     %>
   </section>
+  
+  
+  <!-- 페이징 -->
+  <jsp:include page="paginationAdmin.jsp">
+	<jsp:param value="<%= writePages %>" name="writePages"/>
+	<jsp:param value="<%= totalPage %>" name="totalPage"/>
+	<jsp:param value="<%= curPage %>" name="curPage"/>
+	<jsp:param value="<%= pageRows %>" name="pageRows"/>
+  </jsp:include>
+
 
 <!-- end questions-index-page -->
 </div>
