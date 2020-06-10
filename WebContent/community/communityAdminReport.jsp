@@ -131,11 +131,11 @@
   
    <!-- 테이블 제목 -->
    <article class="questions-item">
-     <table>
+     <table style="width: 100%;">
     
       <tr style="width: 100%;">
-        <td class="questions-item__title" style="width: 7%; text-align: center;">신고내용</td>
-        <td class="questions-item__title" style="width: 60%; text-align: center;">신고자</td>
+        <td class="questions-item__title" style="width: 80%; text-align: center;">신고내용</td>
+        <td class="questions-item__title" style="width: 20%; text-align: center;">신고자</td>
       </tr>
     
       </table>
@@ -149,8 +149,8 @@
     <a class="questions-item__link" href="view.community?no=<%= arr[i].getRqno() %>">
       <article class="questions-item">
       
-       <table>
-        <tr>
+       <table style="width: 100%;">
+        <tr style="width: 100%;">
         
         <!-- 신고 유형 -->
         <%
@@ -191,7 +191,7 @@
         </td>
         
         <!-- 신고 아이디 -->
-        <td style="width: 15%; text-align: right;">
+        <td style="width: 20%; text-align: right;">
           <span class="questions-item__footer__author"><%= arr[i].getRid() %></span>
         </td>
         

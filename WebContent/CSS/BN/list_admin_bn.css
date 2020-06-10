@@ -115,6 +115,7 @@
 	    box-sizing: border-box;
 	    min-height: 1px;
 	}
+	
 	/* 게시글 제목 */
 	.questions-item__title {
 		font-size: 21px;

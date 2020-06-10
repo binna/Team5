@@ -134,7 +134,7 @@
   <section id="questions-list" class="container">
    
    <article class="questions-item">
-    <table>
+    <table style="width: 100%;">
    
       <tr style="width: 100%;">
       <!-- 게시글 번호 -->
@@ -160,7 +160,7 @@
     <a class="questions-item__link" href="view.community?no=<%= arr[i].getCqno() %>">
      <article class="questions-item">
       
-      <table>
+      <table style="width: 100%;">
       <tr style="width: 100%;">
     
        <!-- 게시글 번호 -->

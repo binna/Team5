@@ -188,25 +188,27 @@
 
 
 	<!-- Main section -->
-	<main role="main" id="root">
-	
-	<section class="container upload-types">
-		<h2>글쓰기</h2>
-		<div class="row">
-	    	<section class="col-4 col-lg-3 col-xl-2 upload-types__item__wrap">
-	       	<a class="upload-types__item upload-types__item__qna" href="write.community">
-	        	<div class="upload-types__item__pictogram">
-	          		<div class="upload-types__item__pictogram__contents">
-	          		<i class="far fa-question-circle"></i>
-	            	<p class="bold">질문하기</p>
-	          	</div>
-	        </div>
-	        <p class="upload-types__item__caption">인테리어 고수들과 전문가들에게 질문을 해보세요.</p>
-			</a>    
-			</section>
-	  </div>
-	</section>
-	
+	<main role="main" id="Main_root">
+
+		<section class="upload-types">
+			<h2>글쓰기</h2>
+			<div class="row" id="upload-types_row">
+				<section class="upload-types__item__wrap">
+					<a class="upload-types__item upload-types__item__qna"
+						href="write.community">
+						<div class="upload-types__item__pictogram">
+							<div class="upload-types__item__pictogram__contents">
+								<i class="far fa-question-circle"></i>
+								<p class="bold">질문하기</p>
+							</div>
+						</div>
+						<p class="upload-types__item__caption">인테리어 고수들과 전문가들에게 질문을
+							해보세요.</p>
+					</a>
+				</section>
+			</div>
+		</section>
+
 	</main>
 
 
