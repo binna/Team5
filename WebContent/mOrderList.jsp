@@ -128,10 +128,10 @@ font-family: 'Jua', sans-serif; -->
 		<div class="o_statusMenu row">
 			<a class="order_status_list col-md-2">
 				<div class="status_list">취소요청</div>
-				<div class="status_figure">0</div>
+				<div class="status_figure_cancel">${code0 }</div>
 			</a> <a class="order_status_list col-md-2">
 				<div class="status_list">결제완료</div>
-				<div class="status_figure">0</div>
+				<div class="status_figure_buy">${code1 }</div>
 			</a> <a class="order_status_list col-md-2">
 				<div class="status_list">배송준비</div>
 				<div class="status_figure">0</div>
@@ -149,39 +149,81 @@ font-family: 'Jua', sans-serif; -->
 
 		<c:choose>
 			<c:when test="${empty list || fn:length(list) ==0}">
-				<div id="no_order">
-				</div>
+				<div id="no_order"></div>
 			</c:when>
+
 			<c:otherwise>
-				<c:forEach var="dto" items='${list }'>
-								구매일: ${dto.pcregdate }
-								<!-- 구매 시간  -->
-					<div class="o_list row">
+
+
+				<select id="sort" class="sort" name="sort">
+					<option value='1'>결제 완료</option>
+					<option value='0'>취소 요청</option>
+					<option value="" selected>전체</option>
+				</select>
+				<br>
+				<!-- 			<button>취소요청</button>얘들 눌렀을때  class : stauts_code_0을 보이게하고 stauts_code_1을 숨기기
+			<button>결재완료</button>위에 반대루 하기
+			<button>전체보기</button>전체다  show -->
+				<c:forEach var="dto" items='${list }' varStatus="pcstatus">
+					<div class="o_date status_code_${dto.pcstatus }" id="o_date">구매일: ${dto.pcregdate }</div>
+
+
+					<div class="o_list row status_code_${dto.pcstatus }">
 						<div class="o_image col-md-3">
 							<img class="m_image" id="m_image" src="${dto.pimage}" />
 							<!-- 이미지  -->
 						</div>
 
 						<div class="o_content col-md-7">
-							상품명: ${dto.pname }<br>
-							<!-- 상품명 -->
-							브랜드: ${dto.pbrand }<br>
-							<!-- 브랜드 -->
-							주소: ${dto.pcaddress }<br>
-							<!-- 주소  -->
-							우편번호: ${dto.pcaddressnum }<br>
-							<!-- 우편번호 -->
-							수량 :${dto.pclpcnt }<br>
-							<!-- 수량 -->
-							합계: ${dto.ptotalprice }<br>
-							<!-- 총가격 -->
+
+							<div class="ing" id="o_ing_1_${dto.pid}">
+								<c:if test="${dto.pcstatus == 0 }">
+									<a id="ing" style="color: rgb(255, 0, 0)"> 취소 요청 </a>
+								</c:if>
+
+								<c:if test="${dto.pcstatus == 1 }">
+									<a id="ing" style="color: #35c5f0;"> 결제 완료</a>
+								</c:if>
+							</div>
+
+							<div id="o_info">
+								구매자:${dto.pcuid}<br>
+							</div>
+
+							<div id="o_info">
+								상품명: ${dto.pname }<br>
+							</div>
+
+							<div id="o_info">
+								브랜드: ${dto.pbrand }<br>
+							</div>
+							
+							<div id="o_info">
+								우편번호: ${dto.pcaddressnum }<br>
+							</div>
+							<div id="o_info">
+								주소: ${dto.pcaddress }<br>
+							</div>
+
+							<div id="o_info">
+								상세주소: ${dto.pcaddress2 }<br>
+							</div>
+
+							<div id="o_info">
+								수량 :${dto.pclpcnt }<br>
+							</div>
+							<div id="o_info">
+								합계: ${dto.ptotalprice }<br>
+							</div>
+
 							<div class="u_content" id="u_content">
 								배송 메모: ${dto.pccontent }<br>
 							</div>
 
 						</div>
 						<div class="o_button col-md-2">
-							<button id="delete" onclick="chkDelete(${dto.pid })">주문 취소</button>
+							<button id="delete" onclick="chkDelete(${dto.pid })">주문
+								취소</button>
 						</div>
 					</div>
 				</c:forEach>

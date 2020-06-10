@@ -16,13 +16,14 @@ public class CancelCommand implements Command {
 		
   // 한글 인코딩 꼭!
 		int pid = Integer.parseInt(request.getParameter("pid"));
-		String pcstatus = request.getParameter("pcstatus");
+//		int pcstatus = Integer.parseInt(request.getParameter("pcstatus"));
 		
 		// 매개변수 받아오기
 
 		try {
 			//트랜직션수행
-			cnt= dao.cancel(pid,pcstatus);
+//			cnt= dao.cancel(pid,pcstatus);
+			cnt= dao.cancel(pid);
 			request.setAttribute("cancel", cnt);
 			
 		} catch(SQLException e) {

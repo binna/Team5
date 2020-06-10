@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kim.beans.OrderDAO;
+import com.kim.beans.OrderDTO;
+
+
 
 public class DeleteCommand implements Command {
 
@@ -26,6 +29,8 @@ public class DeleteCommand implements Command {
 
 			e.printStackTrace();
 		}
+		
+	
 
 	}
 

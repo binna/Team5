@@ -55,14 +55,16 @@ public class PurchaseDAO {
 			int pccardnum=dto.getPccardnum();
 			int pid=dto.getPid();
 			int pclpcnt=dto.getPclpcnt();
+			String pcaddress2=dto.getPcaddress2();
+			
 
-			int cnt = this.insert(pcuid,pcaddressnum,pcaddress,ptotalprice,pccontent,pccardnum,pid,pclpcnt);
+			int cnt = this.insert(pcuid,pcaddressnum,pcaddress,ptotalprice,pccontent,pccardnum,pid,pclpcnt,pcaddress2);
 			return cnt;
 		}
 		
 		// 구매,결제 페이지 작성 <-- 제목, 내용, 작성자 
 		public int insert(String pcuid,int pcaddressnum,String pcaddress, int ptotalprice,String pccontent,int pccardnum,
-			int pid ,int pclpnt) throws SQLException {
+			int pid ,int pclpnt,String pcaddress2) throws SQLException {
 			int cnt = 0;
 			
 			try {			
@@ -75,6 +77,7 @@ public class PurchaseDAO {
 				pstmt.setInt(6, pccardnum);
 				pstmt.setInt(7,pid);
 				pstmt.setInt(8,pclpnt);
+				pstmt.setString(9,pcaddress2);
 				
 				cnt = pstmt.executeUpdate();
 			} finally {
@@ -101,6 +104,7 @@ public class PurchaseDAO {
 				int pccardnum =rs.getInt("pccardnum");
 				int pclpid =rs.getInt("pclpid");
 				int pclpcnt = rs.getInt("pclpcnt");
+				String pcaddress2 = rs.getString("pcaddress2");
 				
 				Date d = rs.getDate("pcregdate");
 				Time t = rs.getTime("pcregdate");
@@ -112,7 +116,7 @@ public class PurchaseDAO {
 				}
 				
 				PurchaseDTO dto = new PurchaseDTO(pcid, pcuid, ptotalprice, pcstatus, pcaddress,
-						pcaddressnum,pccontent,pccardnum,pclpid,pclpcnt);
+						pcaddressnum,pccontent,pccardnum,pclpid,pclpcnt,pcaddress2);
 				dto.setPcregdate(pcregdate);
 				order.add(dto);
 				

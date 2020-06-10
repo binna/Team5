@@ -423,7 +423,7 @@ li {list-style: none;}
 /* [반드시 필요] 질문하기 메인에 패딩을 줌 */
 .qna-detail__container__content {
     flex: 1 1 0px;
-    padding: 40px 0 0;
+    padding: 10px 0 0;
     min-width: 0;
 }
 
@@ -433,11 +433,6 @@ li {list-style: none;}
     align-items: stretch;
     min-height: 1px;
 }
-.qna-detail__container__content {
-    flex: 1 1 0px;
-    padding: 40px 0 0;
-    min-width: 0;
-}
 .comment-content-input {
     position: relative;
 }
@@ -445,9 +440,6 @@ li {list-style: none;}
 /* 맨 상단 질문과 답변, 질문 제목 */
 .qna-detail__content__header-container {
     margin-bottom: 40px;
-}
-.qna-detail__content__header-top {
-    margin-bottom: 10px;
 }
 .qna-detail__content__header-subtitle {
     color: #35c5f0;
@@ -612,6 +604,16 @@ li {list-style: none;}
     height: 1em;
     margin: 5px 0 1px;
 }
+
+/* 댓글 삭제 버튼 */
+#btn_comment_delete {
+	float: right;
+    border: 0;
+    background-color: #f7f8fa;
+    margin: 0;
+    padding: 0;
+}
+
 /* 댓글 전송 Form */
 .comment-feed__form {
     margin-bottom: 30px;

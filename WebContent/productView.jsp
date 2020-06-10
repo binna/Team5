@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -14,7 +15,7 @@
 
 <!-- MaxCDN 사용 -->
 
-
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script
@@ -33,8 +34,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
 	rel="stylesheet">
-<!-- font-family: 'Do Hyeon', sans-serif;
-font-family: 'Jua', sans-serif; -->
 
 
 <link rel="stylesheet" href="CSS/initialValue.css" type="text/css">
@@ -42,7 +41,10 @@ font-family: 'Jua', sans-serif; -->
 <link rel="stylesheet" href="CSS/wk.css" type="text/css">
 <script type="text/javascript" src="JS/wk.js"></script>
 <script type="text/javascript" src="JS/yj.js"></script>
-<!-- <link rel="stylesheet" href="CSS/logo_menu.css" type="text/css"> -->
+<script type="text/javascript" src="JS/WOO/ajax.js"></script>
+<script type="text/javascript" src="JS/WOO/postcode.v2.js"></script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 <link rel="shortcut icon" type="image/x-icon"
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
@@ -133,8 +135,11 @@ table, th, td {
 		<br>
 
 		<div class="s_image col-md-6">
-			<h3>가구 > ${view[0].pname }</h3>
+			<h3 class="s_title">가구 > ${view[0].pname }</h3>
 			<br> <img class="p_image" id="p_image" src="${view[0].pimage}" />
+			<div id="k_url">
+				${view[0].pimage}
+			</div>
 		</div>
 		<br>
 
@@ -152,6 +157,19 @@ table, th, td {
 
 			<div class="p_content">
 				<div class="s_price" id="s_price">${view[0].pprice}원</div>
+				<fmt:formatNumber value="${view[0].pprice}" />
+				원
+			</div>
+
+			<div class="p_star" id="p_star">
+				<pre id="star"></pre> <pre id="star"></pre> <pre id="star"></pre>
+				<pre id="star"></pre> <pre id="halfStar"></pre>
+
+			</div>
+			<div class="p_link" id="p_link">
+				<button id="kakaoBtn">
+					<img src="IMG_WOO/link.png">
+				</button>
 			</div>
 
 
@@ -166,6 +184,10 @@ table, th, td {
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
 							<option value="" selected>선택</option>
 						</select>
 
@@ -184,24 +206,21 @@ table, th, td {
 
 	</div>
 	<div id="product_nav" class="floating-menu">
-			<nav style="padding: 0px;">
-				<ul class="menu">
+		<nav style="padding: 0px;">
+			<ul class="menu">
 				<%-- 	<li>상품정보</li>
 					<li>문의 ${fn:length(Qlist) }</li>
 					<li>배송/환불</li> --%>
-					<li class="m"><a href="#section-01" class="menu-01"><span>상품정보</span></a></li>
-					<li class="m"><a href="#section-02" class="menu-02"><span>문의</span></a></li>
-					<li class="m"><a href="#section-03" class="menu-03"><span>배송안내</span></a></li>
+				<li class="m"><a href="#section-01" class="menu-01"><span>상품정보</span></a></li>
+				<li class="m"><a href="#section-02" class="menu-02"><span>문의</span></a></li>
+				<li class="m"><a href="#section-03" class="menu-03"><span>배송안내</span></a></li>
 
-				</ul>
-			</nav>
+			</ul>
+		</nav>
 
 	</div>
 	<div id="detail_image" class="section-01 scroll">
-	<br>
-	<br>
-	<br>
-	<br>
+		<br> <br> <br> <br>
 		<h1>상품 정보</h1>
 		<c:if test="${fn:length(file) > 0 }">
 			<ul>
@@ -223,13 +242,9 @@ table, th, td {
 
 	<!-------------------------------문의입니다. ******복사할부분----------------------------------------------->
 	<div id="detail_question" class="section-02 scroll">
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br> <br>
 		<div class="row">
-		
+
 			<h1 id="detail_question_1" class="col-md-10">
 				문의<a> ${fn:length(Qlist) }</a>
 			</h1>
@@ -325,12 +340,8 @@ table, th, td {
 	<div class="clear"></div>
 	<br>
 	<div id="detail_delivery" class="section-03 scroll">
-		
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+
+		<br> <br> <br> <br> <br>
 		<h1>배송</h1>
 		<table>
 			<tr>
@@ -431,13 +442,22 @@ table, th, td {
 					placeholder="<%=session.getAttribute("id")%>" name="pcuid"
 					value=<%=session.getAttribute("id")%> readonly="readonly" required>
 
-				<label for="addressnum"><b>addressNum</b></label> <input
+				<div class="o_button">
+							<button id="daum" onclick="Daum()"></button>
+						</div>
+				<label for="addressnum"><b>AddressNum</b></label> 
+				<input
 					id="pcaddressnum" type="text" placeholder="우편번호 입력"
-					name="pcaddressnum" required> <label for="address"><b>Address</b></label>
-				<input id="pcaddress" type="text" placeholder="주소" name="pcaddress"
-					required> <label for="tel"><b>요청 사항</b></label> <input
+					name="pcaddressnum" > 
+					<label for="address"><b>Address</b></label>
+				<input id="pcaddress" type="text" placeholder="주소입력" name="pcaddress"
+					><label for="address2"><b>AddressDetail</b></label>
+				<input id="pcaddress2" type="text" placeholder="상세주소 입력" name="pcaddress2"
+					> 
+					
+					 <label for="tel"><b>request</b></label> <input
 					id="pccontent" type="text" placeholder="배송메모" name="pccontent"
-					required> <label for="psw"><b>CardNum</b></label> <input
+					required> <label for="psw"><b>CardNumber</b></label> <input
 					id="pccardnum" type="text" placeholder="카드번호입력" name="pccardnum"
 					required> <input class="okay" id="okay" type="submit"
 					value="구매 하기"> <label> <input type="checkbox"
@@ -445,7 +465,7 @@ table, th, td {
 				</label>
 			</div>
 
-
+			
 
 
 

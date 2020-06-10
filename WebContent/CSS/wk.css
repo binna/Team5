@@ -11,7 +11,7 @@ button#cashBtn {
 	background-color: #35c5f0;
 	border-color: #35c5f0;
 	color: #fff;
-	font-size: 12px;	
+	font-size: 12px;
 	line-height: 26px;
 	border: 1px solid transparent;
 	border-radius: 4px;
@@ -22,7 +22,6 @@ button#cashBtn {
 	opacity: 0.7;
 	display: inline-block;
 }
-
 
 div.s_image {
 	padding-right: 30px;
@@ -58,14 +57,19 @@ div.s_name {
 }
 
 div.p_content {
-	height: 200px;
+	height: auto;
 	border-bottom: 1px solid #ededed;
+	background-color: white;
+}
+
+div.s_price {
+	display: none;
 }
 
 div.pc_price {
 	font-size: 32px;
 	font-weight: 900;
-	height:auto;
+	height: auto;
 }
 
 div.p_fix {
@@ -200,7 +204,7 @@ div.o_container {
 div.o_statusMenu {
 	display: flex;
 	margin-top: 50px;
-	margin-bottom:30px;
+	margin-bottom: 30px;
 	box-shadow: 0 1px 3px 0 #dbdbdb;
 	height: 100px;
 	border-radius: 4px;
@@ -211,7 +215,7 @@ div.o_list {
 	display: flex;
 	margin-top: 10px;
 	margin-bottom: 50px;
-	box-shadow: 0 1px 3px 0 #dbdbdb;
+	box-shadow: 2px 2px 2px 2px #dbdbdb;
 	height: auto;
 	border-radius: 4px;
 	padding: 20px;
@@ -231,24 +235,21 @@ div.status_list {
 }
 
 div.status_figure {
-	color : #35c5f0;
+	color: #35c5f0;
 	text-align: cetner;
-
-
 }
+
 div.status_figure_cancel {
-	color : #35c5f0;
+	color: #35c5f0;
 	text-align: cetner;
-
-
 }
+
 div.status_figure_buy {
-	color : #35c5f0;
+	color: #35c5f0;
 	text-align: cetner;
-
-
 }
-button#delete{
+
+button#delete {
 	width: auto; /* 내부 담는 content 만큼의 폭 */
 	padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
 	background-color: #35c5f0;
@@ -256,31 +257,28 @@ button#delete{
 	border-radius: 5px;
 	color: #fff;
 	font-weight: 900px;
-	margin-bottom:20px;
-	
+	margin-bottom: 20px;
 }
 
-
-div.u_modify_2 button{
-	border:none;
-	padding: 10px 18px; 
-	width:auto;
+div.u_modify_2 button {
+	border: none;
+	padding: 10px 18px;
+	width: auto;
 	background-color: #35c5f0;
 	border-radius: 5px;
 	color: #fff;
 	font-weight: 900px;
-	margin-bottom:20px;	
+	margin-bottom: 20px;
 }
 
-div.u_modify_1 button{
-	border:none;
+div.u_modify_1 button {
+	border: none;
 	background-color: #35c5f0;
 	border-radius: 5px;
 	color: #fff;
-	
 }
 
-div.u_cancel button{
+div.u_cancel button {
 	width: auto; /* 내부 담는 content 만큼의 폭 */
 	padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
 	background-color: #35c5f0;
@@ -290,27 +288,27 @@ div.u_cancel button{
 	font-weight: 900px
 }
 
-img.m_image{
-	weight:120px;
-	height:120px;
+img.m_image {
+	weight: 120px;
+	height: 120px;
 	border-radius: 4px;
 }
 
-div.o_image{
-	weight:120px;
-	height:120px;
+div.o_image {
+	weight: 120px;
+	height: 120px;
 }
 
-div.o_modify{
+div.o_modify {
 	margin-top: 50px;
 	box-shadow: 0 1px 3px 0 #35c5f0;
 	height: auto;
 	border-radius: 4px;
 	padding: 20px;
-	
 }
-input.u_modify_1{
-	margin-top:15px;
+
+input.u_modify_1 {
+	margin-top: 15px;
 	width: auto; /* 내부 담는 content 만큼의 폭 */
 	padding: 10px 18px; /* 기본 버튼 스타일보단 작게 */
 	background-color: #35c5f0;
@@ -320,24 +318,100 @@ input.u_modify_1{
 	font-weight: 900px
 }
 
-form.p_option{
-	
-	border:none;
-	
+form.p_option {
+	border: none;
 }
-label{
-	color: #35c5f0;
-	font-weight: 900px
-	
-}
-div.date{
+
+label {
 	color: #35c5f0;
 	font-weight: 900px
 }
 
-div.u_cancel input{
-
+div.date {
+	color: #35c5f0;
+	font-weight: 900px
 }
-div#ing{
-	color:red;
+
+div.u_cancel input {
+	
+}
+
+div.ing {
+	color: red;
+}
+/*  배송조회  내용!! */
+div.o_content {
+	font-weight: 900;
+	color: #666;
+	padding: 10px;
+}
+
+div#o_info {
+	padding: 5px 0px;
+}
+
+div#o_date {
+	backgroung-image: none;
+	color: #35c5f0;
+}
+
+h3.s_title {
+	color: #35c5f0;
+	font-weight: 900;
+	font-size: 19px;
+}
+
+button#kakaoBtn {
+	background-repeat: no-repeat;
+	border: none;
+	background-color: white;
+}
+
+div.p_star {
+	width: 100%;
+	height: auto;
+}
+
+pre#star {
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	background-image: url('../IMG_WOO/icon1.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+pre#halfStar {
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	background-image: url('../IMG_WOO/icon2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div#k_url {
+	display: none;
+}
+
+button#daum {
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	background-image: url('../IMG_WOO/icon4.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: none;
+	background-color: white;
+	float: right;
+}
+
+input#okay {
+	border: none;
+	padding: 10px 18px;
+	width: auto;
+	background-color: #35c5f0;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 900px;
 }

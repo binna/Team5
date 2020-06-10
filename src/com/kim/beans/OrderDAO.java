@@ -62,6 +62,7 @@ public class OrderDAO {
 				int pclpcnt = rs.getInt("pclpcnt");
 				int pcstatus= rs.getInt("pcstatus");
 				String pcuid = rs.getString("pcuid");
+				String pcaddress2=rs.getString("pcaddress2");
 				
 				Date d = rs.getDate("pcregdate");
 				Time t = rs.getTime("pcregdate");
@@ -73,7 +74,7 @@ public class OrderDAO {
 				}
 				
 				OrderDTO dto = new OrderDTO(pimage,pname,pbrand,pcaddress,pcaddressnum,
-						ptotalprice,pccontent,pid,pclpcnt,pcstatus,pcuid);
+						ptotalprice,pccontent,pid,pclpcnt,pcstatus,pcuid,pcaddress2);
 				dto.setPcregdate(pcregdate);
 				order.add(dto);
 				
@@ -104,6 +105,39 @@ public class OrderDAO {
 			return arr;
 		} // end select()
 		
+		// 관리자 SELECT
+		public OrderDTO [] mSelect( ) throws SQLException {
+			OrderDTO [] arr = null;
+			
+			try {
+				pstmt = conn.prepareStatement(D.SQL_MORDER_SELECT);
+				rs = pstmt.executeQuery();
+				arr = createArray(rs);
+			} finally {
+				close();
+			}		
+			
+			return arr;
+		} // end select()
+		
+		public OrderDTO [] mSort() throws SQLException {
+			OrderDTO [] arrS = null;
+			
+			try {
+				pstmt = conn.prepareStatement(D.SQL_ORDER_SELECT_SORT);
+				rs = pstmt.executeQuery();
+				arrS = createArray(rs);
+			} finally {
+				close();
+			}		
+			
+			return arrS;
+		} // end select()
+		
+		
+		
+		
+		
 		// 특정 uid 글 삭제하기
 		public int deleteByUid(int pid) throws SQLException {
 			int cnt = 0;
@@ -116,6 +150,25 @@ public class OrderDAO {
 			}		
 			return cnt;
 		} // end deleteByUid()
+		
+		public int listCnt(int pcstatus) throws SQLException {
+			OrderDTO[] cnt = null;
+			try {
+				pstmt = conn.prepareStatement(D.SQL_ORDER_SELECT_STATUS);
+				pstmt.setInt(1, pcstatus);
+				rs = pstmt.executeQuery();
+				cnt = createArray(rs);
+			} finally {
+				close();
+			}
+			
+			if(cnt==null) {
+				return 0;
+			}else {
+				return cnt.length;
+			}
+			
+		} // end listCnt()
 		
 		
 		// 특정 uid 의 글 수정 (제목, 내용)
@@ -134,12 +187,12 @@ public class OrderDAO {
 			return cnt;
 		} // end update()
 		
-		public int cancel(int pid, String pcstatus) throws SQLException {
+		public int cancel(int pid) throws SQLException {
 			int cnt = 0;
 			try {
 				pstmt = conn.prepareStatement(D.SQL_STATUS_UPDATE);
-				pstmt.setString(1, pcstatus);
-				pstmt.setInt(2, pid);
+//				pstmt.setInt(1, pcstatus);
+				pstmt.setInt(1, pid);
 				
 				cnt = pstmt.executeUpdate();
 			} finally {
