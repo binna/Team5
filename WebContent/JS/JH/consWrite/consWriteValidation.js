@@ -1,10 +1,6 @@
 $(document)
 		.ready(
 				function() {
-					
-					console.log("들어는 오니?")
-					
-						console.log("들어옴");
 					$('form').on('submit', function(){
 						frm = document.forms["frm"];
 						

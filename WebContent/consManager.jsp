@@ -162,10 +162,14 @@
 					class="consUpdate csno01" style="display: none;" name="csuid"
 					value="<%=arr[i].getCsuid()%>" placeholder="신청아이디"> <input
 					class="consUpdate" style="display: none;" name="csname"
-					value="<%=arr[i].getCsname()%>" placeholder="신청이름"> <input
-					class="consUpdate" style="display: none;" name="csarea"
-					value="<%=arr[i].getCsarea()%>" placeholder="시공지역"> <input
-					class="consUpdate" style="display: none;" name="cstel"
+					value="<%=arr[i].getCsname()%>" placeholder="신청이름"> <select
+					class="consUpdate areaSelect" style="display: none;" name="csarea">
+					<option value="서울">서울</option>
+					<option value="경기">경기</option>
+					<option value="인천">인천</option>
+					<option value="부산">부산</option>
+					<option value="기타">기타</option>
+				</select> <input class="consUpdate" style="display: none;" name="cstel"
 					value="<%=arr[i].getCstel()%>" placeholder="신청번호"> <input
 					type="button" class="update" value="수정"
 					formaction="consUpdateOk.cons"> <input type="submit"

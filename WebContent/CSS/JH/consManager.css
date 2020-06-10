@@ -74,6 +74,12 @@ section {
 	display: inline-block;
 }
 
+.areaSelect{
+	width: 167.5px;
+}
+
+
+/*-------------------------- 페이징 ----------------------------------------*/
 ul.pagination {
 	display: table;
 }

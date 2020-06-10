@@ -22,6 +22,14 @@ public class mainTeamCommand implements Command{
 			//"list"란 name 으로 request에 arr 값 전달
 			// 즉 request 에 담아서 컨트롤러에 전달되는 셈
 			request.setAttribute("randomProduct", arr);
+			
+			//정종훈	------------------------------------
+			
+			
+			// ------------------------------------------
+			
+			
+			
 		}catch (SQLException e) {
 			// 만약 CP 사용한다면
 			// NamingException 도 처리 해야댐

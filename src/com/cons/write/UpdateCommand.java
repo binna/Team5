@@ -20,7 +20,6 @@ public class UpdateCommand implements Command {
 		String csname = request.getParameter("csname");
 		String csarea = request.getParameter("csarea");
 		String cstel = request.getParameter("cstel");
-		System.out.println(csarea+"안녕안녕나는");
 
 		try {
 			cnt = dao.update(csno, csname, csarea, cstel);

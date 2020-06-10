@@ -87,7 +87,7 @@ $(document).ready(
 					break;
 
 				case "csarea":
-					// console.log("들어오냐?");
+					console.log("들어오냐?");
 					$(".searchForm").attr("action", "consCsareaSelect.cons");
 					break;
 				} // end switch

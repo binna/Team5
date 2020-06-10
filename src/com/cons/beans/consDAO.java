@@ -96,8 +96,6 @@ public class consDAO {
 			pstmt.setString(2, CSarea);
 			pstmt.setString(3, CStel);
 			pstmt.setInt(4, csno);
-			System.out.println(CSarea);
-			System.out.println(CStel);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

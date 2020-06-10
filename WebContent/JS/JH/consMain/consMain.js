@@ -21,6 +21,88 @@ $(document).ready(function() {
 	// 게시판 목록 1페이지 로딩
 	loadPage(page);
 
+	
+
+	$('.category').click(function() {
+		$('.cateImg').css({
+			'border' : 'none'
+		});
+
+		$('.category').children('div').css({
+			'color' : 'black'
+		});
+
+		$(this).children('.cateImg').css({
+			'border' : '2px solid #0080c0'
+		});
+
+		$(this).children('div').css({
+			'color' : '#0080c0'
+		});
+		isCheckLR();
+	}); // end click function
+
+	moveScrollRight = function() {
+
+		var _scrollX = $('#category').scrollLeft();
+		$('#category').animate({
+			scrollLeft : (_scrollX + 1000)
+		}, 1000, function() {
+			isCheckLR()
+		});
+		isCheckLR();
+		//console.log($(_scrollX));
+
+	}; // end left click
+
+	moveScrollLeft = function() {
+		var _scrollX = $('#category').scrollLeft();
+		$('#category').animate({
+			scrollLeft : (_scrollX - 1000)
+		}, 1000, function() {
+			isCheckLR()
+		});
+
+	}; // end right click
+
+	$('#category').hover(function() {
+		//console.log($('#category').scrollLeft());
+		if (_scrollX = $('#category').scrollLeft() != 292) {
+			$('.mRight').css({
+				'visibility' : 'visible'
+			})
+		} else if (_scrollX = $('#category').scrollLeft() != 0) {
+			$('.mLeft').css({
+				'visibility' : 'visible'
+			})
+		}
+		;
+		isCheckLR();
+	}); // end mouseHover
+
+	$('#category').mouseleave(function() {
+
+		$('.mRight').css({
+			'visibility' : 'hidden'
+		})
+		$('.mLeft').css({
+			'visibility' : 'hidden'
+		})
+	}); // end mouseLeave
+
+	$('.mLeft').hover(function() {
+		$('.mLeft').css({
+			'visibility' : 'visible'
+		});
+		isCheckLR();
+	}); // end mLeft hover
+
+	$('.mRight').hover(function() {
+		$('.mRight').css({
+			'visibility' : 'visible'
+		});
+		isCheckLR();
+	}); // end mRight hover
 }) // end JS
 
 function loadPage(page) {
@@ -131,86 +213,6 @@ function loadPage(page) {
 					}); // end main function
 }
 
-$('.category').click(function() {
-	$('.cateImg').css({
-		'border' : 'none'
-	});
-
-	$('.category').children('div').css({
-		'color' : 'black'
-	});
-
-	$(this).children('.cateImg').css({
-		'border' : '2px solid #0080c0'
-	});
-
-	$(this).children('div').css({
-		'color' : '#0080c0'
-	});
-	isCheckLR();
-}); // end click function
-
-moveScrollRight = function() {
-
-	var _scrollX = $('#category').scrollLeft();
-	$('#category').animate({
-		scrollLeft : (_scrollX + 1000)
-	}, 1000, function() {
-		isCheckLR()
-	});
-	isCheckLR();
-	//console.log($(_scrollX));
-
-}; // end left click
-
-moveScrollLeft = function() {
-	var _scrollX = $('#category').scrollLeft();
-	$('#category').animate({
-		scrollLeft : (_scrollX - 1000)
-	}, 1000, function() {
-		isCheckLR()
-	});
-
-}; // end right click
-
-$('#category').hover(function() {
-	//console.log($('#category').scrollLeft());
-	if (_scrollX = $('#category').scrollLeft() != 292) {
-		$('.mRight').css({
-			'visibility' : 'visible'
-		})
-	} else if (_scrollX = $('#category').scrollLeft() != 0) {
-		$('.mLeft').css({
-			'visibility' : 'visible'
-		})
-	}
-	;
-	isCheckLR();
-}); // end mouseHover
-
-$('#category').mouseleave(function() {
-
-	$('.mRight').css({
-		'visibility' : 'hidden'
-	})
-	$('.mLeft').css({
-		'visibility' : 'hidden'
-	})
-}); // end mouseLeave
-
-$('.mLeft').hover(function() {
-	$('.mLeft').css({
-		'visibility' : 'visible'
-	});
-	isCheckLR();
-}); // end mLeft hover
-
-$('.mRight').hover(function() {
-	$('.mRight').css({
-		'visibility' : 'visible'
-	});
-	isCheckLR();
-}); // end mRight hover
 
 function isCheckLR() {
 	if (_scrollX = $('#category').scrollLeft() >= 1) {
