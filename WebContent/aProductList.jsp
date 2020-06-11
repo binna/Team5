@@ -59,7 +59,7 @@ font-family: 'Jua', sans-serif; -->
 			<div id="main_top1_1" class="col-md-4">
 				<h1 id="main_title">너네 집 Manager</h1>
 			</div>
-			
+
 			<div id="main_top1_3" class="col-md-8">
 				<div id="search">
 					<i class="fas fa-search"></i>
@@ -129,15 +129,16 @@ font-family: 'Jua', sans-serif; -->
 				<h1 id="main_title">너네 집 Manager</h1>
 			</div>
 
-			
+
 		</div>
-				<hr>
+		<hr>
 		<div id="main_top2" class="row">
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">회원관리</a></li>
-						<li><a href="http://localhost:8888/Team5/community/communityAdmin.community">커뮤니티관리</a></li>
+						<li><a
+							href="http://localhost:8888/Team5/community/communityAdmin.community">커뮤니티관리</a></li>
 						<li id="menu_myshopping"><a href="#">스토어관리</a></li>
 						<li><a href="consManager.cons">인테리어 시공 관리</a></li>
 
@@ -150,7 +151,7 @@ font-family: 'Jua', sans-serif; -->
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li ><a href="aQuestionList.y">문의</a></li>
+						<li><a href="aQuestionList.y">문의</a></li>
 						<li id="Q_li"><a href="aProductList.y">상품</a></li>
 						<li><a href="mOrderList.woo">주문배송내역</a></li>
 					</ul>
@@ -208,22 +209,23 @@ font-family: 'Jua', sans-serif; -->
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
-					<h4 Onclick="#"
-					class="Hpointer">회원조회</h4>
+					<h4 Onclick="#" class="Hpointer">회원조회</h4>
 				</div>
 			</div>
 			<div class="m_nav_menu">
 				<h1 class="Hpointer">
-					<i class="fas fa-comments" ></i> 커뮤니티
+					<i class="fas fa-comments"></i> 커뮤니티
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
 					<h4 Onclick="location.href ='community/communityAdmin.community'"
-					class="Hpointer">들록된 게시글</h4>
-					<h4 Onclick="location.href ='community/communityAdminComment.community'"
-					class="Hpointer">댓글 목록</h4>
-					<h4 Onclick="location.href ='community/communityAdminReport.community'"
-					class="Hpointer">신고 현황</h4>
+						class="Hpointer">들록된 게시글</h4>
+					<h4
+						Onclick="location.href ='community/communityAdminComment.community'"
+						class="Hpointer">댓글 목록</h4>
+					<h4
+						Onclick="location.href ='community/communityAdminReport.community'"
+						class="Hpointer">신고 현황</h4>
 				</div>
 			</div>
 			<div class="m_nav_menu">
@@ -244,12 +246,12 @@ font-family: 'Jua', sans-serif; -->
 				<div class="m_nav_menu_inner">
 					<br>
 					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">상담신청내역</h4>
-					
+
 				</div>
 			</div>
 			<div class="m_nav_menu" id="m_nav_menu_bottom">
 				<h4>마이페이지</h4>
-				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'" >나의쇼핑</h4>
+				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'">나의쇼핑</h4>
 				<h4>스크랩북</h4>
 				<h4>질문하기</h4>
 
@@ -266,9 +268,13 @@ font-family: 'Jua', sans-serif; -->
 			<br>
 			<c:choose>
 				<c:when test="${empty list || fn:length(list) ==0}">
-					<h4>상품 준비중입니다</h4>
+					<h2 id="no_product">준비된 상품이 없습니다.</h2>
+					<img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/200_d.gif"
+						id="loding_img">
 					<br>
-					<form action="aProductSetOk.y"><button type="submit">상품 불러오기</button></form>
+					<form action="aProductSetOk.y">
+						<button type="submit" id="set_p_btn">상품 불러오기</button>
+					</form>
 				</c:when>
 				<c:otherwise>
 					<br>
@@ -325,7 +331,8 @@ font-family: 'Jua', sans-serif; -->
 							<br>
 							<h4>삭제할 상품을 선택해주세요</h4>
 							<br>
-							<form action="aProductDeleteOk.y" method="post" id = "delete_form_${dto.pid }">
+							<form action="aProductDeleteOk.y" method="post"
+								id="delete_form_${dto.pid }">
 								<select name="pid">
 									<c:forEach var="dto" items='${list }'>
 										<option value="${dto.pid }">[${dto.pbrand }]
@@ -340,17 +347,18 @@ font-family: 'Jua', sans-serif; -->
 						<div id="aProduct_update">
 							<br>
 							<h4>수정할 상품을 선택해 주세요</h4>
-							<br> <select name="pid" id ="sort">
+							<br> <select name="pid" id="sort">
 								<c:forEach var="dto" items='${list }'>
 									<option value="${dto.pid }">[${dto.pbrand }]
 										${dto.pname } : ${dto.pprice }원</option>
 								</c:forEach>
 							</select> <br> <br>
 							<c:forEach var="dto" items='${list }'>
-								<form id="updateform_${dto.pid }" class="updateform" action="aProductUpdateOk.y" >
+								<form id="updateform_${dto.pid }" class="updateform"
+									action="aProductUpdateOk.y">
 									<h4>상품정보를 수정해주세요</h4>
-									<input type="hidden" value="${dto.pid }" name ="pid">
-									<br> 상품이름 : <input type="text" name="pname" value="${dto.pname }"><br>
+									<input type="hidden" value="${dto.pid }" name="pid"> <br>
+									상품이름 : <input type="text" name="pname" value="${dto.pname }"><br>
 									상품가격 : <input type="text" name="pprice" value="${dto.pprice }"><br>
 									상품브랜드 : <input type="text" name="pbrand" value="${dto.pbrand }"><br>
 									<button type="submit">수정</button>
@@ -362,9 +370,16 @@ font-family: 'Jua', sans-serif; -->
 						<div id="aProduct_set">
 							<br>
 							<h4>상품업데이트</h4>
-							<br> <br>
-							<form action="aProductSetOk.y"><button type="submit">상품 불러오기</button></form>
-							
+							<br> <br> 
+							<div>
+							<img
+								src="https://media.giphy.com/media/y1ZBcOGOOtlpC/200_d.gif"
+								id="loding_img"></div>
+
+							<form action="aProductSetOk.y">
+								<button type="submit" id="set_p_btn">상품 불러오기</button>
+							</form>
+
 						</div>
 
 					</div>

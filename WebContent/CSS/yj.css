@@ -975,3 +975,23 @@ div#pbrand_uQ{
 	width: 100%;
 	display: inline;
 }
+
+/*판매중인 상품이 없습니다.*/
+div#not_p{
+	width: 100%;
+	text-align: center;
+	
+	
+	
+}
+div#not_p img{
+	width: 70%;
+}
+img#loding_img{
+	width: 30%;
+	margin: 0 35%;
+}
+#aProduct_set div{
+	width: 100%;
+	text-align: center;
+}

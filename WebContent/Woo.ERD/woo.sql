@@ -4,9 +4,12 @@ drop sequence ph_seq;
 
 DROp TABLE Purchase CASCADE CONSTRAINTS;
 
-CREATE SEQUENCE ph_seq;
 
 SELECT * FROM seq WHERE sequence_name = 'PH_SEQ';
+
+
+CREATE SEQUENCE ph_seq;
+
 
 CREATE TABLE Purchase(
 	pcid number NOT NULL,

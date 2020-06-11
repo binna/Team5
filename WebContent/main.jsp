@@ -416,6 +416,7 @@
             <c:choose>
                <c:when
                   test="${empty randomProduct || fn:length(randomProduct) ==0}">
+                  <h1 id = "not_p">판매중인 상품이 없습니다.</h1>
                </c:when>
                <c:otherwise>
                   <c:forEach var="ranP" items='${randomProduct }'>

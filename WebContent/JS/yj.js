@@ -2,6 +2,17 @@
 
 $(document).ready(function() {
 	
+	//manger_product
+	$("#loding_img").hide()
+	$("#no_product").show()
+	$("#set_p_btn").show()
+	$("#set_p_btn").click(function(){
+		$("#loding_img").show()
+		$("#no_product").hide()
+		$("#set_p_btn").hide()
+	})
+	
+	
 //------------------------------------------------------
 	// main js
 

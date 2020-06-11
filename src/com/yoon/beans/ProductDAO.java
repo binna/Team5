@@ -110,11 +110,16 @@ public class ProductDAO implements Query{
 			pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
+			for (int i = 0; i < 6; i++) {
+				if(arr!=null) {
+				arrRan[i]=arr[(int)(Math.random()*arr.length)];
+				}
+				else {
+					return null;
+				}
+			}
 		} finally {
 			close();
-		}
-		for (int i = 0; i < 6; i++) {
-			arrRan[i]=arr[(int)(Math.random()*arr.length)];
 		}
 		
 		return arrRan;

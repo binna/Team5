@@ -423,6 +423,8 @@ font-family: 'Jua', sans-serif; -->
 		<div id="product_main_content2" class="row col-md-9 col-sm-12">
 			<c:choose>
 				<c:when test="${empty list || fn:length(list) ==0}">
+				<div id = "not_p">
+				<img src="https://lh3.googleusercontent.com/proxy/ereTEfbPYV2fQFBKgtt7ukZiNUdqz59kjMGGxPXYvh-DoJ2xPKT5MX2lsA94_Dda-6NkEsjhzq6H4g0HBifvORSUOHOsoe33Aqz_jUb5"></div>
 				</c:when>
 				<c:otherwise>
 					<c:forEach var="dto" items='${list }'>
