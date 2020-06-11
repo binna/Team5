@@ -526,7 +526,7 @@ if(session.getAttribute("id").equals("admin")) {	// 어드민 아이디일때 �
       </div>
    </header>
 <%
-}
+} // end if
 %> 
 	
 	
