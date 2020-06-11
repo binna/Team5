@@ -272,10 +272,22 @@ font-family: 'Jua', sans-serif; -->
 					<c:forEach var="dto" items='${list }'>
 						<div id="main_qlist">
 							<%-- <h3 id = "A_status_${dto.pqid}" class ="A_status" >답변예정</h3> --%>
-							<div class="row">
-								<h3 id="pinfo" class="col-md-8 col-sm-12 col-12">[${dto.pbrand }]
+							<div class="row" class="pbrand_uQ">
+								<h3 id="pinfo" class="col-md-10">[${dto.pbrand }]
 									${dto.pname }</h3>
-								<h3 id="pqregdate" class="col-md-4 col-sm-12 col-12">${dto.pqregdate }</h3>
+							<c:if test="${dto.pqanswer!='답변준비중 입니다.' }">
+									<a id="ql_status_u"  class="col-md-2" 
+										style="color: #fff; background-color: rgb(53, 197, 240);margin: 0px">
+										답변완료 </a>
+								</c:if>
+								<c:if test="${dto.pqanswer=='답변준비중 입니다.' }">
+									<a id="ql_status_u" class="col-md-2" 
+										style="color: rgb(53, 197, 240); background-color: #fff; margin: 0px;border: 1px solid rgb(53, 197, 240)">
+										답변대기 </a>
+								</c:if>
+								
+								<h3 id="pquid" class="col-md-8">${dto.pquid }|
+									${dto.pqregdate }</h3>
 							</div>
 							<br> <br>
 							<h1 id="Q_mark">Q.</h1>
