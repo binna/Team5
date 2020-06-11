@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.admin.beans.WriteDAO;
 
 
-
 public class WriteCommand implements Command {
 
 	@Override
