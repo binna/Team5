@@ -31,7 +31,7 @@ public class MemberJoinAction implements Action{
 		dto.setMEMBER_ADDR2(request.getParameter("MEMBER_ADDR2"));
 		dto.setMEMBER_ADMIN(0);
 		dto.setMEMBER_JOIN_DATE(new Timestamp(System.currentTimeMillis()));		
-		dto.setMEMBER_PROFILE(request.getParameter("MEMBER_PROFILE"));
+		
 		memberdao.insertMember(dto);		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
