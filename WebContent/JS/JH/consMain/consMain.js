@@ -37,7 +37,7 @@ var pageRows = 140 // 한 페이지에 보여지는 게시글 개수v
 
 // 메인화면전환	
 $(document).on('click', '#main_title', function() {
-	location.href = "main.jsp";
+	location.href = "main.team";
 });
 
 

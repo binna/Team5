@@ -278,7 +278,7 @@
 						<option value="cname">업체명</option>
 						<option value="cstel">전화번호</option>
 						<option value="csarea">시공지역</option>
-					</select> <input type="text" name="value"> <input type="submit"
+					</select> <input type="text" class="searchInput" name="value"> <input type="submit"
 						value="검색" class="searchBtn">
 				</form>
 			</div>
