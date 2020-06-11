@@ -26,11 +26,7 @@
 <script src="JS/SJ/info_js.js"></script>
 <body>
 <h1 align="center">회원수정</h1>
-
-
 <FORM  method="post" action="./MemberModifyAction_2.me" onsubmit="return validate()">
-
-
 <table style="border:1px solid black; margin-left:auto; margin-right:auto;">
     <tr align="center">
         <td colspan="2" align="center" bgcolor="skyblue">
@@ -50,7 +46,7 @@
     <tr>
         <td bgcolor="pink" align="center">
         <div style="font-weight: bold;">비밀번호:</div></td>
-        <td><input type="password" id="MEMBER_PW" name="MEMBER_PW" size="15"/>
+        <td><input type="password" id="MEMBER_PW" name="MEMBER_PW"  size="15"/>
            4~12자의 영문 대소문자와 숫자로만 입력</td>
     </tr>
     <tr>
@@ -190,7 +186,6 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
 				size="20" value="${member.MEMBER_NAME }"  readonly/>
 		</td>
     </tr>
-
     <tr>
         <td bgcolor="pink" align="center"><div style="font-weight: bold;">주민등록번호:</div></td>
         <td><input type="text" id ="MEMBER_JUMIN1" name="MEMBER_JUMIN1" size="12" 
@@ -206,8 +201,5 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
     <input type="button" value="회원 탈퇴" name="bt" onclick="out()" />
     <input type="button" name="cancle"value="취소" onclick="location.href='./main.team'">
     </FORM>
-
 </body>
 </html>
-
-
