@@ -591,31 +591,31 @@ table, th, td {
 
 	<!-- The Modal -->
 	<div id="id01" class="modal">
-		<div class="container">
-			<form id="reg" name="reg" class="modal-content animate"
-				action="purchaseOk.woo" method="post">
+		<form id="reg" name="reg" class="modal-content animate"
+			action="purchaseOk.woo" method="post">
 
-				<span class="close" id="close">&times;</span> <br>
-				<div class="imgcontainer row">
-					<div class="col-md-4 col-sm-12 col-12">
-						<img src="${view[0].pimage}" class="avatar" id="avatar"
-							alt="Avatar">
-					</div>
-					<div id="p_imgcontainer" class="col-md-7 col-sm-12 col-12">
-						<div class="s_brand" id="s_brand">
-							${view[0].pbrand }<br>
-						</div>
-
-						<div class="s_name" id="s_name">
-							${view[0].pname }<br>
-						</div>
-
-						<div class="p_content_price">
-							<div class="pc_price" id="pc_price"></div>
-						</div>
-					</div>
-
+			<span class="close" id="close">&times;</span> <br>
+			<div class="imgcontainer row">
+				<div class="col-md-4 col-sm-12 col-12">
+					<img src="${view[0].pimage}" class="avatar" id="avatar"
+						alt="Avatar">
 				</div>
+				<div id="p_imgcontainer" class="col-md-7 col-sm-12 col-12">
+					<div class="s_brand" id="s_brand">
+						${view[0].pbrand }<br>
+					</div>
+
+					<div class="s_name" id="s_name">
+						${view[0].pname }<br>
+					</div>
+
+					<div class="p_content_price">
+						<div class="pc_price" id="pc_price"></div>
+					</div>
+				</div>
+
+			</div>
+			<div class="container">
 				<!-- 로그인 form 스크립트넣어주기-->
 
 				<input type="hidden" name="pclpid" id="resutlt_pid"
@@ -627,9 +627,9 @@ table, th, td {
 					value=<%=session.getAttribute("id")%> readonly="readonly" required>
 
 
-			<div class="o_button">
-				<button id="daum" onclick="Daum()"></button>
-			</div>
+				<div class="o_button">
+					<button id="daum" onclick="Daum()"></button>
+				</div>
 				<label for="addressnum"><b>AddressNum</b></label> <input
 					id="pcaddressnum" type="text" placeholder="우편번호 입력 "
 					name="pcaddressnum" required> <label for="address"><b>Address</b></label>
@@ -640,7 +640,7 @@ table, th, td {
 				<input id="pccontent" type="text" placeholder="배송메모"
 					name="pccontent"> <label for="psw"><b>CardNumber</b></label>
 				<input id="pccardnum" type="text" placeholder="카드번호입력"
-					name="pccardnum" >
+					name="pccardnum">
 				<button id="reg">구매 하기</button>
 				<!-- <input type="submit" name="okay" class="okay" id="okay" value="구매 하기"> -->
 				<label> <input type="checkbox" name="remember" checked>Remember
@@ -649,8 +649,8 @@ table, th, td {
 					<button type="button" class="cancelbtn" id="cancelbtn">Cancel</button>
 					<span class="psw">Forgot <a href="#">password?</a></span>
 				</div>
-			</form>
-		</div>
+			</div>
+		</form>
 
 
 	</div>

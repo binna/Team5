@@ -7,13 +7,6 @@ $(document).ready(function() {
 		a = makeComma(p);
 		$('#total').text("주문금액:    " + a + "원")
 
-		$("#cashBtn").click(function() {
-			if ($('#pquid').val() == "null") {
-				alert("로그인이필요한 페이지 입니다.")
-				location.href = "sign_in.jsp"
-			}
-		}); // 바로구매 클릭시
-	});
 	
 	$("#cashBtn").click(function() {
 		if ($('#pquid').val() == "null") {
@@ -28,6 +21,7 @@ $(document).ready(function() {
 		}
 	}); // 바로구매 클릭시
 	
+	});
 	
 	$("#detail_question_2").click(function() {
 		if ($('#pquid').val() == "null") {
@@ -63,8 +57,8 @@ $(document).ready(function() {
 
 	$("#reg").submit(function() {
 		var enCheck = /[^0-9]$/;
-		var pcaddressnum = $("#pcaddressnum").val().trim();
-		var pccardnum = $("#pccardnum").val().trim();
+		var pcaddressnum = $("#pcaddressnum").val();
+		var pccardnum = $("#pccardnum").val();
 
 		if ($("#pcaddressnum").val() == "") {
 			alert("우편번호 입력해주세요.");
