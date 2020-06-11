@@ -8,13 +8,35 @@ $(document).ready(function() {
 		$('#total').text("주문금액:    " + a + "원")
 
 		$("#cashBtn").click(function() {
+			if ($('#pquid').val() == "null") {
+				alert("로그인이필요한 페이지 입니다.")
+				location.href = "sign_in.jsp"
+			}
+		}); // 바로구매 클릭시
+	});
+	
+	$("#cashBtn").click(function() {
+		if ($('#pquid').val() == "null") {
+			alert("로그인이필요한 페이지 입니다.")
+			location.href = "sign_in.jsp"
+		} else {
 			$('#id01').show();
 			$('#pc_price').text("결제 금액: " + p + "원");
 			$('#result_price').val(p);
 			$('#resutlt_pid').val();
 			$('#result_cnt').val(selectOption);
-		}); // 바로구매 클릭시
-	});
+		}
+	}); // 바로구매 클릭시
+	
+	
+	$("#detail_question_2").click(function() {
+		if ($('#pquid').val() == "null") {
+			alert("로그인이필요한 페이지 입니다.")
+			location.href = "sign_in.jsp"
+		}
+	}); // 바로구매 클릭시
+	
+	
 
 	$('#sort').on('change', function() {
 		var select = document.getElementById("sort");

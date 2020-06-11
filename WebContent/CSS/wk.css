@@ -121,7 +121,7 @@ form {
 .imgcontainer {
 	display: inline-block;
 	width: 100%;
-	margin-top: 100px
+	height: auto;
 }
 
 .close { /* 닫기 버튼 (x) */
@@ -140,9 +140,9 @@ form {
 }
 
 img.avatar {
-	width: 40%; /* 원래 이미지 크기의 40% */
-	border-radius: 5%; /* 이미지 둥글게 */
-	margin-left: 60px;
+	width: 90%;
+    border-radius: 5%;
+    padding-bottom: 50px;
 }
 
 /* --------------------------------------- */
@@ -381,7 +381,7 @@ div#o_date {
 h3.s_title {
 	color: #35c5f0;
 	font-weight: 900;
-	font-size: 19px;
+	font-size: 15px;
 }
 
 button#kakaoBtn {
@@ -442,10 +442,11 @@ button#daum {
 	background-repeat: no-repeat;
 	border: none;
 	background-color: white;
+	float:right;
 
 }
 
-input#okay {
+button#reg {
 	border: none;
 	padding: 10px 18px;
 	width: auto;
@@ -549,6 +550,16 @@ span#s_option {
 	color: #424242;
 }
 
+@media (max-width : 1200px){
+	#pc_price{
+	font-size: 15px;
+	}
+	
+	#s_name{
+	font-size: 15px;
+	}
+}
+
 @media ( max-width : 768px) {
 	#s_brand {
 		display: none;
@@ -580,4 +591,10 @@ span#s_option {
 	.o_statusMenu.row{
 		display: none;
 	}
+	
+	
+	
+/*mmmmmmmmsdcuiagshdfgaksbdcfjkasdfcjasdjacfd  */
+
+
 }

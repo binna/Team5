@@ -69,16 +69,7 @@ table, th, td {
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
 
-	<%
-		if (session.getAttribute("id") == null) {
-	%>
-	<script>
-		alert("로그인이필요한 페이지 입니다.")
-		location.href = "MemberLogin.me"
-	</script>
-	<%
-		}
-	%>
+
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -118,18 +109,18 @@ table, th, td {
 					<i class="fas fa-shopping-cart"></i>
 				</button>
 				<button id="main_user_menu_icon">
-               <i class="far fa-user"></i>
-               <div id="main_user_menu">
-                  <nav style="padding: 0px;">
-                     <ul class="menu">
-                        <li><a><%=session.getAttribute("id")%> 님</a></li>
-                        <li><a href="MemberModifyAction_1.me">마이페이지</a></li>
-                        <li><a href="uOrderList.woo">나의쇼핑</a></li>
-                        <li><a href="member/logout.jsp">로그아웃</a></li>
-                     </ul>
-                  </nav>
-               </div>
-            </button>
+					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a><%=session.getAttribute("id")%> 님</a></li>
+								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
+								<li><a href="uOrderList.woo">나의쇼핑</a></li>
+								<li><a href="member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
+				</button>
 
 
 				<%
@@ -513,7 +504,7 @@ table, th, td {
 			<h2 class="QModal_h2">문의내용</h2>
 			<form id="QModal_form" action="QuestionWriteOk.y" method="post">
 				<input id="QModal_input" type="text" name="pqcontent"
-					placeholder="문의내용을 입력하세요 "> <input type="hidden"
+					placeholder="문의내용을 입력하세요 "> <input type="hidden" id="pquid"
 					name="pquid" value="<%=session.getAttribute("id")%>">
 				<!-- TODO uid 들어가ㅣ -->
 				<input type="hidden" name="pqanswer" value="답변준비중 입니다."> <input
@@ -602,14 +593,15 @@ table, th, td {
 	<div id="id01" class="modal">
 		<div class="container">
 			<form id="reg" name="reg" class="modal-content animate"
-			 action="purchaseOk.woo" method="post" >
+				action="purchaseOk.woo" method="post">
+
 				<span class="close" id="close">&times;</span> <br>
 				<div class="imgcontainer row">
 					<div class="col-md-4 col-sm-12 col-12">
 						<img src="${view[0].pimage}" class="avatar" id="avatar"
 							alt="Avatar">
 					</div>
-					<div class="col-md-7 col-sm-12 col-12">
+					<div id="p_imgcontainer" class="col-md-7 col-sm-12 col-12">
 						<div class="s_brand" id="s_brand">
 							${view[0].pbrand }<br>
 						</div>
@@ -624,7 +616,6 @@ table, th, td {
 					</div>
 
 				</div>
-
 				<!-- 로그인 form 스크립트넣어주기-->
 
 				<input type="hidden" name="pclpid" id="resutlt_pid"
@@ -636,9 +627,12 @@ table, th, td {
 					value=<%=session.getAttribute("id")%> readonly="readonly" required>
 
 
+			<div class="o_button">
+				<button id="daum" onclick="Daum()"></button>
+			</div>
 				<label for="addressnum"><b>AddressNum</b></label> <input
-					id="pcaddressnum" type="text" placeholder="우편번호 입력"
-					name="pcaddressnum"> <label for="address"><b>Address</b></label>
+					id="pcaddressnum" type="text" placeholder="우편번호 입력 "
+					name="pcaddressnum" required> <label for="address"><b>Address</b></label>
 				<input id="pcaddress" type="text" placeholder="주소입력"
 					name="pcaddress"><label for="address2"><b>AddressDetail</b></label>
 				<input id="pcaddress2" type="text" placeholder="상세주소 입력"
@@ -646,8 +640,8 @@ table, th, td {
 				<input id="pccontent" type="text" placeholder="배송메모"
 					name="pccontent"> <label for="psw"><b>CardNumber</b></label>
 				<input id="pccardnum" type="text" placeholder="카드번호입력"
-					name="pccardnum">
-					<button id="reg">구매 하기</button>
+					name="pccardnum" >
+				<button id="reg">구매 하기</button>
 				<!-- <input type="submit" name="okay" class="okay" id="okay" value="구매 하기"> -->
 				<label> <input type="checkbox" name="remember" checked>Remember
 				</label>
@@ -656,9 +650,6 @@ table, th, td {
 					<span class="psw">Forgot <a href="#">password?</a></span>
 				</div>
 			</form>
-			<div class="o_button">
-				<button id="daum" onclick="Daum()"></button>
-			</div>
 		</div>
 
 
