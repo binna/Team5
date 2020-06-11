@@ -1,5 +1,6 @@
 				$(document).ready(function(){
 					$("#kakaoBtn").click(function() {
+						var p = $('#resutlt_pid').val();
 // // 사용할 앱의 JavaScript 키를 설정해 주세요.
 				Kakao.init('cd019b39ca4c0b571b734d4b2403551e');
 
@@ -13,7 +14,8 @@
 								description : '#니네집 #team5 #가구 #인테리어시공 #우리집',
 								imageUrl :$('#k_url').text(),
 								link : {
-									mobileWebUrl : 'https://developers.kakao.com',
+									mobileWebUrl : 'http://localhost:8888/Team5/productView.y',
+									webUrl : 'http://localhost:8888/Team5/productView.y',
 									androidExecParams: 'test',
 								},
 							},
@@ -26,7 +28,8 @@
 									{
 										title : '웹으로 이동',
 										link : {
-											mobileWebUrl : 'https://developers.kakao.com',
+											mobileWebUrl : 'http://localhost:8888/Team5/productView.y',
+											webUrl : 'https://developers.kakao.com',
 										},
 									},
 									{

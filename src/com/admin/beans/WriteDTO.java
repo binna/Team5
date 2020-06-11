@@ -1,4 +1,4 @@
-package com.admin.beans;
+package com.admin.beans; 
 
 import java.sql.Timestamp;
 
