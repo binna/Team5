@@ -6,11 +6,13 @@ html, body {
 
 /*-------------- 헤더 입니당 --------------*/
 #main_title {
-	width: 85px;
+	width : 100%;
 	cursor: pointer;
 }
 
 /*-------------- 본문 입니다 --------------*/
+
+
 .searchInput {
 	width: 180px;
 }
@@ -20,6 +22,7 @@ html, body {
 	width: 60%;
 	padding: 0px 20px 0;
 	margin: 0 auto 10px;
+	margin-top: 20px;
 }
 
 section {
