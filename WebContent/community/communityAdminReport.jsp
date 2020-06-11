@@ -299,7 +299,6 @@
      	style="padding: 7px 15px;border: 1px solid rgb(200, 200, 200);border-radius: 5px">
       <option value="none" selected disabled>==선택==</option>
       <option value="10">10개</option>
-      <option value="10">10개</option>
       <option value="20">20개</option>
       <option value="50">50개</option>
       <option value="100">100개</option>
