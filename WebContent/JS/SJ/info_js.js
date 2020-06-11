@@ -1,327 +1,22 @@
-/*function check(form){
-	var pass1=infoform.MEMBER_PW.value;
-	var pass2=infoform.MEMBER_PW2.value;
-	var email1=infoform.MEMBER_EMAIL1.value;				
-	var email2=infoform.MEMBER_EMAIL2.value;
-	var tel=infoform.MEMBER_PHONE.value;
-	var addr=infoform.MEMBER_ADDR1.value;
-	var addr_about=infoform.MEMBER_ADDR2.value;
-	var phone=infoform.MEMBER_MOBILE.value;
-	
-	var forms = document.getElementById("infoform");
-
-	if ((forms.MEMBER_NAME.value=="")||(forms.MEMBER_NAME.value.length<=1)){
-		alert("이름을 입력하세요.");
-		forms.MEMBER_NAME.focus();
-        return false;
-	}
-	if(pass1.length == 0){
-		alert("비밀번호를 입력하세요.");
-		infoform.MEMBER_PW.focus();
-		return false;
-	} 
-	if(pass1 != pass2){
-		alert("비밀번호가 일치하지 않습니다.");
-		infoform.MEMBER_PW.value="";
-		infoform.MEMBER_PW2.value="";
-		infoform.MEMBER_PW.focus();
-		return false;
-	} 				 
-	if(email1.length == 0 || email2.length == 0){
-		alert("이메일 주소를 입력하세요.");
-		infoform.MEMBER_EMAIL1.focus();
-		return false;
-	}
-	if(tel.length == 0){
-		alert("집 전화를 입력하세요.");
-		infoform.MEMBER_PHONE.focus();
-		return false;
-	} 
-	if((forms.MEMBER_ZIPCODE1.value=="")||(forms.MEMBER_ZIPCODE1.value.length<3)){
-		alert("우편번호 앞의 3자리를 입력해 주세요.");
-      	forms.MEMBER_ZIPCODE1.focus();
-         	return false;
- 		}
- 	if((forms.MEMBER_ZIPCODE2.value=="")||(forms.MEMBER_ZIPCODE2.value.length<3)){
-		alert("우편번호 뒤의 3자리 입력해 주세요.");
-      	forms.MEMBER_ZIPCODE2.focus();
-        return false;
-	}   
-	if(addr.length == 0){
-		alert("집 주소를 입력하세요.");
-		infoform.MEMBER_ADDR1.focus();
-		return false;
-	} 
-	if(addr_about.length == 0){
-		alert("상세 주소를 입력하세요.");
-		infoform.MEMBER_ADDR2.focus();
-		return false;
-	} 
-	if(phone.length == 0){
-		alert("전화번호를 입력하세요.");
-		infoform.MEMBER_MOBILE.focus();
-		return false;
-	}
-	
-	return true;
-}
-
-function openzipcode(joinform){			
-	var url="./Zipcode.me";	
-	open(url, "confirm", "toolbar=no,location=no,status=no,menubar=no,"+
-						 "scrollbars=yes,resizable=no,width=410,height=400");
-}
-
-function gNumCheck(){
-	if(event.keyCode >=48 && event.keyCode <=57) {
-		return true;
-	}else{
-		event.returnValue=false;	
-	}
-}
-
-function out(){
-	var Answer = confirm("회원탈퇴를 하시겠습니까?");
- 		if (Answer == true){ 
- 		location.href = "./MemberOut.me";
- 	}
- }
- 
-function DaumPostcode() {
-    new daum.Postcode({
-        oncomplete: function(data) {
-            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-            // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-            var roadAddr = data.roadAddress; // 도로명 주소 변수
-            var extraRoadAddr = ''; // 참고 항목 변수
-            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                extraRoadAddr += data.bname;
-            }
-            // 건물명이 있고, 공동주택일 경우 추가한다.
-            if(data.buildingName !== '' && data.apartment === 'Y'){
-                extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-            }
-           
-            // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById('postcode').value = data.zonecode;
-            document.getElementById("MEMBER_ADDR1").value = roadAddr;
-        }
-    }).open();
-} */
-//$(document).ready(function() {
-//	
-//	var getName= RegExp(/^[A-Za-z가-힣]{2}/);
-//	var re = RegExp(/[a-zA-Z0-9]{4,12}$/);
-//	var getPass = RegExp(/[a-zA-Z]{1}[0-9]{1}/);
-//	var re2 = RegExp(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i);
-//	var getPhone = RegExp(/^(010|011)[-\s]?\d{3,4}[-\s]?\d{4}$/);
-//	var getEmail = RegExp(/^[\w\.-]{1,64}@[\w\.-]{1,252}\.\w{2,4}$/);	
-//	var getBirth = RegExp(/^[0-9]{2}[0,1]{1}[0-9]{1}[0-3]{1}[0-9]{1}$/);
-//	
-//	
-//	$("#id_sp2").hide()
-//	$("#pass_sp1").hide()
-//	$("#pass_sp2").hide()
-//	$("#pass_sp3").hide()
-//	$("#name_sp").hide()
-//	$("#ph_sp").hide()
-//	$("#email_sp").hide()
-//	$("#birth_sp").hide()
-//	
-//	
-//	$("#id").blur(function() {
-//				 
-//		 if(!re.test($("#id").val())){
-//			 $("#id_sp2").show('fast');
-//			 $("#id").val("");
-//			/* alert("id는 4자이상 입력해야 합니다."); */
-//		 }else{$("#id_sp2").hide('fast');}
-//	
-//	});//id
-//	
-//	$("#pass").blur(function() {
-//		 if(!re.test($("#pass").val())){
-//			 $("#pass_sp1").show('fast');
-//			 $("#pass").val("");
-//		 }else{$("#pass_sp1").hide('fast');}
-//	 
-//		 if(!getPass.test($("#pass").val())){
-//			 $("#pass_sp2").show('fast');
-//			 $("#pass").val("");
-//		 }else{$("#pass_sp2").hide('fast');}
-//	
-//	});//pass
-//	
-//	$("#pass-repeat").blur(function() {
-//		var pass1 = $("#pass").val();
-//		var pass2 = $("#pass-repeat").val();
-//		 if(pass1!=pass2){
-//			 $("#pass_sp3").show('fast');
-//			 $("#pass-repeat").val("");
-//		 }else{$("#pass_sp3").hide('fast');}
-//	
-//	});//pass
-//	
-//	$("#name").blur(function() {		
-//		 if(!getName.test($("#name").val())){
-//			 $("#name_sp").show('fast');
-//			 $("#name").val("");
-//		 }else{$("#name_sp").hide('fast');} 
-//	});//name
-//	$("#phone").blur(function() {	
-//		 if(!getPhone.test($("#phone").val())){
-//			 $("#ph_sp").show('fast');
-//			 $("#phone").val("");
-//		 }else{$("#ph_sp").hide('fast');} 	 
-//	});//phone
-//	
-//	$("#email").blur(function() {	
-//		 if(!getEmail.test($("#email").val())){
-//			 $("#email_sp").show('fast');
-//			 $("#email").val("");
-//		 }else{$("#email_sp").hide('fast');} 	 
-//	});//email
-//	
-//	$("#birth").blur(function() {	
-//		 if(!getBirth.test($("#birth").val())){
-//			 $("#birth_sp").show('fast');
-//			 $("#birth").val("");
-//		 }else{$("#birth_sp").hide('fast');} 	 
-//	});//birth
-//});
-//	  
-//	//아이디 중복 체크 버튼 클릭시 호출 되는 함수 
-// 	function winopen() {
-// 		 
-//		//id입력란이 공백일경우  아이디를 입력하세요 !! 메세지를 띄우고  아이디입력란에 포커스가 깜박이게 
-//		if(document.fr.id.value == ""){
-//			window.alert("아이디를 입력해주세요");
-//			document.fr.id.focus();
-//			return;
-//		}
-// 		
-//		//창열기 
-//		var chkid = document.fr.id.value; //아이디입력란에 작성한 값 얻기 
-//		window.open("IDcheck.jsp?chkid="+ chkid, "", "width=400, height=200");
-//		
-//		
-//	}
-// 	function openmail(){
-// 		
-// 		if(document.fr.email.value == ""){
-// 			alert("이메일을 입력하세요.");
-// 			//아이디 입력 <input>태그에 포커스깜빡
-// 			document.fr.email.focus();
-// 			return;
-// 		}
-// 		
-// 		var femail = document.fr.email.value;
-// 		var check = -1;
-// 		
-// 		
-// 		window.open("join_IDCheck2.jsp?email="+femail+"&check="+check,"","width=400,height=200");
-// 		
-// 	
-// 	}
-//	
-//	
-//	
-//    function sample6_execDaumPostcode() {
-//        new daum.Postcode({
-//            oncomplete: function(data) {
-//                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-//                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-//                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-//                var fullAddr = ''; // 최종 주소 변수
-//                var extraAddr = ''; // 조합형 주소 변수
-//                // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-//                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-//                    fullAddr = data.roadAddress;
-//                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-//                    fullAddr = data.jibunAddress;
-//                }
-//                // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
-//                if(data.userSelectedType === 'R'){
-//                    //법정동명이 있을 경우 추가한다.
-//                    if(data.bname !== ''){
-//                        extraAddr += data.bname;
-//                    }
-//                    // 건물명이 있을 경우 추가한다.
-//                    if(data.buildingName !== ''){
-//                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-//                    }
-//                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
-//                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
-//                }
-//                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-//                document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
-//                document.getElementById('sample6_address').value = fullAddr;
-//                // 커서를 상세주소 필드로 이동한다.
-//                document.getElementById('sample6_address2').focus();
-//            }
-//        }).open();
-//    }
-//	
-//    function inputIdChk(){
-//        document.fr.idDuplication.value ="idUncheck";
-//    }
-//    function checkVlaue() {
-//    	
-//    	if(!fr.pass.value){
-//    		alert("비밀번호를 입력해주세요");
-//    		return false;
-//    	}
-//    	
-//    	if(!fr.name.value){
-//    		alert("이름을 입력해주세요");
-//    		return false;
-//    	}
-//    	
-//    	if(!fr.phone.value){
-//    		alert("전화번호를 입력해주세요");
-//    		return false;
-//    	}
-//    	
-//    	if(!fr.email.value){
-//    		alert("이메일을 입력해주세요");
-//    		return false;
-//    	}
-//    	
-//    	
-//		if(fr.idDuplication.value != "idcheck"){
-//			alert("아이디 중복체크를 해주세요");
-//			return false;
-//		}
-//		
-//		else{
-//			document.fr.submit();
-//		}
-//	}
-//    
+    
 
  function check1() {
         //event.preventDefault();
-        var objID = document.getElementById("MEMBER_ID");
+       
         var pass1 = document.getElementById("MEMBER_PW");
         var objPwd2 = document.getElementById("MEMBER_PW2");
         var objEmail = document.getElementById("MEMBER_EMAIL1");
         var objEmail2= document.getElementById("MEMBER_EMAIL2"); 
-        var objName = document.getElementById("MEMBER_NAME");
-        var objNum1 = document.getElementById("MEMBER_JUMIN1");
-        var objNum2 = document.getElementById("MEMBER_JUMIN2");
+        
         var postcode = document.getElementById("postcode"); // 우편번호
         var adress = document.getElementById("MEMBER_ADDR2"); //상세주소
         /* var adress = document.getElementById("MEMBER_ADDR2"); //전화번호 */
         var mobile = document.getElementById("MEMBER_MOBILE"); //핸드폰번호
         
  
-        var arrNum1 = new Array();
-        var arrNum2 = new Array();
+        
  
-        var tempSum=0;//주민번호 합을 넣는 공간
+       
  
         //아이디와 패스워드 값 데이터 정규화 공식
         var regul1 = /^[a-zA-Z0-9]{4,12}$/;
@@ -329,7 +24,7 @@ function DaumPostcode() {
         //[]안에 있는 값만 쓰겠다
  
         //이메일 정규화 공식
-        var regul2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+        //var regul2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
         //이름 정규화 공식
         var regul3 = /^[가-힝a-zA-Z]{2,}$/;
         //var email = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
@@ -344,12 +39,7 @@ function DaumPostcode() {
 		var regul6 = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
         
         
-        //아이디 입력 하지 않았을 경우
-        if ((objID.value) == ""){
-            alert("아이디를 입력하지 않았습니다.");
-            objID.focus();
-            return false;
-        }
+        
         
         
         //아이디 유효성 검사
@@ -438,57 +128,57 @@ function DaumPostcode() {
  
         //주민번호 뒷자리를 각 배열에 넣어 검색 및 비교하기위한 단계
         //뒷자리 값 만큼 돌림
-        for (var i = 0; i <objNum2.value.length; i++) {
-            //배열 칸마다 뒷자리 값 하나씩 넣어줌
-            arrNum2[i]=objNum2.value.charAt(i);
-        }
+//        for (var i = 0; i <objNum2.value.length; i++) {
+//            //배열 칸마다 뒷자리 값 하나씩 넣어줌
+//            arrNum2[i]=objNum2.value.charAt(i);
+//        }
         //주민번호 앞자리를 tempSum에 집어 넣기
         //앞자리 만큼 돌림
-        for (var i = 0; i <objNum1.value.length; i++) {
-            //tempSum에 앞자리를 연이어 넣어줌
-            tempSum += arrNum1[i]*(2+i);
-        }
+//        for (var i = 0; i <objNum1.value.length; i++) {
+//            //tempSum에 앞자리를 연이어 넣어줌
+//            tempSum += arrNum1[i]*(2+i);
+//        }
         //주민번호 뒷자리를 tempSum에 집어 넣기
         //뒷자리 -1을 해주는 이유 : 뒷자리 마지막 자리는 더할 필요 없어서
         //뒷자리의 -1만큼 돌림
-        for (var i = 0; i <objNum2.value.length-1; i++) {
-            //뒷자리 2번째 자리 부터 
-            if (i>=2) {
-                //tempSum에 2~6번째까지 넣어줌
-                tempSum += arrNum2[i]*i;
-            }else{//뒷자리 0~1번째 자리
-                //tempSum에 0~1번째까지 넣어줌
-                tempSum += arrNum2[i]*(8+i);
-            }
-        }
+//        for (var i = 0; i <objNum2.value.length-1; i++) {
+//            //뒷자리 2번째 자리 부터 
+//            if (i>=2) {
+//                //tempSum에 2~6번째까지 넣어줌
+//                tempSum += arrNum2[i]*i;
+//            }else{//뒷자리 0~1번째 자리
+//                //tempSum에 0~1번째까지 넣어줌
+//                tempSum += arrNum2[i]*(8+i);
+//            }
+//        }
         //주민번호 유효성 체크
         //주민번호 구하는 식
-        if (((11-(tempSum%11))%10)!=arrNum2[6]) {
-            alert("올바른 주민 번호가 아닙니다.");
-            objNum1.value="";
-            objNum2.value="";
-            objNum1.focus();
-            return false;
-        }
-        //주민번호를 입력하면 생년월일이 자동으로 입력된다.
-        //substring은 시작문자와 끝문자를 검색하는 역할
-       if (arrNum2[0]==1 || arrNum2[0]==2) {//1900년생 일때
-            var y = parseInt(objNum1.value.substring(0,2));
-            var m = parseInt(objNum1.value.substring(2,4));
-            var d = parseInt(objNum1.value.substring(4,6));
-            //년도,월,일을 각각 구함
-            f.my_year.value = 1900+y;//년도
-            f.month.value = m;//월
-            f.day.value = d;//일
-        }else if(arrNum2[0]==3||arrNum2[0]==4){//2000년생 일때
-            var y = parseInt(objNum1.value.substring(0,2));
-            var m = parseInt(objNum1.value.substring(2,4));
-            var d = parseInt(objNum1.value.substring(4,6));
-            
-            f.my_year.value = 2000+y;//년도
-            f.month.value = m;//월
-            f.day.value = d;//일
-        }
+//        if (((11-(tempSum%11))%10)!=arrNum2[6]) {
+//            alert("올바른 주민 번호가 아닙니다.");
+//            objNum1.value="";
+//            objNum2.value="";
+//            objNum1.focus();
+//            return false;
+//        }
+//        //주민번호를 입력하면 생년월일이 자동으로 입력된다.
+//        //substring은 시작문자와 끝문자를 검색하는 역할
+//       if (arrNum2[0]==1 || arrNum2[0]==2) {//1900년생 일때
+//            var y = parseInt(objNum1.value.substring(0,2));
+//            var m = parseInt(objNum1.value.substring(2,4));
+//            var d = parseInt(objNum1.value.substring(4,6));
+//            //년도,월,일을 각각 구함
+//            f.my_year.value = 1900+y;//년도
+//            f.month.value = m;//월
+//            f.day.value = d;//일
+//        }else if(arrNum2[0]==3||arrNum2[0]==4){//2000년생 일때
+//            var y = parseInt(objNum1.value.substring(0,2));
+//            var m = parseInt(objNum1.value.substring(2,4));
+//            var d = parseInt(objNum1.value.substring(4,6));
+//            
+//            f.my_year.value = 2000+y;//년도
+//            f.month.value = m;//월
+//            f.day.value = d;//일
+//        }
        
     }
     

@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="net.member.db.MemberBean" %>
-<%
+<%-- <%
 	MemberBean member=(MemberBean)request.getAttribute("member");
 	String MEMBER_ZIPCODE=member.getMEMBER_ZIPCODE();
 	String MEMBER_EMAIL=member.getMEMBER_EMAIL();
 	String MEMBER_EMAIL_GET=member.getMEMBER_EMAIL_GET();	
 	String[] zipcodes=MEMBER_ZIPCODE.split("-");	//"-"로 구분함
 	String[] email=MEMBER_EMAIL.split("@");	//"@"로 구분함
-%>
+%> --%>
 <!DOCTYPE html>
 <html lang="ko">
 <head> 
@@ -209,3 +209,5 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
 
 </body>
 </html>
+
+
