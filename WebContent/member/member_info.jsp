@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="net.member.db.MemberBean" %>
-<%-- <%
+<%
 	MemberBean member=(MemberBean)request.getAttribute("member");
 	String MEMBER_ZIPCODE=member.getMEMBER_ZIPCODE();
 	String MEMBER_EMAIL=member.getMEMBER_EMAIL();
 	String MEMBER_EMAIL_GET=member.getMEMBER_EMAIL_GET();	
 	String[] zipcodes=MEMBER_ZIPCODE.split("-");	//"-"로 구분함
 	String[] email=MEMBER_EMAIL.split("@");	//"@"로 구분함
-%> --%>
+%> 
 <!DOCTYPE html>
 <html lang="ko">
 <head> 
@@ -26,11 +26,7 @@
 <script src="JS/SJ/info_js.js"></script>
 <body>
 <h1 align="center">회원수정</h1>
-
-
 <FORM  method="post" action="./MemberModifyAction_2.me" onsubmit="return validate()">
-
-
 <table style="border:1px solid black; margin-left:auto; margin-right:auto;">
     <tr align="center">
         <td colspan="2" align="center" bgcolor="skyblue">
@@ -190,7 +186,6 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
 				size="20" value="${member.MEMBER_NAME }"  readonly/>
 		</td>
     </tr>
-
     <tr>
         <td bgcolor="pink" align="center"><div style="font-weight: bold;">주민등록번호:</div></td>
         <td><input type="text" id ="MEMBER_JUMIN1" name="MEMBER_JUMIN1" size="12" 
@@ -206,8 +201,5 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
     <input type="button" value="회원 탈퇴" name="bt" onclick="out()" />
     <input type="button" name="cancle"value="취소" onclick="location.href='./main.team'">
     </FORM>
-
 </body>
 </html>
-
-
