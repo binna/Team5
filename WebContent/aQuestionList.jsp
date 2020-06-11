@@ -95,7 +95,7 @@ font-family: 'Jua', sans-serif; -->
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">회원관리</a></li>
-						<li><a href="community/communityAdmin.community">커뮤니티관리</a></li>
+						<li><a href="community/communityAdmin.community?page=1&pagerow=10">커뮤니티관리</a></li>
 						<li id="menu_myshopping"><a href="#">스토어관리</a></li>
 						<li><a href="consManager.cons">인테리어 시공 관리</a></li>
 
@@ -276,12 +276,12 @@ font-family: 'Jua', sans-serif; -->
 								<h3 id="pinfo" class="col-md-10">[${dto.pbrand }]
 									${dto.pname }</h3>
 							<c:if test="${dto.pqanswer!='답변준비중 입니다.' }">
-									<a id="ql_status_u"  class="col-md-2" 
+									<a id="ql_status_u"  class="col-md-2 col-sm-4 col-4" 
 										style="color: #fff; background-color: rgb(53, 197, 240);margin: 0px">
 										답변완료 </a>
 								</c:if>
 								<c:if test="${dto.pqanswer=='답변준비중 입니다.' }">
-									<a id="ql_status_u" class="col-md-2" 
+									<a id="ql_status_u" class="col-md-2 col-sm-4 col-4" 
 										style="color: rgb(53, 197, 240); background-color: #fff; margin: 0px;border: 1px solid rgb(53, 197, 240)">
 										답변대기 </a>
 								</c:if>

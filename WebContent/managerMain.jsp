@@ -93,7 +93,7 @@
 
 		<div id="main_content_managerMenu" class="row col-md-12">
 			<div class="col-md-3 col-sm-6 col-6">
-				<button id="manager_btn_1">
+				<button id="manager_btn_1" onclick="location.href='list.ad'">
 					<i class="fas fa-users"></i>
 				</button>
 				<h2>회원 관리</h2>

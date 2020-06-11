@@ -88,7 +88,7 @@
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!-- 팝업설정 js경로  -->
-<script type="text/javascript" src="JS/popup.js"></script>
+<!-- <script type="text/javascript" src="JS/popup.js"></script> -->
 <body>
    <%-- <%
       System.out.print(session.getAttribute("id"));
@@ -114,7 +114,7 @@
    <form action="MemberModifyAction_1.me">
       <input type="submit" value="회원수정"><br>
    </form> --%>
-<body onLoad="javascript:open_win();">
+<body>
    <!-- 팝업창 설정 -->
    <!-- 여기부터  복사-->
    <header style="padding: 0px;" class="col-md-12" id="main_header">
@@ -289,7 +289,7 @@
             님
          </h1>
          <br>
-         <button id="m_menu_logout">로그아웃</button>
+         <button id="m_menu_logout" OnClick="location.href ='member/logout.jsp'">로그아웃</button>
          <%
             } else {
          %>
