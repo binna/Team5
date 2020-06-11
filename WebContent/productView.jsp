@@ -25,7 +25,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-
+<script src="//code.jquery.com/jquery.min.js"></script>
 <!-- Google 아이콘 -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -50,6 +50,7 @@
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
 
+
 <style>
 table {
 	width: 100%;
@@ -67,6 +68,17 @@ table, th, td {
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
+
+	<%
+		if (session.getAttribute("id") == null) {
+	%>
+	<script>
+		alert("로그인이필요한 페이지 입니다.")
+		location.href = "MemberLogin.me"
+	</script>
+	<%
+		}
+	%>
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -75,9 +87,9 @@ table, th, td {
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
+						<li><a href="community/write.community" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -85,10 +97,17 @@ table, th, td {
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
-				<button id="write">글쓰기</button>
+
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+
 				<!-- <button>
 					<i class="fas fa-search"></i>
-				</button> -->
+				</button> --->
+				<%
+					if (session.getAttribute("id") != null) {
+				%>
+
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -98,14 +117,111 @@ table, th, td {
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button>
+				<button id="main_user_menu_icon">
 					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
+								<li><a href="uOrderList.woo">나의쇼핑</a></li>
+								<li><a href="member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
+				</button>
+				<a><%=session.getAttribute("id")%> 님</a>
+
+				<%
+					} else {
+				%>
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<!-- <a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a> -->
+				<a href="sign_in.jsp">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
+				<%
+					}
+				%>
+
+
+
+			</div>
+		</div>
+
+		<hr>
+		<div id="main_top2" class="row">
+			<div class="col-md-9" id="main_top2-1">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="storeMain.y">스토어홈</a></li>
+						<li><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">특가</a></li>
+						<li><a href="#">여름패브릭</a></li>
+						<li><a href="#">여름가전</a></li>
+						<li><a href="#">기획전</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-2">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="main.team">홈</a></li>
+						<li><a href="community/write.community">질문과답변</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-3">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="consMain.jsp">시공홈</a></li>
+						<li><a href="#">견적계산</a></li>
+						<li><a href="#">전문가찾기</a></li>
+						<li><a href="#">시공스토어</a></li>
+						<li><a href="#">방산시장</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div calss="col-md-3 col-sm-offset-0">
+				<button id="main_top2_app"></button>
+				<a href="#">앱 다운로드</a>
+			</div>
+
+		</div>
+		<hr>
+	</header>
+
+	<header style="padding: 0px;" class="col-md-12" id="main_header_m">
+		<div id="main_top1" class="row">
+			<div id="main_top1_1" class="col-sm-1 col-1">
+
+				<button id="main_bar_btn">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+			<div id="main_top1_2" class="col-sm-5 col-5">
+				<h1 id="main_title">너네 집</h1>
+			</div>
+
+			<div id="main_top1_3" class="col-sm-6 col-6">
+
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기
+				</button>
+				<button id="search">
+					<i class="fas fa-search"></i>
+				</button>
+
+				<button>
+					<i class="fas fa-shopping-cart"></i>
 				</button>
 			</div>
 		</div>
+		<!-- 
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-9">
+			<div class="col-sm-12 col-12" id="main_top2-1">
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">스토어홈</a></li>
@@ -119,13 +235,77 @@ table, th, td {
 					</ul>
 				</nav>
 			</div>
-			<div class="col-md-3">
-				<button id="main_top2_app"></button>
-				<a href="#">앱 다운로드</a>
-			</div>
+
 
 		</div>
-		<hr>
+		<hr> -->
+		<div id="m_nav_menu">
+			<button id="m_menu_close">
+				<i class="far fa-times-circle"></i>
+			</button>
+
+			<h1 id="main_title" class="m_nav_menu_title">너네 집</h1>
+			<%
+				if (session.getAttribute("id") != null) {
+			%>
+			<h1><%=session.getAttribute("id")%>
+				님
+			</h1>
+			<br>
+			<button id="m_menu_logout">로그아웃</button>
+			<%
+				} else {
+			%>
+			<button id="m_menu_login" OnClick="location.href ='sign_in.jsp'">로그인</button>
+			<button id="m_menu_join" OnClick="location.href ='MemberJoin.me'">회원가입</button>
+
+			<%
+				}
+			%>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-comments"></i> 커뮤니티
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4>홈</h4>
+					<h4 Onclick="location.href='community/list.community?page=1'"
+						class="Hpointer">질문과 답변</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-store"></i> 스토어
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4>카테고리</h4>
+					<h4 OnClick="location.href ='storeMain.y'">스토어홈</h4>
+					<h4>베스트</h4>
+					<h4>특가</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-tools"></i> 인테리어 시공
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공
+						홈</h4>
+					<h4>견적계산</h4>
+					<h4>시공스토어</h4>
+					<h4>전문가 찾기</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu" id="m_nav_menu_bottom">
+				<h4>마이페이지</h4>
+				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'">나의쇼핑</h4>
+				<h4>스크랩북</h4>
+				<h4>질문하기</h4>
+
+			</div>
+		</div>
 	</header>
 
 
@@ -180,7 +360,8 @@ table, th, td {
 			<div class="ignore" id="ignore">
 				<div id="i_1">일반택배</div>
 				<div id="i_2">
-					(3개월) 무이자할부<br><br>*조건에 따라 추가비용 발생 가능 (상품 상세 정보 참고)<br><br> 제주도/도서산간 지역 배송 불가
+					(3개월) 무이자할부<br> <br>*조건에 따라 추가비용 발생 가능 (상품 상세 정보 참고)<br>
+					<br> 제주도/도서산간 지역 배송 불가
 				</div>
 			</div>
 
@@ -190,8 +371,8 @@ table, th, td {
 						<!-- 						<div >
 							<span>수량 :</span> <input class="figure" type="number" name="number" min="1" max="50" step="1" /><br>
 						</div> -->
-						<span id="s_option">수량 : </span> <select id="figure" class="figure"
-							name="figure">
+						<span id="s_option">수량 : </span> <select id="figure"
+							class="figure" name="figure">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -418,31 +599,31 @@ table, th, td {
 
 	<!-- The Modal -->
 	<div id="id01" class="modal">
-		<form class="modal-content animate" action="purchaseOk.woo"
-			method="post">
-			<span class="close" id="close">&times;</span> <br>
-			<div class="imgcontainer row">
-				<div class="col-md-4 col-sm-12 col-12">
-					<img src="${view[0].pimage}" class="avatar" id="avatar"
-						alt="Avatar">
+		<div class="container">
+			<form id="reg" class="modal-content animate"
+				action="purchaseOk.woo" method="post">
+				<span class="close" id="close">&times;</span> <br>
+				<div class="imgcontainer row">
+					<div class="col-md-4 col-sm-12 col-12">
+						<img src="${view[0].pimage}" class="avatar" id="avatar"
+							alt="Avatar">
+					</div>
+					<div class="col-md-7 col-sm-12 col-12">
+						<div class="s_brand" id="s_brand">
+							${view[0].pbrand }<br>
+						</div>
+
+						<div class="s_name" id="s_name">
+							${view[0].pname }<br>
+						</div>
+
+						<div class="p_content_price">
+							<div class="pc_price" id="pc_price"></div>
+						</div>
+					</div>
+
 				</div>
-				<div class="col-md-7 col-sm-12 col-12">
-					<div class="s_brand" id="s_brand">
-						${view[0].pbrand }<br>
-					</div>
 
-					<div class="s_name" id="s_name">
-						${view[0].pname }<br>
-					</div>
-
-					<div class="p_content_price">
-						<div class="pc_price" id="pc_price"></div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="container">
 				<!-- 로그인 form 스크립트넣어주기-->
 
 				<input type="hidden" name="pclpid" id="resutlt_pid"
@@ -453,9 +634,7 @@ table, th, td {
 					placeholder="<%=session.getAttribute("id")%>" name="pcuid"
 					value=<%=session.getAttribute("id")%> readonly="readonly" required>
 
-				<div class="o_button">
-					<button id="daum" onclick="Daum()"></button>
-				</div>
+
 				<label for="addressnum"><b>AddressNum</b></label> <input
 					id="pcaddressnum" type="text" placeholder="우편번호 입력"
 					name="pcaddressnum"> <label for="address"><b>Address</b></label>
@@ -464,42 +643,24 @@ table, th, td {
 				<input id="pcaddress2" type="text" placeholder="상세주소 입력"
 					name="pcaddress2"> <label for="tel"><b>request</b></label>
 				<input id="pccontent" type="text" placeholder="배송메모"
-					name="pccontent" required> <label for="psw"><b>CardNumber</b></label>
+					name="pccontent"> <label for="psw"><b>CardNumber</b></label>
 				<input id="pccardnum" type="text" placeholder="카드번호입력"
-					name="pccardnum" required> 
-					
-					
-					<input class="okay" id="okay"
-					type="submit" value="구매 하기"> <label>
-					
-					 <input
-					type="checkbox" name="remember" checked>Remember
+					name="pccardnum">
+				<button class="okay" id="okay">구매 하기</button>
+				<label> <input type="checkbox" name="remember" checked>Remember
 				</label>
+				<div class="container" style="background-color: #f1f1f1">
+					<button type="button" class="cancelbtn" id="cancelbtn">Cancel</button>
+					<span class="psw">Forgot <a href="#">password?</a></span>
+				</div>
+			</form>
+			<div class="o_button">
+				<button id="daum" onclick="Daum()"></button>
 			</div>
+		</div>
 
-
-
-
-
-			<div class="container" style="background-color: #f1f1f1">
-				<button type="button" class="cancelbtn" id="cancelbtn">Cancel</button>
-				<span class="psw">Forgot <a href="#">password?</a></span>
-			</div>
-		</form>
 
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
