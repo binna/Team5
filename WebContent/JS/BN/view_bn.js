@@ -17,15 +17,24 @@ $(document).ready(function () {
 	
 	// 라디오 값 추출하기
 	$('.close_popup').click(function(){
-		// 신고 유형
-		var reportType = $("input:radio[name=report_type]:checked").val();
-		// 신고 게시글
-		var no = $("#reportQno").val();
-		// 신고 아이디
-		var reportId = $("#reportID").val();
 		
-		// 신고페이지로 이동
-		location.href="reportWriteOk.community?type=" + reportType + "&no=" + no + "&reportId=" + reportId;
+		// 아니오 눌렀을때 신고되지 않기
+		if(!confirm('정말로 신고하시겠습니까?')){
+			alert('신고 취소를 선택하셨습니다');
+			$(".dismiss_popup").trigger("click");
+			return false;
+		} else {	// 신고하기 버튼누르면 신고 접수가 완료됨
+			// 신고 유형
+			var reportType = $("input:radio[name=report_type]:checked").val();
+			// 신고 게시글
+			var no = $("#reportQno").val();
+			// 신고 아이디
+			var reportId = $("#reportID").val();
+			
+			// 신고페이지로 이동
+			location.href="reportWriteOk.community?type=" + reportType + "&no=" + no + "&reportId=" + reportId;
+		}
+		
 	});
 	
 	// 댓글을 정말 삭제할 것인가 물어보기

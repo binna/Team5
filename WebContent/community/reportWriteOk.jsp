@@ -10,12 +10,12 @@
 
 <% if(cnt == 0) { %>
 		<script>
-			alert('등록 실패');
+			alert('신고 등록이 실패하였습니다.');
 			history.back();	// 브라우저가 직전에 직전 페이지(입력중 페이지로)
 		</script>
 <% } else { %>
 		<script>
-			alert('등록 성공');
+			alert('신고 등록이 되었습니다.');
 			location.href = "view.community?no=<%= Rqno %>";
 		</script>
 <% } %>

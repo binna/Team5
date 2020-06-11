@@ -13,14 +13,15 @@ public class SelectCommand implements Command {
 		WriteDAO dao = new WriteDAO();
 		WriteDTO [] arr = null;
 		
-		int no = Integer.parseInt(request.getParameter("no"));  // 매개변수 검증 필요
+		int no = Integer.parseInt(request.getParameter("no"));
 
 		try {
-			arr = dao.onlySelectByQno(no);  // 읽기 only
+			arr = dao.onlySelectByQno(no);
 			request.setAttribute("select", arr);
-			
-		} catch (SQLException e) {  
-			e.printStackTrace();
+		} catch(SQLException e) {
+			System.out.println("트랜젝션 에러 발생");
+		} catch (Exception e) {
+			System.out.println("트랜젝션 이외의 에러 발생");
 		}
 
 	} // end SelectCommand

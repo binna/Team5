@@ -11,22 +11,23 @@ public class DeleteCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		int cnt = 0;
+		int cnt = 0;	// 성공 여부 확인을 위한 변수 선언
 
 		WriteDAO dao = new WriteDAO();
 
-		//입력한 값을 받아오기
+		// 매개변수 받아오기
 		int no = Integer.parseInt(request.getParameter("no"));
-		System.out.println(no);
 
 		try {			
 			cnt = dao.deleteByQno(no);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch(SQLException e) {
+			System.out.println("트랜젝션 에러 발생");
+		} catch (Exception e) {
+			System.out.println("트랜젝션 이외의 에러 발생");
 		}
 
 		request.setAttribute("delete", cnt);
 
-	} // end DeleteCommand()
+	} // end execute()
 
 } // end Command

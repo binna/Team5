@@ -12,13 +12,9 @@ public class WriteCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		
-		// insert가 성공했는지 확인하기
-		int cnt = 0;
-		
-		// insert에 성공했다면 Qno값을 받아오기
-		// 등록 성공 후 View 단으로 가기 위해 필요
-		Integer[] arr = null;
+		int cnt = 0;			// 삽입 트랜잭션 성공 여부 확인
+		Integer[] arr = null;	// 글 삽입이 성공했다면 뷰단으로 가기위해 Qno값이 필요함
+								// Qno값을 저장하기 위해 필요
 		
 		WriteDAO dao = new WriteDAO();
 
@@ -28,16 +24,19 @@ public class WriteCommand implements Command {
 		String keyword = request.getParameter("keyword");		// 키워드
 		String qid = request.getParameter("qid");				// 작성자
 		
-		// title과 content는 null 이면 안됨
-		if(title != null && content != null
-				&& title.trim().length() > 0 && content.trim().length() > 0) {
+		// 백엔드 유효성 검사
+		// 제목과 글을 0이거나 7자, 10자 미만이되고 
+		// 키워드는 무조건 1개 이상이어야 하기 때문에 값이 null 값이면 안됨!
+		if(title != null && content != null && keyword != null
+				&& title.trim().length() > 7 && content.trim().length() > 10) {
 			
 			try {
+				// 삽입 트랜잭션 실행
 				cnt = dao.insert(title, content, keyword, qid);
-				
 			} catch(SQLException e) {
-				e.printStackTrace();
-				
+				System.out.println("트랜젝션 에러 발생");
+			} catch (Exception e) {
+				System.out.println("트랜젝션 이외의 에러 발생");
 			}
 			
 		} // end if
@@ -45,16 +44,18 @@ public class WriteCommand implements Command {
 		dao = new WriteDAO();
 		
 		if(cnt != 0) {
+			
 			try {
-				// 트랜젝션 수행
+				// Qno 찾는 트랜젝션 수행
 				arr = dao.QnoSelect();
-				
 				// 모든 no의 값을 전달
 				request.setAttribute("Qno", arr);
-				
 			} catch(SQLException e) {
-				e.printStackTrace();
-			} 
+				System.out.println("트랜젝션 에러 발생");
+			} catch (Exception e) {
+				System.out.println("트랜젝션 이외의 에러 발생");
+			}
+			
 		} // end if
 		
 		request.setAttribute("result", cnt);

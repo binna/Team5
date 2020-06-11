@@ -20,18 +20,14 @@ public class ReportWriteCommand implements Command {
 		int Rqno = Integer.parseInt(request.getParameter("no"));	// 게시글 번호, FK
 		String Rid = request.getParameter("reportId");				// 신고 아이디, FK
 		
-		
 		try {
 			cnt = dao.insert(Rid, Rtype, Rqno);
-			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} 
 			
-			
 		request.setAttribute("report", cnt);
 		request.setAttribute("Rqno", Rqno);
-		System.out.println(Rqno);
 		
 	} // end execute()
 

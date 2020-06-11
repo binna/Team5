@@ -48,7 +48,13 @@ $(document).ready(function () {
 	if(checkCnt != 0) {
 		$('#error2').css('display', 'none');
 	}
-	
+	// 불러온 키워드 체크수 확인하여 확인 버튼 활성화 여부 판단
+	if($("input[class='form-che']:checked").length > 0) {
+		$('#btnCommit').prop('disabled', false);
+	} 
+	if($("input[class='form-che']:checked").length == 0){
+		$('#btnCommit').prop('disabled', true);
+	}
 	
 	// 택스트 박스------------------------------------------------------------------
 	// 기존에 저장한 문의 내용 값 적용

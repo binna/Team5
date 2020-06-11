@@ -7,8 +7,7 @@
 	WriteDTO[] arr = (WriteDTO [])request.getAttribute("select");
 	int no = Integer.parseInt(request.getParameter("no"));
 	
-	//http://localhost:8888/Team5/community/update.community?no=3
-
+	String qid = arr[0].getQid();
 	String title = arr[0].getTitle();
 	String content = arr[0].getContent();
 	String keyword = arr[0].getKeyword();
@@ -48,9 +47,32 @@
 
 <body>
 
+
+<%
+	// 로그인 여부 확인하기
+	if (session.getAttribute("id") == null) {
+%>
+	<script>
+		alert("로그인이 필요한 페이지입니다.")
+		location.href = "../sign_in.jsp"
+	</script>
+<%
+	}
+
+	// 작성자와 현재 로그인 되어 있는 사용자가 일치하는지 않으면 팝업창과 함께 기존 뷰화면으로 돌려보내기
+	else if(!session.getAttribute("id").equals(qid)) {	// 아이디도 일치하면
+%>
+	<script>
+		alert("현재 로그인되어 있는 사용자와 작성자가 일치하지 않습니다.")
+		history.back();
+	</script>
+<%
+	}
+%>
+
 <header id="simplified-gnb" class="simplified-gnb">
     <div class="container simplified-gnb__container">
-		<a class="simplified-gnb__logo" href="../main.jsp">
+		<a class="simplified-gnb__logo" href="../main.team">
             <span class="icon icon-etc-brand-icon-n-bi-md">
             	<img src="Image/icon.png"></span>
 		</a>

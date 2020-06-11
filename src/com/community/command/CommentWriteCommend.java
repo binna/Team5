@@ -11,25 +11,28 @@ public class CommentWriteCommend implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		int cnt = 0;	// 삽입 트랜잭션 성공 여부 확인
 		
-		int cnt = 0;	// insert가 성공했는지 확인하기
-		
-		CommentDAO dao = new CommentDAO();	// DAO 객체 생성
+		CommentDAO dao = new CommentDAO();
 		
 		// 매개변수 받아오기
 		int cQno = Integer.parseInt(request.getParameter("no"));
 		String cid = request.getParameter("Comment_id");
 		String content = request.getParameter("commentContent");
-		
-		System.out.println("no " + cQno);
-		System.out.println("content " + content);
-		System.out.println("cid " + cid);
-		
-		try {
-			// 트랜잭션 수행하기
-			cnt = dao.insert(cQno, content, cid);
+
+		// 백앤드 유효성 검사
+		// 내용이 null이 아닌지 확인하기
+		if(content != null) {
 			
-		} catch(SQLException e) {}
+			try {
+				cnt = dao.insert(cQno, content, cid);
+			} catch(SQLException e) {
+				System.out.println("트랜젝션 에러 발생");
+			} catch (Exception e) {
+				System.out.println("트랜젝션 이외의 에러 발생");
+			}
+			
+		} // end if
 		
 		request.setAttribute("CommentInsert", cnt);
 

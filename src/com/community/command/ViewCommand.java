@@ -14,34 +14,35 @@ public class ViewCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		WriteDAO dao = new WriteDAO();	// DAO 객체 생성
+		// 조회와 동시에 조회수 증가까지 필요
+		WriteDAO dao = new WriteDAO();
 		WriteDTO[] arr = null;
 		
-		// Qno 값 받아 오기, id 값 받아오기
+		// Qno 값 받아 오기
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		try {
-			// 트랜잭션 수행
 			arr = dao.clickReadByQno(no);
-			request.setAttribute("view", arr);
-			
 		} catch(SQLException e) {
-			e.printStackTrace();
-		} // end try catch
+			System.out.println("트랜젝션 에러 발생");
+		} catch (Exception e) {
+			System.out.println("트랜젝션 이외의 에러 발생");
+		}
 		
 		// 등록된 댓글 모두 보기
-		CommentDAO dao2 = new CommentDAO();	// DAO 객체 생성
+		CommentDAO dao2 = new CommentDAO();
 		CommentDTO[] arr2 = null;
 		
 		try {
-			// 트랜젝션 수행
 			arr2 = dao2.select(no);
-			request.setAttribute("CommentList", arr2);
-			
-			
 		} catch(SQLException e) {
-			e.printStackTrace();
+			System.out.println("트랜젝션 에러 발생");
+		} catch (Exception e) {
+			System.out.println("트랜젝션 이외의 에러 발생");
 		}
+
+		request.setAttribute("view", arr);
+		request.setAttribute("CommentList", arr2);
 
 	} // end execute
 
