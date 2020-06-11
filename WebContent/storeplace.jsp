@@ -46,28 +46,64 @@ font-family: 'Jua', sans-serif; -->
 
 
 <script type="text/javascript" src="JS/yj.js"></script>
+<script type="text/javascript" src="JS/Ajax.js"></script>
+
+<!-- MaxCDN 사용 -->
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="GoldCoffeeJS.js"></script>
+<link rel="shortcut icon" type="image/x-icon"
+	href="https://image.freepik.com/free-photo/gold-letter-g_2227-955.jpg">
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
-<title>너네집 Manager</title>
+<title>너네 집 : 스토어 홈</title>
+
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
-			<div id="main_top1_1" class="col-md-4">
-				<h1 id="main_title"  OnClick="location.href ='managerMain.jsp'">너네 집 Manager</h1>
+			<div id="main_top1_1" class="col-md-2">
+				<h1 id="main_title">너네 집</h1>
 			</div>
-			
-			<div id="main_top1_3" class="col-md-8">
+			<div id="main_top1_2" class="col-md-3">
+				<nav>
+					<ul>
+						<li><a href="community/write.community" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
+						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div id="main_top1_3" class="col-md-7">
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
-				<button id="write">글쓰기</button>
+
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+
 				<!-- <button>
 					<i class="fas fa-search"></i>
-				</button> -->
+				</button> --->
+				<%
+					if (session.getAttribute("id") != null) {
+				%>
+
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -82,41 +118,75 @@ font-family: 'Jua', sans-serif; -->
 					<div id="main_user_menu">
 						<nav style="padding: 0px;">
 							<ul class="menu">
+								<li><a><%=session.getAttribute("id")%> 님</a></li>
+								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
+								<li><a href="uOrderList.woo">나의쇼핑</a></li>
 								<li><a href="member/logout.jsp">로그아웃</a></li>
 							</ul>
 						</nav>
 					</div>
 				</button>
+				<%
+					} else {
+				%>
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<!-- <a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a> -->
+				<a href="sign_in.jsp">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
+				<%
+					}
+				%>
+
+
+
 			</div>
 		</div>
+
 		<hr>
 		<div id="main_top2" class="row">
-			<div class="col-md-12">
+			<div class="col-md-9" id="main_top2-1">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">회원관리</a></li>
-						<li><a href="community/communityAdmin.community?page=1&pagerow=10">커뮤니티관리</a></li>
-						<li id="menu_myshopping"><a href="#">스토어관리</a></li>
-						<li><a href="consManager.cons">인테리어 시공 관리</a></li>
+						<li><a href="storeMain.y">스토어홈</a></li>
+						<li id="category_li"><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">특가</a></li>
+						<li><a href="#">여름패브릭</a></li>
+						<li><a href="#">여름가전</a></li>
+						<li><a href="storeplace.jsp">OFFLINE STORE</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-2">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="main.team">홈</a></li>
+						<li><a href="community/write.community">질문과답변</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-9" id="main_top2-3">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="consMain.jsp">시공홈</a></li>
+						<li><a href="#">견적계산</a></li>
+						<li><a href="#">전문가찾기</a></li>
+						<li><a href="#">시공스토어</a></li>
+						<li><a href="#">방산시장</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div calss="col-md-3 col-sm-offset-0">
+				<button id="main_top2_app"></button>
+				<a href="#">앱 다운로드</a>
+			</div>
 
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<hr>
-		<div id="main_top3" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li id="Q_li"><a href="aQuestionList.y">문의</a></li>
-						<li><a href="aProductList.y">상품</a></li>
-						<li><a href="mOrderList.woo">주문배송내역</a></li>
-					</ul>
-				</nav>
-			</div>
 		</div>
 		<hr>
 	</header>
+
 	<header style="padding: 0px;" class="col-md-12" id="main_header_m">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-sm-1 col-1">
@@ -125,39 +195,24 @@ font-family: 'Jua', sans-serif; -->
 					<i class="fas fa-bars"></i>
 				</button>
 			</div>
-			<div id="main_top1_2" class="col-sm-11 col-11">
-				<h1 id="main_title"  OnClick="location.href ='managerMain.jsp'">너네 집 Manager</h1>
+			<div id="main_top1_2" class="col-sm-5 col-5">
+				<h1 id="main_title">너네 집</h1>
 			</div>
 
-			
-		</div>
-				<hr>
-		<div id="main_top2" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="#">회원관리</a></li>
-						<li><a href="http://localhost:8888/Team5/community/communityAdmin.community">커뮤니티관리</a></li>
-						<li id="menu_myshopping"><a href="#">스토어관리</a></li>
-						<li><a href="consManager.cons">인테리어 시공 관리</a></li>
+			<div id="main_top1_3" class="col-sm-6 col-6">
 
-					</ul>
-				</nav>
+				<button id="write"
+					onclick="location.href='community/communityMain.jsp'">글쓰기
+				</button>
+				<button id="search">
+					<i class="fas fa-search"></i>
+				</button>
+
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
 			</div>
 		</div>
-		<hr>
-		<div id="main_top3" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li id="Q_li"><a href="aQuestionList.y">문의</a></li>
-						<li><a href="aProductList.y">상품</a></li>
-						<li><a href="mOrderList.woo">주문배송내역</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<hr>
 		<!-- 
 		<hr>
 		<div id="main_top2" class="row">
@@ -192,7 +247,8 @@ font-family: 'Jua', sans-serif; -->
 				님
 			</h1>
 			<br>
-			<button id="m_menu_logout">로그아웃</button>
+			<button id="m_menu_logout"
+				OnClick="location.href ='member/logout.jsp'">로그아웃</button>
 			<%
 				} else {
 			%>
@@ -204,26 +260,13 @@ font-family: 'Jua', sans-serif; -->
 			%>
 			<div class="m_nav_menu">
 				<h1 class="Hpointer">
-					<i class="fas fa-user"></i> 회원 관리
+					<i class="fas fa-comments"></i> 커뮤니티
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
-					<h4 Onclick="#"
-					class="Hpointer">회원조회</h4>
-				</div>
-			</div>
-			<div class="m_nav_menu">
-				<h1 class="Hpointer">
-					<i class="fas fa-comments" ></i> 커뮤니티
-				</h1>
-				<div class="m_nav_menu_inner">
-					<br>
-					<h4 Onclick="location.href ='community/communityAdmin.community'"
-					class="Hpointer">들록된 게시글</h4>
-					<h4 Onclick="location.href ='community/communityAdminComment.community'"
-					class="Hpointer">댓글 목록</h4>
-					<h4 Onclick="location.href ='community/communityAdminReport.community'"
-					class="Hpointer">신고 현황</h4>
+					<h4>홈</h4>
+					<h4 Onclick="location.href='community/list.community?page=1'"
+						class="Hpointer">질문과 답변</h4>
 				</div>
 			</div>
 			<div class="m_nav_menu">
@@ -232,24 +275,28 @@ font-family: 'Jua', sans-serif; -->
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
-					<h4 OnClick="location.href ='aQuestionList.y'">문의 관리</h4>
-					<h4 OnClick="location.href ='aProductList.y'">상품 관리</h4>
-					<h4 OnClick="location.href ='mOrderList.woo'">주문 배송 내역</h4>
+					<h4>카테고리</h4>
+					<h4 OnClick="location.href ='storeMain.y'">스토어홈</h4>
+					<h4>베스트</h4>
+					<h4>특가</h4>
 				</div>
 			</div>
 			<div class="m_nav_menu">
 				<h1 class="Hpointer">
-					<i class="fas fa-tools"></i> 인테리어
+					<i class="fas fa-tools"></i> 인테리어 시공
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
-					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">상담신청내역</h4>
-					
+					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공
+						홈</h4>
+					<h4>견적계산</h4>
+					<h4>시공스토어</h4>
+					<h4>전문가 찾기</h4>
 				</div>
 			</div>
 			<div class="m_nav_menu" id="m_nav_menu_bottom">
 				<h4>마이페이지</h4>
-				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'" >나의쇼핑</h4>
+				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'">나의쇼핑</h4>
 				<h4>스크랩북</h4>
 				<h4>질문하기</h4>
 
@@ -257,63 +304,32 @@ font-family: 'Jua', sans-serif; -->
 		</div>
 	</header>
 
+	<div id='placemain'>
+		<h1>OFFLINE STORE</h1>
+		<br>
+		<div id='placemain1'>
+			<div class="row" id="placemain1_input">
+					<input type="text" name="location" class="col-sm-8 col-8"
+						placeholder="현재위치 또는 지역명 입력 ex) 서울시" id='location'>
+					<button id="btn_search"  class="col-sm-2 col-2" type="button">SEARCH</button>
+					<button id="btn_search2"  class="col-sm-2 col-2" type="button">
+						<i class="fas fa-map-marker-alt"></i>
+					</button>
+			</div>
 
-	<!--내용부분입니다.  -->
-	<div id="main_content">
-		<div id="main_content_qlist">
-			<h1 id="main_content_qlist_h">상품문의내역</h1>
-			<c:choose>
-				<c:when test="${empty list || fn:length(list) ==0}">
-					<div id="main_qlist">
-						<h1>아직 문의한 내역이 없습니다.</h1>
-					</div>
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="dto" items='${list }'>
-						<div id="main_qlist">
-							<%-- <h3 id = "A_status_${dto.pqid}" class ="A_status" >답변예정</h3> --%>
-							<div class="row" class="pbrand_uQ">
-								<h3 id="pinfo" class="col-md-10">[${dto.pbrand }]
-									${dto.pname }</h3>
-							<c:if test="${dto.pqanswer!='답변준비중 입니다.' }">
-									<a id="ql_status_u"  class="col-md-2 col-sm-4 col-4" 
-										style="color: #fff; background-color: rgb(53, 197, 240);margin: 0px">
-										답변완료 </a>
-								</c:if>
-								<c:if test="${dto.pqanswer=='답변준비중 입니다.' }">
-									<a id="ql_status_u" class="col-md-2 col-sm-4 col-4" 
-										style="color: rgb(53, 197, 240); background-color: #fff; margin: 0px;border: 1px solid rgb(53, 197, 240)">
-										답변대기 </a>
-								</c:if>
-								
-								<h3 id="pquid" class="col-md-8">${dto.pquid }|
-									${dto.pqregdate }</h3>
-							</div>
-							<br> <br>
-							<h1 id="Q_mark">Q.</h1>
-							<h3 class="pqcontent">${dto.pqcontent }</h3>
-							<br>
-							<h1 id="A_mark">A.</h1>
-							<h3 class="pqanswer">${dto.pqanswer }</h3>
-							<br>
-							<form action="QuestionUpdateOk.y" method="post">
-								<input type="hidden" name = "pqid" value="${dto.pqid}">
-								<input type="text" id="main_qlist_input_${dto.pqid}"
-									class="main_qlist_input" value="${dto.pqanswer}" name ="pqanswer"> <br> <br>
-								<button class="main_qlist_answer_1"
-									id="main_qlist_answer_1_${dto.pqid}" type="button">답변 등록</button>
-								<button class="main_qlist_answer_2"
-									id="main_qlist_answer_2_${dto.pqid}" type="submit">등록 완료</button>
-							</form>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-			</c:choose>
 		</div>
-
+		<hr>
+		<div class="row">
+			<div id="map" class="col-md-6 col-sm-12 col-12"></div>
+			<div class="col-md-6 col-sm-12 col-12">
+				<h1 id='resultlocation'>매장 검색 결과 0 건</h1>
+				<div id="storelist"></div>
+			</div>
+		</div>
+		<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad5d4e40850394cbdf4da8bbdd046a92"></script>
+		<script type="text/javascript" src="Ajax.js"></script>
 	</div>
-
-
 
 	<!-- 바닥입니다. -->
 	<footer id="main_footer">
