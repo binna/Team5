@@ -11,7 +11,7 @@
 	</c:when>
 	<c:otherwise>
 		<script>
-			alert("취소 완료")
+			alert("취소 요청 완료")
 			location.href = "uOrderList.woo"
 		</script>
 	</c:otherwise>

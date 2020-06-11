@@ -15,10 +15,10 @@ CREATE TABLE Purchase(
 	pcregdate DATE DEFAULT SYSDATE,
 	pcstatus NUMBER DEFAULT 1,
 	pcaddress varchar2(100) NOT NULL,
-	pcaddressnum number NOT NULL UNIQUE,
+	pcaddressnum number NOT NULL,
 	pccontent varchar2(100),
 	pccardnum NUMBER NOT NULL,
-	pid NUMBER NOT NULL UNIQUE,
+	pid NUMBER NOT NULL UNIQUE, 
 	pclpcnt NUMBER NOT NULL,
 	pcaddress2 varchar2(500),
 	pRIMARY KEY (pcid)

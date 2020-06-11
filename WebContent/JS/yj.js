@@ -138,6 +138,8 @@ $(document).ready(function() {
 	//-----------------------------
 	//store_main :category
 	$('div[id^="category_"]').click(function() {
+		$('div[id^="category_"]').css("color","#666")
+		$(this).css("color","rgb(53, 197, 240)")
 		var code = $(this).attr('id').split("_")[1];
 		for (var i = 1; i <= 10; i++) {
 			$('.category_code_' + i).hide()

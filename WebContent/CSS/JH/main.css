@@ -23,3 +23,8 @@
 .randomCompany>div{
 	cursor: pointer;
 }
+
+.randomCompany{
+	display: inline-block;
+	margin: 0px;
+}

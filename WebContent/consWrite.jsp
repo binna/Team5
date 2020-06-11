@@ -8,7 +8,7 @@
 %>
 <script>
 	alert("로그인이필요한 페이지 입니다.")
-	location.href = "MemberLogin.me"
+	location.href = "sign_in.jsp"
 </script>
 <%
 	}

@@ -4,7 +4,14 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
-html {scroll-behavior: smooth; /* 부드러게 */}
+html {scroll-behavior: smooth; /* 부드럽게 */}
+
+/*-------------- 헤더 입니당 --------------*/
+#main_title{
+	width: 85px;
+	cursor: pointer;
+}
+
 
 /*-------------- 메뉴 입니당 --------------*/
 .mLeft {

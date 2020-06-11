@@ -162,12 +162,13 @@ footer#main_footer {
 	width: 100%;
 	background-color: rgb(250, 250, 250);
 	border-top: 1px solid rgb(200, 200, 200);
+	height: auto;
 }
 
 #main_footer_content {
 	width: 80%;
-	height: 200px;
 	margin: 50px auto;
+	height: auto;
 }
 
 #main_footer_icon {
@@ -576,6 +577,8 @@ input.Q_sort {
 div.main_content_manager h1 {
 	text-align: center;
 	margin: 50px 0;
+
+	
 }
 
 div#main_content_managerMenu h2 {
@@ -659,7 +662,7 @@ div#main_content_managerMenu div {
 	margin-top: 20px
 }
 
-button#pbtnAdd, button#pbtnmin {
+button#pbtnAdd, button#pbtnmin{
 	background-color: #ddd;
 	font-size: large;
 }
@@ -794,7 +797,7 @@ header#main_header_m div#main_top1_3 {
 
 div#m_nav_menu {
 	height: 937px;
-	width: 30%;
+	width: 40%;
 	background-color: #fff;
 	position: fixed;
 	left: 0;
@@ -865,20 +868,6 @@ h1.m_nav_menu_title {
 	font-size: 0.8em;
 	margin: 20px
 }
-/*반응형------------------------------------------------*/
-@media only screen and (max-width: 1160px) {
-	header#main_header {
-		display: none;
-	}
-	header#main_header_m {
-		display: block;
-	}
-	button.main_qlist_answer_1, button.main_qlist_answer_2 {
-		width: 100%
-	}
-	div#product_main_content1 li, h3.pprice, h3.pbrand, h3.pname {
-		font-size: small;
-	}
 	h1.admin_title {
 		background-color: rgb(53, 197, 240);
 		text-align: center;
@@ -895,6 +884,21 @@ h1.m_nav_menu_title {
 		right: 20px;
 		font-weight: 900;
 	}
+/*반응형------------------------------------------------*/
+@media only screen and (max-width: 1160px) {
+	header#main_header {
+		display: none;
+	}
+	header#main_header_m {
+		display: block;
+	}
+	button.main_qlist_answer_1, button.main_qlist_answer_2 {
+		width: 100%
+	}
+	div#product_main_content1 li, h3.pprice, h3.pbrand, h3.pname {
+		font-size: small;
+	}
+
 	#main_header_m ul {
 		text-align: center;
 	}
@@ -950,4 +954,24 @@ h1.m_nav_menu_title {
 	div#product_main_content1 {
 		display: none;
 	}
+}
+/*uQuestionList button*/
+button.main_qlist_delete{
+	background-color: rgb(53, 197, 240);
+	border: 0;
+	color: #fff;
+	font-weight: 900;
+	border-radius: 5px;
+	padding: 10px
+	
+}
+a#ql_status_u{
+	padding: 6px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: 900;
+}
+div#pbrand_uQ{
+	width: 100%;
+	display: inline;
 }

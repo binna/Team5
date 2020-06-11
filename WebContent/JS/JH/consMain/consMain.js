@@ -9,15 +9,45 @@ var comImg = [
 		"https://shopping-phinf.pstatic.net/main_5374722/5374722468.20191120112240.jpg",
 		"https://shopping-phinf.pstatic.net/main_2084307/20843079794.20190909143646.jpg",
 		"https://shopping-phinf.pstatic.net/main_1453461/14534617503.20180614165123.jpg",
-		"https://shopping-phinf.pstatic.net/main_2242193/22421934241.20200408153623.jpg" ];
+		"https://shopping-phinf.pstatic.net/main_2242193/22421934241.20200408153623.jpg",
+		"https://shopping-phinf.pstatic.net/main_1689820/16898205436.20190701114901.jpg",
+		"https://shopping-phinf.pstatic.net/main_1960001/19600015813.20190715180635.jpg",
+		"https://shopping-phinf.pstatic.net/main_1790146/17901460822.20200316103434.jpg",
+		"https://shopping-phinf.pstatic.net/main_2186889/21868891241.20200131183058.jpg",
+		"https://shopping-phinf.pstatic.net/main_1983820/19838204814.20190619141238.jpg",
+		"https://cdn.pixabay.com/photo/2016/11/29/08/43/blank-1868502_1280.jpg",
+		"https://cdn.pixabay.com/photo/2014/08/11/21/39/wall-416060__480.jpg",
+		"https://cdn.pixabay.com/photo/2015/04/20/13/38/furniture-731449__480.jpg",
+		"https://cdn.pixabay.com/photo/2016/11/18/17/20/couch-1835923__480.jpg",
+		"https://cdn.pixabay.com/photo/2017/08/02/01/01/living-room-2569325__480.jpg",
+		"https://cdn.pixabay.com/photo/2017/09/09/18/25/living-room-2732939__480.jpg",
+		"https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756__480.jpg",
+		"https://cdn.pixabay.com/photo/2016/09/19/17/20/home-1680800__480.jpg",
+		"https://cdn.pixabay.com/photo/2015/06/24/16/36/office-820390__480.jpg",
+		"https://cdn.pixabay.com/photo/2017/08/27/10/16/interior-2685521__480.jpg",
+		"https://cdn.pixabay.com/photo/2017/03/25/23/32/kitchen-2174593__480.jpg",
+		"https://cdn.pixabay.com/photo/2018/03/08/18/13/chair-3209341__480.jpg",
+		"https://cdn.pixabay.com/photo/2015/05/15/14/30/interior-768526__480.jpg"
+		]; 	// 이미지 불러올 데가 없어서 url 적어놓음
 
-var k = 0;
+var k = 0;	// 이미지 출력을 위한 변수
 
 var page = 1 // 현재 페이지
-var pageRows = 140 // 한 페이지에 보여지는 게시글 개수
+var pageRows = 140 // 한 페이지에 보여지는 게시글 개수v
+
+// 메인화면전환	
+$(document).on('click', '#main_title', function() {
+	location.href = "main.jsp";
+});
+
 
 $(document).ready(function() {
-
+	
+	// 메뉴 초기설정
+	$("#main_top2-1").css("display", "none");
+	$("#main_top2-2").css("display", "none");
+	$("#main_top2-3").css("display", "inline-block");
+	
 	// 게시판 목록 1페이지 로딩
 	loadPage(page);
 
@@ -109,6 +139,10 @@ function loadPage(page) {
 	$("#category>.category")
 			.click(
 					function() {
+					    comImg.sort(function(){
+					    	return Math.random() - Math.random();
+					    });
+						
 						$("#ex").remove();
 						// console.log($('#consArea').val().trim());
 						// console.log($(this).text().trim());

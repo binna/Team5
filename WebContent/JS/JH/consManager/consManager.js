@@ -1,5 +1,15 @@
 $(document).ready(
 		function() {
+			// 메뉴 초기설정
+			$("#main_top2-1").css("display", "none");
+			$("#main_top2-2").css("display", "none");
+			$("#main_top2-3").css("display", "none");
+			
+			// 메인화면전환	
+			$(document).on('click', '#main_title', function() {
+				location.href = "main.jsp";
+			});
+			
 			$('.updateComplete').hide(); // 초기수정 완료 버튼
 			$('.cancel').hide(); // 초기 취소 버튼
 			$('.update')
