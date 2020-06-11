@@ -70,7 +70,7 @@
 	<input type="text" id="MEMBER_EMAIL2" name="MEMBER_EMAIL2" value="" ReadOnly="true"/>
 <select name="emailCheck"
 onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
-    <option value="notSelected" >::선택하세요::</option>ㄱ
+    <option value="notSelected" >::선택하세요::</option>
     <option value="etc">직접입력</option>
     <option value="naver.com">naver.com</option>
     <option value="nate.com">nate.com</option>
