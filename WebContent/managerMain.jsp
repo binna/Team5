@@ -100,7 +100,7 @@
 			</div>
 			<div class="col-md-3 col-sm-6 col-6">
 				<button id="manager_btn_2"
-					onclick="location.href='community/communityAdmin.community'">
+					onclick="location.href='community/communityAdmin.community?page=1&pagerow=10'">
 					<i class="fas fa-comments"></i>
 				</button>
 				<h2>커뮤니티 관리</h2>

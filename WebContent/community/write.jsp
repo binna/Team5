@@ -38,13 +38,11 @@
 
 <!-- 로그인 확인 -->
 <%
-	System.out.print(session.getAttribute("id"));
-
 	if (session.getAttribute("id") == null) {
 %>
 	<script>
 		alert("로그인이 필요한 페이지입니다.")
-		location.href = "../MemberLogin.me"
+		location.href = "../sign_in.jsp"
 	</script>
 <%
 	}
@@ -52,7 +50,7 @@
 
 <header id="simplified-gnb" class="simplified-gnb">
     <div class="container simplified-gnb__container">
-		<a class="simplified-gnb__logo" href="../main.jsp">
+		<a class="simplified-gnb__logo" href="../main.team">
             <span class="icon icon-etc-brand-icon-n-bi-md">
             	<img src="Image/icon.png"></span>
 		</a>

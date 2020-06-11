@@ -11,14 +11,16 @@ public class ReportListAdmin implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// 리스트 출력
 		ReportDAO dao = new ReportDAO();
 		ReportDTO[] arr = null;
 		
 		try {
 			arr = dao.select();
-			
-		} catch (SQLException e) {  
-			e.printStackTrace();
+		} catch(SQLException e) {
+			System.out.println("트랜젝션 에러 발생");
+		} catch (Exception e) {
+			System.out.println("트랜젝션 이외의 에러 발생");
 		}
 		
 		// 페이징
@@ -30,24 +32,19 @@ public class ReportListAdmin implements Command {
 		
 		dao = new ReportDAO();
 		
-		// page : 현재 몇 페이지?
+		// 현재 페이지와 한 페이지당 몇 개의 리스트를 노출할지 url로 받아오기
 		curPage = Integer.parseInt(request.getParameter("page"));
 		pageRows = Integer.parseInt(request.getParameter("pagerow"));
 		
 		try {
-			// 트랜잭션 실행
-			// 글 전체 개수 구하기
 			totalCnt = dao.countAll();
-			
-			// 총 몇 페이지 분량인가?
 			totalPage = (int)Math.ceil(totalCnt / (double)pageRows);
-			
-			// 몇 번째 row부터?
 			int fromRow = (curPage - 1) * pageRows + 1;
-
 			dao.selectFromRow(fromRow, pageRows);
 		} catch(SQLException e) {
-			 e.printStackTrace();
+			System.out.println("트랜젝션 에러 발생");
+		} catch (Exception e) {
+			System.out.println("트랜젝션 이외의 에러 발생");
 		}
 		
 		request.setAttribute("selectReportAdmin", arr);
@@ -58,6 +55,6 @@ public class ReportListAdmin implements Command {
 		request.setAttribute("pageRows", pageRows);
 		request.setAttribute("totalCnt", totalCnt);
 		
-	} // end execute
+	} // end execute()
 
 } // end Command

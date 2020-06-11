@@ -5,19 +5,16 @@
 <%	
 	int cnt = (Integer)request.getAttribute("delete");
 	int qno = (Integer)request.getAttribute("qno");
-	System.out.println("jsp");
-	System.out.println(cnt);
-	System.out.println(qno);
 %>
 
 <% if(cnt == 0) { %>
 		<script>
-			alert('삭제 실패');
+			alert('댓글 삭제가 실패하였습니다.');
 			history.back();
 		</script>
 <% } else { %>
 		<script>
-			alert('삭제 성공');
+			alert('댓글 삭제가 성공하였습니다.');
 			location.href = "view.community?no=<%= qno %>";
 		</script>
 <% } %>

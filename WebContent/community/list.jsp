@@ -3,7 +3,7 @@
 <%@ page import="com.community.beans.*" %>
 
 <%
-	//Controller로부터 결과 데이터 받음
+	// Controller로부터 결과 데이터 받음
 	WriteDTO[] arr = (WriteDTO[])request.getAttribute("list");
 
 	int writePages = (Integer)request.getAttribute("writePages");
@@ -102,7 +102,7 @@
 						<nav style="padding: 0px;">
 							<ul class="menu">
 								<li><a href="../MemberModifyAction_1.me">마이페이지</a></li>
-								<li><a href="#">나의쇼핑</a></li>
+								<li><a href="../uOrderList.woo">나의쇼핑</a></li>
 								<li><a href="../member/logout.jsp">로그아웃</a></li>
 							</ul>
 						</nav>
@@ -116,7 +116,7 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<a href="../MemberLogin.me">로그인 </a> | <a href="../MemberJoin.me">회원가입</a>
+				<a href="../sign_in.jsp">로그인 </a> | <a href="../MemberJoin.me">회원가입</a>
 				<%
 					}
 				%>
@@ -131,7 +131,7 @@
 			<div class="col-md-9" id="main_top2-1">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">스토어홈</a></li>
+						<li><a href="../storeMain.y">스토어홈</a></li>
 						<li><a href="#">카테고리</a></li>
 						<li><a href="#">신혼가구</a></li>
 						<li><a href="#">베스트</a></li>
@@ -153,7 +153,7 @@
 			<div class="col-md-9" id="main_top2-3">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li><a href="#">시공홈</a></li>
+						<li><a href="../consMain.jsp">시공홈</a></li>
 						<li><a href="#">견적계산</a></li>
 						<li><a href="#">전문가찾기</a></li>
 						<li><a href="#">시공스토어</a></li>
