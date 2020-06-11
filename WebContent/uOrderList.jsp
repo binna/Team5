@@ -289,10 +289,10 @@ font-family: 'Jua', sans-serif; -->
 		<div class="o_statusMenu row">
 			<a class="order_status_list col-md-2">
 				<div class="status_list">취소요청</div>
-				<div class="status_figure_cancel" id="status_figure_cancel"></div>
+				<div class="status_figure_cancel" >${code0}</div>
 			</a> <a class="order_status_list col-md-2">
 				<div class="status_list">결제완료</div>
-				<div class="status_figure_buy" id="status_figure_buy"></div>
+				<div class="status_figure_buy" >${code1}</div>
 			</a> <a class="order_status_list col-md-2">
 				<div class="status_list">배송준비</div>
 				<div class="status_figure">0</div>

@@ -85,17 +85,17 @@ $(document).ready(function() {
 
 	});
 
-	var buy = $('input[value=1]').length;
-	$('#status_figure_buy').text(buy);
-
-	var cancel = $('input[value=0]').length;
-	if (canecel = null) {
-		$('#status_figure_cancel').text("0");
-
-	} else {
-		$('#status_figure_cancel').text(cancel);
-
-	}
+//	var buy = $('input[value=1]').length;
+//	$('#status_figure_buy').text(buy);
+//
+//	var cancel = $('input[value=0]').length;
+//	if (canecel = null) {
+//		$('#status_figure_cancel').text("0");
+//
+//	} else {
+//		$('#status_figure_cancel').text(cancel);
+//
+//	}
 
 	// 배송 메모 수정
 	$('div[id^="u_modify_input_"]').hide();

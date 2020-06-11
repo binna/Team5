@@ -170,6 +170,26 @@ public class OrderDAO {
 			
 		} // end listCnt()
 		
+		public int orderList(String pcuid, int pcstatus) throws SQLException {
+			OrderDTO[] cnt = null;
+			try {
+				pstmt = conn.prepareStatement(D.SQL_ORDER_LIST);
+				pstmt.setString(1, pcuid);
+				pstmt.setInt(2, pcstatus);
+				rs = pstmt.executeQuery();
+				cnt = createArray(rs);
+			} finally {
+				close();
+			}
+			
+			if(cnt==null) {
+				return 0;
+			}else {
+				return cnt.length;
+			}
+			
+		} // end listCnt()
+		
 		
 		// 특정 uid 의 글 수정 (제목, 내용)
 		public int update(int pid, String pccontent) throws SQLException {
