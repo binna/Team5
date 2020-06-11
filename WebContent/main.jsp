@@ -125,7 +125,7 @@
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="community/write.community" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
 						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
 						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
@@ -205,7 +205,7 @@
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="main.team">홈</a></li>
-						<li><a href="community/write.community">질문과답변</a></li>
+						<li><a href="community/list.community?page=1">질문과답변</a></li>
 					</ul>
 				</nav>
 			</div>
