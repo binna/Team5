@@ -6,11 +6,16 @@ html, body {
 
 /*-------------- 헤더 입니당 --------------*/
 #main_title {
-	width: 85px;
+	width : 100%;
 	cursor: pointer;
 }
 
 /*-------------- 본문 입니다 --------------*/
+
+.consManager{
+	margin-top: 20px;
+}
+
 .searchInput {
 	width: 180px;
 }

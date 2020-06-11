@@ -51,7 +51,6 @@ $(document).ready(function() {
 	// 게시판 목록 1페이지 로딩
 	loadPage(page);
 
-	
 
 	$('.category').click(function() {
 		$('.cateImg').css({
@@ -133,6 +132,9 @@ $(document).ready(function() {
 		});
 		isCheckLR();
 	}); // end mRight hover
+	
+	
+	
 }) // end JS
 
 function loadPage(page) {

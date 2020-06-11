@@ -44,6 +44,7 @@ $(document).ready(function() {
 					return false;
 
 				} // end 공백
+				alert("신청되었습니다.")
 				return true;
 			} // end for
 
@@ -57,6 +58,7 @@ $(document).ready(function() {
 			frm["cstel"].focus();
 			return false;
 		} else {
+			alert("신청되었습니다.")
 			return true;
 		}
 	}) // end function()

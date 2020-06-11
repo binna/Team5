@@ -235,13 +235,13 @@
 						class="Hpointer">질문과 답변</h4>
 				</div>
 			</div>
-			<div class="m_nav_menu">
+			<div class="m_nav_menu store">
 				<h1 class="Hpointer">
 					<i class="fas fa-store"></i> 스토어
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
-					<h4>카테고리</h4>
+					<h4 class="categoryStore">카테고리</h4>
 					<h4 OnClick="location.href ='storeMain.y'">스토어홈</h4>
 					<h4>베스트</h4>
 					<h4>특가</h4>
