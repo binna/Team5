@@ -38,6 +38,8 @@ $(document).on('click', '.hi', function() {
 	}
 });
 
+
+
 </script>
 <body>
 	<h2>읽기 ${list[0].MEMBER_ID }</h2>
