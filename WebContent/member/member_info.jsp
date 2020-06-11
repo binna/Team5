@@ -149,7 +149,7 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
 			<div style="font-weight: bold;">우편번호 </div>
           	</td> 
 			<td>
-			<input type="text" id="postcode" placeholder="우편번호" name="MEMBER_ZIPCODE1" value="${member.MEMBER_ZIPCODE }">
+			<input type="text" id="postcode" placeholder="우편번호" name="MEMBER_ZIPCODE1" value="${member.MEMBER_ZIPCODE }"readonly>
 			<input type="button" name="zipcode" onclick="DaumPostcode()" value="우편번호 찾기" ><br>
 			</td>
 		</tr>
@@ -160,7 +160,7 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
            </div>
             </td> 
 			<td>
-				<input type="text" name="MEMBER_ADDR1" id="MEMBER_ADDR1" placeholder="도로명주소" value="${member.MEMBER_ADDR1 }"><br>
+				<input type="text" name="MEMBER_ADDR1" id="MEMBER_ADDR1" placeholder="도로명주소" value="${member.MEMBER_ADDR1 }" readonly><br>
 			</td>
 		</tr>
 		<tr>
@@ -194,10 +194,10 @@ onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
     <tr>
         <td bgcolor="pink" align="center"><div style="font-weight: bold;">주민등록번호:</div></td>
         <td><input type="text" id ="MEMBER_JUMIN1" name="MEMBER_JUMIN1" size="12" 
-				 maxlength="6" value= ${member.MEMBER_JUMIN1 }>-	
+				 maxlength="6" value= ${member.MEMBER_JUMIN1 } readonly>-	
             
             <input type="password" id ="MEMBER_JUMIN2" name="MEMBER_JUMIN2" size="12" 
-				 maxlength="7" value= ${member.MEMBER_JUMIN2 }/>
+				 maxlength="7" value= ${member.MEMBER_JUMIN2 } readonly/>
             예) 750615, 1862133</td>
     </tr>
  </table>
