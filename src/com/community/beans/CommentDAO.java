@@ -13,12 +13,6 @@ import java.util.ArrayList;
 
 import com.community.common.CommunityD;
 
-// 비즈니스 로직 : 데이터 동작, 트랜잭션들
-// DAO : Data Access Object
-// DB에 접속하는 트랜잭션을 수행하는 객체
-
-// 다루는 데이터 소스의 종류에 따라 DAO는 여러개 있을 수 있다
-
 public class CommentDAO {
 	Connection conn = null;
 	Statement stmt = null;

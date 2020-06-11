@@ -1,22 +1,5 @@
 package com.community.beans;
 
-// DTO : Data Transfer Object
-//	데이터를 담아 나르기 위한 객체
-
-// 클래스 필드명 == DB 필드명 == form의 name
-
-/*  DB 속성명
-	Qno Number	// 게시글 No
-	Qtitle varchar2(20)	// 제목 -> 20자 미만 받으면 안됨
-	Qcontent clob	// 내용물
-	Qregdate date	// 날짜
-	Qclickcnt number	// 조회수
-	Qkeyword varchar2(50) // 키워드
-	
-	-- 로그인 아이디 저장, FK, member 테이블로 FK
-	Qmember_id VARCHAR2(20),
-*/
-
 public class WriteDTO {
 	
 	// 각각 담을 데이터 객체

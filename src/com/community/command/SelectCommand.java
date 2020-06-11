@@ -24,6 +24,6 @@ public class SelectCommand implements Command {
 			System.out.println("트랜젝션 이외의 에러 발생");
 		}
 
-	} // end SelectCommand
+	} // end execute()
 
 } // end Command

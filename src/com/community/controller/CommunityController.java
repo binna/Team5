@@ -128,7 +128,6 @@ public class CommunityController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);
 		}
-		
 				
 	} // end actionDo()
 

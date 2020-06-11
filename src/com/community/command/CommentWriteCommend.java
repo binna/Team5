@@ -36,6 +36,6 @@ public class CommentWriteCommend implements Command {
 		
 		request.setAttribute("CommentInsert", cnt);
 
-	} // end execute
+	} // end execute()
 
 } // end Commend

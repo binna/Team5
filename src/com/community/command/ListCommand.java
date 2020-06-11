@@ -55,6 +55,6 @@ public class ListCommand implements Command {
 		request.setAttribute("pageRows", pageRows);
 		request.setAttribute("totalCnt", totalCnt);
 		
-	} // end execute
+	} // end execute()
 		
 } // end Command
