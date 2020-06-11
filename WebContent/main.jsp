@@ -125,7 +125,7 @@
 			<div id="main_top1_2" class="col-md-3">
 				<nav>
 					<ul>
-						<li><a href="#" id="main_a_comunity">커뮤니티</a></li>
+						<li><a href="community/write.community" id="main_a_comunity">커뮤니티</a></li>
 						<li><a href="storeMain.y" id="main_a_store">스토어</a></li>
 						<li><a href="consMain.jsp" id="main_a_cons">인테리어시공</a></li>
 					</ul>
@@ -160,7 +160,6 @@
 					<div id="main_user_menu">
 						<nav style="padding: 0px;">
 							<ul class="menu">
-								<li><a><%=session.getAttribute("id")%> 님</a></li>
 								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
 								<li><a href="uOrderList.woo">나의쇼핑</a></li>
 								<li><a href="member/logout.jsp">로그아웃</a></li>
@@ -168,6 +167,8 @@
 						</nav>
 					</div>
 				</button>
+				<a><%=session.getAttribute("id")%> 님</a>
+
 				<%
 					} else {
 				%>
@@ -205,7 +206,7 @@
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="main.team">홈</a></li>
-						<li><a href="community/list.community?page=1">질문과답변</a></li>
+						<li><a href="community/write.community">질문과답변</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -237,11 +238,11 @@
 					<i class="fas fa-bars"></i>
 				</button>
 			</div>
-			<div id="main_top1_2" class="col-sm-3 col-3">
+			<div id="main_top1_2" class="col-sm-5 col-5">
 				<h1 id="main_title">너네 집</h1>
 			</div>
 
-			<div id="main_top1_3" class="col-sm-8 col-8">
+			<div id="main_top1_3" class="col-sm-6 col-6">
 
 				<button id="write"
 					onclick="location.href='community/communityMain.jsp'">글쓰기
@@ -409,6 +410,12 @@
 				</nav>
 			</div>
 			<br> <br> <br> <br> <br> <br>
+			<div id="content_community">
+				<h1 class="Hpointer"
+					Onclick="location.href='community/write.community'">오늘의 스토리</h1>
+				<br> <br> <br>
+
+			</div>
 			<div id="content_main_store" class="row">
 				<h1 class="col-md-12 Hpointer"
 					OnClick="location.href ='storeMain.y'">오늘의 딜</h1>
@@ -437,8 +444,8 @@
 			</div>
 
 			<br> <br>
-			<div id="content_interior" class="row">
-				<h1 Onclick="location.href='consMain.jsp'" class="Hpointer col-md-12">인테리어
+			<div id="content_interior" >
+				<h1 Onclick="location.href='consMain.jsp'" class="Hpointer">인테리어
 					시공</h1>
 				<br> <br> <br>
 				<c:choose>
@@ -448,15 +455,13 @@
 					<c:otherwise>
 						<c:forEach var="ranC" items='${randomCompany }' varStatus="count">
 							<div
-								class="col-md-2 col-sm-6 randomCompany btnCons">
+								class="col-md-2 col-sm-6 randomCompany">
 								<div class="comImg${count.index}"></div>
-								<br>
 								<h3 class="cname">[${ranC.cname}]</h3>
 								<br>
 								<h3 style="height: 40px" class="cadr">${ranC.cadr}</h3>
 								<br>
 								<h3 class="ctel">${ranC.ctel}</h3>
-								<h1 style="visibility: hidden;" class="cno">${ranC.cno}</h1>
 							</div>
 						</c:forEach>
 					</c:otherwise>
@@ -497,4 +502,3 @@
 	</footer>
 </body>
 
-</html>
