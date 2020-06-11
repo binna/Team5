@@ -46,7 +46,7 @@
     <tr>
         <td bgcolor="pink" align="center">
         <div style="font-weight: bold;">비밀번호:</div></td>
-        <td><input type="password" id="MEMBER_PW" name="MEMBER_PW"  size="15"/>
+        <td><input type="password" id="MEMBER_PW" name="MEMBER_PW" size="15"/>
            4~12자의 영문 대소문자와 숫자로만 입력</td>
     </tr>
     <tr>
