@@ -237,11 +237,11 @@
 					<i class="fas fa-bars"></i>
 				</button>
 			</div>
-			<div id="main_top1_2" class="col-sm-5 col-5">
+			<div id="main_top1_2" class="col-sm-3 col-3">
 				<h1 id="main_title">너네 집</h1>
 			</div>
 
-			<div id="main_top1_3" class="col-sm-6 col-6">
+			<div id="main_top1_3" class="col-sm-8 col-8">
 
 				<button id="write"
 					onclick="location.href='community/communityMain.jsp'">글쓰기
