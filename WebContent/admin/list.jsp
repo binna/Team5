@@ -113,7 +113,7 @@ table, th, td {
 				<th>row</th> <!-- row 번호 -->
 				<th>ID</th>
 				<th>비밀번호</th>
-				<th>잉름</th>
+				<th>이름</th>
 				<th>email</th>
 				<th>가입일</th>
 			</tr>
@@ -152,7 +152,7 @@ table, th, td {
 %>			
 		</table>
 		<br>
-		<button onclick="location.href='write.jsp'">신규등록</button>
+		<!-- <button onclick="location.href='write.jsp'">신규등록</button> -->
 <%	
 	} catch(Exception e){
 		e.printStackTrace();

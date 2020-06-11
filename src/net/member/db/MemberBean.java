@@ -16,6 +16,7 @@ public class MemberBean {
 	private int MEMBER_ADMIN;
 	private Timestamp MEMBER_JOIN_DATE;
 	
+	
 	public String getMEMBER_ID() {
 		return MEMBER_ID;
 	}
@@ -31,6 +32,7 @@ public class MemberBean {
 	public String getMEMBER_NAME() {
 		return MEMBER_NAME;
 	}
+	
 	public void setMEMBER_NAME(String member_name) {
 		MEMBER_NAME = member_name;
 	}

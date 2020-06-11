@@ -12,7 +12,7 @@ public class MemberModifyAction_1 implements Action{
 		String id=(String)sesseion.getAttribute("id");		
 		if(id==null){
 			forward.setRedirect(true);
-			forward.setPath("./MemberLogin.me");
+			forward.setPath("./sign_in.jsp");
 			return forward;
 		}
 		
