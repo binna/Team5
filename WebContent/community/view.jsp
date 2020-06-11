@@ -139,7 +139,7 @@ if(session.getAttribute("id").equals("admin")) {	// 어드민 아이디일때 �
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li id="Q_li"><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
+						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
 						<li><a href="communityAdminComment.community?page=1&pagerow=10">댓글 목록</a></li>
 						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
 					</ul>
@@ -181,7 +181,7 @@ if(session.getAttribute("id").equals("admin")) {	// 어드민 아이디일때 �
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
-						<li id="Q_li"><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
+						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
 						<li><a href="communityAdminComment.community?page=1&pagerow=10">댓글 목록</a></li>
 						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
 					</ul>
