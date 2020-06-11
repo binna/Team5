@@ -4,14 +4,15 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
-html {scroll-behavior: smooth; /* 부드럽게 */}
+html {
+	scroll-behavior: smooth; /* 부드럽게 */
+}
 
 /*-------------- 헤더 입니당 --------------*/
-#main_title{
+#main_title {
 	width: 85px;
 	cursor: pointer;
 }
-
 
 /*-------------- 메뉴 입니당 --------------*/
 .mLeft {
@@ -61,8 +62,8 @@ html {scroll-behavior: smooth; /* 부드럽게 */}
 }
 
 #consMenu {
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-left: 10%;
+	margin-right: 10%;
 	position: relative;
 }
 
@@ -97,10 +98,10 @@ IMG {
 	overflow: hidden;
 }
 
-.comImg{
-	vertical-align:top;
+.comImg {
+	vertical-align: top;
 	width: 100px;
-	height:100px;
+	height: 100px;
 	border-radius: 10%;
 	display: inline-block;
 }
@@ -110,19 +111,22 @@ IMG {
 	cursor: pointer;
 }
 
-.comlist {
-	display: inline-block;
-	width: 50%;
+.btnCons {
+	border-radius: 6%;
+	padding: 10px 0px;
 }
+
 #comList {
-	width: 80%;
-	padding-left: 20%;
+	width: 90%;
+	padding-left: 10%;
 	margin: 50px 0px;
 	display: inline-block;
 }
-.comNo{
+
+.comNo {
 	visibility: hidden;
 }
+
 .comList:hover {
 	background-color: #f9ffff;
 }
@@ -134,7 +138,7 @@ IMG {
 	padding-top: 5px;
 }
 
-.comInfoImdang{
+.comInfoImdang {
 	display: inline-block;
 	padding-left: 10px;
 }
@@ -143,16 +147,6 @@ IMG {
 	position: relative;
 	margin-bottom: 30px;
 	padding-bottom: 10px;
-}
-
-.btnCons {
-	position: absolute;
-	right: 5px;
-	top: 10px;
-	background-color: #f7f7f7;
-	border-radius: 3px;
-	padding: 12px 8px;
-	font-weight: bold;
 }
 
 .btnCons:hover {
@@ -178,56 +172,87 @@ IMG {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	visibility: 
+	visibility:
 }
 
 /*---------------------------------------- */
-
 .center {
-    text-align: center;
+	text-align: center;
 }
 
-ul.pagination{
-	list-style-type:none
+ul.pagination {
+	list-style-type: none
 }
 
-ul.pagination li{
-    display: inline-block;
+ul.pagination li {
+	display: inline-block;
 }
 
 ul.pagination a {
-    color: black;
-    float: left;
-    padding: 4px 8px;
-    text-decoration: none;
-    transition: background-color .3s;
-    /* border: 1px solid #ddd; */
-    /* margin: 0 4px; */
-    margin: 0px;
+	color: black;
+	float: left;
+	padding: 4px 8px;
+	text-decoration: none;
+	transition: background-color .3s;
+	/* border: 1px solid #ddd; */
+	/* margin: 0 4px; */
+	margin: 0px;
 }
 
 ul.pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #4CAF50;
+	background-color: #4CAF50;
+	color: white;
+	border: 1px solid #4CAF50;
 }
-
-ul.pagination a:hover:not(.active) {background-color: #ddd;}
 
 /*-------------------------------- 반응형 --------------------------------*/
-@media only screen and (max-width: 768px) {
-
-	.comList>IMG{
-		width: 100%;
-		height:400px;
-		display: block;
+@media only screen and (min-width: 1160px) {
+	.comList {
+		display: inline-block;
+		width: 50%;
 	}
-	
-	.btnCons{
-		top:auto;
-		right: 0px;
-		bottom: 20px;
-		
+	.btnCons {
+		border-radius: 6%;
+		padding: 10px 0px;
+		text-align: center;
+		width: 80px;
+		top: 10px;
+		right: 20px;
+		position: absolute
 	}
 }
 
+@media only screen and (max-width: 1160px) {
+	.comList {
+		display: inline-block;
+		width: 100%;
+		margin-right: 0px;
+	}
+	.btnCons {
+		border-radius: 6%;
+		padding: 10px 0px;
+		text-align: center;
+		width: 80px;
+		top: 10px;
+		right: 5px;
+		position: absolute
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.comList {
+		text-align: center;
+	}
+	.comList>IMG {
+		width: 100%;
+		height: 400px;
+		display: block;
+	}
+	.btnCons {
+		display: inline-block;
+		position: relative;
+	}
+	.comInfoImdang {
+		text-align: -webkit-center;
+	}
+}
