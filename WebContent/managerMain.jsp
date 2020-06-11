@@ -55,116 +55,68 @@
 <script type="text/javascript" src="JS/yj.js"></script>
 <body>
 
+	<header id="manageMain_header">
 
-	<header style="padding: 0px;" class="col-md-12" id="main_header">
-		<div id="main_top1" class="row">
-			<div id="main_top1_1" class="col-md-2">
-				<h1 id="main_title">너네 집</h1>
-			</div>
-			<div id="main_top1_2" class="col-md-3">
-				<nav>
-					<ul>
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="storeMain.jsp">스토어</a></li>
-						<li><a href="consMain.jsp">인테리어시공</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div id="main_top1_3" class="col-md-7">
-				<div id="search">
-					<i class="fas fa-search"></i>
-				</div>
-				<button id="write">글쓰기</button>
-				<!-- <button>
-					<i class="fas fa-search"></i>
-				</button> -->
-				<%
-					if (session.getAttribute("id") != null) {
-						
-				%>
+		<%
+			if (session.getAttribute("id") != null) {
+		%>
 
-				<button>
-					<i class="far fa-bookmark"></i>
-				</button>
-				<button>
-					<i class="far fa-bell"></i>
-				</button>
-				<button>
-					<i class="fas fa-shopping-cart"></i>
-				</button>
-				<button id="main_user_menu_icon" >
-					<i class="far fa-user"></i>
-					<div id="main_user_menu">
-						<nav style="padding: 0px;">
-							<ul class="menu">
-								<li><a href="#">마이페이지</a></li>
-								<li><a href="#">나의쇼핑</a></li>
-								<li><a href="member/logout.jsp">로그아웃</a></li>
-							</ul>
-						</nav>
-					</div>
-				</button>
+		<h1 class="col-md-12 admin_title" id="main_title">
 
-				<%
-					} else {
-				%>
-				<button>
-					<i class="fas fa-shopping-cart"></i>
-				</button>
-				<!-- <a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a> -->
-				 <a href="sign_in.jsp">로그인 </a> | <a href="MemberJoin.me">회원가입</a>
-				<%
-					}
-				%>
+			<img
+				src="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
+			너네 집
 
 
-			</div>
-		</div>
-		<hr>
-		<div id="main_top2" class="row">
-			<div class="col-md-9">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="#">스토어홈</a></li>
-						<li><a href="#">카테고리</a></li>
-						<li><a href="#">신혼가구</a></li>
-						<li><a href="#">베스트</a></li>
-						<li><a href="#">특가</a></li>
-						<li><a href="#">여름패브릭</a></li>
-						<li><a href="#">여름가전</a></li>
-						<li><a href="#">기획전</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div calss="col-md-3">
-				<button id="main_top2_app"></button>
-				<a href="#">앱 다운로드</a>
-			</div>
+		</h1>
 
-		</div>
-		<hr>
+
+		<%
+			} else {
+		%>
+		<script>
+			alert("로그인이 필요한 페이지 입니다.");
+			location.href = "sign_in.jsp";
+		</script>
+		<%
+			}
+		%>
+
+		<h1 id="manager_logout" class="Hpointer" OnClick="location.href ='member/logout.jsp'">log out</h1>
 	</header>
-
-
 	<!--내용부분입니다.  -->
 	<div id="main_content" class="row main_content_manager">
-		<h1 class = "col-md-12">관리자 메인입니다</h1>
+
+		<h1 class="col-md-12"><%=session.getAttribute("id")%>
+			님 안녕하세요. 관리자 페이지입니다
+		</h1>
 
 		<div id="main_content_managerMenu" class="row col-md-12">
-			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_1"><i class="fas fa-users"></i></button>
+			<div class="col-md-3 col-sm-6 col-6">
+				<button id="manager_btn_1">
+					<i class="fas fa-users"></i>
+				</button>
 				<h2>회원 관리</h2>
 			</div>
-			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_2" onclick="location.href='community/communityAdmin.community?page=1'"><i class="fas fa-comments"></i></button>
+			<div class="col-md-3 col-sm-6 col-6">
+				<button id="manager_btn_2"
+					onclick="location.href='community/communityAdmin.community'">
+					<i class="fas fa-comments"></i>
+				</button>
 				<h2>커뮤니티 관리</h2>
 			</div>
-			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_3" onclick="location.href= 'aQuestionList.y'"><i class="fas fa-store"></i></button>
+			<div class="col-md-3 col-sm-6 col-6">
+				<button id="manager_btn_3"
+					onclick="location.href= 'aQuestionList.y'">
+					<i class="fas fa-store"></i>
+				</button>
 				<h2>스토어 관리</h2>
 			</div>
-			<div class="col-md-3 col-sm-6">
-				<button id = "manager_btn_4" onclick="location.href='consManager.cons'"><i class="fas fa-tools"></i></button>
+			<div class="col-md-3 col-sm-6 col-6">
+				<button id="manager_btn_4"
+					onclick="location.href='consManager.cons'">
+					<i class="fas fa-tools"></i>
+				</button>
 				<h2>인테리어 시공 관리</h2>
 			</div>
 

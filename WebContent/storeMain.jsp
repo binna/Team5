@@ -55,7 +55,6 @@ font-family: 'Jua', sans-serif; -->
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
-
 		<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-2">
@@ -99,6 +98,7 @@ font-family: 'Jua', sans-serif; -->
 					<div id="main_user_menu">
 						<nav style="padding: 0px;">
 							<ul class="menu">
+								<li><a><%=session.getAttribute("id")%> 님</a></li>
 								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
 								<li><a href="uOrderList.woo">나의쇼핑</a></li>
 								<li><a href="member/logout.jsp">로그아웃</a></li>
@@ -106,8 +106,6 @@ font-family: 'Jua', sans-serif; -->
 						</nav>
 					</div>
 				</button>
-				<a><%=session.getAttribute("id")%> 님</a>
-
 				<%
 					} else {
 				%>
@@ -131,7 +129,7 @@ font-family: 'Jua', sans-serif; -->
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="storeMain.y">스토어홈</a></li>
-						<li><a href="#">카테고리</a></li>
+						<li id="category_li"><a href="#">카테고리</a></li>
 						<li><a href="#">신혼가구</a></li>
 						<li><a href="#">베스트</a></li>
 						<li><a href="#">특가</a></li>
@@ -241,13 +239,13 @@ font-family: 'Jua', sans-serif; -->
 			%>
 			<div class="m_nav_menu">
 				<h1 class="Hpointer">
-					<i class="fas fa-comments" ></i> 커뮤니티
+					<i class="fas fa-comments"></i> 커뮤니티
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
 					<h4>홈</h4>
 					<h4 Onclick="location.href='community/list.community?page=1'"
-					class="Hpointer">질문과 답변</h4>
+						class="Hpointer">질문과 답변</h4>
 				</div>
 			</div>
 			<div class="m_nav_menu">
@@ -268,7 +266,8 @@ font-family: 'Jua', sans-serif; -->
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
-					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공 홈</h4>
+					<h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공
+						홈</h4>
 					<h4>견적계산</h4>
 					<h4>시공스토어</h4>
 					<h4>전문가 찾기</h4>
@@ -276,7 +275,7 @@ font-family: 'Jua', sans-serif; -->
 			</div>
 			<div class="m_nav_menu" id="m_nav_menu_bottom">
 				<h4>마이페이지</h4>
-				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'" >나의쇼핑</h4>
+				<h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'">나의쇼핑</h4>
 				<h4>스크랩북</h4>
 				<h4>질문하기</h4>
 
@@ -284,71 +283,117 @@ font-family: 'Jua', sans-serif; -->
 		</div>
 	</header>
 	
-	
+
+
 	<div id="product_main_nav" class="row">
-		<div class="product_main_nav col-md-1" id="category_1" id="category_1">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_1"
+			id="category_1">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904115802_0VKPJ.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>가구</h3>
 		</div>
 
-		<div class="product_main_nav col-md-1" id="category_2">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_2">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//157490693067184634.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>침구</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_3">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_3">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//157490693687318741.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>패브릭</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_4">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_4">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//156506730153520142.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>조명</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_5">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_5">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904172550_YrPh.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>홈데코</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_6">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_6">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904180123_LYQ.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>가전</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_7">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_7">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//156870501110279761.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>수납/정리</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_8">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_8">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//156880465200709393.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>생활용품</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_9">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_9">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904215840_JtXLLU6E4.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>주방</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_10">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_10">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904218943_dG8q.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
-			<h3>DIY셀프시공</h3>
+			<h3>셀프시공</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_11">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_11">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904246197_agKC.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>시공/서비스</h3>
 		</div>
-		<div class="product_main_nav col-md-1" id="category_12">
+		<div class="product_main_nav col-md-1 col-sm-2 col-2" id="category_12">
 			<div class="product_main_nav_img"
 				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904223978_Omb.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
 			<h3>반려동물</h3>
 		</div>
 
 
+	</div>
+	<div style="width: 100%" id = "store_main_category_table">
+		<table style="width: 100%">
+			<tr>
+				<td id = "category_m_1"><div class="product_main_nav_img" 
+						style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904115802_0VKPJ.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
+					<h3>가구</h3></td>
+				<td id = "category_m_2"><div class="product_main_nav_img"
+						style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//157490693067184634.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
+					<h3>침구</h3></td>
+				<td id = "category_m_3"><div class="product_main_nav_img"
+						style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//157490693687318741.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
+					<h3>패브릭</h3></td>
+				<td id = "category_m_4"><div class="product_main_nav_img"
+						style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//156506730153520142.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
+					<h3>조명</h3></td>
+				<td id = "category_m_5"><div class="product_main_nav_img"
+						style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904172550_YrPh.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
+					<h3>홈데코</h3></td>
+				<td id = "category_m_6"><div class="product_main_nav_img"
+				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904180123_LYQ.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
+			<h3>가전</h3></td>
+			</tr>
+			<tr>
+				<td id = "category_m_7"><div class="product_main_nav_img"
+				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//156870501110279761.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
+			<h3>수납/정리</h3></td>
+				<td id = "category_m_8"><div class="product_main_nav_img"
+				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//156880465200709393.png?gif=1&w=144&h=144&c=c&webp=1')"></div>
+			<h3>생활용품</h3></td>
+				<td id = "category_m_9"><div class="product_main_nav_img"
+				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904215840_JtXLLU6E4.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
+			<h3>주방</h3></td>
+				<td id = "category_m_10"><div class="product_main_nav_img"
+				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904218943_dG8q.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
+			<h3>셀프시공</h3></td>
+				<td id = "category_m_11"><div class="product_main_nav_img"
+				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904246197_agKC.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
+			<h3>시공/서비스</h3></td>
+				<td id = "category_m_12">	<div class="product_main_nav_img"
+				style="background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/category/store_hamburger_categories//1557904223978_Omb.jpg?gif=1&w=144&h=144&c=c&webp=1')"></div>
+			<h3>반려동물</h3></td>
+			</tr>
+		</table>
 	</div>
 
 
@@ -359,28 +404,34 @@ font-family: 'Jua', sans-serif; -->
 		<div id="product_main_content1" class="row col-md-3">
 			<nav id="product_category">
 				<ul>
-					<li>홈데코</li>
-					<li>가구</li>
-					<li>패브릭</li>
-					<li>가전</li>
-					<li>수납/정리</li>
-					<li>생활용품</li>
-					<li>주방</li>
-					<li>DIY셀프시공</li>
+					<li id="category_li_1">가구</li>
+					<li id="category_li_2">침구</li>
+					<li id="category_li_3">패브릭</li>
+					<li id="category_li_4">조명</li>
+					<li id="category_li_5">홈데코</li>
+					<li id="category_li_6">가전</li>
+					<li id="category_li_7">수납/정리</li>
+					<li id="category_li_8">생활용품</li>
+					<li id="category_li_9">주방</li>
+					<li id="category_li_10">셀프시공</li>
+					<li id="category_li_11">시공서비스</li>
+					<li id="category_li_12">반려동쿨</li>
 				</ul>
 			</nav>
 
 		</div>
-		<div id="product_main_content2" class="row col-md-9">
+		<div id="product_main_content2" class="row col-md-9 col-sm-12">
 			<c:choose>
 				<c:when test="${empty list || fn:length(list) ==0}">
 				</c:when>
 				<c:otherwise>
 					<c:forEach var="dto" items='${list }'>
-						<div class="product_td col-md-3 category_code_${dto.pcode }">
+						<div
+							class="product_td col-md-3 col-sm-6 col-6 category_code_${dto.pcode }">
 							<%-- <a href="productView.woo?pid=${dto.pid }"> --%>
 							<a href="productView.y?pid=${dto.pid }">
-								<div class="product_img" style='background-image: url("${dto.pimage }")'></div> <!--<img class="thumbnail-img" src="${dto.pimage }" />  -->
+								<div class="product_img"
+									style='background-image: url("${dto.pimage }")'></div> <!--<img class="thumbnail-img" src="${dto.pimage }" />  -->
 								<br>
 								<h3 class="pbrand">[${dto.pbrand }]</h3> <br>
 								<h3 class="pname">${dto.pname }</h3> <br>

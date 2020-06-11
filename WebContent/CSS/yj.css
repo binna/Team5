@@ -582,6 +582,7 @@ div#main_content_managerMenu h2 {
 	width: 100%;
 	text-align: center;
 	margin-top: 50px;
+	margin-bottom: 50px;
 	font-weight: 900;
 }
 
@@ -645,9 +646,10 @@ div#main_content_managerMenu div {
 	color: #fff;
 	padding: 13px 15px;
 	box-sizing: border-box;
-	font-weight: 900;
 	background-color: rgb(53, 197, 240);
-	border-radius: 10px
+	border-radius: 10px;
+	font-size: small;
+	font-weight: 900;
 }
 
 #pfiles, #aProduct_delete, #aProduct_update, #aProduct_set {
@@ -769,17 +771,19 @@ div#main_header_m div {
 	display: inline-block;
 }
 
-button#main_bar_btn,button#m_menu_close {
+button#main_bar_btn, button#m_menu_close {
 	background: #fff;
 	border: 0;
 	color: rgb(53, 197, 240);
 }
-button#m_menu_close{
+
+button#m_menu_close {
 	position: absolute;
 	right: 10px;
 	top: 10px;
 	font-size: 30px;
 }
+
 header#main_header_m #main_top2-1 ul {
 	text-align: center;
 }
@@ -791,8 +795,8 @@ header#main_header_m div#main_top1_3 {
 div#m_nav_menu {
 	height: 937px;
 	width: 30%;
-	background-color: #fff; 
-	position : fixed;
+	background-color: #fff;
+	position: fixed;
 	left: 0;
 	top: 0;
 	z-index: 10;
@@ -800,7 +804,8 @@ div#m_nav_menu {
 	display: none;
 	text-align: center;
 }
-#m_menu_login{
+
+#m_menu_login {
 	background-color: white;
 	border: 1px solid rgb(53, 197, 240);
 	color: rgb(53, 197, 240);
@@ -810,7 +815,8 @@ div#m_nav_menu {
 	padding: 10px;
 	width: 40%
 }
-#m_menu_join{
+
+#m_menu_join {
 	background-color: rgb(53, 197, 240);
 	border: 1px solid rgb(53, 197, 240);
 	color: white;
@@ -820,7 +826,8 @@ div#m_nav_menu {
 	padding: 10px;
 	width: 40%
 }
-#m_menu_logout{
+
+#m_menu_logout {
 	background-color: rgb(53, 197, 240);
 	border: 1px solid rgb(53, 197, 240);
 	color: white;
@@ -830,10 +837,12 @@ div#m_nav_menu {
 	padding: 10px;
 	width: 80%
 }
-h1.m_nav_menu_title{
+
+h1.m_nav_menu_title {
 	margin-top: 50px
 }
-.m_nav_menu{
+
+.m_nav_menu {
 	width: 80%;
 	margin: 10px auto;
 	text-align: left;
@@ -842,17 +851,19 @@ h1.m_nav_menu_title{
 	color: #666;
 	font-weight: 900
 }
-.m_nav_menu div{
-	padding:20px;
+
+.m_nav_menu div {
+	padding: 20px;
 	padding-bottom: 0px
 }
-.m_nav_menu div h4{
+
+.m_nav_menu div h4 {
 	margin-bottom: 15px
 }
-#m_nav_menu_bottom h4{
+
+#m_nav_menu_bottom h4 {
 	font-size: 0.8em;
 	margin: 20px
-	
 }
 /*반응형------------------------------------------------*/
 @media only screen and (max-width: 1160px) {
@@ -862,6 +873,49 @@ h1.m_nav_menu_title{
 	header#main_header_m {
 		display: block;
 	}
+	button.main_qlist_answer_1, button.main_qlist_answer_2 {
+		width: 100%
+	}
+	div#product_main_content1 li, h3.pprice, h3.pbrand, h3.pname {
+		font-size: small;
+	}
+	h1.admin_title {
+		background-color: rgb(53, 197, 240);
+		text-align: center;
+		color: #fff;
+		padding: 100px;
+	}
+	h1.admin_title img {
+		width: 50px
+	}
+	h1#manager_logout {
+		color: #fff;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-weight: 900;
+	}
+	#main_header_m ul {
+		text-align: center;
+	}
+	div#store_main_category_table td {
+		height: 60px;
+		border: 0.5px solid #ccc;
+		width: 16.66%;
+		text-align: center;
+		font-weight: 900;
+		color: #666;
+		font-size: x-small;
+		padding: 10px;
+	}
+	div#store_main_category_table .product_main_nav_img {
+		width: 70%;
+		height: 60px
+	}
+	div#store_main_category_table {
+		margin-top: 30px
+	}
+
 }
 
 @media only screen and (min-width: 1160px) {
@@ -869,6 +923,31 @@ h1.m_nav_menu_title{
 		display: block;
 	}
 	header#main_header_m {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	div#store_main_category_table table {
+		display: none;
+	}
+	div#product_main_content1 {
+		display: block;
+	}
+}
+
+}
+@media only screen and (max-width: 768px) {
+	div#store_main_category_table table {
+		display: block;
+	}
+	div#product_main_content1 {
+		display: none;
+	}
+}
+@media only screen and (max-width: 768px) {
+
+	div#product_main_content1 {
 		display: none;
 	}
 }

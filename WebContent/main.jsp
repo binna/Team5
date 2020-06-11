@@ -160,6 +160,7 @@
 					<div id="main_user_menu">
 						<nav style="padding: 0px;">
 							<ul class="menu">
+								<li><a><%=session.getAttribute("id")%> 님</a></li>
 								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
 								<li><a href="uOrderList.woo">나의쇼핑</a></li>
 								<li><a href="member/logout.jsp">로그아웃</a></li>
@@ -167,8 +168,6 @@
 						</nav>
 					</div>
 				</button>
-				<a><%=session.getAttribute("id")%> 님</a>
-
 				<%
 					} else {
 				%>
