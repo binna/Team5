@@ -16,8 +16,6 @@ $(document).ready(function() {
 		}); // 바로구매 클릭시
 	});
 
-	
-	
 	$('#sort').on('change', function() {
 		var select = document.getElementById("sort");
 		selectt = select.options[select.selectedIndex].value;
@@ -29,30 +27,28 @@ $(document).ready(function() {
 
 			$('.status_code_' + '0').show();
 			$('.status_code_' + '1').hide();
-		} else{
+		} else {
 			$('.status_code_' + '0').show();
 			$('.status_code_' + '1').show();
 		}
 
 	});
 
-	
-	
-	
 	$("#close, #cancelbtn").click(function() {
 		$('#id01').hide();
 
 	}); // 닫기 , 캔슬 , 구매버튼(바꿔야함) 클릭시!
 
-	
-	
 	$("#reg").submit(function() {
-		var enCheck = RegExp(/[^0-9]$/);
-		var test = $('pcaddressnum').val();
-		var test = $('pccardnum').val();
+		var enCheck = /[^0-9]$/;
+		var pcaddressnum = $("#pcaddressnum").val().trim();
+		var pccardnum = $("#pccardnum").val().trim();
 
 		if ($("#pcaddressnum").val() == "") {
-			alert("우편번호  입력해주세요.");
+			alert("우편번호 입력해주세요.");
+			return false;
+		} else if (enCheck.test(pcaddressnum)) {
+			alert("5자리 우편번호만 입력해주세요.");
 			return false;
 		} else if ($("#pcaddress").val() == "") {
 			alert("주소를 입력해주세요.");
@@ -63,11 +59,8 @@ $(document).ready(function() {
 		} else if ($("#pccardnum").val() == "") {
 			alert("카드번호 입력해주세요.");
 			return false;
-		} else if ($.isNumeric(test)) {
-			alert("카드번호는 숫자만 입력해주세요.");
-			return false;
-		} else if ($("#pccardnum").val() == "") {
-			alert("-없이 숫자만 입력해주세요.");
+		} else if (enCheck.test(pccardnum)) {
+			alert("-없이  숫자만 입력해주세요.");
 			return false;
 		} else {
 
@@ -107,8 +100,18 @@ $(document).ready(function() {
 	// 배송 메모 수정 끝
 }); // Main document end
 
+function reg() {
+	var pcaddressnum = document.getElementById("pcaddressnum");
+	var pccardnum = document.getElementById("pccardnum");
 
+	var enCheck = /[^0-9]$/;
 
+	if (!check(enCheck, pcaddressnum, "dn.")) {
+		return false;
+	}
+	;
+
+};
 
 function makeComma(str) {
 	str = String(str);
@@ -116,13 +119,12 @@ function makeComma(str) {
 
 };
 
-
-
 // 관리자삭제모
 function chkDelete(pid) {
 	// 삭제 여부, 다시 확인 하고 진행하기
 	var r = confirm("삭제하시겠습니까?");
 	if (r) {
 		location.href = 'mOrderDeleteOk.woo?pid=' + pid;
-	};
+	}
+	;
 };

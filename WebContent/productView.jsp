@@ -118,18 +118,19 @@ table, th, td {
 					<i class="fas fa-shopping-cart"></i>
 				</button>
 				<button id="main_user_menu_icon">
-					<i class="far fa-user"></i>
-					<div id="main_user_menu">
-						<nav style="padding: 0px;">
-							<ul class="menu">
-								<li><a href="MemberModifyAction_1.me">마이페이지</a></li>
-								<li><a href="uOrderList.woo">나의쇼핑</a></li>
-								<li><a href="member/logout.jsp">로그아웃</a></li>
-							</ul>
-						</nav>
-					</div>
-				</button>
-				<a><%=session.getAttribute("id")%> 님</a>
+               <i class="far fa-user"></i>
+               <div id="main_user_menu">
+                  <nav style="padding: 0px;">
+                     <ul class="menu">
+                        <li><a><%=session.getAttribute("id")%> 님</a></li>
+                        <li><a href="MemberModifyAction_1.me">마이페이지</a></li>
+                        <li><a href="uOrderList.woo">나의쇼핑</a></li>
+                        <li><a href="member/logout.jsp">로그아웃</a></li>
+                     </ul>
+                  </nav>
+               </div>
+            </button>
+
 
 				<%
 					} else {
@@ -600,8 +601,8 @@ table, th, td {
 	<!-- The Modal -->
 	<div id="id01" class="modal">
 		<div class="container">
-			<form id="reg" class="modal-content animate"
-				action="purchaseOk.woo" method="post">
+			<form id="reg" name="reg" class="modal-content animate"
+			 action="purchaseOk.woo" method="post" >
 				<span class="close" id="close">&times;</span> <br>
 				<div class="imgcontainer row">
 					<div class="col-md-4 col-sm-12 col-12">
@@ -646,7 +647,8 @@ table, th, td {
 					name="pccontent"> <label for="psw"><b>CardNumber</b></label>
 				<input id="pccardnum" type="text" placeholder="카드번호입력"
 					name="pccardnum">
-				<button class="okay" id="okay">구매 하기</button>
+					<button id="reg">구매 하기</button>
+				<!-- <input type="submit" name="okay" class="okay" id="okay" value="구매 하기"> -->
 				<label> <input type="checkbox" name="remember" checked>Remember
 				</label>
 				<div class="container" style="background-color: #f1f1f1">
