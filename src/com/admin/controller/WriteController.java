@@ -83,6 +83,7 @@ public class WriteController extends HttpServlet {
 //			break;  // 디버깅 훈련, 이 break를 없애고, 찾아보기
 //
 		case "/deleteOk.ad":
+			System.out.println("야야야야야양야");
 			command = new DeleteCommand();
 			command.execute(request, response);
 			viewPage = "./admin/deleteOk.jsp";
