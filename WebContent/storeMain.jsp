@@ -227,7 +227,7 @@ font-family: 'Jua', sans-serif; -->
 				님
 			</h1>
 			<br>
-			<button id="m_menu_logout">로그아웃</button>
+			<button id="m_menu_logout" OnClick="location.href ='member/logout.jsp'">로그아웃</button>
 			<%
 				} else {
 			%>

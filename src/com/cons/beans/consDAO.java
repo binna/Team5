@@ -219,7 +219,7 @@ public class consDAO {
 	// 특정 CSAREA 의 글 만 SELECT (조회수 증가 없슴!)
 	public consDTO[] selectByRows(int curPage, int cnt, int totalPage, int pageRows) throws SQLException {
 		final String SQL_WRITE_SELECT_FROM_ROW = "SELECT * FROM "
-				+ "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT c2.*, c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO) T) "
+				+ "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT c2.*, c1.CNAME FROM COMPANY c1 INNER JOIN CONSULTING c2 ON c1.CNO =c2.CNO ORDER BY CSNO DESC) T) "
 				+ "WHERE RNUM >= ? AND RNUM < ? ORDER BY CSNO DESC";
 
 		consDTO[] arr = null;

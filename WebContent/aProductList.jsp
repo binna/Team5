@@ -95,7 +95,7 @@ font-family: 'Jua', sans-serif; -->
 				<nav style="padding: 0px;">
 					<ul class="menu">
 						<li><a href="#">회원관리</a></li>
-						<li><a href="community/communityAdmin.community">커뮤니티관리</a></li>
+						<li><a href="community/communityAdmin.community?page=1&pagerow=10">커뮤니티관리</a></li>
 						<li id="menu_myshopping"><a href="#">스토어관리</a></li>
 						<li><a href="consManager.cons">인테리어 시공 관리</a></li>
 

@@ -7,7 +7,7 @@ $(document).ready(
 			
 			// 메인화면전환	
 			$(document).on('click', '#main_title', function() {
-				location.href = "main.jsp";
+				location.href = "main.team";
 			});
 			
 			$('.updateComplete').hide(); // 초기수정 완료 버튼
