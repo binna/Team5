@@ -39,3 +39,28 @@ INSERT INTO Question (Qno, Qtitle, Qcontent, Qkeyword, Qmember_id) VALUES (SEQ_q
 SELECT * FROM Question ORDER BY QNO DESC;
 INSERT INTO Question(Qno, Qtitle, Qcontent, Qkeyword, Qmember_id)
 	SELECT SEQ_question_Qno.nextval, Qtitle, Qcontent, Qkeyword, Qmember_id FROM Question;
+	
+
+
+-- 댓글 삽입
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every5116', 5, '정말 훌륭합니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna', 5, '요즘 대세는 나무색이죠');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna94', 3, '어떤색을 원하시는지 잘 모르겠다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna1994', 5, 'ㅋㅋㅋㅋㅋ');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna27', 5, '저도 어떤 색상이 어려울지 가늠하기 어렵습니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every3488', 6, '댓글입니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every4954', 5, '구매하실때 꼼꼼하게 알아보셔야 합니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every2281', 10, '조금더 자세하게 문의를 남겨주세요 그래야 답변이 가능해요');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every94', 5, '고민이 많으시겠네요 저같으면 여기에 네이비 색으로 꾸밀것 같아요');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every1994', 5, '인테리어는 함부러 결정하는 것보다 많이 알아보고 결정해야 합니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every27', 5, '이미 좋은 답변들이 많이 달려 있네요');
+
+
+SELECT * FROM QComment ORDER BY Cno DESC;
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent)
+	SELECT SEQ_QComment_Cno.nextval, Cmember_id, Cqno, Ccontent FROM QComment;
+	
+-- 다량의 데이터 필요
+SELECT * FROM Qrepor ORDER BY Rno DESC;
+INSERT INTO Qrepor(Rno, Rmember_id, Rtype, Rqno)
+	SELECT SEQ_Qrepor_Rno.nextval, Rmember_id, Rtype, Rqno FROM Qrepor;
