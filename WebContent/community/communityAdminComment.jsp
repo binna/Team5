@@ -50,44 +50,35 @@
 	href="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/22308828_1362771857179344_2862649104720883557_n.png?_nc_cat=1&_nc_sid=09cbfe&_nc_eui2=AeH5lxEnBFrz40hJ6UtdpaQJuBoYtwUvLmC4Ghi3BS8uYAhbV6mwPZVwNDLVqmNQ06N1d9OzpAwE7e94RmBOvcN5&_nc_ohc=UJrBOpVraysAX9EMaAO&_nc_ht=scontent-ssn1-1.xx&oh=ef4a21dc6a1b52af269c893205600fff&oe=5EF360AB">
 
 
-<script type="text/javascript" src="../JS/wk.js"></script>
+<script type="text/javascript" src="../JS/yj.js"></script>
 <script type="text/javascript" src="../JS/BN/admin_bn.js"></script>
 
+<link rel="stylesheet" href="../CSS/BN/list_admin_bn.css" type="text/css">
 <link rel="stylesheet" href="../CSS/wk.css" type="text/css">
 <link rel="stylesheet" href="../CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="../CSS/yj.css" type="text/css">
-<link rel="stylesheet" href="../CSS/BN/list_admin_bn.css" type="text/css">
 
 
 
 
-
-<title>너네집</title>
+<title>너네집 Manager</title>
 </head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <body>
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
-			<div id="main_top1_1" class="col-md-2">
-				<h1 id="main_title">너네 집</h1>
+			<div id="main_top1_1" class="col-md-4">
+				<h1 id="main_title">너네 집 Manager</h1>
 			</div>
-			<div id="main_top1_2" class="col-md-3">
-				<nav>
-					<ul>
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">스토어</a></li>
-						<li><a href="#">인테리어시공</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div id="main_top1_3" class="col-md-7">
+			
+			<div id="main_top1_3" class="col-md-8">
 				<div id="search">
 					<i class="fas fa-search"></i>
 				</div>
 				<button id="write">글쓰기</button>
 				<!-- <button>
-               <i class="fas fa-search"></i>
-            </button> -->
+					<i class="fas fa-search"></i>
+				</button> -->
 				<button>
 					<i class="far fa-bookmark"></i>
 				</button>
@@ -97,8 +88,15 @@
 				<button>
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<button>
+				<button id="main_user_menu_icon">
 					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a href="../member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
 				</button>
 			</div>
 		</div>
@@ -107,16 +105,175 @@
 			<div class="col-md-12">
 				<nav style="padding: 0px;">
 					<ul class="menu">
+						<li><a href="#">회원관리</a></li>
+						<li id="menu_myshopping"><a href="community/communityAdmin.community">커뮤니티관리</a></li>
+						<li><a href="../aQuestionList.y">스토어관리</a></li>
+						<li><a href="../consManager.cons">인테리어 시공 관리</a></li>
+
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<hr>
+		<div id="main_top3" class="row">
+			<div class="col-md-12">
+				<nav style="padding: 0px;">
+					<ul class="menu">
 						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
-						<li><a href="communityAdmin.community?page=1&pagerow=10">댓글 목록</a></li>
+						<li id="Q_li"><a href="communityAdminComment.community?page=1&pagerow=10">댓글 목록</a></li>
 						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
 					</ul>
 				</nav>
 			</div>
 		</div>
-
 		<hr>
 	</header>
+	<header style="padding: 0px;" class="col-md-12" id="main_header_m">
+		<div id="main_top1" class="row">
+			<div id="main_top1_1" class="col-sm-1 col-1">
+
+				<button id="main_bar_btn">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+			<div id="main_top1_2" class="col-sm-11 col-11">
+				<h1 id="main_title">너네 집 Manager</h1>
+			</div>
+
+			
+		</div>
+				<hr>
+		<div id="main_top2" class="row">
+			<div class="col-md-12">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">회원관리</a></li>
+						<li id="menu_myshopping"><a href="communityAdmin.community">커뮤니티관리</a></li>
+						<li><a href="../aQuestionList.y">스토어관리</a></li>
+						<li><a href="../consManager.cons">인테리어 시공 관리</a></li>
+
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<hr>
+		<div id="main_top3" class="row">
+			<div class="col-md-12">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
+						<li id="Q_li"><a href="communityAdminComment.community?page=1&pagerow=10">댓글 목록</a></li>
+						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<hr>
+		<!-- 
+		<hr>
+		<div id="main_top2" class="row">
+			<div class="col-sm-12 col-12" id="main_top2-1">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">스토어홈</a></li>
+						<li><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">특가</a></li>
+						<li><a href="#">여름패브릭</a></li>
+						<li><a href="#">여름가전</a></li>
+						<li><a href="#">기획전</a></li>
+					</ul>
+				</nav>
+			</div>
+
+
+		</div>
+		<hr> -->
+		<div id="m_nav_menu">
+			<button id="m_menu_close">
+				<i class="far fa-times-circle"></i>
+			</button>
+
+			<h1 id="main_title" class="m_nav_menu_title">너네 집</h1>
+			<%
+				if (session.getAttribute("id") != null) {
+			%>
+			<h1><%=session.getAttribute("id")%>
+				님
+			</h1>
+			<br>
+			<button id="m_menu_logout">로그아웃</button>
+			<%
+				} else {
+			%>
+			<button id="m_menu_login" OnClick="location.href ='../sign_in.jsp'">로그인</button>
+			<button id="m_menu_join" OnClick="location.href ='../MemberJoin.me'">회원가입</button>
+
+			<%
+				}
+			%>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-user"></i> 회원 관리
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 Onclick="#"
+					class="Hpointer">회원조회</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-comments" ></i> 커뮤니티
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 Onclick="location.href ='communityAdmin.community?page=1&pagerow=10'"
+					class="Hpointer">등록된 게시글</h4>
+					<h4 Onclick="location.href ='communityAdminComment.community?page=1&pagerow=10'"
+					class="Hpointer">댓글 목록</h4>
+					<h4 Onclick="location.href ='communityAdminReport.community?page=1&pagerow=10'"
+					class="Hpointer">신고 현황</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-store"></i> 스토어
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 OnClick="location.href ='../aQuestionList.y'">문의 관리</h4>
+					<h4 OnClick="location.href ='../aProductList.y'">상품 관리</h4>
+					<h4 OnClick="location.href ='../mOrderList.woo'">주문 배송 내역</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-tools"></i> 인테리어
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 OnClick="location.href ='../consMain.jsp'" class="Hpointer">상담신청내역</h4>
+					
+				</div>
+			</div>
+			<div class="m_nav_menu" id="m_nav_menu_bottom">
+				<h4>마이페이지</h4>
+				<h4 class="Hpointer" OnClick="location.href ='../uOrderList.woo'" >나의쇼핑</h4>
+				<h4>스크랩북</h4>
+				<h4>질문하기</h4>
+
+			</div>
+		</div>
+	</header>
+
+
+
+	
+	
+	
+	
 	
 	
 	
@@ -144,7 +301,6 @@
      <select id="page_choice" 
      	style="padding: 7px 15px;border: 1px solid rgb(200, 200, 200);border-radius: 5px">
       <option value="none" selected disabled>==선택==</option>
-      <option value="10">10개</option>
       <option value="10">10개</option>
       <option value="20">20개</option>
       <option value="50">50개</option>

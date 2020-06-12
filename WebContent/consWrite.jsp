@@ -121,8 +121,8 @@
 					class="userNameInput"></input>
 				<div class="userTelInfo">
 					상담받을 전화번호를 알려주세요.
-					<div class="userTelHint">-를 제외한 전화번호를 적어주세요</div>
-					<input type="text" name="cstel" placeholder="ex) 01012345678" class="ctel">
+					<div class="userTelHint">아래 형식에 맞추어 전화번호를 적어주세요</div>
+					<input type="text" name="cstel" placeholder="ex) 010-1234-5678" class="ctel">
 				</div>
 				<input type="hidden" value="<%=cno%>" name="cno"> <input
 					type="submit" class="submit" value="SUBMIT"> <input

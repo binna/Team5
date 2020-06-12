@@ -22,14 +22,15 @@ public class SelectCommand implements Command {
 			switch (valueName) {
 			// 상담신청순서
 			case "csno":
-				int csno = Integer.parseInt(value);
 				System.out.println("csno switch 들어옴");
-
 				try {
+					int csno = Integer.parseInt(value);
 					arr = dao.selectByCsno(csno);
 					request.setAttribute("list", arr);
-
-				} catch (SQLException e) { // 만약 ConnectionPool 을 사용한다면 여기서 NamingException 도 catch 해야 한다
+				} catch (NumberFormatException e) {
+					request.setAttribute("list", arr);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				break;

@@ -13,6 +13,9 @@ public class D {
 	
 	public static final String SQL_ORDER_SELECT_STATUS = "SELECT a.PIMAGE ,a.PNAME ,a.PBRAND ,a.pid, b.PCADDRESS ,b.PCADDRESSNUM , b.PTOTALPRICE ,b.PCCONTENT ,b.pcuid,b.pcregdate,b.PCLPCNT ,b.PCSTATUS,b.PCADDRESS2 "
 			+ "FROM PRODUCT a inner join PURCHASE b " + "on a.PID =b.PID WHERE b.PCSTATUS=?";
+	
+	public static final String SQL_ORDER_LIST = "SELECT a.PIMAGE ,a.PNAME ,a.PBRAND ,a.pid, b.PCADDRESS ,b.PCADDRESSNUM , b.PTOTALPRICE ,b.PCCONTENT ,b.pcuid,b.pcregdate,b.PCLPCNT ,b.PCSTATUS,b.PCADDRESS2 "
+			+ "FROM PRODUCT a inner join PURCHASE b " + "on a.PID = b.PID WHERE b.PCUID=? and b.PCSTATUS=?";
 
 	
 	public static final String SQL_ORDER_SELECT_SORT = "SELECT a.PIMAGE ,a.PNAME ,a.PBRAND ,a.pid, b.PCADDRESS ,b.PCADDRESSNUM , b.PTOTALPRICE ,b.PCCONTENT ,b.pcuid,b.pcregdate,b.PCLPCNT ,b.PCSTATUS,b.PCADDRESS2 "

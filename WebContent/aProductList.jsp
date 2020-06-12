@@ -57,7 +57,7 @@ font-family: 'Jua', sans-serif; -->
 	<header style="padding: 0px;" class="col-md-12" id="main_header">
 		<div id="main_top1" class="row">
 			<div id="main_top1_1" class="col-md-4">
-				<h1 id="main_title">너네 집 Manager</h1>
+				<h1 id="main_title" OnClick="location.href ='managerMain.jsp'">너네 집 Manager</h1>
 			</div>
 
 			<div id="main_top1_3" class="col-md-8">
@@ -126,7 +126,7 @@ font-family: 'Jua', sans-serif; -->
 				</button>
 			</div>
 			<div id="main_top1_2" class="col-sm-11 col-11">
-				<h1 id="main_title">너네 집 Manager</h1>
+				<h1 id="main_title"  OnClick="location.href ='managerMain.jsp'">너네 집 Manager</h1>
 			</div>
 
 
@@ -185,7 +185,7 @@ font-family: 'Jua', sans-serif; -->
 				<i class="far fa-times-circle"></i>
 			</button>
 
-			<h1 id="main_title" class="m_nav_menu_title">너네 집</h1>
+			<h1 id="main_title" class="m_nav_menu_title"  OnClick="location.href ='managerMain.jsp'">너네 집</h1>
 			<%
 				if (session.getAttribute("id") != null) {
 			%>
@@ -209,7 +209,7 @@ font-family: 'Jua', sans-serif; -->
 				</h1>
 				<div class="m_nav_menu_inner">
 					<br>
-					<h4 Onclick="#" class="Hpointer">회원조회</h4>
+					<h4  OnClick="location.href ='#'" class="Hpointer">회원조회</h4>
 				</div>
 			</div>
 			<div class="m_nav_menu">

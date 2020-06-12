@@ -995,3 +995,49 @@ img#loding_img{
 	width: 100%;
 	text-align: center;
 }
+
+
+div#placemain{
+	width: 80%;
+	margin: 50px auto;
+}
+div#placemain h1{
+	font-size: larger;
+	color: #333;
+}
+div#storelist{
+	width: 100%
+}
+div#storelist div{
+	padding: 30px;
+	border-bottom: 0.5px solid #aaa;
+	border-top: 0.5px solid #aaa;
+	color: #333
+}
+
+div#storelist h2,div#storelist h3{
+	font-size: medium;
+	margin-bottom: 10px
+}
+div#storelist h2{
+	font-weight: 900;
+}
+#resultlocation{
+	font-size: medium;
+	color: #666;
+}
+#placemain1_input input{
+	height: 60px;
+	border: 1px solid #aaa
+}
+#placemain1_input button{
+	border: 1px solid #fff;
+	color: #fff;
+	background-color: #aaa;
+}
+#map{
+	min-height: 400px;
+	max-height: 600px;
+	margin-bottom: 50px;
+	padding: 10px
+}

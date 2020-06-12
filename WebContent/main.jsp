@@ -197,7 +197,7 @@
                   <li><a href="#">특가</a></li>
                   <li><a href="#">여름패브릭</a></li>
                   <li><a href="#">여름가전</a></li>
-                  <li><a href="#">기획전</a></li>
+                  <li><a href="storeplace.jsp">OFFLINE STORE</a></li>
                </ul>
             </nav>
          </div>
