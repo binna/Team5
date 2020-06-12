@@ -54,7 +54,9 @@ CREATE TABLE Pimage
 	pfpid number NOT NULL,
 	PRIMARY KEY (pfuid)
 );
-CREATE SEQUENCE SEQ_PQuestion_PQid;
+SELECT * FROM member;
+
+CREATE SEQUENCE pquestion_seq;
 CREATE TABLE PQuestion
 (
 	PQid number NOT NULL,
@@ -126,11 +128,11 @@ CREATE TABLE Question
 (
 	Qno number NOT NULL,
 	Qmember_id VARCHAR2(20),
-	Qtitle varchar2(100) NOT NULL,
+	Qtitle varchar2(200) NOT NULL,
 	Qcontent clob NOT NULL,
 	Qregdate date DEFAULT SYSDATE,
 	Qclickcnt NUMBER DEFAULT 0,
-	Qkeyword varchar2(50) NOT NULL,
+	Qkeyword varchar2(100) NOT NULL,
 	PRIMARY KEY (Qno)
 );
 
@@ -155,9 +157,10 @@ CREATE TABLE Qrepor
 	PRIMARY KEY (Rno)
 );
 
-
+DROP FUNCTION get_seq;
 -- 함수 생성
 CREATE FUNCTION get_seq RETURN NUMBER IS BEGIN RETURN company_seq.nextval;END;
+
 
 INSERT ALL
 INTO Company (Cno, Cname, Cadr, Ctel, Carea, Ccategory) VALUES(get_seq,	'도배잘하는집',	'서울 마포구 서교동 475-4',	'전화번호가 없습니다.' ,	'서울',	'도배'	)
