@@ -77,218 +77,8 @@
 <link rel="stylesheet" href="../CSS/initialValue.css" type="text/css">
 <link rel="stylesheet" href="../CSS/yj.css" type="text/css">
 
-
 <%
-if(session.getAttribute("id").equals("admin")) {	// 어드민 아이디일때 노출
-%>
-<title>너네집 Manager</title>
-</head>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<body>
-	<header style="padding: 0px;" class="col-md-12" id="main_header">
-		<div id="main_top1" class="row">
-			<div id="main_top1_1" class="col-md-4">
-				<h1 id="main_title">너네 집 Manager</h1>
-			</div>
-			
-			<div id="main_top1_3" class="col-md-8">
-				<div id="search">
-					<i class="fas fa-search"></i>
-				</div>
-				<button id="write">글쓰기</button>
-				<!-- <button>
-					<i class="fas fa-search"></i>
-				</button> -->
-				<button>
-					<i class="far fa-bookmark"></i>
-				</button>
-				<button>
-					<i class="far fa-bell"></i>
-				</button>
-				<button>
-					<i class="fas fa-shopping-cart"></i>
-				</button>
-				<button id="main_user_menu_icon">
-					<i class="far fa-user"></i>
-					<div id="main_user_menu">
-						<nav style="padding: 0px;">
-							<ul class="menu">
-								<li><a href="../member/logout.jsp">로그아웃</a></li>
-							</ul>
-						</nav>
-					</div>
-				</button>
-			</div>
-		</div>
-		<hr>
-		<div id="main_top2" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="#">회원관리</a></li>
-						<li id="menu_myshopping"><a href="community/communityAdmin.community">커뮤니티관리</a></li>
-						<li><a href="../aQuestionList.y">스토어관리</a></li>
-						<li><a href="../consManager.cons">인테리어 시공 관리</a></li>
-
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<hr>
-		<div id="main_top3" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
-						<li><a href="communityAdminComment.community?page=1&pagerow=10">댓글 목록</a></li>
-						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<hr>
-	</header>
-	<header style="padding: 0px;" class="col-md-12" id="main_header_m">
-		<div id="main_top1" class="row">
-			<div id="main_top1_1" class="col-sm-1 col-1">
-
-				<button id="main_bar_btn">
-					<i class="fas fa-bars"></i>
-				</button>
-			</div>
-			<div id="main_top1_2" class="col-sm-11 col-11">
-				<h1 id="main_title">너네 집 Manager</h1>
-			</div>
-
-			
-		</div>
-				<hr>
-		<div id="main_top2" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="#">회원관리</a></li>
-						<li id="menu_myshopping"><a href="communityAdmin.community">커뮤니티관리</a></li>
-						<li><a href="../aQuestionList.y">스토어관리</a></li>
-						<li><a href="../consManager.cons">인테리어 시공 관리</a></li>
-
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<hr>
-		<div id="main_top3" class="row">
-			<div class="col-md-12">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
-						<li><a href="communityAdminComment.community?page=1&pagerow=10">댓글 목록</a></li>
-						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<hr>
-		<!-- 
-		<hr>
-		<div id="main_top2" class="row">
-			<div class="col-sm-12 col-12" id="main_top2-1">
-				<nav style="padding: 0px;">
-					<ul class="menu">
-						<li><a href="#">스토어홈</a></li>
-						<li><a href="#">카테고리</a></li>
-						<li><a href="#">신혼가구</a></li>
-						<li><a href="#">베스트</a></li>
-						<li><a href="#">특가</a></li>
-						<li><a href="#">여름패브릭</a></li>
-						<li><a href="#">여름가전</a></li>
-						<li><a href="#">기획전</a></li>
-					</ul>
-				</nav>
-			</div>
-
-
-		</div>
-		<hr> -->
-		<div id="m_nav_menu">
-			<button id="m_menu_close">
-				<i class="far fa-times-circle"></i>
-			</button>
-
-			<h1 id="main_title" class="m_nav_menu_title">너네 집</h1>
-			<%
-				if (session.getAttribute("id") != null) {
-			%>
-			<h1><%=session.getAttribute("id")%>
-				님
-			</h1>
-			<br>
-			<button id="m_menu_logout">로그아웃</button>
-			<%
-				} else {
-			%>
-			<button id="m_menu_login" OnClick="location.href ='../sign_in.jsp'">로그인</button>
-			<button id="m_menu_join" OnClick="location.href ='../MemberJoin.me'">회원가입</button>
-
-			<%
-				}
-			%>
-			<div class="m_nav_menu">
-				<h1 class="Hpointer">
-					<i class="fas fa-user"></i> 회원 관리
-				</h1>
-				<div class="m_nav_menu_inner">
-					<br>
-					<h4 Onclick="#"
-					class="Hpointer">회원조회</h4>
-				</div>
-			</div>
-			<div class="m_nav_menu">
-				<h1 class="Hpointer">
-					<i class="fas fa-comments" ></i> 커뮤니티
-				</h1>
-				<div class="m_nav_menu_inner">
-					<br>
-					<h4 Onclick="location.href ='communityAdmin.community?page=1&pagerow=10'"
-					class="Hpointer">등록된 게시글</h4>
-					<h4 Onclick="location.href ='communityAdminComment.community?page=1&pagerow=10'"
-					class="Hpointer">댓글 목록</h4>
-					<h4 Onclick="location.href ='communityAdminReport.community?page=1&pagerow=10'"
-					class="Hpointer">신고 현황</h4>
-				</div>
-			</div>
-			<div class="m_nav_menu">
-				<h1 class="Hpointer">
-					<i class="fas fa-store"></i> 스토어
-				</h1>
-				<div class="m_nav_menu_inner">
-					<br>
-					<h4 OnClick="location.href ='../aQuestionList.y'">문의 관리</h4>
-					<h4 OnClick="location.href ='../aProductList.y'">상품 관리</h4>
-					<h4 OnClick="location.href ='../mOrderList.woo'">주문 배송 내역</h4>
-				</div>
-			</div>
-			<div class="m_nav_menu">
-				<h1 class="Hpointer">
-					<i class="fas fa-tools"></i> 인테리어
-				</h1>
-				<div class="m_nav_menu_inner">
-					<br>
-					<h4 OnClick="location.href ='../consMain.jsp'" class="Hpointer">상담신청내역</h4>
-					
-				</div>
-			</div>
-			<div class="m_nav_menu" id="m_nav_menu_bottom">
-				<h4>마이페이지</h4>
-				<h4 class="Hpointer" OnClick="location.href ='../uOrderList.woo'" >나의쇼핑</h4>
-				<h4>스크랩북</h4>
-				<h4>질문하기</h4>
-
-			</div>
-		</div>
-	</header>
-<%
-} else {	// 어드민 아이디가 아닐때, 비로그인 모두 포함
+if(session.getAttribute("id") == null) {	// 비로그인 일때
 %>
 <title>너네 집</title>
 
@@ -526,8 +316,458 @@ if(session.getAttribute("id").equals("admin")) {	// 어드민 아이디일때 �
       </div>
    </header>
 <%
+} else {	//로그인일 때
+	if(session.getAttribute("id").equals("admin")) {	// 로그인 아이디, 어드민 아이디일때
+%>
+<title>너네집 Manager</title>
+</head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<body>
+	<header style="padding: 0px;" class="col-md-12" id="main_header">
+		<div id="main_top1" class="row">
+			<div id="main_top1_1" class="col-md-4">
+				<h1 id="main_title">너네 집 Manager</h1>
+			</div>
+			
+			<div id="main_top1_3" class="col-md-8">
+				<div id="search">
+					<i class="fas fa-search"></i>
+				</div>
+				<button id="write">글쓰기</button>
+				<!-- <button>
+					<i class="fas fa-search"></i>
+				</button> -->
+				<button>
+					<i class="far fa-bookmark"></i>
+				</button>
+				<button>
+					<i class="far fa-bell"></i>
+				</button>
+				<button>
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<button id="main_user_menu_icon">
+					<i class="far fa-user"></i>
+					<div id="main_user_menu">
+						<nav style="padding: 0px;">
+							<ul class="menu">
+								<li><a href="../member/logout.jsp">로그아웃</a></li>
+							</ul>
+						</nav>
+					</div>
+				</button>
+			</div>
+		</div>
+		<hr>
+		<div id="main_top2" class="row">
+			<div class="col-md-12">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">회원관리</a></li>
+						<li id="menu_myshopping"><a href="community/communityAdmin.community">커뮤니티관리</a></li>
+						<li><a href="../aQuestionList.y">스토어관리</a></li>
+						<li><a href="../consManager.cons">인테리어 시공 관리</a></li>
+
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<hr>
+		<div id="main_top3" class="row">
+			<div class="col-md-12">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
+						<li><a href="communityAdminComment.community?page=1&pagerow=10">댓글 목록</a></li>
+						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<hr>
+	</header>
+	<header style="padding: 0px;" class="col-md-12" id="main_header_m">
+		<div id="main_top1" class="row">
+			<div id="main_top1_1" class="col-sm-1 col-1">
+
+				<button id="main_bar_btn">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+			<div id="main_top1_2" class="col-sm-11 col-11">
+				<h1 id="main_title">너네 집 Manager</h1>
+			</div>
+
+			
+		</div>
+				<hr>
+		<div id="main_top2" class="row">
+			<div class="col-md-12">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">회원관리</a></li>
+						<li id="menu_myshopping"><a href="communityAdmin.community">커뮤니티관리</a></li>
+						<li><a href="../aQuestionList.y">스토어관리</a></li>
+						<li><a href="../consManager.cons">인테리어 시공 관리</a></li>
+
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<hr>
+		<div id="main_top3" class="row">
+			<div class="col-md-12">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="communityAdmin.community?page=1&pagerow=10">등록된 게시글</a></li>
+						<li><a href="communityAdminComment.community?page=1&pagerow=10">댓글 목록</a></li>
+						<li><a href="communityAdminReport.community?page=1&pagerow=10">신고 현황</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<hr>
+		<!-- 
+		<hr>
+		<div id="main_top2" class="row">
+			<div class="col-sm-12 col-12" id="main_top2-1">
+				<nav style="padding: 0px;">
+					<ul class="menu">
+						<li><a href="#">스토어홈</a></li>
+						<li><a href="#">카테고리</a></li>
+						<li><a href="#">신혼가구</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">특가</a></li>
+						<li><a href="#">여름패브릭</a></li>
+						<li><a href="#">여름가전</a></li>
+						<li><a href="#">기획전</a></li>
+					</ul>
+				</nav>
+			</div>
+
+
+		</div>
+		<hr> -->
+		<div id="m_nav_menu">
+			<button id="m_menu_close">
+				<i class="far fa-times-circle"></i>
+			</button>
+
+			<h1 id="main_title" class="m_nav_menu_title">너네 집</h1>
+			<%
+				if (session.getAttribute("id") != null) {
+			%>
+			<h1><%=session.getAttribute("id")%>
+				님
+			</h1>
+			<br>
+			<button id="m_menu_logout">로그아웃</button>
+			<%
+				} else {
+			%>
+			<button id="m_menu_login" OnClick="location.href ='../sign_in.jsp'">로그인</button>
+			<button id="m_menu_join" OnClick="location.href ='../MemberJoin.me'">회원가입</button>
+
+			<%
+				}
+			%>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-user"></i> 회원 관리
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 Onclick="#"
+					class="Hpointer">회원조회</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-comments" ></i> 커뮤니티
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 Onclick="location.href ='communityAdmin.community?page=1&pagerow=10'"
+					class="Hpointer">등록된 게시글</h4>
+					<h4 Onclick="location.href ='communityAdminComment.community?page=1&pagerow=10'"
+					class="Hpointer">댓글 목록</h4>
+					<h4 Onclick="location.href ='communityAdminReport.community?page=1&pagerow=10'"
+					class="Hpointer">신고 현황</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-store"></i> 스토어
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 OnClick="location.href ='../aQuestionList.y'">문의 관리</h4>
+					<h4 OnClick="location.href ='../aProductList.y'">상품 관리</h4>
+					<h4 OnClick="location.href ='../mOrderList.woo'">주문 배송 내역</h4>
+				</div>
+			</div>
+			<div class="m_nav_menu">
+				<h1 class="Hpointer">
+					<i class="fas fa-tools"></i> 인테리어
+				</h1>
+				<div class="m_nav_menu_inner">
+					<br>
+					<h4 OnClick="location.href ='../consMain.jsp'" class="Hpointer">상담신청내역</h4>
+					
+				</div>
+			</div>
+			<div class="m_nav_menu" id="m_nav_menu_bottom">
+				<h4>마이페이지</h4>
+				<h4 class="Hpointer" OnClick="location.href ='../uOrderList.woo'" >나의쇼핑</h4>
+				<h4>스크랩북</h4>
+				<h4>질문하기</h4>
+
+			</div>
+		</div>
+	</header>
+<%
+	} else {	// 로그인 했으나 어드민 아이디가 아닐때
+%>
+<title>너네 집</title>
+
+</head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<body>
+
+   <!-- header -->
+	   <header style="padding: 0px;" class="col-md-12" id="main_header">
+      <div id="main_top1" class="row">
+         <div id="main_top1_1" class="col-md-2">
+            <h1 id="main_title">너네 집</h1>
+         </div>
+         <div id="main_top1_2" class="col-md-3">
+            <nav>
+               <ul>
+                  <li><a href="#" id="main_a_comunity">커뮤니티</a></li>
+                  <li><a href="../storeMain.y" id="main_a_store">스토어</a></li>
+                  <li><a href="../consMain.jsp" id="main_a_cons">인테리어시공</a></li>
+               </ul>
+            </nav>
+         </div>
+         <div id="main_top1_3" class="col-md-7">
+            <div id="search">
+               <i class="fas fa-search"></i>
+            </div>
+
+            <button id="write"
+               onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+
+            <!-- <button>
+               <i class="fas fa-search"></i>
+            </button> --->
+            <%
+               if (session.getAttribute("id") != null) {
+            %>
+
+            <button>
+               <i class="far fa-bookmark"></i>
+            </button>
+            <button>
+               <i class="far fa-bell"></i>
+            </button>
+            <button>
+               <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button id="main_user_menu_icon">
+               <i class="far fa-user"></i>
+               <div id="main_user_menu">
+                  <nav style="padding: 0px;">
+                     <ul class="menu">
+                        <li><a><%=session.getAttribute("id")%> 님</a></li>
+                        <li><a href="../MemberModifyAction_1.me">마이페이지</a></li>
+                        <li><a href="../uOrderList.woo">나의쇼핑</a></li>
+                        <li><a href="../member/logout.jsp">로그아웃</a></li>
+                     </ul>
+                  </nav>
+               </div>
+            </button>
+            <%
+               } else {
+            %>
+            <button>
+               <i class="fas fa-shopping-cart"></i>
+            </button>
+            <!-- <a href="MemberLogin.me">로그인 </a> | <a href="MemberJoin.me">회원가입</a> -->
+            <a href="../sign_in.jsp">로그인 </a> | <a href="../MemberJoin.me">회원가입</a>
+            <%
+               }
+            %>
+
+
+
+         </div>
+      </div>
+
+      <hr>
+      <div id="main_top2" class="row">
+         <div class="col-md-9" id="main_top2-1">
+            <nav style="padding: 0px;">
+               <ul class="menu">
+                  <li><a href="../storeMain.y">스토어홈</a></li>
+                  <li><a href="#">카테고리</a></li>
+                  <li><a href="#">신혼가구</a></li>
+                  <li><a href="#">베스트</a></li>
+                  <li><a href="#">특가</a></li>
+                  <li><a href="#">여름패브릭</a></li>
+                  <li><a href="#">여름가전</a></li>
+                  <li><a href="#">기획전</a></li>
+               </ul>
+            </nav>
+         </div>
+         <div class="col-md-9" id="main_top2-2">
+            <nav style="padding: 0px;">
+               <ul class="menu">
+                  <li><a href="../main.team">홈</a></li>
+                  <li><a href="list.community?page=1">질문과답변</a></li>
+               </ul>
+            </nav>
+         </div>
+         <div class="col-md-9" id="main_top2-3">
+            <nav style="padding: 0px;">
+               <ul class="menu">
+                  <li><a href="../consMain.jsp">시공홈</a></li>
+                  <li><a href="#">견적계산</a></li>
+                  <li><a href="#">전문가찾기</a></li>
+                  <li><a href="#">시공스토어</a></li>
+                  <li><a href="#">방산시장</a></li>
+               </ul>
+            </nav>
+         </div>
+         <div calss="col-md-3 col-sm-offset-0">
+            <button id="main_top2_app"></button>
+            <a href="#">앱 다운로드</a>
+         </div>
+
+      </div>
+      <hr>
+   </header>
+
+   <header style="padding: 0px;" class="col-md-12" id="main_header_m">
+      <div id="main_top1" class="row">
+         <div id="main_top1_1" class="col-sm-1 col-1">
+
+            <button id="main_bar_btn">
+               <i class="fas fa-bars"></i>
+            </button>
+         </div>
+         <div id="main_top1_2" class="col-sm-3 col-3">
+            <h1 id="main_title">너네 집</h1>
+         </div>
+
+         <div id="main_top1_3" class="col-sm-8 col-8">
+
+            <button id="write"
+               onclick="location.href='community/communityMain.jsp'">글쓰기
+            </button>
+            <button id="search">
+               <i class="fas fa-search"></i>
+            </button>
+
+            <button>
+               <i class="fas fa-shopping-cart"></i>
+            </button>
+         </div>
+      </div>
+      <!-- 
+      <hr>
+      <div id="main_top2" class="row">
+         <div class="col-sm-12 col-12" id="main_top2-1">
+            <nav style="padding: 0px;">
+               <ul class="menu">
+                  <li><a href="#">스토어홈</a></li>
+                  <li><a href="#">카테고리</a></li>
+                  <li><a href="#">신혼가구</a></li>
+                  <li><a href="#">베스트</a></li>
+                  <li><a href="#">특가</a></li>
+                  <li><a href="#">여름패브릭</a></li>
+                  <li><a href="#">여름가전</a></li>
+                  <li><a href="#">기획전</a></li>
+               </ul>
+            </nav>
+         </div>
+
+
+      </div>
+      <hr> -->
+      <div id="m_nav_menu">
+         <button id="m_menu_close">
+            <i class="far fa-times-circle"></i>
+         </button>
+
+         <h1 id="main_title" class="m_nav_menu_title">너네 집</h1>
+         <%
+            if (session.getAttribute("id") != null) {
+         %>
+         <h1><%=session.getAttribute("id")%>
+            님
+         </h1>
+         <br>
+         <button id="m_menu_logout" OnClick="location.href ='member/logout.jsp'">로그아웃</button>
+         <%
+            } else {
+         %>
+         <button id="m_menu_login" OnClick="location.href ='sign_in.jsp'">로그인</button>
+         <button id="m_menu_join" OnClick="location.href ='MemberJoin.me'">회원가입</button>
+
+         <%
+            }
+         %>
+         <div class="m_nav_menu">
+            <h1 class="Hpointer">
+               <i class="fas fa-comments"></i> 커뮤니티
+            </h1>
+            <div class="m_nav_menu_inner">
+               <br>
+               <h4>홈</h4>
+               <h4 Onclick="location.href='community/list.community?page=1'"
+                  class="Hpointer">질문과 답변</h4>
+            </div>
+         </div>
+         <div class="m_nav_menu">
+            <h1 class="Hpointer">
+               <i class="fas fa-store"></i> 스토어
+            </h1>
+            <div class="m_nav_menu_inner">
+               <br>
+               <h4>카테고리</h4>
+               <h4 OnClick="location.href ='storeMain.y'">스토어홈</h4>
+               <h4>베스트</h4>
+               <h4>특가</h4>
+            </div>
+         </div>
+         <div class="m_nav_menu">
+            <h1 class="Hpointer">
+               <i class="fas fa-tools"></i> 인테리어 시공
+            </h1>
+            <div class="m_nav_menu_inner">
+               <br>
+               <h4 OnClick="location.href ='consMain.jsp'" class="Hpointer">시공
+                  홈</h4>
+               <h4>견적계산</h4>
+               <h4>시공스토어</h4>
+               <h4>전문가 찾기</h4>
+            </div>
+         </div>
+         <div class="m_nav_menu" id="m_nav_menu_bottom">
+            <h4>마이페이지</h4>
+            <h4 class="Hpointer" OnClick="location.href ='uOrderList.woo'">나의쇼핑</h4>
+            <h4>스크랩북</h4>
+            <h4>질문하기</h4>
+
+         </div>
+      </div>
+   </header>
+<%
+	} // end if
 } // end if
 %> 
+
 	
 	
 	
