@@ -945,8 +945,8 @@ if(session.getAttribute("id") == null) {	// 비로그인 일때
 		          <article class="comment-feed__item">
 		            <!-- 댓글 남긴 사람과 댓글 내용 -->
 		            <p class="comment-feed__item__content">
-		              <span class="comment-feed__item__content__author__name"><%= arr2[i].getCid()%></span>
-		              <span class="comment-feed__item__content__content"><%= arr2[i].getCcomment() %></span>
+		              <span style="width: 15%" class="comment-feed__item__content__author__name"><%= arr2[i].getCid()%></span>
+		              <span style="width: 80%" class="comment-feed__item__content__content"><%= arr2[i].getCcomment() %></span>
 		              
 		             
 		              <% // 댓글 삭제란
