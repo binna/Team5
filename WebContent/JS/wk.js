@@ -7,30 +7,55 @@ $(document).ready(function() {
 		a = makeComma(p);
 		$('#total').text("주문금액:    " + a + "원")
 
-	
-	$("#cashBtn").click(function() {
-		if ($('#pquid').val() == "null") {
-			alert("로그인이필요한 페이지 입니다.")
-			location.href = "sign_in.jsp"
-		} else {
-			$('#id01').show();
-			$('#pc_price').text("결제 금액: " + p + "원");
-			$('#result_price').val(p);
-			$('#resutlt_pid').val();
-			$('#result_cnt').val(selectOption);
-		}
-	}); // 바로구매 클릭시
-	
+		$("#cashBtn").click(function() {
+			if ($('#pquid').val() == "null") {
+				alert("로그인이필요한 페이지 입니다.")
+				location.href = "sign_in.jsp"
+			} else {
+				$('#id01').show();
+				$('#pc_price').text("결제 금액: " + p + "원");
+				$('#result_price').val(p);
+				$('#resutlt_pid').val();
+				$('#result_cnt').val(selectOption);
+			}
+		}); // 바로구매 클릭시
+
+		$("#check_module").click(function() {
+
+			IMP.init('iamport');
+			var msg;
+
+			IMP.request_pay({
+				pg : 'inicis', // version 1.1.0부터 지원.
+				pay_method : 'card',
+				merchant_uid : 'merchant_' + new Date().getTime(),
+				name : '주문명:결제테스트',
+				amount : p,
+				buyer_email : 'iamport@siot.do',
+				buyer_name : '구매자이름',
+				buyer_tel : '010-1234-5678',
+				buyer_addr : '서울특별시 강남구 삼성동',
+				buyer_postcode : '123-456',
+				m_redirect_url : 'https://www.yourdomain.com/payments/complete'
+			}, function(rsp) {
+				if (rsp.success) {
+					var msg = '결제가 완료되었습니다.';
+
+				} else {
+					var msg = '결제에 완료하였습니다.\n 구매완료 버튼 눌러주세요';
+				}
+				alert(msg);
+			});
+
+		});
 	});
-	
+
 	$("#detail_question_2").click(function() {
 		if ($('#pquid').val() == "null") {
 			alert("로그인이필요한 페이지 입니다.")
 			location.href = "sign_in.jsp"
 		}
 	}); // 바로구매 클릭시
-	
-	
 
 	$('#sort').on('change', function() {
 		var select = document.getElementById("sort");
@@ -72,10 +97,10 @@ $(document).ready(function() {
 		} else if ($("#pcaddress2").val() == "") {
 			alert("상세주소를 입력해주세요.");
 			return false;
-		} else if ($("#pccardnum").val() == "") {
-			alert("카드번호 입력해주세요.");
+		} else if (enCheck.val(pccardnum)) {
+			alert("숫자만 입력해주세요.");
 			return false;
-		} else if (enCheck.test(pccardnum)) {
+		} else if ($("#pccardnum").val() == "") {
 			alert("-없이  숫자만 입력해주세요.");
 			return false;
 		} else {
@@ -84,18 +109,6 @@ $(document).ready(function() {
 		}
 
 	});
-
-//	var buy = $('input[value=1]').length;
-//	$('#status_figure_buy').text(buy);
-//
-//	var cancel = $('input[value=0]').length;
-//	if (canecel = null) {
-//		$('#status_figure_cancel').text("0");
-//
-//	} else {
-//		$('#status_figure_cancel').text(cancel);
-//
-//	}
 
 	// 배송 메모 수정
 	$('div[id^="u_modify_input_"]').hide();
@@ -114,20 +127,8 @@ $(document).ready(function() {
 		$('#u_modify_input_' + id).hide();
 	});
 	// 배송 메모 수정 끝
+
 }); // Main document end
-
-function reg() {
-	var pcaddressnum = document.getElementById("pcaddressnum");
-	var pccardnum = document.getElementById("pccardnum");
-
-	var enCheck = /[^0-9]$/;
-
-	if (!check(enCheck, pcaddressnum, "dn.")) {
-		return false;
-	}
-	;
-
-};
 
 function makeComma(str) {
 	str = String(str);

@@ -455,6 +455,15 @@ button#reg {
 	color: #fff;
 	font-weight: 900px;
 }
+button#check_module{
+	border: none;
+	padding: 10px 18px;
+	width: auto;
+	background-color: #35c5f0;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 900px;
+}
 
 div#p_star {
 	margin-top: 10px;

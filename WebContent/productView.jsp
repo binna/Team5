@@ -13,8 +13,12 @@
 
 
 
-<!-- MaxCDN 사용 -->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
+<!-- 지울것 -->
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -630,18 +634,29 @@ table, th, td {
 				<div class="o_button">
 					<button id="daum" onclick="Daum()"></button>
 				</div>
-				<label for="addressnum"><b>AddressNum</b></label> <input
-					id="pcaddressnum" type="text" placeholder="우편번호 입력 "
-					name="pcaddressnum" required> <label for="address"><b>Address</b></label>
-				<input id="pcaddress" type="text" placeholder="주소입력"
-					name="pcaddress"><label for="address2"><b>AddressDetail</b></label>
-				<input id="pcaddress2" type="text" placeholder="상세주소 입력"
-					name="pcaddress2"> <label for="tel"><b>request</b></label>
-				<input id="pccontent" type="text" placeholder="배송메모"
-					name="pccontent"> <label for="psw"><b>CardNumber</b></label>
-				<input id="pccardnum" type="text" placeholder="카드번호입력"
-					name="pccardnum">
-				<button id="reg">구매 하기</button>
+				<label for="addressnum"><b>AddressNum</b></label>
+				<div>
+					<input id="pcaddressnum" type="text" placeholder="우편번호 입력 "
+						name="pcaddressnum" maxlength="5" style="width: 200px" required>
+				</div>
+				<label for="address"><b>Address</b></label> <input id="pcaddress"
+					type="text" placeholder="주소입력" name="pcaddress"><label
+					for="address2"><b>AddressDetail</b></label> <input id="pcaddress2"
+					type="text" placeholder="상세주소 입력" name="pcaddress2"> <label
+					for="tel"><b>Request</b></label> <input id="pccontent" type="text"
+					placeholder="배송메모" name="pccontent"> <label for="psw"><b>CardNumber</b></label>
+				<div>
+					<input id="pccardnum" type="text" placeholder="카드번호입력"
+						name="pccardnum" maxlength="4" style="width: 200px" required> ㅡ <input
+						id="pccardnum2" maxlength="4" style="width: 200px" type="password" required>
+					 ㅡ <input
+						id="pccardnum3" maxlength="4" style="width: 200px" type="password" required>
+					 ㅡ <input
+						id="pccardnum4" maxlength="4" style="width: 200px" type="password" required>
+				</div>
+
+				<button id="reg">구매 완료</button>
+					<button id="check_module" type="button">결제 하기</button>
 				<!-- <input type="submit" name="okay" class="okay" id="okay" value="구매 하기"> -->
 				<label> <input type="checkbox" name="remember" checked>Remember
 				</label>
@@ -651,8 +666,7 @@ table, th, td {
 				</div>
 			</div>
 		</form>
-
-
+			
 	</div>
 
 
