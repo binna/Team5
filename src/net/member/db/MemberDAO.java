@@ -205,6 +205,7 @@ public class MemberDAO {
 	}
 	// 회원탈퇴
 	public int deleteMember(String id, String pw) throws SQLException{
+		System.out.println("들어옴");
 		String sql=null;
 		int x=-1;
 		
@@ -215,9 +216,10 @@ public class MemberDAO {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs=pstmt.executeQuery();
-			
 			if(rs.next()){
 				String memberpw=rs.getString("MEMBER_PW");
+				System.out.println(memberpw + "야야야");
+				
 				if(memberpw.equals(pw)){
 					sql="delete from member where MEMBER_ID=?";
 					pstmt=con.prepareStatement(sql);
