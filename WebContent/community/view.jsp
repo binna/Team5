@@ -108,7 +108,7 @@ if(session.getAttribute("id") == null) {	// 비로그인 일때
             </div>
 
             <button id="write"
-               onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+               onclick="location.href='communityMain.jsp'">글쓰기</button>
 
             <!-- <button>
                <i class="fas fa-search"></i>
@@ -215,7 +215,7 @@ if(session.getAttribute("id") == null) {	// 비로그인 일때
          <div id="main_top1_3" class="col-sm-8 col-8">
 
             <button id="write"
-               onclick="location.href='community/communityMain.jsp'">글쓰기
+               onclick="location.href='communityMain.jsp'">글쓰기
             </button>
             <button id="search">
                <i class="fas fa-search"></i>
@@ -556,7 +556,7 @@ if(session.getAttribute("id") == null) {	// 비로그인 일때
             </div>
 
             <button id="write"
-               onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+               onclick="location.href='communityMain.jsp'">글쓰기</button>
 
             <!-- <button>
                <i class="fas fa-search"></i>
@@ -663,7 +663,7 @@ if(session.getAttribute("id") == null) {	// 비로그인 일때
          <div id="main_top1_3" class="col-sm-8 col-8">
 
             <button id="write"
-               onclick="location.href='community/communityMain.jsp'">글쓰기
+               onclick="location.href='communityMain.jsp'">글쓰기
             </button>
             <button id="search">
                <i class="fas fa-search"></i>

@@ -223,7 +223,8 @@ public class WriteDAO {
 			pstmt.setInt(2, from + rows);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-		} finally {
+		}
+		finally {
 			close();
 		} // end try
 		

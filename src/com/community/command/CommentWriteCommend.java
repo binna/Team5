@@ -27,9 +27,9 @@ public class CommentWriteCommend implements Command {
 			try {
 				cnt = dao.insert(cQno, content, cid);
 			} catch(SQLException e) {
-				System.out.println("트랜젝션 에러 발생");
+				System.out.println("CommentWriteCommend 트랜젝션 에러 발생");
 			} catch (Exception e) {
-				System.out.println("트랜젝션 이외의 에러 발생");
+				System.out.println("CommentWriteCommend 트랜젝션 이외의 에러 발생");
 			}
 			
 		} // end if

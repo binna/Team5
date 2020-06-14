@@ -19,9 +19,9 @@ public class ListCommand implements Command {
 		try {
 			arr = dao.select();
 		} catch(SQLException e) {
-			System.out.println("트랜젝션 에러 발생");
+			System.out.println("ListCommand1 트랜젝션 에러 발생");
 		} catch (Exception e) {
-			System.out.println("트랜젝션 이외의 에러 발생");
+			System.out.println("ListCommand1 트랜젝션 이외의 에러 발생");
 		}
 		
 		// 페이징
@@ -42,9 +42,9 @@ public class ListCommand implements Command {
 			int fromRow = (curPage - 1) * pageRows + 1;
 			dao.selectFromRow(fromRow, pageRows);
 		} catch(SQLException e) {
-			System.out.println("트랜젝션 에러 발생");
+			System.out.println("ListCommand2 트랜젝션 에러 발생");
 		} catch (Exception e) {
-			System.out.println("트랜젝션 이외의 에러 발생");
+			System.out.println("ListCommand2 트랜젝션 이외의 에러 발생");
 		}
 		
 		request.setAttribute("list", arr);

@@ -21,9 +21,9 @@ public class DeleteCommand implements Command {
 		try {			
 			cnt = dao.deleteByQno(no);
 		} catch(SQLException e) {
-			System.out.println("트랜젝션 에러 발생");
+			System.out.println("DeleteCommand 트랜젝션 에러 발생");
 		} catch (Exception e) {
-			System.out.println("트랜젝션 이외의 에러 발생");
+			System.out.println("DeleteCommand 트랜젝션 이외의 에러 발생");
 		}
 
 		request.setAttribute("delete", cnt);

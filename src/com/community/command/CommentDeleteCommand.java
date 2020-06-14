@@ -23,9 +23,9 @@ public class CommentDeleteCommand implements Command {
 			cnt = dao.deleteComment(Cno);
 			
 		} catch(SQLException e) {
-			System.out.println("트랜젝션 에러 발생");
+			System.out.println("CommentDeleteCommand 트랜젝션 에러 발생");
 		} catch (Exception e) {
-			System.out.println("트랜젝션 이외의 에러 발생");
+			System.out.println("CommentDeleteCommand 트랜젝션 이외의 에러 발생");
 		}
 
 		request.setAttribute("delete", cnt);

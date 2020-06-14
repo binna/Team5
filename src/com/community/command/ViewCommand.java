@@ -24,9 +24,9 @@ public class ViewCommand implements Command {
 		try {
 			arr = dao.clickReadByQno(no);
 		} catch(SQLException e) {
-			System.out.println("트랜젝션 에러 발생");
+			System.out.println("ViewCommand1 트랜젝션 에러 발생");
 		} catch (Exception e) {
-			System.out.println("트랜젝션 이외의 에러 발생");
+			System.out.println("ViewCommand1 트랜젝션 이외의 에러 발생");
 		}
 		
 		// 등록된 댓글 모두 보기
@@ -36,9 +36,9 @@ public class ViewCommand implements Command {
 		try {
 			arr2 = dao2.select(no);
 		} catch(SQLException e) {
-			System.out.println("트랜젝션 에러 발생");
+			System.out.println("ViewCommand2 트랜젝션 에러 발생");
 		} catch (Exception e) {
-			System.out.println("트랜젝션 이외의 에러 발생");
+			System.out.println("ViewCommand2 트랜젝션 이외의 에러 발생");
 		}
 
 		request.setAttribute("view", arr);

@@ -19,9 +19,9 @@ public class SelectCommand implements Command {
 			arr = dao.onlySelectByQno(no);
 			request.setAttribute("select", arr);
 		} catch(SQLException e) {
-			System.out.println("트랜젝션 에러 발생");
+			System.out.println("SelectCommand1 트랜젝션 에러 발생");
 		} catch (Exception e) {
-			System.out.println("트랜젝션 이외의 에러 발생");
+			System.out.println("SelectCommand1 트랜젝션 이외의 에러 발생");
 		}
 
 	} // end execute()

@@ -110,12 +110,13 @@ public class ReportDAO {
 		ReportDTO[] arr = null;
 		
 		try {
-			pstmt = conn.prepareStatement(CommunityD.SQL_COMMENT_SELECT_FROM_ROW);
+			pstmt = conn.prepareStatement(CommunityD.SQL_REPOR_SELECT_FROM_ROW);
 			pstmt.setInt(1, from);
 			pstmt.setInt(2, from + rows);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-		} finally {
+		}
+		finally {
 			close();
 		} // end try
 		
@@ -127,7 +128,7 @@ public class ReportDAO {
 		int cnt = 0;
 		
 		try {
-			pstmt = conn.prepareStatement(CommunityD.SQL_COMMENT_COUNT_ALL);
+			pstmt = conn.prepareStatement(CommunityD.SQL_REPORT_SELECT_ADMIN_ALL);
 			rs = pstmt.executeQuery();
 			rs.next();
 			cnt = rs.getInt(1);

@@ -306,7 +306,7 @@
       <option value="50">50개</option>
       <option value="100">100개</option>
      </select>
-     <button id="btn_page_choice" type="button"
+     <button id="btn_page_choice_comment" type="button"
      	style="background-color: #35C5F0;color: #ffffff;cursor: default;
      		padding: 10px; border: none; border-radius: 20px;">선택</button>
     </div>
@@ -383,7 +383,7 @@
   
   
   <!-- 페이징 -->
-  <jsp:include page="paginationAdmin.jsp">
+  <jsp:include page="paginationAdminComment.jsp">
 	<jsp:param value="<%= writePages %>" name="writePages"/>
 	<jsp:param value="<%= totalPage %>" name="totalPage"/>
 	<jsp:param value="<%= curPage %>" name="curPage"/>

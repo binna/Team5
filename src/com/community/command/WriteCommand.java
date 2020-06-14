@@ -34,9 +34,9 @@ public class WriteCommand implements Command {
 				// 삽입 트랜잭션 실행
 				cnt = dao.insert(title, content, keyword, qid);
 			} catch(SQLException e) {
-				System.out.println("트랜젝션 에러 발생");
+				System.out.println("WriteCommand1 트랜젝션 에러 발생");
 			} catch (Exception e) {
-				System.out.println("트랜젝션 이외의 에러 발생");
+				System.out.println("WriteCommand1 트랜젝션 이외의 에러 발생");
 			}
 			
 		} // end if
@@ -51,9 +51,9 @@ public class WriteCommand implements Command {
 				// 모든 no의 값을 전달
 				request.setAttribute("Qno", arr);
 			} catch(SQLException e) {
-				System.out.println("트랜젝션 에러 발생");
+				System.out.println("WriteCommand2 트랜젝션 에러 발생");
 			} catch (Exception e) {
-				System.out.println("트랜젝션 이외의 에러 발생");
+				System.out.println("WriteCommand2 트랜젝션 이외의 에러 발생");
 			}
 			
 		} // end if

@@ -30,9 +30,9 @@ public class UpdateCommand implements Command{
 			try {			
 				cnt = dao.update(title, content, keyword, no);
 			} catch(SQLException e) {
-				System.out.println("트랜젝션 에러 발생");
+				System.out.println("UpdateCommand1 트랜젝션 에러 발생");
 			} catch (Exception e) {
-				System.out.println("트랜젝션 이외의 에러 발생");
+				System.out.println("UpdateCommand1 트랜젝션 이외의 에러 발생");
 			}
 			
 		} // end if
