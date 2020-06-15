@@ -87,7 +87,7 @@
             </div>
 
             <button id="write"
-               onclick="location.href='community/communityMain.jsp'">글쓰기</button>
+               onclick="location.href='communityMain.jsp'">글쓰기</button>
 
             <!-- <button>
                <i class="fas fa-search"></i>
@@ -194,7 +194,7 @@
          <div id="main_top1_3" class="col-sm-8 col-8">
 
             <button id="write"
-               onclick="location.href='community/communityMain.jsp'">글쓰기
+               onclick="location.href='communityMain.jsp'">글쓰기
             </button>
             <button id="search">
                <i class="fas fa-search"></i>
@@ -256,7 +256,7 @@
             <div class="m_nav_menu_inner">
                <br>
                <h4>홈</h4>
-               <h4 Onclick="location.href='community/list.community?page=1'"
+               <h4 Onclick="location.href='list.community?page=1'"
                   class="Hpointer">질문과 답변</h4>
             </div>
          </div>

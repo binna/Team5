@@ -277,7 +277,7 @@ if(session.getAttribute("id") == null) {	// 비로그인 일때
             <div class="m_nav_menu_inner">
                <br>
                <h4>홈</h4>
-               <h4 Onclick="location.href='community/list.community?page=1'"
+               <h4 Onclick="location.href='list.community?page=1'"
                   class="Hpointer">질문과 답변</h4>
             </div>
          </div>
@@ -725,7 +725,7 @@ if(session.getAttribute("id") == null) {	// 비로그인 일때
             <div class="m_nav_menu_inner">
                <br>
                <h4>홈</h4>
-               <h4 Onclick="location.href='community/list.community?page=1'"
+               <h4 Onclick="location.href='list.community?page=1'"
                   class="Hpointer">질문과 답변</h4>
             </div>
          </div>
