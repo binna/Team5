@@ -43,17 +43,17 @@ INSERT INTO Question(Qno, Qtitle, Qcontent, Qkeyword, Qmember_id)
 
 
 -- 댓글 삽입
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every5116', 18433, '정말 훌륭합니다');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna', 18433, '요즘 대세는 나무색이죠');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna94', 18433, '어떤색을 원하시는지 잘 모르겠다');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna1994', 18433, 'ㅋㅋㅋㅋㅋ');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna27', 18433, '저도 어떤 색상이 어려울지 가늠하기 어렵습니다');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every3488', 18433, '댓글입니다');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every4954', 18433, '구매하실때 꼼꼼하게 알아보셔야 합니다');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every2281', 18433, '조금더 자세하게 문의를 남겨주세요 그래야 답변이 가능해요');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every94', 18433, '고민이 많으시겠네요 저같으면 여기에 네이비 색으로 꾸밀것 같아요');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every1994', 18433, '인테리어는 함부러 결정하는 것보다 많이 알아보고 결정해야 합니다');
-INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every27', 18433, '이미 좋은 답변들이 많이 달려 있네요');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every5116', 4608, '정말 훌륭합니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna', 4608, '요즘 대세는 나무색이죠');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna94', 4608, '어떤색을 원하시는지 잘 모르겠다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna1994', 4608, 'ㅋㅋㅋㅋㅋ');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'binna27', 4608, '저도 어떤 색상이 어려울지 가늠하기 어렵습니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every3488', 4608, '댓글입니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every4954', 4608, '구매하실때 꼼꼼하게 알아보셔야 합니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every2281', 4608, '조금더 자세하게 문의를 남겨주세요 그래야 답변이 가능해요');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every94', 4608, '고민이 많으시겠네요 저같으면 여기에 네이비 색으로 꾸밀것 같아요');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every1994', 4608, '인테리어는 함부러 결정하는 것보다 많이 알아보고 결정해야 합니다');
+INSERT INTO QComment(Cno, Cmember_id, Cqno, Ccontent) VALUES (SEQ_QComment_Cno.nextval, 'every27', 4608, '이미 좋은 답변들이 많이 달려 있네요');
 
 
 SELECT * FROM QComment ORDER BY Cno DESC;

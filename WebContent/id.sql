@@ -11,5 +11,6 @@ INSERT INTO MEMBER VALUES ('every94','123456789','박빈나','750615','1862133',
 INSERT INTO MEMBER VALUES ('every1994','123456789','박빈나','750615','1862133','bhd4445@naver.com','YES','010-0000-0000','02-0000-0000','04738','서울 성동구 독서당로 272','1동 101호',0,sysdate);
 INSERT INTO MEMBER VALUES ('every27','123456789','박빈나','750615','1862133','bhd4445@naver.com','YES','010-0000-0000','02-0000-0000','04738','서울 성동구 독서당로 272','1동 101호',0,sysdate);
 INSERT INTO MEMBER VALUES ('team5','team5','박빈나','750615','1862133','bhd4445@naver.com','YES','010-0000-0000','02-0000-0000','04738','서울 성동구 독서당로 272','1동 101호',0,sysdate);
+INSERT INTO MEMBER VALUES ('test','test','박빈나','750615','1862133','bhd4445@naver.com','YES','010-0000-0000','02-0000-0000','04738','서울 성동구 독서당로 272','1동 101호',0,sysdate);
 
 SELECT * FROM "MEMBER" m;
