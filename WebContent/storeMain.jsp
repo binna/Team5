@@ -424,7 +424,7 @@ font-family: 'Jua', sans-serif; -->
 			<c:choose>
 				<c:when test="${empty list || fn:length(list) ==0}">
 				<div id = "not_p">
-				<img src="https://lh3.googleusercontent.com/proxy/ereTEfbPYV2fQFBKgtt7ukZiNUdqz59kjMGGxPXYvh-DoJ2xPKT5MX2lsA94_Dda-6NkEsjhzq6H4g0HBifvORSUOHOsoe33Aqz_jUb5"></div>
+				<h4>준비된 상품이 없습니다.</h4>
 				</c:when>
 				<c:otherwise>
 					<c:forEach var="dto" items='${list }'>

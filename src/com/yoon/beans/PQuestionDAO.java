@@ -94,7 +94,7 @@ public class PQuestionDAO {
 			pstmt = conn.prepareStatement(D.SQL_PQLIST_SELECT_ALL);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-			System.out.println(arr.length);
+		
 		} finally {
 			close();
 		}
